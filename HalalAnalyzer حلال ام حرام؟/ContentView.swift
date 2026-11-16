@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var session = IngredientScreeningSession()
     @State private var showingLimitations = false
+    @FocusState private var ingredientEditorFocused: Bool
 
     private let samples = [
         "Gelatin, sugar, natural flavors",
@@ -16,16 +17,18 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 22) {
                     header
                     inputSection
-                    sampleSection
 
                     if let result = session.currentResult {
                         resultSection(result)
                     }
+
+                    sampleSection
                 }
                 .padding(20)
             }
             .background(Color(.systemGroupedBackground))
             .navigationTitle("Halal Analyzer")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
@@ -66,6 +69,7 @@ struct ContentView: View {
                 .font(.headline)
 
             TextEditor(text: $session.input)
+                .focused($ingredientEditorFocused)
                 .frame(minHeight: 150)
                 .padding(10)
                 .scrollContentBackground(.hidden)
@@ -88,6 +92,7 @@ struct ContentView: View {
                 .accessibilityHint("Type or paste English ingredient text, then activate Screen text. Editing clears the previous result.")
 
             Button {
+                ingredientEditorFocused = false
                 session.screen()
             } label: {
                 Label("Screen text", systemImage: "magnifyingglass")
