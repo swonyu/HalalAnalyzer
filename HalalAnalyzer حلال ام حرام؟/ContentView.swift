@@ -1,15 +1,8 @@
-//
-//  ContentView.swift
-//  HalalAnalyzer حلال ام حرام؟
-//
-//  Created by saleh alayed on 10/12/1447 AH.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    @State private var ingredientText = ""
-    @State private var analysis: AnalysisResult?
+    @State private var session = IngredientScreeningSession()
+    @State private var showingLimitations = false
 
     private let samples = [
         "Gelatin, sugar, natural flavors",
@@ -25,8 +18,8 @@ struct ContentView: View {
                     inputSection
                     sampleSection
 
-                    if let analysis {
-                        resultSection(analysis)
+                    if let result = session.currentResult {
+                        resultSection(result)
                     }
                 }
                 .padding(20)
@@ -34,24 +27,34 @@ struct ContentView: View {
             .background(Color(.systemGroupedBackground))
             .navigationTitle("Halal Analyzer")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        showingLimitations = true
+                    } label: {
+                        Label("Privacy and limitations", systemImage: "info.circle")
+                    }
+                    .accessibilityLabel("Privacy and limitations")
+                }
+
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Clear") {
-                        ingredientText = ""
-                        analysis = nil
+                        session.clear()
                     }
-                    .disabled(ingredientText.isEmpty && analysis == nil)
+                    .disabled(session.input.isEmpty && session.currentResult == nil)
                 }
+            }
+            .sheet(isPresented: $showingLimitations) {
+                ScreeningInformationView()
             }
         }
     }
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Label("حلال ام حرام؟", systemImage: "checkmark.seal.fill")
+            Label("Ingredient screening", systemImage: "text.magnifyingglass")
                 .font(.title.bold())
-                .foregroundStyle(.green)
 
-            Text("Paste ingredients or additives to get a quick local screening. Ambiguous items are marked for review.")
+            Text("Match a small set of English ingredient terms. Results identify words to check; they do not determine halal status.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
@@ -62,7 +65,7 @@ struct ContentView: View {
             Text("Ingredients")
                 .font(.headline)
 
-            TextEditor(text: $ingredientText)
+            TextEditor(text: $session.input)
                 .frame(minHeight: 150)
                 .padding(10)
                 .scrollContentBackground(.hidden)
@@ -72,35 +75,41 @@ struct ContentView: View {
                         .stroke(Color(.separator), lineWidth: 0.5)
                 }
                 .overlay(alignment: .topLeading) {
-                    if ingredientText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    if session.input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                         Text("Example: gelatin, whey, E471, vanilla extract...")
                             .foregroundStyle(.tertiary)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 18)
                             .allowsHitTesting(false)
+                            .accessibilityHidden(true)
                     }
                 }
+                .accessibilityLabel("Ingredient text")
+                .accessibilityHint("Type or paste English ingredient text, then activate Screen text. Editing clears the previous result.")
 
             Button {
-                analysis = IngredientAnalyzer.analyze(ingredientText)
+                session.screen()
             } label: {
-                Label("Analyze", systemImage: "magnifyingglass")
+                Label("Screen text", systemImage: "magnifyingglass")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
-            .disabled(ingredientText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            .disabled(session.input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+
+            Text("Changing the text clears the result. No result is a halal certificate.")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
         }
     }
 
     private var sampleSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Samples")
+            Text("Try sample text")
                 .font(.headline)
 
             ForEach(samples, id: \.self) { sample in
                 Button {
-                    ingredientText = sample
-                    analysis = IngredientAnalyzer.analyze(sample)
+                    session.useSample(sample)
                 } label: {
                     HStack {
                         Text(sample)
@@ -111,43 +120,59 @@ struct ContentView: View {
                         Image(systemName: "chevron.right")
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(.secondary)
+                            .accessibilityHidden(true)
                     }
                     .padding(12)
                     .background(.background, in: RoundedRectangle(cornerRadius: 8))
                 }
                 .buttonStyle(.plain)
+                .accessibilityHint("Replaces the text and screens this sample.")
             }
         }
     }
 
-    private func resultSection(_ result: AnalysisResult) -> some View {
+    private func resultSection(_ result: IngredientScreeningResult) -> some View {
         VStack(alignment: .leading, spacing: 14) {
-            Label(result.title, systemImage: result.icon)
+            Label(result.outcome.title, systemImage: result.outcome.symbol)
                 .font(.title3.bold())
-                .foregroundStyle(result.color)
+                .foregroundStyle(result.outcome.color)
+                .accessibilityAddTraits(.isHeader)
 
-            Text(result.summary)
+            Text(result.outcome.summary)
                 .font(.subheadline)
-                .foregroundStyle(.secondary)
 
             if !result.matches.isEmpty {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Matched items")
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Matched terms")
                         .font(.headline)
+                        .accessibilityAddTraits(.isHeader)
 
                     ForEach(result.matches) { match in
-                        VStack(alignment: .leading, spacing: 4) {
+                        VStack(alignment: .leading, spacing: 5) {
                             Text(match.name)
                                 .font(.subheadline.weight(.semibold))
-                            Text(match.reason)
-                                .font(.caption)
+                            Text(match.disposition.title)
+                                .font(.subheadline)
+                            Text("Matched text: \(match.terms.joined(separator: ", "))")
+                                .font(.footnote)
+                            Text(match.explanation)
+                                .font(.footnote)
                                 .foregroundStyle(.secondary)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(10)
-                        .background(result.color.opacity(0.1), in: RoundedRectangle(cornerRadius: 8))
+                        .padding(12)
+                        .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 8))
+                        .accessibilityElement(children: .combine)
                     }
                 }
+            }
+
+            Text(IngredientScreening.coverageNotice)
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+
+            Button("Read privacy and limitations") {
+                showingLimitations = true
             }
         }
         .padding(16)
@@ -155,98 +180,57 @@ struct ContentView: View {
     }
 }
 
-private enum IngredientAnalyzer {
-    static func analyze(_ text: String) -> AnalysisResult {
-        let normalizedText = text.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: .current)
-        let matches = rules.filter { rule in
-            rule.keywords.contains { normalizedText.localizedCaseInsensitiveContains($0) }
-        }
-
-        if matches.contains(where: { $0.status == .haram }) {
-            return AnalysisResult(
-                status: .haram,
-                matches: matches,
-                summary: "This list contains ingredients commonly considered haram. Check the product source and certification before consuming."
-            )
-        }
-
-        if matches.contains(where: { $0.status == .review }) {
-            return AnalysisResult(
-                status: .review,
-                matches: matches,
-                summary: "No clearly haram item was found, but some ingredients depend on source or processing method."
-            )
-        }
-
-        return AnalysisResult(
-            status: .halal,
-            matches: matches,
-            summary: "No flagged ingredients were detected in this basic screening. Certification is still the best confirmation."
-        )
-    }
-
-    private static let rules: [IngredientRule] = [
-        IngredientRule(name: "Alcohol / Ethanol", keywords: ["alcohol", "ethanol", "beer", "wine", "rum"], status: .haram, reason: "Intoxicating alcohol is not halal."),
-        IngredientRule(name: "Pork", keywords: ["pork", "porcine", "lard", "bacon", "ham"], status: .haram, reason: "Pig-derived ingredients are haram."),
-        IngredientRule(name: "Carmine / E120", keywords: ["carmine", "cochineal", "e120"], status: .review, reason: "This coloring is debated and may require scholar or certification guidance."),
-        IngredientRule(name: "Gelatin", keywords: ["gelatin", "gelatine"], status: .review, reason: "Gelatin can be halal, beef, fish, or pork-derived depending on source."),
-        IngredientRule(name: "Mono- and Diglycerides / E471", keywords: ["e471", "mono", "diglycerides"], status: .review, reason: "These emulsifiers can come from plant or animal fat."),
-        IngredientRule(name: "Enzymes", keywords: ["enzyme", "rennet"], status: .review, reason: "Enzymes may be microbial, plant-based, or animal-derived."),
-        IngredientRule(name: "Vanilla Extract", keywords: ["vanilla extract"], status: .review, reason: "Some extracts use alcohol as a solvent.")
-    ]
-}
-
-private struct IngredientRule: Identifiable {
-    let id = UUID()
-    let name: String
-    let keywords: [String]
-    let status: AnalysisStatus
-    let reason: String
-}
-
-private struct AnalysisResult {
-    let status: AnalysisStatus
-    let matches: [IngredientRule]
-    let summary: String
-
-    var title: String {
-        switch status {
-        case .halal:
-            return "Looks Halal"
-        case .review:
-            return "Needs Review"
-        case .haram:
-            return "Likely Haram"
-        }
-    }
-
-    var icon: String {
-        switch status {
-        case .halal:
-            return "checkmark.circle.fill"
-        case .review:
-            return "questionmark.circle.fill"
-        case .haram:
-            return "xmark.octagon.fill"
+private extension ScreeningOutcome {
+    var symbol: String {
+        switch self {
+        case .flaggedTerms: return "exclamationmark.triangle"
+        case .sourceDependent: return "questionmark.circle"
+        case .unknown: return "text.magnifyingglass"
         }
     }
 
     var color: Color {
-        switch status {
-        case .halal:
-            return .green
-        case .review:
-            return .orange
-        case .haram:
-            return .red
+        switch self {
+        case .flaggedTerms, .sourceDependent: return .primary
+        case .unknown: return .secondary
         }
     }
 }
 
-private enum AnalysisStatus {
-    case halal
-    case review
-    case haram
+private struct ScreeningInformationView: View {
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {
+                    section("What this screen does", text: "It matches a limited set of English ingredient words and E120/E471 formats in text you choose to type or paste. It has no camera, OCR, barcode scanning, trained AI model, or remote screening service.")
+                    section("What a result means", text: "A match only shows that a term appeared. It does not establish ingredient presence, origin, processing, cross-contamination, or halal status. Simple statements such as alcohol-free are marked for context review; this app cannot verify such claims. Unmatched text remains unknown. Check the original label and ask the manufacturer or a qualified certifier when needed.")
+                    section("Your text and privacy", text: "This app screens text on your device and keeps the current text and result in memory. It does not save or transmit them, include analytics, or request camera, photos, microphone, or location permissions. Clear removes the current text and result. Your keyboard and other iOS services remain subject to your device settings.")
+                    section("Language and coverage", text: IngredientScreening.coverageNotice)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(20)
+            }
+            .navigationTitle("Privacy & limitations")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
+        }
+    }
+
+    private func section(_ title: String, text: String) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.headline)
+                .accessibilityAddTraits(.isHeader)
+            Text(text)
+                .font(.body)
+        }
+    }
 }
 
 #Preview {
