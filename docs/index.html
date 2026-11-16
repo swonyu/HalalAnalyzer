@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HalalTag — Privacy and limitations</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; max-width: 760px; margin: 40px auto; padding: 0 20px; color: #222; }
+        h1 { color: #0a6b42; font-size: 2.2em; line-height: 1.2; }
+        h2 { color: #0a6b42; margin-top: 2em; line-height: 1.3; }
+        a { color: #075b38; text-underline-offset: 0.2em; }
+        a:focus-visible { outline: 3px solid #0a6b42; outline-offset: 4px; }
+        nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .note { background-color: #f4f4f4; padding: 20px; border-radius: 10px; border-left: 5px solid #0a6b42; }
+        .note p { margin: 0; }
+        footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <nav aria-label="HalalTag pages"><a href="index.html" aria-current="page">Privacy and limitations</a><a href="support.html">Support</a></nav>
+    <main>
+        <p class="note"><strong>Draft for the upcoming version.</strong> These pages describe the corrected English text-screening release being prepared. They are not the policy for a published App Store build.</p>
+        <h1>HalalTag privacy and limitations</h1>
+        <p><strong>Developer:</strong> Saleh Alayed</p>
+
+        <h2>What this version does</h2>
+        <p>HalalTag checks a small set of English ingredient terms in text you choose to type or paste. Screening runs on your device. This version does not use a camera, OCR, barcode scanning or a remote ingredient-analysis service.</p>
+
+        <h2>Your ingredient text and results</h2>
+        <p>The screening screen keeps the current text and result in memory. This feature does not save a scan history or a favorites list and does not send ingredient text to a remote screening service.</p>
+        <p>Clear removes the current text and result from the screen. Editing the text clears the previous result so you can screen the revised text again.</p>
+
+        <h2>Your device and keyboard</h2>
+        <p>Keyboard, dictation, clipboard and other iOS services remain subject to your device settings and their providers’ practices. This description of HalalTag’s screening feature does not make guarantees about those separate services or about the security of your device.</p>
+
+        <h2>Visiting these webpages</h2>
+        <p>The planned hosting provider for these privacy and support webpages is GitHub Pages. Visiting the published pages will send a web request to GitHub. GitHub states that it logs and stores visitors’ IP addresses for security purposes, including when visitors are not signed in. This website hosting is separate from the app’s on-device ingredient screening.</p>
+        <p>Read <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages data collection information</a> and the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</p>
+
+        <h2>What results mean</h2>
+        <p>A match identifies supported words in the supplied text. It does not establish ingredient presence, source, processing, contamination or halal certification. Unrecognized terms and languages may be missed.</p>
+        <div class="note"><p><strong>No supported match means the status is unknown.</strong> It does not mean that a product is certified. Check the original label and seek source or certification information when needed.</p></div>
+
+        <h2>Statement status</h2>
+        <p>Draft updated 16 November 2026. This statement will be reviewed against the final app before release.</p>
+
+            <h2>Privacy questions</h2>
+        <p>The contact address for privacy questions will be added before release.</p>
+    </main>
+    <footer><a href="support.html">Using HalalTag and understanding results</a></footer>
+</body>
+</html>
