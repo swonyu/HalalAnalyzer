@@ -1,0 +1,55 @@
+{
+  "status": "CLOUD_PREPARATION_EXERCISED_NOT_MAC_EXPORTED_OR_SENT",
+  "export_environment": "linux",
+  "exact_commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+  "exact_tree": "a12a81a8fb1a0fe9085fc316aca8d9eedd7bd718",
+  "complete_tracked_files": 95,
+  "original_tracked_bytes": 1290553,
+  "utf8_text_files": 94,
+  "binary_files": 1,
+  "every_tracked_file_in_zip": true,
+  "every_utf8_file_reproduced_byte_exact": true,
+  "omitted_tracked_paths": [],
+  "original_source_edited": false,
+  "git_refs_modified": false,
+  "native_invoked": false,
+  "upload_invoked": false,
+  "exporter_sha256": "d413851c3c298fde1250ae194fe93f924f75b991820c92d75ee63d6d52dbdd32",
+  "engine_sha256": "6b3e8847c2587e729e23b78fc77c9087ed62bb4d6a1f53af89c0af4e1414ae62",
+  "export": {
+    "app": "HalalTag",
+    "archive": {
+      "bytes": 829264,
+      "name": "HalalTag-156c5eeb-complete-source.zip",
+      "sha256": "5a68fb2f8614f08a3207ca88c4e9708f3be844cdfc3d688a4d8304a5c6875a82"
+    },
+    "bounded_reading": {
+      "bytes": 385094,
+      "index": "HalalTag-156c5eeb-complete-source-reading-batches/READING-BATCH-INDEX.json",
+      "maximum_part_bytes": 131072,
+      "parts": 6,
+      "sha256": "337c6ec88952d7cc54a1b67250be4efcd56e69ec89449a4a272191d2c003b5ea",
+      "zip": "HalalTag-156c5eeb-complete-source-reading-pack.zip"
+    },
+    "commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+    "manifest": {
+      "name": "HalalTag-156c5eeb-complete-source-manifest.json",
+      "sha256": "5b480948692eab181906969b84764c4b17f320a5160e3503d1a2c81a4ae00469"
+    },
+    "reading_pack": {
+      "bytes": 747658,
+      "name": "HalalTag-156c5eeb-complete-source.txt",
+      "rule": "Strict UTF-8 without NUL; original text bytes are preserved.",
+      "sha256": "c9d542cfc92331b5a5cbc3485eba96739fce7bbba56091e49dd31e4ad861ece3"
+    },
+    "scan_report": {
+      "name": "HalalTag-156c5eeb-complete-source-scan.json",
+      "sha256": "abe6b49f1da7655ae5792fddbf80f29b16ce90a3969e09e00903033e69486f74"
+    },
+    "tracked_files": 95,
+    "tree": "a12a81a8fb1a0fe9085fc316aca8d9eedd7bd718",
+    "utf8_text_files": 94
+  },
+  "bare_HEAD_was_documentation_successor": "dda637fd5366aaec35f06a2bd5a1c533b2746a86",
+  "source_note": "Source95 and TXT94 original-byte outputs are exact; transport instruction spacing was polished after the cloud exercise and does not affect original source or TXT hashes."
+}

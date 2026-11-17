@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "decision": "APPROPRIATE_FOR_AUTHORIZED_GROK_REVIEW",
+  "scope": "Exact complete frozen HalalTag R7 Git tree only; no native or delivery claim",
+  "apps": {
+    "HalalTag": {
+      "commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+      "screening_digest": "0040fd6ba06ee0cd1a67eeab913b66298aeba5dcfaeef5cf55ec1644e1965c49",
+      "candidate_dispositions": {},
+      "new_binary_review": {},
+      "context_review": "All95 tracked files screened;94 are strict UTF-8. Twelve findings are technical local provenance paths already within the user-authorized app handoff. No credential/contact/sensitive-file candidate or nested archive was found. The sole binary icon is byte-identical to the prior aa7 snapshot; no new binary review is being claimed."
+    }
+  },
+  "limitations": "Signature/context screening cannot prove absence of every possible private fact. A baseline blob match is not an upload or read receipt. No private store contact or account dump is included."
+}

@@ -1,0 +1,89 @@
+--- r7/native_coordination_frozen.py
++++ r7-extension/native_coordination_extended.py
+@@ -27,11 +27,11 @@
+ SCHEDULE = Path("/Users/saleh/Library/Caches/AppStore-Native-Schedule-20261116")
+ LOCK = Path("/tmp/dot-ios-build.lock")
+ HERE = Path(__file__).resolve().parent
+-# The user requested 24 ACTIVE engineering hours. This elapsed-time checkpoint
+-# is a conservative scheduling boundary, not an independently verified hard
+-# deadline or proof of active hours consumed. No user budget is restarted here.
+-CONSERVATIVE_CHECKPOINT = datetime(2026, 11, 17, 22, 26, 12, tzinfo=timezone.utc)
+-BUDGET_BASIS = "24 active engineering hours requested; active usage and remaining balance unverified; elapsed checkpoint used conservatively"
++# Release-only successor: the user explicitly added another 24 hours to the
++# original 2026-11-17T22:26:12Z cutoff. The original start/budget is not reset.
++# The frozen predecessor remains separately preserved and hash-bound.
++CONSERVATIVE_CHECKPOINT = datetime(2026, 11, 18, 22, 26, 12, tzinfo=timezone.utc)
++BUDGET_BASIS = "Original budget/start preserved; user explicitly extended the original cutoff by 24h to 2026-11-18T22:26:12Z"
+ QUEUE_SECONDS = 600
+ POLL_SECONDS = 10
+ # Each task reserves one extra minute for launch overhead. Its exact preserved
+@@ -269,6 +269,7 @@
+ def preflight(own_paths: set[Path], queue: dict) -> dict:
+     current = now()
+     proposed_end = min(current + timedelta(minutes=queue["native_hard_cap_minutes"] + 1), CONSERVATIVE_CHECKPOINT)
++    require(proposed_end > current, "No positive scheduling window remains before the explicitly extended cutoff")
+     blockers = []
+     records = []
+     for path in sorted(SCHEDULE.glob("*.json")):
+@@ -491,8 +492,4 @@
+ 
+ 
+ if __name__ == "__main__":
+-    try:
+-        raise SystemExit(main())
+-    except (RuntimeError, OSError, ValueError) as error:
+-        print("BLOCKED: " + str(error), file=sys.stderr)
+-        raise SystemExit(2)
++    raise SystemExit("R7 release coordination is import-only; use the exact reviewed release adapter")
+--- r7/release_support.py
++++ r7-extension/release_support.py
+@@ -10,7 +10,7 @@
+ import zipfile
+ 
+ HERE = Path(__file__).resolve().parent
+-MANIFEST_SHA = 'b5bece02f9433870a3183a5be9572f6c004cbe92499cd3168135f5e9688c2076'
++MANIFEST_SHA = 'd233c3b5fd3f71f93550efaa12b58fc5e10a5e4077c58ed0f8317d62a27c05f5'
+ STAGES = ('unsigned-archive', 'developer-archive', 'distribution-export')
+ 
+ 
+--- r7/run_release_stage.py
++++ r7-extension/run_release_stage.py
+@@ -20,14 +20,14 @@
+ import time
+ 
+ HERE = Path(__file__).resolve().parent
+-SUPPORT_SHA = 'ed5cfc3d1bf2976e91875a4757ef81ab43559fffd6c01002b356949ace081e50'
++SUPPORT_SHA = '241d396d7aec9ebb195e0a1a6333af0cd52e8427583b91d84a31696ec32e3fa0'
+ support_path = HERE / 'release_support.py'
+ if not support_path.is_file() or support_path.is_symlink() or hashlib.sha256(support_path.read_bytes()).hexdigest() != SUPPORT_SHA:
+     raise RuntimeError('Reviewed release support bytes changed; no stage code imported')
+ import release_support as support
+ 
+ LIFECYCLE_SHA = '1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99'
+-COORDINATION_SHA = '243dc8943a5d91ed3a26673223f862a4f30a1c8b0a35088e7476d02ea4f78c6c'
++COORDINATION_SHA = '43c070a63728f680b5de707f9d8f9903e058a312df185bfde16ba0fdc02ef562'
+ OUTPUT_ROOT = Path('/Users/saleh/Library/Caches/HalalTag-ProductionReleaseR7')
+ SCHEDULE = Path('/Users/saleh/Library/Caches/AppStore-Native-Schedule-20261116')
+ RESULTS = {'unsigned-archive': 'LOCAL_UNSIGNED_ARCHIVE_VERIFIED',
+@@ -66,7 +66,11 @@
+     support.require(ack.get('schema_version') == 1 and ack.get('acknowledged') is True
+                     and ack.get('scope') == spec['scope'] and ack.get('stage') == args.stage,
+                     'A fresh exact root acknowledgment is required')
+-    pins = {'adapter_sha256': support.sha(Path(__file__)),
++    pins = {'conservative_scheduling_checkpoint': spec['conservative_scheduling_checkpoint'],
++            'original_deadline_utc': spec['original_deadline_utc'],
++            'extended_deadline_utc': spec['extended_deadline_utc'],
++            'explicit_user_extension_hours': spec['explicit_user_extension_hours'],
++            'adapter_sha256': support.sha(Path(__file__)),
+             'support_sha256': support.sha(HERE / 'release_support.py'),
+             'production_manifest_sha256': support.MANIFEST_SHA,
+             'lifecycle_sha256': LIFECYCLE_SHA, 'coordination_sha256': COORDINATION_SHA,
+@@ -230,7 +234,7 @@
+         support.require(args.prior_stage_report is None, 'Unsigned archive has no prior-stage input')
+     ack, minutes, own_paths = validate_ack(args.acknowledgment, args, spec, native, identity, previous)
+     base = load('halal_release_frozen_lifecycle', HERE / 'publishing_runner_frozen.py', LIFECYCLE_SHA)
+-    coordination = load('halal_release_frozen_coordination', HERE / 'native_coordination_frozen.py', COORDINATION_SHA)
++    coordination = load('halal_release_extended_coordination', HERE / 'native_coordination_extended.py', COORDINATION_SHA)
+     check = coordination.preflight(own_paths, {'native_hard_cap_minutes': minutes, 'created_at': ack['acknowledged_at']})
+     support.require(coordination.clear(check), 'Existing native ownership/schedule blocks this stage; no wait or takeover')
+     runtime_args = argparse.Namespace(output_root=OUTPUT_ROOT, deadline_minutes=minutes,

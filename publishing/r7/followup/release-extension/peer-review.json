@@ -1,0 +1,57 @@
+{
+  "Mac_actions": false,
+  "native_invoked": false,
+  "original_finding": {
+    "evidence": "Reviewed preflight min(now+cap+1, old constant), validate_ack manifest cutoff, all three old template fields.",
+    "impact_scope": "No effect on current pre-original-cutoff slots; concrete wrong future coordination within the authorized extension.",
+    "problem": "R7 release manifest allowed the user-authorized Nov18 cutoff, but frozen preflight and acknowledgment template metadata retained Nov17. After original cutoff preflight could calculate a past proposed_end and omit interval-only pending schedule conflicts.",
+    "status": "RESOLVED_IN_SEPARATE_SUCCESSOR"
+  },
+  "owner_regression_evidence": {
+    "method": "Read source and existing owner log only. Extracted preflight/clear functions use synthetic temporary schedules and fake ps output; they reproduce old post-cutoff omission, establish unchanged pre-cutoff behavior and require failure after new cutoff.",
+    "path": "/workspace/scratch/d57f4cd77813/halaltag-r7-release-extension/coordination-horizon-tests.log",
+    "reported_failed": 0,
+    "reported_passed": 3,
+    "rerun_by_reviewer": false
+  },
+  "pins": {
+    "explicit-extension-adapter.diff": "b8211f95995b9b0b142b9057d4f565ef402443b411ab28ba0304e527f1c3d051",
+    "extension-preparation-review.json": "4d034997c92952497af50b2dc955c71b491245c6a2f046f63edd879b9c4d0cb4",
+    "native_coordination_extended.py": "43c070a63728f680b5de707f9d8f9903e058a312df185bfde16ba0fdc02ef562",
+    "native_coordination_frozen.py": "243dc8943a5d91ed3a26673223f862a4f30a1c8b0a35088e7476d02ea4f78c6c",
+    "production-manifest.json": "d233c3b5fd3f71f93550efaa12b58fc5e10a5e4077c58ed0f8317d62a27c05f5",
+    "publishing_runner_frozen.py": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99",
+    "release_support.py": "241d396d7aec9ebb195e0a1a6333af0cd52e8427583b91d84a31696ec32e3fa0",
+    "run_release_stage.py": "992d2ad5ad021568b0519e0fe98205fcd596fd99a94bf44acc8ee071c3068003"
+  },
+  "preparation": "/workspace/scratch/d57f4cd77813/halaltag-r7-release-extension/preparation",
+  "push_invoked": false,
+  "release_adapter_invoked": false,
+  "remaining_findings": [],
+  "result": "No remaining blocking file-level issue in reviewed release-only successor. Native R7 acceptance and each release-stage evidence remain required; this review is not a native pass or release authorization.",
+  "reviewed_utc": "2026-11-17T17:04:43.750498+00:00",
+  "reviewer": "/root/lumina_recovery",
+  "schema": "halaltag-release-peer-review/v1",
+  "scope": "Read-only file/source/AST/hash review of R7 release gates and separate explicit-deadline extension successor; no adapter import/execution, no native or Mac action.",
+  "source_edits": false,
+  "successor_review": {
+    "all19_case_plan_specs_unchanged": true,
+    "all_three_ack_templates_false_and_new_deadline_fields_bound": true,
+    "cutoff_exactly_matches_user_extension": true,
+    "expired_extended_cutoff_fails_closed_before_process_scan": true,
+    "frozen_predecessor_preserved_byte_exact": true,
+    "historical_copied_scheduler_CLI_disabled": true,
+    "model_gate_AST_unchanged": true,
+    "native_adapter_and_three_evidence_guard_pins_match_exact_R7_files": true,
+    "native_cap_and_cleanup_reserve_unchanged": true,
+    "native_gate_preserves_exact19_no_retries_original_artifacts_and_real_model_receipt_requirements": true,
+    "new_preflight_requires_positive_window": true,
+    "original_start_and_budget_not_reset": true,
+    "preflight_only_changed_function": true,
+    "process_lifecycle_bytes_unchanged": true,
+    "release_config_UNCONFIGURED": true,
+    "shipping_matches_frozen_native_source": true,
+    "source14_shipping_unchanged_and_hash_verified": true,
+    "source_process_lock_and_schedule_checks_otherwise_identical": true
+  }
+}

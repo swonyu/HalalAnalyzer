@@ -1,0 +1,8 @@
+test_after_original_cutoff_interval_only_conflict_is_still_blocked (__main__.CoordinationHorizon.test_after_original_cutoff_interval_only_conflict_is_still_blocked) ... ok
+test_expired_extended_horizon_fails_closed_and_templates_align (__main__.CoordinationHorizon.test_expired_extended_horizon_fails_closed_and_templates_align) ... ok
+test_pre_cutoff_behavior_and_existing_process_lock_rules_are_preserved (__main__.CoordinationHorizon.test_pre_cutoff_behavior_and_existing_process_lock_rules_are_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.048s
+
+OK

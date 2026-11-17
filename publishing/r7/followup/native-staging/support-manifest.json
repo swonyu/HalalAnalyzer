@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "status": "SUPPORT_ONLY_NO_NATIVE_SOURCE_OR_EXECUTION",
+  "native_commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+  "native_tree": "a12a81a8fb1a0fe9085fc316aca8d9eedd7bd718",
+  "full_tracked_source_count_at_commit": 95,
+  "native_source_count": 47,
+  "support_file_count": 22,
+  "sealed_index_sha256": "49c63a850d040e6428c90ce8597c742d8df3f7ee7cb0484643ac152787fcea0d",
+  "files": [
+    {
+      "path": "HANDOFF.txt",
+      "bytes": 6013,
+      "sha256": "d9c80733ce3711660c3fccc482f895a901109b5831071bbc5f450659077ab145"
+    },
+    {
+      "path": "Tests/test_adapter_contract.py",
+      "bytes": 15543,
+      "sha256": "58861ef62a6434e202586d48b11582abe6c0999e677042dc64de2fd36a157d7e"
+    },
+    {
+      "path": "adapter-from-r6.diff",
+      "bytes": 709,
+      "sha256": "eff672f6f5166323098cec9f37064fa3613dab46ae24d9d941638edba786bf49"
+    },
+    {
+      "path": "adapter-from-r6b.diff",
+      "bytes": 2994,
+      "sha256": "089fde49eacbdd723b04939227c6ffaac87e5a0bcf2e158ab2d420a7b0f0991b"
+    },
+    {
+      "path": "appearance_evidence_guard.py",
+      "bytes": 28453,
+      "sha256": "a64b3d9a7d44cb3d9c905c93d4830205a12c7d3981b28f43b208e4f75753387c"
+    },
+    {
+      "path": "appearance_evidence_guard.py.from-r6b.diff",
+      "bytes": 22170,
+      "sha256": "8074a058b9ea2a889e8481d54d325181e4c9c06178e3f0f5f949fbe6e4f7c693"
+    },
+    {
+      "path": "appearance_png.py",
+      "bytes": 2828,
+      "sha256": "0d22ed3a871d4abdf5c8272a3a7319b4c8698d45d77554d5261140e4ac9c7f2d"
+    },
+    {
+      "path": "arabic_appearance_evidence_guard.py",
+      "bytes": 29280,
+      "sha256": "b7f7a2bedde6b8637009e175eae12d59723b200780b2c441108a1c2679830259"
+    },
+    {
+      "path": "arabic_appearance_evidence_guard.py.from-r6b.diff",
+      "bytes": 22247,
+      "sha256": "9f155b92051af6b1f0fd0d2f62e4803ef52c2557a89c190c52c513b9be4cac69"
+    },
+    {
+      "path": "coordinator-acknowledgment-UNCONFIGURED.json",
+      "bytes": 2227,
+      "sha256": "74f107d9387cd465833eb6a1577db54854d117e72322d86ba9b252c27113a354"
+    },
+    {
+      "path": "predecessor-adapter-from-r5.diff",
+      "bytes": 8810,
+      "sha256": "ae799655413f2af2dcedb34bfa786913b1602f54b00bf4be372ffcc5a7ec271e"
+    },
+    {
+      "path": "product-from-r5.patch",
+      "bytes": 1160,
+      "sha256": "18d64de40c1ae54095e0133c8c3e09d4cfc8800f144a0c9b38c3469422ed7efd"
+    },
+    {
+      "path": "production_case_evidence.py",
+      "bytes": 16581,
+      "sha256": "90c8237cba74d0e0e98c9d0e4724af2e96dc858bba7599cc7d09a042c3535e6f"
+    },
+    {
+      "path": "publishing_runner_frozen.py",
+      "bytes": 61657,
+      "sha256": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99"
+    },
+    {
+      "path": "reference-inputs.json",
+      "bytes": 3883,
+      "sha256": "d757602aec670d1f959f20f9e5635f7d743c9e2e8eea4e204580b119b859d702"
+    },
+    {
+      "path": "run_halaltag_native_qa.py",
+      "bytes": 60954,
+      "sha256": "e0becc1b7320367dc30d8a1187ccf3ebe1d0bec652b34fe50a082d131fae1b4f"
+    },
+    {
+      "path": "sealed-project-inputs.json",
+      "bytes": 8873,
+      "sha256": "49c63a850d040e6428c90ce8597c742d8df3f7ee7cb0484643ac152787fcea0d"
+    },
+    {
+      "path": "shipping-retention.json",
+      "bytes": 3058,
+      "sha256": "84758b707c9b7b5968b5b77e101d865f3be3180d9caab58d133f5ce096ce6def"
+    },
+    {
+      "path": "simctl-ui-help-root-20261117.stderr",
+      "bytes": 1776,
+      "sha256": "2fa67269b4a75d4856edcaf9f65ed4bd830bd0ecae95e370173fa8ed2fe87084"
+    },
+    {
+      "path": "source-retention.json",
+      "bytes": 1748,
+      "sha256": "24e7e32cfde543c99c25bca323a2b19d5212e8b0a96aa043921cccd9d499d9fc"
+    },
+    {
+      "path": "system_size_evidence.py",
+      "bytes": 6440,
+      "sha256": "e2e58acbb2de819be1e1cc4e0149f7311981c243473c07992df0ca1f67b8e83b"
+    },
+    {
+      "path": "test_geometry_evidence.py",
+      "bytes": 9257,
+      "sha256": "919fa777986167454a6b036a91d2ca4d2a4660247aacc77d0706919009cdbd73"
+    }
+  ]
+}

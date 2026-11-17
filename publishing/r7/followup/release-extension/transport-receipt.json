@@ -1,0 +1,24 @@
+{
+  "status": "FILE_ONLY_RELEASE_EXTENSION_PREPARATION",
+  "archive": "HalalTag-R7-release-extension-preparation.zip",
+  "bytes": 674887,
+  "sha256": "3a1116d1f8a636113defd2fe44a01e09e7fd504cb41eab0fe5c19caf85607c3d",
+  "source_commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+  "shipping_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "native_source_or_support_changed": false,
+  "all14_shipping_files_unchanged": true,
+  "three_schedule_regressions_passed": true,
+  "peer_review_sha256": "4ff35844e2e3e031bdb34a9dab0166bfa282993a4f5236387ba2cf7947d3acc4",
+  "old_release_preparations_preserved": true,
+  "all_three_acknowledgments_unconfigured": true,
+  "stage_executed": false,
+  "mac_action": false,
+  "pins": {
+    "production-manifest.json": "d233c3b5fd3f71f93550efaa12b58fc5e10a5e4077c58ed0f8317d62a27c05f5",
+    "release_support.py": "241d396d7aec9ebb195e0a1a6333af0cd52e8427583b91d84a31696ec32e3fa0",
+    "run_release_stage.py": "992d2ad5ad021568b0519e0fe98205fcd596fd99a94bf44acc8ee071c3068003",
+    "native_coordination_extended.py": "43c070a63728f680b5de707f9d8f9903e058a312df185bfde16ba0fdc02ef562",
+    "native_coordination_frozen.py": "243dc8943a5d91ed3a26673223f862a4f30a1c8b0a35088e7476d02ea4f78c6c",
+    "publishing_runner_frozen.py": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99"
+  }
+}

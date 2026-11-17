@@ -1,0 +1,15 @@
+{
+  "status": "CLOUD_ONLY_STAGER_CHECKS_PASSED",
+  "bare_HEAD_was_documentation_successor": "dda637fd5366aaec35f06a2bd5a1c533b2746a86",
+  "reconstructed_native_commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+  "exact_native_source_files": 47,
+  "exact_support_files": 22,
+  "all69_files_match_frozen_preparation_byte_for_byte": true,
+  "second_run_existing_destination_refused": true,
+  "second_run_exit_code": 1,
+  "mac_action": false,
+  "native_action": false,
+  "positive_log_sha256": "0fd099d4810ecb97c8f4ca6f8fd3b3d67a286be13588585899ad7933e7bb3925",
+  "refusal_log_sha256": "eee02669498b0bbffd31d0eede998fcefc3bbf3e180b24adf20f91b4aea0e5ca",
+  "stager_sha256": "bea99c670a17ba8e4d3871c3fccb2f3071a7d773120cef96b55e965deac5e6b8"
+}

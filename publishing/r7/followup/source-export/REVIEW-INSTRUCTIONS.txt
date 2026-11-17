@@ -1,0 +1,56 @@
+HALALTAG R7 — COMPLETE FROZEN SOURCE, BOUNDED READING
+
+Exact commit: 156c5eeb60eb1e06cf369235ed33af265460a9cb
+Exact tree: a12a81a8fb1a0fe9085fc316aca8d9eedd7bd718
+Complete Git snapshot:95 tracked files, 1,290,553 original file bytes.
+Complete readable source:94 strict UTF-8 files; one unchanged binary icon remains
+in the full source ZIP and file-hash manifest. No tracked file is omitted.
+
+Please open the actual full ZIP, manifest and bounded reading index. Confirm the
+exact commit and file count that you could read; do not infer successful reading
+from an upload tile, export index or this instruction. The complete TXT is also
+provided, with byte-exact offsets for every text file. The reading ZIP contains
+that full TXT plus consecutive UTF-8 parts of at most 128KiB. Concatenating all
+parts recreates the complete TXT exactly; parts may cross file boundaries.
+
+The existing Grok chat previously reported too much information when many large
+TXT files were submitted together. Use one app and a bounded file/part batch at
+a time. Start with one part or a small named-file group, state which paths/ranges
+you actually inspected, then continue through the remaining index. Retain the
+full ZIP and complete TXT as the authoritative source; individual batches are a
+reading mechanism, not a partial-source substitute. If ZIP access fails, ask for
+the indexed individual text part with its hash; do not claim unread files passed.
+
+Review priorities:
+1. Verify the production app behavior and Arabic/English limitations against
+   actual files: ContentView,IngredientScreening,ScreeningLocalization,privacy,
+   entitlements/project/resources. Arabic UI does not imply Arabic ingredient
+   recognition or halal certification. Do not propose a camera/scanner flow that
+   this frozen text-screening app does not have.
+2. Review the R7 geometry/recovery helpers and evidence guards, preserving all 19
+   top-level methods, continuous text coverage, real gesture chains, whole-target
+   visibility and the exact unfiltered contrast/clipped-text/Dynamic Type audit.
+   Never waive, catch or retry a failed audit into a pass.
+3. Compare the separate ORIGINAL R6b failure images/AX/geometry with the source.
+   Root reported that you already opened all four original images. Do not relabel
+   them as R7 captures. In particular, the Done-overlay crop and clipped link pose
+   support a geometry hypothesis; they do not prove a shipping tint defect or that
+   R7 works. R7 native execution was not yet established at the coordinator's
+   17:02:12Z staging observation; request any later actual receipt separately.
+4. Return concrete security,reliability,accessibility,UI and release findings with
+   exact source paths/lines and evidence. Distinguish validated defects from
+   hypotheses, historical problems, incomplete gates and optional product ideas.
+   Recommend minimal in-scope corrections and necessary retests. No paid services,
+   new accounts, permissions, external posting or store action is authorized by
+   this review package.
+
+Shipping files remain exactly f2c27c9271da3a17bb01c50b6cdad94643e1d0f2.
+Last completed native run R6b: 211 model checks passed, 16/19 UI passed, 3 failed.
+R7 source/static/guard checks are preparation evidence only. The app is not
+established as released. See VERSION-AND-UI-STATUS.json for exact versions,
+separate later documentation/release-preparation material and missing evidence.
+
+This export does not include .git history, untracked files, credentials, private
+store contacts or account dumps. It also does not include a newly captured R7 UI
+audit. The full95-file statement applies specifically to the exact Git snapshot,
+not all historical repositories or post-commit preparation artifacts.

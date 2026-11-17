@@ -1,0 +1,35 @@
+{
+  "status": "FILE_ONLY_EXTENSION_REPAIR_NOT_EXECUTED",
+  "native_candidate_commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+  "shipping_candidate_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "shipping_files_unchanged": 14,
+  "original_checkpoint": "2026-11-17T22:26:12Z",
+  "extended_checkpoint": "2026-11-18T22:26:12Z",
+  "explicit_user_extension_hours": 24,
+  "budget_restarted": false,
+  "parent_pins": {
+    "production-manifest.json": "b5bece02f9433870a3183a5be9572f6c004cbe92499cd3168135f5e9688c2076",
+    "release_support.py": "ed5cfc3d1bf2976e91875a4757ef81ab43559fffd6c01002b356949ace081e50",
+    "run_release_stage.py": "ff97c414e4c4494cf4074f00f32c7ec722715ebe9f1994d5767998cd55541cce",
+    "publishing_runner_frozen.py": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99",
+    "native_coordination_frozen.py": "243dc8943a5d91ed3a26673223f862a4f30a1c8b0a35088e7476d02ea4f78c6c"
+  },
+  "current_pins": {
+    "production-manifest.json": "d233c3b5fd3f71f93550efaa12b58fc5e10a5e4077c58ed0f8317d62a27c05f5",
+    "release_support.py": "241d396d7aec9ebb195e0a1a6333af0cd52e8427583b91d84a31696ec32e3fa0",
+    "run_release_stage.py": "992d2ad5ad021568b0519e0fe98205fcd596fd99a94bf44acc8ee071c3068003",
+    "publishing_runner_frozen.py": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99",
+    "native_coordination_frozen.py": "243dc8943a5d91ed3a26673223f862a4f30a1c8b0a35088e7476d02ea4f78c6c"
+  },
+  "extended_coordination_sha256": "43c070a63728f680b5de707f9d8f9903e058a312df185bfde16ba0fdc02ef562",
+  "frozen_predecessor_preserved": true,
+  "lifecycle_unchanged": true,
+  "all_three_acknowledgments_false": true,
+  "native_adapter_unchanged": true,
+  "native_source_unchanged": true,
+  "native_invoked": false,
+  "release_adapter_invoked": false,
+  "signing_invoked": false,
+  "upload_invoked": false,
+  "preparer_sha256": "b98ba4d8cbfde4c905f484db1054768b5ace55b76d1e73c5497deb947c11642b"
+}

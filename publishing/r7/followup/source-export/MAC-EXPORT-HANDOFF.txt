@@ -1,0 +1,49 @@
+HALALTAG R7 COMPLETE-SOURCE EXPORT — ROOT COORDINATOR
+
+Frozen source: 156c5eeb60eb1e06cf369235ed33af265460a9cb, tree
+a12a81a8fb1a0fe9085fc316aca8d9eedd7bd718. All 95 tracked files, 94 UTF-8 text
+files and one unchanged binary icon. The current bare HEAD may be a documentation
+successor; the exporter reads only the exact frozen commit, never HEAD.
+
+From the extracted preparation directory, run:
+
+python3 -B /ABSOLUTE/PATH/export_halaltag_r7.py
+
+Defaults:
+--bare-repository /Users/saleh/Library/Caches/Publishing-Continuation-20261117-d597fc87411f/Recovery-d57f4cd77813/GitCheckpoint/halaltag.git
+--output /Users/saleh/Library/Caches/Grok-HalalTag-R7-Full-Source-20261117-d57f4-156c5ee
+
+Use a new output path if that directory exists. The exporter refuses overwrite.
+It makes only read-only local Git calls and new artifact files. It does not modify
+refs, build/test, touch the native lock, configure acknowledgment, use a browser
+or upload. No dependencies, accounts or payments are added.
+
+The unchanged previously reviewed full-source export engine is pinned by SHA256.
+The wrapper pins the exact95-file tree, 1,290,553 original bytes and complete scan
+digest. The scan found 12 technical local-provenance paths and no credential,
+private contact or sensitive-file candidate. No new binary exists versus aa7.
+The source export was exercised on a cloud bare clone whose HEAD was dda637fd:
+all 95 archive members and all 94 original TXT byte ranges were verified, and all
+six bounded UTF-8 parts concatenate exactly to the complete 747,658-byte TXT.
+This cloud preparation is not a Mac export, upload or Grok read receipt.
+
+Output Source/ contains:
+- HalalTag-156c5eeb-complete-source.zip: all tracked source/resources/tests/docs.
+- HalalTag-156c5eeb-complete-source.txt: complete original UTF-8 file contents.
+- HalalTag-156c5eeb-complete-source-manifest.json: every file hash/size/mode,
+  original blob identity, archive membership and exact TXT byte offsets.
+- HalalTag-156c5eeb-complete-source-reading-pack.zip: complete TXT plus all six
+  consecutive bounded parts and their complete reading index.
+- Full-tree scan JSON and separate instructions/version evidence notes.
+
+EXPORT-RECEIPT.json gives actual hashes for the files generated on that machine.
+ZIP container hashes can differ by Git/compression version and creation time;
+use the actual Mac receipt. The complete TXT hash is deterministic:
+c9d542cfc92331b5a5cbc3485eba96739fce7bbba56091e49dd31e4ad861ece3.
+
+Send full source ZIP, reading-pack ZIP, manifest and concise review instructions
+in one app-specific message. Request actual archive reading in bounded batches
+instead of pasting a large TXT directly. The previously read four R6b failure
+images stay separate and historical; this exporter does not fabricate R7 images.
+Only actual later R7 native results can establish its compilation or UI outcome.
+Verify Grok's upload/read response before reporting delivery/review complete.
