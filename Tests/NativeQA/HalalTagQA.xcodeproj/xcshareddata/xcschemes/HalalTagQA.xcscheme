@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme version="1.7">
+  <BuildAction parallelizeBuildables="NO" buildImplicitDependencies="YES">
+    <BuildActionEntries>
+      <BuildActionEntry buildForTesting="YES" buildForRunning="YES" buildForProfiling="NO" buildForArchiving="NO" buildForAnalyzing="YES"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="000000000000000000000006" BuildableName="HalalTagQA.app" BlueprintName="HalalTagQA" ReferencedContainer="container:HalalTagQA.xcodeproj"/></BuildActionEntry>
+      <BuildActionEntry buildForTesting="YES" buildForRunning="NO" buildForProfiling="NO" buildForArchiving="NO" buildForAnalyzing="YES"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="000000000000000000000007" BuildableName="HalalTagQAUItests.xctest" BlueprintName="HalalTagQAUItests" ReferencedContainer="container:HalalTagQA.xcodeproj"/></BuildActionEntry>
+    </BuildActionEntries>
+  </BuildAction>
+  <TestAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.LLDB" shouldUseLaunchSchemeArgsEnv="NO" codeCoverageEnabled="NO">
+    <MacroExpansion><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="000000000000000000000006" BuildableName="HalalTagQA.app" BlueprintName="HalalTagQA" ReferencedContainer="container:HalalTagQA.xcodeproj"/></MacroExpansion>
+    <Testables>
+      <TestableReference skipped="NO" parallelizable="NO"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="000000000000000000000007" BuildableName="HalalTagQAUItests.xctest" BlueprintName="HalalTagQAUItests" ReferencedContainer="container:HalalTagQA.xcodeproj"/></TestableReference>
+    </Testables>
+    <EnvironmentVariables>
+      <EnvironmentVariable key="HALALTAG_UI_QA_RUN_MODE" value="$(HALALTAG_UI_QA_RUN_MODE)" isEnabled="YES"/>
+      <EnvironmentVariable key="HALALTAG_UI_QA_RUN_ID" value="$(HALALTAG_UI_QA_RUN_ID)" isEnabled="YES"/>
+    </EnvironmentVariables>
+  </TestAction>
+  <LaunchAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.LLDB" launchStyle="0" useCustomWorkingDirectory="NO" ignoresPersistentStateOnLaunch="NO" debugDocumentVersioning="YES" allowLocationSimulation="NO">
+    <BuildableProductRunnable runnableDebuggingMode="0"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="000000000000000000000006" BuildableName="HalalTagQA.app" BlueprintName="HalalTagQA" ReferencedContainer="container:HalalTagQA.xcodeproj"/></BuildableProductRunnable>
+  </LaunchAction>
+  <AnalyzeAction buildConfiguration="Debug"/>
+</Scheme>

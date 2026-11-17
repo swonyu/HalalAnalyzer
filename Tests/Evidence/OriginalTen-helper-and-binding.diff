@@ -1,0 +1,157 @@
+--- original/HalalTagPreparedUITests.swift
++++ Tests/NativeQA/UITests/HalalTagFunctionalUITests.swift
+@@ -1,8 +1,9 @@
+ import Foundation
+ import XCTest
+ 
+-/// PREPARATION ONLY: not compiled or run, and not wired into an Xcode target.
+-/// Uses the reviewed screen's existing labels. No app-side test flags or IDs.
++/// Production composition preparation: all ten original test method bodies retained.
++/// The shared QA guard, launch binding and independently readable match helper are
++/// separately reviewed adaptations. Native compile and execution are still unverified.
+ final class HalalTagPreparedUITests: XCTestCase {
+     private var app: XCUIApplication!
+     private let stateTimeout: TimeInterval = 3
+@@ -36,6 +37,12 @@
+         )
+         app = XCUIApplication(bundleIdentifier: configuration.qaBundleIdentifier!)
+         app.terminate()
++        // Receipt arguments configure only the external simulator QA host.
++        // They never change shipping behavior, text, geometry or test expectations.
++        app.launchArguments = ["--appearance-case", "light-large",
++            "--appearance-run-id", configuration.runID!,
++            "--language-launch-id", UUID().uuidString,
++            "-AppleLanguages", "(en)", "-AppleLocale", "en_US"]
+         app.launch()
+         try requireEventually("Ingredient text is absent after QA launch", timeout: 10) {
+             self.editor.exists
+@@ -285,15 +292,41 @@
+     }
+ 
+     private func assertCombinedMatch(_ fragments: [String]) throws {
+-        // Source combines each match card's children. Match the combined label
+-        // without guessing whether this OS exposes it as staticText or other.
+-        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates:
+-            fragments.map { NSPredicate(format: "label CONTAINS %@", $0) }
+-        )
+-        let matches = app.descendants(matching: .any).matching(predicate)
+-        try requireEventually("Expected one combined match card containing: \(fragments.joined(separator: " | "))") {
+-            matches.count == 1
+-        }
++        // The reviewed card exposes four real, independently navigable texts.
++        // Preserve every original expected fragment while requiring exact first
++        // three labels, one uncombined container, ordering and actual geometry.
++        let identifier: String
++        switch fragments.first {
++        case "Pork-related terms": identifier = "screening-match-pork"
++        case "Alcohol-related terms": identifier = "screening-match-alcohol"
++        case "Gelatin": identifier = "screening-match-gelatin"
++        default: try fail("No reviewed evidence-card mapping for this original fixture")
++        }
++        let matches = app.descendants(matching: .any).matching(identifier: identifier)
++        try requireEventually("Expected one independently readable match card containing: \(fragments.joined(separator: " | "))") {
++            guard (3...4).contains(fragments.count), matches.count == 1 else { return false }
++            let card = matches.element(boundBy: 0)
++            guard card.exists, card.elementType != .staticText else { return false }
++            let children = card.descendants(matching: .staticText).allElementsBoundByIndex
++            guard children.count == 4,
++                  Array(children.prefix(3).map(\.label)) == Array(fragments.prefix(3)),
++                  !children[3].label.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
++                  fragments.count == 3 || children[3].label.contains(fragments[3]) else { return false }
++            let containerFrame = card.frame
++            guard !containerFrame.isNull, !containerFrame.isInfinite,
++                  containerFrame.width > 0, containerFrame.height > 0 else { return false }
++            var previousBottom = containerFrame.minY
++            for child in children {
++                let frame = child.frame
++                guard child.exists, !frame.isNull, !frame.isInfinite,
++                      frame.width > 0, frame.height > 0,
++                      containerFrame.insetBy(dx: -2, dy: -2).contains(frame),
++                      frame.minY >= previousBottom - 2 else { return false }
++                previousBottom = frame.maxY
++            }
++            return true
++        }
++        attachText("Independent match evidence", matches.element(boundBy: 0).debugDescription)
+     }
+ 
+     private func assertInformationSheet() throws {
+@@ -395,78 +428,3 @@
+     }
+ }
+ 
+-private enum PreparationFailure: Error, CustomStringConvertible {
+-    case blocked(String)
+-    var description: String {
+-        switch self { case .blocked(let reason): return reason }
+-    }
+-}
+-
+-/// This is runner configuration, not a user approval workflow or a claim that source
+-/// hashes independently prove what is installed. Packaging/install evidence
+-/// must be verified by the integration owner before configuring this resource.
+-private struct QAInstallation: Decodable {
+-    let schemaVersion: Int
+-    let configurationStatus: String
+-    let runID: String?
+-    let qaBundleIdentifier: String?
+-    let productionBundleIdentifier: String?
+-    let uiTestBundleIdentifier: String?
+-    let installationIsDedicatedAndSynthetic: Bool
+-    let qaArtifactSHA256: String?
+-    let buildEvidenceReference: String?
+-    let installationEvidenceReference: String?
+-    let destinationEvidenceReference: String?
+-    let contentViewSHA256: String
+-    let ingredientScreeningSHA256: String
+-
+-    static func loadConfiguration(testBundle: Bundle) throws -> QAInstallation {
+-        let environment = ProcessInfo.processInfo.environment
+-        guard environment["HALALTAG_UI_QA_RUN_MODE"] == "ISOLATED_SYNTHETIC_QA" else {
+-            throw PreparationFailure.blocked("QA launch refused: the runner is not configured for an isolated synthetic installation. Do not substitute the production app.")
+-        }
+-        guard let url = testBundle.url(forResource: "HalalTagSyntheticQAInstallation", withExtension: "json") else {
+-            throw PreparationFailure.blocked("QA launch refused: the separately reviewed installation manifest is not a UI-test-bundle resource. The supplied example is intentionally unconfigured.")
+-        }
+-        let manifest = try JSONDecoder().decode(QAInstallation.self, from: Data(contentsOf: url))
+-        guard manifest.schemaVersion == 1,
+-              manifest.configurationStatus == "CONFIGURED_ISOLATED_QA",
+-              manifest.installationIsDedicatedAndSynthetic,
+-              let runID = manifest.runID, UUID(uuidString: runID) != nil,
+-              environment["HALALTAG_UI_QA_RUN_ID"] == runID else {
+-            throw PreparationFailure.blocked("QA launch refused: isolated-installation configuration/run binding is missing or inconsistent.")
+-        }
+-        guard let qaID = manifest.qaBundleIdentifier,
+-              let productionID = manifest.productionBundleIdentifier,
+-              nonemptyIdentity(qaID), nonemptyIdentity(productionID),
+-              qaID != productionID,
+-              let testID = manifest.uiTestBundleIdentifier,
+-              testID == testBundle.bundleIdentifier,
+-              testID != qaID, testID != productionID else {
+-            throw PreparationFailure.blocked("QA launch refused: require the actual verified dedicated QA identity, the distinct production identity, and the exact UI test bundle identity. No app identifier or naming convention is supplied by this preparation.")
+-        }
+-        guard let artifact = manifest.qaArtifactSHA256,
+-              artifact.range(of: "^[0-9a-f]{64}$", options: .regularExpression) != nil,
+-              artifact != String(repeating: "0", count: 64),
+-              usableReference(manifest.buildEvidenceReference),
+-              usableReference(manifest.installationEvidenceReference),
+-              usableReference(manifest.destinationEvidenceReference) else {
+-            throw PreparationFailure.blocked("QA launch refused: exact synthetic artifact, installation and destination evidence are required.")
+-        }
+-        guard manifest.contentViewSHA256 == "bc2703028bf281860955e39bc1d52a5b7cc7fdcfac717967021cc7205d02a423",
+-              manifest.ingredientScreeningSHA256 == "bf98d94670058cb2a810ae9bb3866053bd9b706eee6d8503b9f459caa683bfe2" else {
+-            throw PreparationFailure.blocked("QA launch refused: declared source hashes differ from the reviewed snapshot. Re-review the suite and evidence; do not silently refresh hashes.")
+-        }
+-        return manifest
+-    }
+-
+-    private static func nonemptyIdentity(_ value: String) -> Bool {
+-        !value.isEmpty && value == value.trimmingCharacters(in: .whitespacesAndNewlines)
+-    }
+-
+-    private static func usableReference(_ value: String?) -> Bool {
+-        guard let value = value else { return false }
+-        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+-        return !trimmed.isEmpty && !["UNCONFIGURED", "TODO", "PENDING"].contains(trimmed.uppercased())
+-    }
+-}

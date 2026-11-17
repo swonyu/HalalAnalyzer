@@ -1,0 +1,27 @@
+{
+  "created_at_utc": "2026-11-17T11:29:50.778455+00:00",
+  "base_commit": "ad0cece77f322fcc0911fc2a38ee37ffd354c54a",
+  "original_ten_source": "/workspace/scratch/1c9c3057c84a/halaltag-readable-controls-native-qa-20261117-r1/packages/iphone/sealed-QAProject/UITests/HalalTagPreparedUITests.swift",
+  "original_ten_sha256": "68246ae5cc145eb8dab71f98835fc423b4925ad6e23a7ba91fc42789165e4306",
+  "functional_fixture_sha256": "e54f3e6225535c55fa1dac32ac41aae8032fcaf3c3195387f93810597d49344c",
+  "reviewed_combined_parent": "/workspace/scratch/d597fc87411f/halaltag-bilingual-native-text-composition-r1",
+  "reviewed_product_hashes": {
+    "ContentView.swift": "0e325df994491b1d1daf60eb69d4bf5d2186867717ba71c901dc4e18fb325099",
+    "IngredientScreening.swift": "bf98d94670058cb2a810ae9bb3866053bd9b706eee6d8503b9f459caa683bfe2",
+    "ScreeningLocalization.swift": "7311a8c17857ed07161bac107911670c0edfdec5b8169fb8e08cb85739a92e4e",
+    "PrivacyInfo.xcprivacy": "a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12"
+  },
+  "qa_bundle_id": "com.saleh.halaltag.productioncomposition.qa.r20261117",
+  "production_bundle_id": "HalalTag.v1.1",
+  "test_method_count": 19,
+  "original_ten_method_bodies_unchanged": true,
+  "original_ten_full_file_unchanged": false,
+  "old_helper_reason": "One combined label is obsolete; four real static texts retain original content and add ordering/geometry assertions.",
+  "native_compilation": "NOT_RUN",
+  "native_UI": "NOT_RUN",
+  "production_archive": "NOT_RUN",
+  "localization_sources": [
+    "https://developer.apple.com/library/archive/qa/qa1828/_index.html",
+    "https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html"
+  ]
+}
