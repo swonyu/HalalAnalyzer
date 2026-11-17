@@ -1,0 +1,62 @@
+--- r6b/release_support.py
++++ r7/release_support.py
+@@ -1,4 +1,4 @@
+-"""File-only validation and command construction for reviewed HalalTag R6b."""
++"""File-only validation and command construction for reviewed HalalTag R7."""
+ from pathlib import Path, PurePosixPath
+ from datetime import datetime, timezone
+ import hashlib
+@@ -10,7 +10,7 @@
+ import zipfile
+ 
+ HERE = Path(__file__).resolve().parent
+-MANIFEST_SHA = '4334b0b1c78610592846330f177559c38aba430dd42c0ea14d63d814b2fb8e50'
++MANIFEST_SHA = 'b5bece02f9433870a3183a5be9572f6c004cbe92499cd3168135f5e9688c2076'
+ STAGES = ('unsigned-archive', 'developer-archive', 'distribution-export')
+ 
+ 
+@@ -143,10 +143,10 @@
+     gate = spec['native_gate']
+     root = report_path.parent
+     require(report_path.name == 'report.json' and root.parent == Path(gate['run_root']),
+-            'Native report must be the actual isolated R6b run report')
++            'Native report must be the actual isolated R7 run report')
+     report = read_json(report_path)
+     require(report.get('scope') == gate['required_scope'] and
+-            report.get('native_ui_result') == gate['required_result'], 'Exact R6b native acceptance is missing')
++            report.get('native_ui_result') == gate['required_result'], 'Exact R7 native acceptance is missing')
+     require(report.get('exit_code') == 0 and report.get('cleanup_complete') is True
+             and report.get('lock') == 'released' and report.get('errors') == [],
+             'Native outcome or cleanup is incomplete')
+@@ -156,7 +156,10 @@
+     require(report.get('sealed_index_sha256') == gate['sealed_index_sha256']
+             and report.get('prepared_input') == gate['source_root'], 'Native source identity differs')
+     require(report.get('acknowledgment', {}).get('adapter_sha256') == gate['native_adapter_sha256'],
+-            'Native adapter identity differs from the reviewed R6 model runner')
++            'Native adapter identity differs from the reviewed R7 model runner')
++    require(all(report.get('acknowledgment', {}).get(key) == gate[key] for key in
++                ['appearance_guard_sha256', 'arabic_guard_sha256', 'nineteen_case_guard_sha256']),
++            'Native appearance/geometry guards differ from the exact reviewed R7 policy')
+     model = validate_model_gate(root, report, gate)
+     inventory_path = root / 'verified-nineteen-test-inventory.json'
+     inventory = read_json(inventory_path)
+--- r6b/run_release_stage.py
++++ r7/run_release_stage.py
+@@ -20,7 +20,7 @@
+ import time
+ 
+ HERE = Path(__file__).resolve().parent
+-SUPPORT_SHA = '98831a44ebd99bbafedae46b25218777ce229cacc83d076b7756d4036c18c5ed'
++SUPPORT_SHA = 'ed5cfc3d1bf2976e91875a4757ef81ab43559fffd6c01002b356949ace081e50'
+ support_path = HERE / 'release_support.py'
+ if not support_path.is_file() or support_path.is_symlink() or hashlib.sha256(support_path.read_bytes()).hexdigest() != SUPPORT_SHA:
+     raise RuntimeError('Reviewed release support bytes changed; no stage code imported')
+@@ -28,7 +28,7 @@
+ 
+ LIFECYCLE_SHA = '1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99'
+ COORDINATION_SHA = '243dc8943a5d91ed3a26673223f862a4f30a1c8b0a35088e7476d02ea4f78c6c'
+-OUTPUT_ROOT = Path('/Users/saleh/Library/Caches/HalalTag-ProductionReleaseR6b')
++OUTPUT_ROOT = Path('/Users/saleh/Library/Caches/HalalTag-ProductionReleaseR7')
+ SCHEDULE = Path('/Users/saleh/Library/Caches/AppStore-Native-Schedule-20261116')
+ RESULTS = {'unsigned-archive': 'LOCAL_UNSIGNED_ARCHIVE_VERIFIED',
+            'developer-archive': 'DEVELOPER_SIGNED_ARCHIVE_VERIFIED',

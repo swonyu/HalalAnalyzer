@@ -1,0 +1,38 @@
+{
+  "reviewer": "/root/github_recovery",
+  "at": "2026-11-17T16:47:39.530547+00:00",
+  "scope": "READ_ONLY_SOURCE_AND_GUARD_REVIEW_NOT_NATIVE_ACCEPTANCE",
+  "reviewedWorktreeBase": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+  "sourceSHA256": {
+    "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift": "d5b353a69a4888c87b6ff18b75c02602379ef6081822a9dade9c93bded7ffaa8",
+    "Tests/NativeQA/UITests/HalalTagArabicAppearanceUITests.swift": "5a6ed862fb3608398703b392f979d628aa306bb15f9192222548e04eb986ee11",
+    "publishing/r7/appearance_evidence_guard.py": "a64b3d9a7d44cb3d9c905c93d4830205a12c7d3981b28f43b208e4f75753387c",
+    "publishing/r7/arabic_appearance_evidence_guard.py": "b7f7a2bedde6b8637009e175eae12d59723b200780b2c441108a1c2679830259"
+  },
+  "decision": "NO_REMAINING_BLOCKING_SOURCE_FINDING_AFTER_REVEAL_BINDING_REPAIR",
+  "observations": [
+    "All19 test method names remain across the four native UI files; current tracked changes are confined to Tests, and new guard files live under publishing/r7.",
+    "Native helpers still require actual gesture progress, measured routes avoiding editor/scroll-indicator frames, complete reachable control containment, uninterrupted no-gap text reading, and restoration to the prior relative viewport position within2pt.",
+    "Every audit remains the original combined contrast/textClipped/dynamicType call without a filter, catch or success-after-retry path.",
+    "Each operation has the finite geometry-derived ceil(distance/(.40*viewportHeight))+2 bound capped at64; actual recovery gestures are accounted independently; total168 and capture400 limits remain explicit. These are source-level bounds, not a promise of successful runtime completion.",
+    "Explicit online privacy/support links receive real full-frame exposure and audits; privacy headings and all required original actions remain.",
+    "Guard evidence binds completed reading/recovery/link rows to original capture identities and exact geometry; separate movement and audit recovery counters remain visible.",
+    "No concrete Swift syntax/type concern was found by inspection, but no Swift compiler or native runtime was invoked."
+  ],
+  "finding": {
+    "id": "R7-PEER-REVEAL-BINDING",
+    "initialIssue": "A reveal budget could declare contained final_frame y200 although its last actual gesture after.y was254; only containment and size were checked. Event chain continuity was also absent.",
+    "status": "FIXED_IN_REVIEWED_BYTES",
+    "fix": "Swift records initial/final actual anchor frames for groups. Guard binds union translation to anchor translation, first/last event to anchors, zero-movement target equality, and per-budget event continuity within2pt.",
+    "regressionSourceInspected": "test_geometry_evidence.py rejects the forged final, forged final+anchor, and broken second-event before-frame; owner reports5 synthetic tests and92 source checks passed. This reviewer did not rerun those tests."
+  },
+  "sourceModifiedByReviewer": false,
+  "testsInvoked": false,
+  "nativeInvoked": false,
+  "macWrites": false,
+  "pushInvoked": false,
+  "limitations": [
+    "Actual R7 native compile, compact-phone interactions, Arabic/English appearance audits and strict exported evidence acceptance remain required.",
+    "No prior16/19 result is upgraded to pass by this code review."
+  ]
+}

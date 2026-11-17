@@ -1,0 +1,36 @@
+{
+  "status": "FILE_ONLY_PREPARATION_NO_STAGE_EXECUTED",
+  "native_candidate_commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+  "shipping_candidate_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "shipping_files": 14,
+  "all_shipping_bytes_unchanged": true,
+  "native_source_files": 47,
+  "native_source_seal_sha256": "49c63a850d040e6428c90ce8597c742d8df3f7ee7cb0484643ac152787fcea0d",
+  "native_source_mac": "/Users/saleh/Library/Caches/Publishing-Continuation-20261117-d597fc87411f/HalalTag/Production-Composition-R7-d57f4cd77813/preparation/Source",
+  "parent_pins": {
+    "production-manifest.json": "4334b0b1c78610592846330f177559c38aba430dd42c0ea14d63d814b2fb8e50",
+    "release_support.py": "98831a44ebd99bbafedae46b25218777ce229cacc83d076b7756d4036c18c5ed",
+    "run_release_stage.py": "9ac183044c3b33833311451fd28ec83756f663d4ece1563e415eda715aebe0a3",
+    "publishing_runner_frozen.py": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99",
+    "native_coordination_frozen.py": "243dc8943a5d91ed3a26673223f862a4f30a1c8b0a35088e7476d02ea4f78c6c"
+  },
+  "current_pins": {
+    "production-manifest.json": "b5bece02f9433870a3183a5be9572f6c004cbe92499cd3168135f5e9688c2076",
+    "release_support.py": "ed5cfc3d1bf2976e91875a4757ef81ab43559fffd6c01002b356949ace081e50",
+    "run_release_stage.py": "ff97c414e4c4494cf4074f00f32c7ec722715ebe9f1994d5767998cd55541cce",
+    "publishing_runner_frozen.py": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99",
+    "native_coordination_frozen.py": "243dc8943a5d91ed3a26673223f862a4f30a1c8b0a35088e7476d02ea4f78c6c"
+  },
+  "model_gate_function_unchanged": true,
+  "all19_case_specifications_unchanged": true,
+  "original_deadline_utc": "2026-11-17T22:26:12Z",
+  "explicit_user_extension_hours": 24,
+  "extended_deadline_utc": "2026-11-18T22:26:12Z",
+  "budget_restarted": false,
+  "native_stage_invoked": false,
+  "release_adapter_invoked": false,
+  "signing_performed": false,
+  "upload_performed": false,
+  "configured_acknowledgment_created": false,
+  "preparer_sha256": "d9b868b9295f4d28c69b35bac482f045d42ab9fdaad8516e6cc414955f6d75d9"
+}

@@ -1,0 +1,20 @@
+test_actual_style_and_size_required_before_and_after_each_case (__main__.ContractTests.test_actual_style_and_size_required_before_and_after_each_case) ... ok
+test_arabic_guard_preserves_all_original_audit_geometry_thresholds (__main__.ContractTests.test_arabic_guard_preserves_all_original_audit_geometry_thresholds) ... ok
+test_changed_host_bytes_and_reused_launch_uuid_rejected (__main__.ContractTests.test_changed_host_bytes_and_reused_launch_uuid_rejected) ... ok
+test_exact_nineteen_inventory_and_twenty_process_launches (__main__.ContractTests.test_exact_nineteen_inventory_and_twenty_process_launches) ... ok
+test_fail_skip_warning_duplicate_and_wrong_device_rejected (__main__.ContractTests.test_fail_skip_warning_duplicate_and_wrong_device_rejected) ... ok
+test_functional_attachment_binding_cannot_use_another_run_or_artifact (__main__.ContractTests.test_functional_attachment_binding_cannot_use_another_run_or_artifact) ... ok
+test_no_uuid_english_hosts_precede_supplementary_directory_creation (__main__.ContractTests.test_no_uuid_english_hosts_precede_supplementary_directory_creation) ... ok
+test_original_nineteen_methods_and_unrelated_helpers_remain_unchanged (__main__.ContractTests.test_original_nineteen_methods_and_unrelated_helpers_remain_unchanged) ... ok
+test_prepared_manifest_and_scope_match_all_nineteen_sources (__main__.ContractTests.test_prepared_manifest_and_scope_match_all_nineteen_sources) ... ok
+test_r7_guard_pins_replace_obsolete_budget_claims_explicitly (__main__.ContractTests.test_r7_guard_pins_replace_obsolete_budget_claims_explicitly) ... ok
+test_synthetic_host_paths_and_persistence_relaunch_count (__main__.ContractTests.test_synthetic_host_paths_and_persistence_relaunch_count) ... ok
+test_synthetic_nineteen_case_index_accepts_only_exact_order_and_inventory (__main__.ContractTests.test_synthetic_nineteen_case_index_accepts_only_exact_order_and_inventory) ... ok
+test_synthetic_one_leaf_for_every_sealed_selector (__main__.ContractTests.test_synthetic_one_leaf_for_every_sealed_selector) ... ok
+test_unconfigured_acknowledgment_cannot_authorize_native_work (__main__.ContractTests.test_unconfigured_acknowledgment_cannot_authorize_native_work) ... ok
+test_unknown_readback_and_unsafe_uuid_path_rejected (__main__.ContractTests.test_unknown_readback_and_unsafe_uuid_path_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.089s
+
+OK
