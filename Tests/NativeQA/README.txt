@@ -11,7 +11,7 @@ implementation. App/HalalTagQAApp.swift is a separate UIKit receipt host; it doe
 not belong to the shipping file-system-synchronized app group. The shipping
 SwiftUI entry and production archive scheme remain unchanged.
 
-Exact native scope: halaltag-production-composition-nineteen-journeys-r3.
+Exact native scope: halaltag-production-composition-nineteen-journeys-r4.
 Use the distinct reviewed nineteen-case adapter and a fresh exact-source
 coordinator acknowledgment. A prior nine-case receipt cannot authorize or prove
 this scope. The bundled installation manifest is deliberately UNCONFIGURED.

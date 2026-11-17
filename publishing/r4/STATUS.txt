@@ -1,0 +1,50 @@
+HalalTag R4 reviewed source checkpoint — 17 November 2026
+
+Status: source prepared and peer reviewed; native R4 acceptance has NOT run.
+The branch name records the R3 lineage start; this commit advances that same
+continuation without rewriting the sealed R3 commit 4633d6d6179f194bdc3d7b74b01041aca360f598.
+R3's 10-minute queue expired at 13:22:30Z with no native execution and is now
+superseded before native. The original queue and all R3 frozen inputs remain.
+
+Exactly one shipping sentence changes from R3. The Arabic meaningBody now says
+English phrases and displays the literal alcohol-free inside U+2066/U+2069,
+so it no longer suggests that unsupported Arabic ingredient text is matched.
+The parser, unknown outcomes, all English copy and the R3 accessibility/layout
+repairs are unchanged. Native large-text wrapping remains an acceptance gate.
+
+All 47 frozen R4 source files are retained in their existing repository paths;
+source-files.json records their exact bytes. All 19 native test method bodies,
+assertions, accessibility audits, helpers and gesture/time budgets are preserved.
+The shared installation guard's exact localization SHA is rebound, along with
+fresh QA identity and scope; no test was removed or weakened.
+
+Cloud source checks: 85 structure checks, 15 synthetic adapter contracts and exact
+47-file sealed-source validation passed. These do not establish a Swift compile,
+native pass, production archive, signed upload, App Review or public release.
+The last verified native batch remains R2: 13/19 with six appearance failures;
+all 10 functional plus 3 language/state cases passed, cleanup complete.
+
+Scope: halaltag-production-composition-nineteen-journeys-r4
+QA: com.saleh.halaltag.productioncomposition.qa.r20261117r4
+Production: HalalTag.v1.1
+R4 frozen native19 ZIP SHA256:
+3b2edbe22608c02bc5971bcfad5914c09aecec95ba280106aa3015a4037bb422
+R4 ScreeningLocalization.swift SHA256:
+097a18920ff95fda968c6cee1591360b50b0c077673bf40cb6c0970e8aa8be70
+ContentView.swift retained SHA256:
+9bfc7e5814308b8b7382f3136c7e076ee423e798ea45a321a05f8ec82ebe0c95
+
+Root's separately reviewed patient coordinator waits up to 45 minutes, then
+allows one native attempt with the unchanged 35-minute cap including 120-second
+cleanup. A permanent atomic per-candidate claim blocks reentry; there is no
+lock takeover or automatic retry. Other owners' builds keep their locks.
+No build/test/signing/upload/store command is run by this Git checkpoint.
+
+Earlier production Release/archive/export scripts are R3-bound and have not
+run; they need exact R4 rebinding after acceptance. No live advertising release
+is verified and no ad SDK is added. Keep the app free. The original 24 ACTIVE
+engineering-hour budget is not restarted; actual active use remains unknown.
+
+Source base: 674b8f32c0760bb6c9fc243d65109a2e3ee299b7, origin d597fc87411f.
+Executing continuation: 01a49fa7c28e. Independent source/queue review by
+publishing_research found no concrete P0/P1; runtime result remains pending.
