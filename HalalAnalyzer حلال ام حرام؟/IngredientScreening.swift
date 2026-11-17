@@ -109,7 +109,7 @@ enum IngredientScreening {
             locale: Locale(identifier: "en_US_POSIX")
         )
         // Keep ingredient separators so phrases cannot span separate entries.
-        let ingredientSeparators = CharacterSet(charactersIn: ",;•،").union(.newlines)
+        let ingredientSeparators = CharacterSet(charactersIn: ",;•،؛").union(.newlines)
         let segments = normalized.components(separatedBy: ingredientSeparators)
             .map { $0.components(separatedBy: CharacterSet.alphanumerics.inverted).filter { !$0.isEmpty } }
 

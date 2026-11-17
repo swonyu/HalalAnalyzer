@@ -1,0 +1,53 @@
+    def run_model_checks(self) -> None:
+        """Execute the sealed model harness inside this same owned native window."""
+        folder = self.output / "ModelChecks"
+        folder.mkdir(exist_ok=False)
+        module_cache = folder / "ModuleCache"
+        module_cache.mkdir(exist_ok=False)
+        relative_sources = [
+            "HalalAnalyzer حلال ام حرام؟/IngredientScreening.swift",
+            "HalalAnalyzer حلال ام حرام؟/ScreeningLocalization.swift",
+            "Tests/Model/BilingualModelChecks.swift",
+        ]
+        sources = [self.project_copy / relative for relative in relative_sources]
+        source_binding = {relative: self.seal[relative] for relative in relative_sources}
+        binary = folder / "BilingualModelChecks"
+        compiled = self.run("compile-sealed-model-checks", [
+            "/usr/bin/xcrun", "--sdk", "macosx", "swiftc", "-parse-as-library",
+            "-swift-version", "5", "-module-cache-path", str(module_cache),
+            *[str(path) for path in sources], "-o", str(binary),
+        ], self.project_copy, 120)
+        require(binary.is_file() and not binary.is_symlink(), "No compiled sealed model harness")
+        executed = self.run("execute-sealed-model-checks", [str(binary)], folder, 30)
+        output = read_json(Path(executed["stdout"]))
+        checks = output.get("checks", [])
+        require(output.get("status") == "PASS" and isinstance(checks, list)
+                and all(isinstance(item, str) for item in checks)
+                and output.get("check_count") == len(checks), "Model checks did not report complete success")
+        boundary_checks = [label + separator for separator in (";", "؛") for label in (
+            "Separated entries cannot form an additive code: ",
+            "Separated entries cannot form a multiword ingredient: ",
+            "A qualifier in an earlier entry cannot suppress a direct term: ",
+            "A qualifier in a later entry cannot suppress a direct term: ",
+        )] + ["Arabic semicolons preserve valid within-entry terms and phrases"]
+        require(len(set(checks)) == len(checks) and set(boundary_checks) <= set(checks),
+                "Required Arabic-semicolon regressions are missing or duplicated")
+        for relative, path in zip(relative_sources, sources):
+            require(sha(path) == source_binding[relative]["sha256"]
+                    and path.stat().st_size == source_binding[relative]["bytes"],
+                    "Compiled model source changed: " + relative)
+        receipt = {"status": "PASS", "source_binding": source_binding,
+            "binary": str(binary), "binary_sha256": sha(binary),
+            "compile_stdout": compiled["stdout"], "compile_stderr": compiled["stderr"],
+            "compile_stdout_sha256": sha(Path(compiled["stdout"])),
+            "compile_stderr_sha256": sha(Path(compiled["stderr"])),
+            "execution_stdout": executed["stdout"], "execution_stderr": executed["stderr"],
+            "execution_stdout_sha256": sha(Path(executed["stdout"])),
+            "execution_stderr_sha256": sha(Path(executed["stderr"])),
+            "actual_result": output, "required_boundary_check_count": len(boundary_checks)}
+        receipt_path = self.output / "model-checks-receipt.json"
+        base.write_json(receipt_path, receipt)
+        self.report["model_checks"] = {**receipt, "receipt": str(receipt_path),
+                                       "receipt_sha256": sha(receipt_path)}
+        self.flush()
+

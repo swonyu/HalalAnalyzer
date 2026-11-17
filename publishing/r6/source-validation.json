@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "2026-11-17T15:03:29.463136+00:00",
+  "source_structure_checks_passed": 86,
+  "prior_source_structure_checks_retained": 85,
+  "additional_check": "exact R6 model hash rebinding in the original shared QA guard",
+  "shipping_diff": "one Arabic semicolon character added to the existing entry separators",
+  "model_sha256": "fc8aab56d0fbdf7682cc77bf74a0a1811c813e93447b6985379f24c122e4167a",
+  "model_harness_sha256": "b9df24c2bde9976438e6ca219987081056ac253b8a3fd02d0d5c78dfcbbc450c",
+  "model_regressions_added": 9,
+  "model_regressions_executed": false,
+  "reason": "Swift compiler unavailable in cloud; required compile/execute added to root-owned native adapter",
+  "all_nineteen_ui_method_bodies_preserved": true,
+  "native_execution": "NOT_RUN",
+  "frozen_r5_artifacts_changed": false,
+  "git_diff_check": "PASS"
+}

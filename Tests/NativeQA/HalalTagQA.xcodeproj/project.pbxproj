@@ -291,7 +291,7 @@
 		"00000000000000000000001E" = {
 			"isa" = "XCBuildConfiguration";
 			"buildSettings" = {
-				"PRODUCT_BUNDLE_IDENTIFIER" = "com.saleh.halaltag.productioncomposition.qa.r20261117r5";
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.saleh.halaltag.productioncomposition.qa.r20261117r6";
 				"PRODUCT_NAME" = "$(TARGET_NAME)";
 				"GENERATE_INFOPLIST_FILE" = "NO";
 				"CURRENT_PROJECT_VERSION" = "1";
@@ -315,7 +315,7 @@
 		"00000000000000000000001F" = {
 			"isa" = "XCBuildConfiguration";
 			"buildSettings" = {
-				"PRODUCT_BUNDLE_IDENTIFIER" = "com.saleh.halaltag.productioncomposition.qa.r20261117r5.uitests";
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.saleh.halaltag.productioncomposition.qa.r20261117r6.uitests";
 				"PRODUCT_NAME" = "$(TARGET_NAME)";
 				"GENERATE_INFOPLIST_FILE" = "YES";
 				"CURRENT_PROJECT_VERSION" = "1";

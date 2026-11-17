@@ -54,6 +54,18 @@ struct BilingualModelChecks {
         try expect(IngredientScreening.analyze("no pork, pork").outcome == .flaggedTerms, "Contextual occurrence cannot suppress a direct term")
         try expect(IngredientScreening.analyze("chamomile, monosodium glutamate").outcome == .unknown, "No broad substring false positives")
         try expect(IngredientScreening.analyze("pork، gelatin").matches.count == 2, "Arabic separator preserves existing English matches")
+        for separator in [";", "؛"] {
+            try expect(IngredientScreening.analyze("E" + separator + "120, E" + separator + "471").outcome == .unknown,
+                       "Separated entries cannot form an additive code: \(separator)")
+            try expect(IngredientScreening.analyze("vanilla" + separator + "extract").outcome == .unknown,
+                       "Separated entries cannot form a multiword ingredient: \(separator)")
+            try expect(IngredientScreening.analyze("no" + separator + "pork").outcome == .flaggedTerms,
+                       "A qualifier in an earlier entry cannot suppress a direct term: \(separator)")
+            try expect(IngredientScreening.analyze("alcohol" + separator + "free").outcome == .flaggedTerms,
+                       "A qualifier in a later entry cannot suppress a direct term: \(separator)")
+        }
+        try expect(Set(IngredientScreening.analyze("E120؛ gelatin؛ vanilla extract").matches.map(\.id)) == ["e120", "gelatin", "vanilla"],
+                   "Arabic semicolons preserve valid within-entry terms and phrases")
         for input in ["جيلاتين", "الكارمين", "خنزير", "حلال", "ماء، تمر", "E١٢٠", "إي١٢٠"] {
             try expect(IngredientScreening.analyze(input).outcome == .unknown, "Unsupported Arabic input stays unknown: \(input)")
         }
