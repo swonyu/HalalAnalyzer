@@ -1,0 +1,146 @@
+{
+  "label": "R8 AR AX5 focused editor indicator collision",
+  "source_sha256": "dbe26683e95a4f2f21c81460ed833c5aa6ade89c92d5887c65e272acac27ef05",
+  "source_attachment": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "58639E52-7C7F-4E0F-B84D-E3B314B1E608",
+    "deviceName": "HalalTag-Appearance-QA-72dad329c7e84a35",
+    "exportedFileName": "D9B26860-0F01-467E-8156-494DD7C390DD.txt",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Appearance AX - appearance-light-accessibility5-253-focused-before-sample_0_61E61703-B433-4CEB-BB71-082671D10E1C.txt",
+    "timestamp": 1794942657.529
+  },
+  "viewport": {
+    "x": 2,
+    "y": 77,
+    "width": 371,
+    "height": 224.5
+  },
+  "content_frames": [
+    {
+      "x": 40,
+      "y": 82,
+      "width": 295,
+      "height": 204
+    }
+  ],
+  "button_frames": [
+    {
+      "x": 318.5,
+      "y": 24,
+      "width": 36.5,
+      "height": 36
+    },
+    {
+      "x": 20,
+      "y": 308,
+      "width": 335,
+      "height": 79.5
+    },
+    {
+      "x": 20,
+      "y": 766,
+      "width": 335,
+      "height": 199
+    },
+    {
+      "x": 20,
+      "y": 975,
+      "width": 335,
+      "height": 199
+    },
+    {
+      "x": 20,
+      "y": 1184,
+      "width": 335,
+      "height": 257
+    },
+    {
+      "x": 20,
+      "y": 315.5,
+      "width": 335,
+      "height": 79.5
+    },
+    {
+      "x": 0,
+      "y": 407,
+      "width": 125,
+      "height": 44
+    },
+    {
+      "x": 125,
+      "y": 407,
+      "width": 125,
+      "height": 44
+    },
+    {
+      "x": 250,
+      "y": 407,
+      "width": 125,
+      "height": 44
+    },
+    {
+      "x": 4.5,
+      "y": 566,
+      "width": 48,
+      "height": 54
+    },
+    {
+      "x": 50.5,
+      "y": 620,
+      "width": 46,
+      "height": 54
+    },
+    {
+      "x": 96.5,
+      "y": 620,
+      "width": 37,
+      "height": 54
+    },
+    {
+      "x": 280.5,
+      "y": 620,
+      "width": 92,
+      "height": 54
+    }
+  ],
+  "link_frames": [],
+  "editor_frames": [
+    {
+      "x": 40,
+      "y": 82,
+      "width": 295,
+      "height": 204
+    }
+  ],
+  "indicator_frames": [
+    {
+      "x": 16,
+      "y": 82,
+      "width": 30,
+      "height": 204
+    },
+    {
+      "x": -24,
+      "y": 75,
+      "width": 30,
+      "height": 228.5
+    },
+    {
+      "x": -24,
+      "y": 75,
+      "width": 30,
+      "height": 228.5
+    }
+  ],
+  "requested_travel": 125.72,
+  "direction": -1,
+  "previous_route": {
+    "x": 19,
+    "y": 126.39,
+    "width": 4,
+    "height": 125.72
+  },
+  "fixture_scope": "Extracted actual R8 AX rectangles; route calculation is synthetic and does not establish a native pass.",
+  "previous_route_provenance": "Calculated from frozen R8 left-gutter source and original AX because safety assertion fired before route attachment"
+}

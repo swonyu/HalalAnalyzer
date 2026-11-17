@@ -1,0 +1,38 @@
+{
+  "product_source_review": {
+    "reviewed_at": "2026-11-17T22:18:04.099731+00:00",
+    "reviewer": "lumina_recovery",
+    "scope": "Read-only two-line Link Text foregroundStyle qualification; no native execution",
+    "base_content_sha256": "a694d60e5cde54e96ae497b5e04803cec11700206e6630b6346bc43c8b9163dc",
+    "proposed_content_sha256": "ec5d3ff8b0edf26b7b885aed7a20d15ae8a6eafd1a675cb760dcce295a348fc1",
+    "patch_sha256": "254d264005a0ab699bea5259f1ef6121e1737fe2796a66855778e793c12f4a86",
+    "exact_scoped_reconstruction": true,
+    "viewed_original": "5DF7784E-5B6E-4AF0-B912-FE0BDCC4D927.png",
+    "visual_observation": "Both underlined blue link labels are fully visible on white in the original pre-audit screenshot. The separate failure crop showing Done is not treated as the blue-link color measurement.",
+    "official_sources": [
+      "https://developer.apple.com/documentation/swiftui/shapestyle/primary.md",
+      "https://developer.apple.com/documentation/swiftui/color/primary.md",
+      "https://developer.apple.com/documentation/swiftui/link.md"
+    ],
+    "source_reasoning": "Unqualified ShapeStyle.primary is hierarchical and follows the current foreground style; explicit Color.primary is the semantic primary content color. Apple supports styling a Link Text label via foregroundStyle.",
+    "retained": [
+      "Text and localization",
+      "Underline and link affordance",
+      "URLs and actual Link actions",
+      "44pt minimum height",
+      "Wrapping and dynamic sizing",
+      "Accessibility hints",
+      "All helpers, assertions and audits"
+    ],
+    "disposition": "No blocking source finding; actual native light/dark/Arabic contrast remains pending.",
+    "not_performed": [
+      "Source edits",
+      "Compile",
+      "Native tests",
+      "Simulator operations",
+      "Push",
+      "Deployment"
+    ]
+  },
+  "native_execution_by_peer": false
+}

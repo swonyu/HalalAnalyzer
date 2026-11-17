@@ -1,0 +1,74 @@
+{
+  "source_commit": "c9d4218a0dd84f073ab9f46d50b370d8213863ec",
+  "run_id": "20261117T214823Z-45630-766e9f17a6",
+  "case": "en-light-large",
+  "case_result": "FAILED",
+  "case_counts": {
+    "passed": 0,
+    "failed": 1,
+    "skipped": 0
+  },
+  "step_finished_at": "2026-11-17T21:53:16.348229+00:00",
+  "actual_issue": "Contrast nearly passed; Complete Issue Description: Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.",
+  "preaudit_AX_geometry": {
+    "window": [
+      0,
+      0,
+      375,
+      667
+    ],
+    "scroll": [
+      0,
+      91,
+      375,
+      508
+    ],
+    "privacy_link": [
+      20,
+      485,
+      226.5,
+      44
+    ],
+    "support_link": [
+      20,
+      541,
+      199,
+      44
+    ],
+    "done": [
+      20,
+      611,
+      335,
+      44
+    ]
+  },
+  "observations": [
+    "Both links are fully contained in the actual scroll viewport immediately before the failing audit.",
+    "The three original PNGs were each actually viewed. Pre-audit text remains system blue despite the two hierarchical .primary source modifiers.",
+    "Original unmodified pixel decoding confirms RGB0,136,255 with solid3x3 interiors,2691privacy and2381support solid pixels in the two recorded glyph regions; whitebackground,3.5201447456958013 ratio.",
+    "The failing audit snapshot shows the content shifted down; the original issue crop shows only Done. This does not identify which pixels the contrast engine sampled.",
+    "The same run has a completed EN light AX5 execute step return0 at22:06:20.436392Z; this does not close the full19-case gate."
+  ],
+  "official_sources": [
+    {
+      "url": "https://developer.apple.com/documentation/swiftui/shapestyle/primary",
+      "supports": "Unqualified primary is documented as a HierarchicalShapeStyle using the current style."
+    },
+    {
+      "url": "https://developer.apple.com/documentation/swiftui/view/foregroundstyle(_:).md",
+      "supports": "Color supplies a specific style; hierarchical styles modify inherited styles and can preserve material vibrancy."
+    },
+    {
+      "url": "https://developer.apple.com/documentation/swiftui/color/primary.md",
+      "supports": "Explicit primary property is typed Color."
+    },
+    {
+      "url": "https://developer.apple.com/documentation/swiftui/link.md",
+      "supports": "A Link Text label can be styled with foregroundStyle."
+    }
+  ],
+  "reasoning": "Inference from exact source, official API types and observed unchanged blue: hierarchical primary preserves the link context instead of supplying the intended explicit semantic primary color. Explicit Color.primary removes that ambiguity with a two-token qualified-style substitution. Native behavior and the unchanged contrast audit still decide acceptance. No claim that all audit displacement is a separate shipping defect.",
+  "private_original_packet_receipt_sha256": "98829b0158c0e405e1bd1241ea6d083d522a7959866c0ee25822346c46f28b06",
+  "original_images_not_in_public_source": true,
+  "full_r10_batch_terminal_not_observed_in_this_snapshot": true
+}

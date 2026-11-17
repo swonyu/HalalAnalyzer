@@ -653,7 +653,7 @@ private struct ScreeningInformationView: View {
                 Link(destination: privacyURL) {
                     Text(copy(.onlinePrivacy))
                         .underline()
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(Color.primary)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(minHeight: 44, alignment: .leading)
                 }
@@ -664,7 +664,7 @@ private struct ScreeningInformationView: View {
                 Link(destination: supportURL) {
                     Text(copy(.onlineSupport))
                         .underline()
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(Color.primary)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(minHeight: 44, alignment: .leading)
                 }

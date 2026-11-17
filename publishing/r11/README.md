@@ -1,0 +1,13 @@
+# HalalTag R11 — explicit Link label color
+
+R11 is a new candidate based on c9d4218a0dd84f073ab9f46d50b370d8213863ec. Its only shipping change is two Link Text label qualifiers: .foregroundStyle(.primary) becomes .foregroundStyle(Color.primary). The other 13 shipping files are byte-identical. Copy, underline, URLs, 44pt minimum, RTL/layout and real Link semantics are retained.
+
+The completed R10 English light/large native case actually failed the unchanged combined contrast/text-clipping/DynamicType audit. Its fully visible pre-audit Link labels still rendered RGB(0,136,255), 3.5201:1 against white despite hierarchical .primary. Apple documents that hierarchical primary follows the inherited content style; explicit Color.primary is a Color. The native issue crop showed Done after audit displacement, so that crop is not treated as proof of the sampled foreground. The source-level inference and all limits are in r10-light-large-failure.json. Original screenshots remain private review evidence, not public source assets.
+
+R11 preserves all 19 native method bodies, every assertion, unfiltered uncaught audit calls, every actual gesture/coverage/progress guard, continuous reading coverage and all model checks. QA identity/source hashes are rebound to this candidate. The 45-minute finite batch cap, 120-second cleanup reserve, 20-minute per-case bound and zero retries are unchanged. No lifecycle/process cleanup changes.
+
+prepare_native_review.py is file-only: it requires a clean committed descendant, verifies all 23 exact parent support hashes and all 47 parent source hashes, proves 13 unchanged/1 changed shipping file and exact UI hash-only change, then assembles 47 source + 23 support inputs. It never invokes native tools, signs, uploads or writes Git refs. It preserves an UNCONFIGURED acknowledgment; only root allocates and authorizes a fresh native slot.
+
+The 16 adapter contract methods are retained. One method's three shipping-retention expectations are updated True/14/[] to False/13/[ContentView], while all 14 actual current hashes are rechecked. Geometry/composition guard logic and tests are retained. File-only checks are not compilation or native acceptance.
+
+R11 has not been compiled or native-tested at preparation. R10's overall batch was still active when the initial source snapshot was authored and had at least one actual UI failure. Full current 211 model + 19 native gates, signed release and store evidence remain required. Original deadline 2026-11-17T22:26:12Z is preserved with the user's explicit 24-hour extension to 2026-11-18T22:26:12Z; the work budget was not restarted.
