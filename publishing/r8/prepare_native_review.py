@@ -70,6 +70,14 @@ def main():
         assert (out/name).read_text().replace(NEW_ID,OLD_ID)==text
     before=(parent/'run_halaltag_native_qa.py').read_text()
     after=before.replace(OLD_SCOPE,NEW_SCOPE).replace(OLD_ID,NEW_ID).replace('ProductionCompositionR7-NativeQA','ProductionCompositionR8-NativeQA')
+    # R7's early46s English AX5 failure did not measure a complete journey.
+    # Its636.745s Arabic AX5 traversal makes a finite45min total envelope
+    # necessary to allow comparable full coverage; lifecycle/case caps stay fixed.
+    for old,new in [('5 <= requested_minutes <= 35','5 <= requested_minutes <= 45'),
+                    ('Total deadline must be 5–35 minutes including cleanup','Total deadline must be 5–45 minutes including cleanup'),
+                    ('parser.add_argument("--deadline-minutes", type=int, default=35)',
+                     'parser.add_argument("--deadline-minutes", type=int, default=45)')]:
+        assert after.count(old)==1,old;after=after.replace(old,new)
     for key,name in {'SEAL_SHA':'sealed-project-inputs.json','EVIDENCE_GUARD_SHA':'appearance_evidence_guard.py',
                      'ARABIC_GUARD_SHA':'arabic_appearance_evidence_guard.py','NINETEEN_GUARD_SHA':'production_case_evidence.py'}.items():
         after,count=re.subn('^'+key+' = "[0-9a-f]+"',key+' = "'+sha(out/name)+'"',after,flags=re.M); assert count==1
@@ -90,6 +98,7 @@ def main():
     ack=json.loads((out/'coordinator-acknowledgment-UNCONFIGURED.json').read_text());assert ack['acknowledged'] is False
     ack.update(scope=NEW_SCOPE,executing_continuation='d57f4cd77813',preparation_revision='R8-entry-scope-and-explicit-clear-return',
         candidate_content_sha256=CONTENT,
+        total_hard_cap_minutes=45,cleanup_reserve_seconds=120,per_case_timeout_seconds=1200,
         original_deadline_utc='2026-11-17T22:26:12Z',explicit_user_extension_hours=24,extended_deadline_utc='2026-11-18T22:26:12Z',
         budget_restarted=False,note='UNCONFIGURED R8; fresh root-owned exclusive native slot required. R7 failed17/19; R8 has not run. All19 original journeys, helpers, audits and budgets retained.')
     for key,name in [('adapter_sha256','run_halaltag_native_qa.py'),('sealed_index_sha256','sealed-project-inputs.json'),
@@ -103,6 +112,8 @@ def main():
         last_native_run='20261117T170914Z-39588-7dd1ee578a',last_native_result='FAILED17/19;not acceptance',
         preparation_revision='R8-entry-scope-and-explicit-clear-return',native_execution='NOT_RUN',current_native_execution='NOT_RUN',
         current_model_regression_execution='NOT_RUN',model_regression_execution='NOT_RUN',
+        total_hard_cap_minutes=45,cleanup_reserve_seconds=120,per_case_timeout_seconds=1200,
+        timing_provenance='R7elapsed1603.887s;ARAX5636.745s;ENAX5failed46.159s; completeR8durationunmeasured',
         content_view_sha256=CONTENT,parent_content_view_sha256=PARENT_CONTENT,product_patch_sha256=sha(out/'product-from-r7.patch'),
         parent_shipping_source_commit=PARENT_SHIPPING_COMMIT,
         geometry_guard_sha256=sha(out/'appearance_evidence_guard.py'),arabic_geometry_guard_sha256=sha(out/'arabic_appearance_evidence_guard.py'),
@@ -112,6 +123,27 @@ def main():
     old_assert="self.assertTrue(retained['byte_identical']);self.assertEqual(len(retained['files']),14)"
     new_assert="self.assertFalse(retained['byte_identical']);self.assertEqual(len(retained['files']),14)\n        self.assertEqual(retained['unchanged_file_count'],13)\n        self.assertEqual(retained['changed_files'],['HalalAnalyzer حلال ام حرام؟/ContentView.swift'])"
     assert contract.count(old_assert)==1;contract=contract.replace(old_assert,new_assert)
+    hook='    def test_unconfigured_acknowledgment_cannot_authorize_native_work(self):'
+    assert contract.count(hook)==1
+    contract=contract.replace(hook,'''    def test_finite45_total_envelope_and_shorter_actual_window(self):
+        from datetime import timedelta
+        now=datetime(2026,11,17,18,0,0,tzinfo=timezone.utc)
+        receipt=json.loads((ROOT/'coordinator-acknowledgment-UNCONFIGURED.json').read_text())
+        receipt.update(acknowledged=True,coordinator='synthetic-contract-test',
+            coordinator_reference='synthetic-only-no-native-authorization',slot_id='synthetic-r8-45-window',
+            acknowledged_at=(now-timedelta(seconds=1)).isoformat(),
+            window_starts_at=(now-timedelta(seconds=1)).isoformat(),
+            window_ends_at=(now+timedelta(minutes=50)).isoformat())
+        self.assertEqual(adapter.validate_window(receipt,now,45),('synthetic-r8-45-window',45))
+        for invalid in (46,4,True):
+            with self.subTest(requested=invalid):
+                with self.assertRaises(RuntimeError):adapter.validate_window(receipt,now,invalid)
+        receipt['window_ends_at']=(now+timedelta(minutes=44,seconds=59)).isoformat()
+        self.assertEqual(adapter.validate_window(receipt,now,45),('synthetic-r8-45-window',44))
+        receipt['window_ends_at']=(now+timedelta(minutes=4,seconds=59)).isoformat()
+        with self.assertRaises(RuntimeError):adapter.validate_window(receipt,now,45)
+
+'''+hook)
     ast.parse(contract);(out/'Tests/test_adapter_contract.py').write_text(contract)
     shutil.copyfile(repo/'publishing/r8/README.md',out/'HANDOFF.txt')
     for name in ['publishing_runner_frozen.py','appearance_png.py','system_size_evidence.py','simctl-ui-help-root-20261117.stderr','test_geometry_evidence.py']:

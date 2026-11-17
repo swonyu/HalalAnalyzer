@@ -26,6 +26,15 @@ gesture budget is changed. Only the exact ContentView source binding and the
 fresh isolated QA identity/scope are updated. All 211 model checks and all 19
 original native journeys must execute again; source inspection is not a pass.
 
+The R8 batch has a finite 45-minute total cap, including the unchanged120-second
+cleanup reserve. Each original native case keeps its1200-second bound and no
+automatic retry. R7 took1603.887 seconds overall, but its English AX5 case
+failed after46.159 seconds; the Arabic AX5 traversal took636.745 seconds.
+Substituting only that measured traversal duration gives2194.473 seconds,
+already beyond the earlier35-minute total envelope. This is a scheduling
+estimate, not a prediction or acceptance claim for R8. The actual exclusive
+acknowledged window can still shorten the cap; the frozen lifecycle is unchanged.
+
 The original deadline was 2026-11-17T22:26:12Z. The user's explicit additional
 24 hours extends it to 2026-11-18T22:26:12Z without resetting the start.
 Root remains the sole native/store/browser coordinator. All acknowledgment
