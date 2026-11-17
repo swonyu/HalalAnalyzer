@@ -89,6 +89,7 @@ def main():
         shipping_change='Only ContentView: exact entryScope native renderer and explicit Clear return to real input',files=retention))
     ack=json.loads((out/'coordinator-acknowledgment-UNCONFIGURED.json').read_text());assert ack['acknowledged'] is False
     ack.update(scope=NEW_SCOPE,executing_continuation='d57f4cd77813',preparation_revision='R8-entry-scope-and-explicit-clear-return',
+        candidate_content_sha256=CONTENT,
         original_deadline_utc='2026-11-17T22:26:12Z',explicit_user_extension_hours=24,extended_deadline_utc='2026-11-18T22:26:12Z',
         budget_restarted=False,note='UNCONFIGURED R8; fresh root-owned exclusive native slot required. R7 failed17/19; R8 has not run. All19 original journeys, helpers, audits and budgets retained.')
     for key,name in [('adapter_sha256','run_halaltag_native_qa.py'),('sealed_index_sha256','sealed-project-inputs.json'),
