@@ -1,0 +1,66 @@
+{
+  "status": "CURRENT_PUBLIC_BRANCH_BYTES_RECONCILED_IN_APP_DOCS_NO_DEPLOYMENT",
+  "verified_repository": "swonyu/HalalAnalyzer",
+  "verified_branch": "docs/public-support-20261117-01a49",
+  "verified_branch_commit": "d86eb20622a0f2c06d2ae238de2ca7fa20e61eb4",
+  "verified_tree_api": "https://api.github.com/repos/swonyu/HalalAnalyzer/git/trees/d86eb20622a0f2c06d2ae238de2ca7fa20e61eb4?recursive=1",
+  "website_branch_shape": "orphan root: .nojekyll and five public HTML/CSS files; no docs subdirectory",
+  "recovered_candidate_directory": "/workspace/scratch/01a49fa7c28e/halaltag-public-pages-r2/docs",
+  "native_candidate_commit": "be0b7ab202c38d81aab6a908cd69902c18b5ded9",
+  "public_files": [
+    {
+      "source_branch_path": "index.html",
+      "app_repository_path": "docs/index.html",
+      "git_blob_sha1": "5cd085ae36bc7b01685bbab0f91e9aebc9fbdebb",
+      "sha256": "564e60c1d16d9ec28a3e523d992a807033027f6e1a400efa1dcdd410d04bc806",
+      "bytes": 6551
+    },
+    {
+      "source_branch_path": "privacy-ar.html",
+      "app_repository_path": "docs/privacy-ar.html",
+      "git_blob_sha1": "ebd8706c166476c8db1945bc95d301297df2f601",
+      "sha256": "af5eaf971243252319f10b3aeb0478355c77f6fd439357d8a25115d81d4f50bb",
+      "bytes": 9307
+    },
+    {
+      "source_branch_path": "styles.css",
+      "app_repository_path": "docs/styles.css",
+      "git_blob_sha1": "95bd67a105257869343f41be98b9706a9abeebbb",
+      "sha256": "7722431bff7128a31943b847d5262571fa9dec25c3ef201161969856ee9dd7e7",
+      "bytes": 3012
+    },
+    {
+      "source_branch_path": "support-ar.html",
+      "app_repository_path": "docs/support-ar.html",
+      "git_blob_sha1": "482a010c6a82b634f7c83333ff4e976a543fd40a",
+      "sha256": "7a5d93efb9efcebe1050e48bb342e2e2ebd70118a652e125157e265b705266ab",
+      "bytes": 7577
+    },
+    {
+      "source_branch_path": "support.html",
+      "app_repository_path": "docs/support.html",
+      "git_blob_sha1": "e06c6115407ed29db04fded323343b23ff020645",
+      "sha256": "39e402376a3692487716d93862c398bd6b3059406d554a5f26d1e91dca94f0db",
+      "bytes": 5272
+    }
+  ],
+  "preserved_site_marker": {
+    "path": ".nojekyll",
+    "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "bytes": 0
+  },
+  "actions_not_performed": [
+    "website branch merge",
+    "website mutation",
+    "Pages reconfiguration",
+    "deployment",
+    "native source mutation",
+    "native package reseal",
+    "App Store metadata update"
+  ],
+  "remaining_evidence": [
+    "current configured Pages branch/path and live bytes must be verified before any website operation",
+    "approved public contact information beyond public GitHub issues has not been established",
+    "final binary and App Privacy answers must agree with described on-device behavior"
+  ]
+}

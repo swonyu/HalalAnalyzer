@@ -1,0 +1,35 @@
+{
+  "observed_at_utc": "2026-11-17T14:43:56.982508+00:00",
+  "checks": [
+    {
+      "page": "index.html",
+      "language": "en",
+      "direction": "ltr",
+      "structure_and_local_links": "PASS"
+    },
+    {
+      "page": "privacy-ar.html",
+      "language": "ar",
+      "direction": "rtl",
+      "structure_and_local_links": "PASS"
+    },
+    {
+      "page": "support.html",
+      "language": "en",
+      "direction": "ltr",
+      "structure_and_local_links": "PASS"
+    },
+    {
+      "page": "support-ar.html",
+      "language": "ar",
+      "direction": "rtl",
+      "structure_and_local_links": "PASS"
+    }
+  ],
+  "public_file_bytes_match_verified_d86eb206": true,
+  "shipping_content_hash_unchanged_from_frozen_be0b": true,
+  "native_package_modified": false,
+  "browser_render_performed": false,
+  "native_performed": false,
+  "live_website_verification_performed": false
+}
