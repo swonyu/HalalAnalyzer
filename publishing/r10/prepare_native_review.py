@@ -180,6 +180,20 @@ def main():
         timing_provenance='R8elapsed2137.487s;ENAX5454.702s;ARAX5598.920s;R9buildfailed55.145s beforeUI;R10durationunmeasured;45mincapunchanged')
     dump(out/'reference-inputs.json',reference)
     contract=(parent/'Tests/test_adapter_contract.py').read_text().replace(OLD_SCOPE,NEW_SCOPE).replace('synthetic-r9-45-window','synthetic-r10-45-window')
+    # R9 changed ContentView relative to R8; R10 keeps all R9 shipping bytes.
+    # Preserve all16 cases and their per-file hashes while rebinding exactly
+    # these three shipping-retention expectations to the new parent relation.
+    contract_replacements = [
+        ("        self.assertFalse(retained['byte_identical']);self.assertEqual(len(retained['files']),14)\n",
+         "        self.assertTrue(retained['byte_identical']);self.assertEqual(len(retained['files']),14)\n"),
+        ("        self.assertEqual(retained['unchanged_file_count'],13)\n",
+         "        self.assertEqual(retained['unchanged_file_count'],14)\n"),
+        ("        self.assertEqual(retained['changed_files'],['HalalAnalyzer حلال ام حرام؟/ContentView.swift'])\n",
+         "        self.assertEqual(retained['changed_files'],[])\n"),
+    ]
+    for original, revised in contract_replacements:
+        assert contract.count(original)==1, 'Exact parent shipping expectation required'
+        contract=contract.replace(original,revised,1)
     ast.parse(contract);(out/'Tests/test_adapter_contract.py').write_text(contract)
     shutil.copyfile(spec/'README.md',out/'HANDOFF.txt')
     assert all(sha(out/name)==sha(parent/name) for name in unchanged)
