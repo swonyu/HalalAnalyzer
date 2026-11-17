@@ -5,7 +5,7 @@ import Foundation
 import SwiftUI
 import UIKit
 
-private let appearanceQAID = "com.saleh.halaltag.productioncomposition.qa.r20261117"
+private let appearanceQAID = "com.saleh.halaltag.productioncomposition.qa.r20261117r3"
 
 @MainActor
 private struct AppearanceFixture {

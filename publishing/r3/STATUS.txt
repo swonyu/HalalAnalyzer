@@ -1,0 +1,54 @@
+HalalTag R3 publishing checkpoint — 17 November 2026
+
+Status: REVIEWED SOURCE CHECKPOINT; NO VERIFIED R3 NATIVE PASS.
+This branch is prepared for review and push. A Git checkpoint is separate from
+compilation, native testing, signed upload, App Review and public release.
+
+Provenance
+Base: 674b8f32c0760bb6c9fc243d65109a2e3ee299b7, the original owner's bilingual
+production composition. The exact 47 files of the frozen R3 native19 Source
+are retained at their existing repository paths; source-files.json records them.
+No original tracked file was removed. Production bundle: HalalTag.v1.1.
+Executing continuation: 01a49fa7c28e; source origin: d597fc87411f.
+
+Changes since the base
+Only ContentView.swift changes shipping behavior. R2 introduced genuinely
+visible native UILabel match text and keyboard-reveal timing tied to the Screen
+action. R3 makes the privacy Done button a persistent, scalable real action
+outside the scrollable full privacy body, and retains semantic reading position
+for match fields at very large text sizes. QA identifiers and hash bindings are
+updated to R3. All original ten and reviewed nine native test methods, assertions,
+accessibility audits and gesture budgets remain; none were weakened.
+
+Evidence and remaining gates
+R2 finished 13/19: all ten functional and three language/state cases passed;
+six appearance cases failed. Its runner completed cleanup and released its lock.
+R3 has source/contract verification (84 structure checks, 15 runner contracts,
+47 bound files), but no native result yet. At the last read on 17 November,
+no R3 report existed in its expected output directory. Root alone schedules
+native work and preserves the shared lock. R3's reading-position correction is
+still a runtime hypothesis pending the unchanged full nineteen-case run.
+
+Frozen native19 ZIP SHA256:
+318faa8eb1a462b7f398e3c8edd3b10519a58b2d644d15c32dc4a83f252bf893
+R3 production ContentView.swift SHA256:
+9bfc7e5814308b8b7382f3136c7e076ee423e798ea45a321a05f8ec82ebe0c95
+Separate production Release/archive/export scripts are prepared and reviewed,
+but have not run. Their prepared ZIP SHA256:
+8ab1ab70ae384d2d9d153e458ebb5f7327cd634e5834e56b1a7c27c1541b8899
+No signed upload, App Review decision or public R3 release is claimed here.
+The app is intended to remain free. No live advertising release is verified;
+this source does not add an advertising SDK or future-ad privacy declarations.
+
+Coordination
+Preserve the original owner's branches. The native QA bundle is isolated from
+the production app, and its test assertions are not part of production source.
+The 24 ACTIVE engineering-hour budget is not restarted. Active usage/remaining
+hours are unknown; 22:26:12Z on 17 November is only the conservative elapsed
+scheduling checkpoint used by the coordinator, not a verified hard deadline.
+
+Push-trigger review
+No .github/workflows or ci_scripts files exist in this tree. Server-side Xcode
+Cloud workflow/branch filters are not established by this source review; root
+must inspect those settings before admission if a push could start a build.
+Do not treat this document as permission to duplicate a build or store action.

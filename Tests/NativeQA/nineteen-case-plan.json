@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "scope": "halaltag-production-composition-nineteen-journeys-r1",
+  "scope": "halaltag-production-composition-nineteen-journeys-r3",
   "status": "PREPARATION_ONLY_NOT_NATIVE_ACCEPTANCE",
-  "qa_bundle_id": "com.saleh.halaltag.productioncomposition.qa.r20261117",
+  "qa_bundle_id": "com.saleh.halaltag.productioncomposition.qa.r20261117r3",
   "production_bundle_id": "HalalTag.v1.1",
-  "test_bundle_id": "com.saleh.halaltag.productioncomposition.qa.r20261117.uitests",
+  "test_bundle_id": "com.saleh.halaltag.productioncomposition.qa.r20261117r3.uitests",
   "source_project": "Tests/NativeQA/HalalTagQA.xcodeproj",
   "source_scheme": "HalalTagQA",
   "shipping_project": "HalalAnalyzer حلال ام حرام؟.xcodeproj",

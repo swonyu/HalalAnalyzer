@@ -1,0 +1,48 @@
+{
+  "parent_preparation": "/workspace/scratch/01a49fa7c28e/halaltag-production-fix-r2/native19-preparation",
+  "product_changed_files": [
+    "HalalAnalyzer حلال ام حرام؟/ContentView.swift"
+  ],
+  "source_changes": [
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ContentView.swift",
+      "parent_sha256": "537ddb395a37f41ec6cdf4491331f1758ce80017be56089fd8b07fdbde9589b0",
+      "candidate_sha256": "9bfc7e5814308b8b7382f3136c7e076ee423e798ea45a321a05f8ec82ebe0c95"
+    },
+    {
+      "path": "Tests/NativeQA/App/HalalTagQAApp.swift",
+      "parent_sha256": "6b5282f34b29ba1b1ffed01fb23b50e2a7d1e8d4f711824e217d4241e948f9c4",
+      "candidate_sha256": "52dcc1d6708a452b1949aa04132286e14e7d5e281effac23aa4c127d0c0e19b7"
+    },
+    {
+      "path": "Tests/NativeQA/HalalTagQA.xcodeproj/project.pbxproj",
+      "parent_sha256": "a3e8bfae3ac0e59139cab20e83915751898840a3bc6e50254bcd68e76bbf61af",
+      "candidate_sha256": "333c529a7f47043c7c78b556b2e111e3d181d2dc688155d5540afeaf973f2288"
+    },
+    {
+      "path": "Tests/NativeQA/README.txt",
+      "parent_sha256": "8da400d4152a12f6f364e9f950f25ca95884ee22dd04b4010b2bb6c66990cccd",
+      "candidate_sha256": "c586cd06a5027d26967a3357f06212e629a7b7eb2abaec8fe9045861acf8c6f1"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift",
+      "parent_sha256": "232abb1b876ff3304b9236b20788f701c2d6ac21d19c5c69b46bc19a5cd8d040",
+      "candidate_sha256": "b3a24d23e46c4dff57922558c12e17f225baf2fb7168794340c0a82b5f9c561d"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagSyntheticQAInstallation.json",
+      "parent_sha256": "5655101d72465518ac9a826634b99ffbfeea4555454eafcf5b7591a05c1fca5b",
+      "candidate_sha256": "61034ec5751ec37b80f7f2777d07e1046e55672f1a579996a2b891718303118a"
+    },
+    {
+      "path": "Tests/NativeQA/nineteen-case-plan.json",
+      "parent_sha256": "f6cc084804fe8e260f5415976ec3c8a6ed1fa04ae6f46325a4017b807de2f384",
+      "candidate_sha256": "4b226c129d90514659d9c57ffb55ae98a8f47feaf1a5d4b013d3d6b05be9b6e7"
+    },
+    {
+      "path": "Tests/validate_composition.py",
+      "parent_sha256": "f393a3ef2358754cc569508ec3f5d3df02e2e1824c867f7fce3c9c1dffd0b98b",
+      "candidate_sha256": "3aaecdcb29029eac0786d9c551fb216899e0bed7fbfaf14a34b5b66fd686771c"
+    }
+  ]
+}

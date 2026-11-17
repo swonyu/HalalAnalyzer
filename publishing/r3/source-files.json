@@ -1,0 +1,241 @@
+{
+  "scope": "halaltag-production-composition-nineteen-journeys-r3",
+  "base_commit": "674b8f32c0760bb6c9fc243d65109a2e3ee299b7",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "425858fa284e970d92a16ae3bde6f2f920f0462f34afbbc0ea4ecaad8ebc186d",
+      "bytes": 68
+    },
+    {
+      "path": "Artwork/HalalAnalyzerIcon.svg",
+      "sha256": "d3e639d38eac86bb2bab040ec2c0c6a3b5072316c42eb472bd05b67d72b24380",
+      "bytes": 3097
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/AccentColor.colorset/Contents.json",
+      "sha256": "9af65086fa30b49252fae1a1225731691de794f7775af74d71befeb507d12b7c",
+      "bytes": 123
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png",
+      "sha256": "27e8d19a818f17dbcda9e3e6352055de3116748e1fb5e5d6f627886d30708fe0",
+      "bytes": 577515
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "sha256": "9cf2928dad89427abd581b6852db081352417f400afb65e60c479228cdc4f4da",
+      "bytes": 216
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/Contents.json",
+      "sha256": "0fd49ba3c3585c709678e0046a821c3c60685ec7063720d30d3a3448be3a208b",
+      "bytes": 63
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ContentView.swift",
+      "sha256": "9bfc7e5814308b8b7382f3136c7e076ee423e798ea45a321a05f8ec82ebe0c95",
+      "bytes": 29771
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/HalalAnalyzer______________App.swift",
+      "sha256": "ae36f474eb444bfa7c084573d2e544a42ca1406e7082c2eea575a856f088e831",
+      "bytes": 300
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/IngredientScreening.swift",
+      "sha256": "bf98d94670058cb2a810ae9bb3866053bd9b706eee6d8503b9f459caa683bfe2",
+      "bytes": 9193
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/PrivacyInfo.xcprivacy",
+      "sha256": "a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12",
+      "bytes": 598
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ScreeningLocalization.swift",
+      "sha256": "7311a8c17857ed07161bac107911670c0edfdec5b8169fb8e08cb85739a92e4e",
+      "bytes": 20961
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ar.lproj/InfoPlist.strings",
+      "sha256": "14e333dd2c788060b92ac06b5fa2055f064dd190c801390764b972d9a520f354",
+      "bytes": 106
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/en.lproj/InfoPlist.strings",
+      "sha256": "14e333dd2c788060b92ac06b5fa2055f064dd190c801390764b972d9a520f354",
+      "bytes": 106
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟.xcodeproj/project.pbxproj",
+      "sha256": "777ca0dda92eabf2d446285a47b6f6f47f5d3d09e6c211744b88a25dd62661f0",
+      "bytes": 12604
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+      "bytes": 135
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟.xcodeproj/xcshareddata/xcschemes/HalalAnalyzer حلال ام حرام؟.xcscheme",
+      "sha256": "84deda478d07aa0c842e1effc47b0060b9ad356a5ab6841f1590577e0630cc7b",
+      "bytes": 2455
+    },
+    {
+      "path": "HalalTag.xcworkspace/contents.xcworkspacedata",
+      "sha256": "da6d2cee1e12ca533006d2628813a2744f0fa6bd056d4f73ffcff7a7e283b6f1",
+      "bytes": 223
+    },
+    {
+      "path": "README.md",
+      "sha256": "065182464929a146aa33271e33f29c555b874eb1378d3235e9171365c9088e4c",
+      "bytes": 728
+    },
+    {
+      "path": "Tests/Evidence/Baseline-AppEntry.swift.txt",
+      "sha256": "ae36f474eb444bfa7c084573d2e544a42ca1406e7082c2eea575a856f088e831",
+      "bytes": 300
+    },
+    {
+      "path": "Tests/Evidence/Baseline-ContentView.swift.txt",
+      "sha256": "2ee0276c580055038c1a4c79553930ad6d121df7b3497db34ac05e59907f11bf",
+      "bytes": 9870
+    },
+    {
+      "path": "Tests/Evidence/Baseline-ShippingScheme.xcscheme.txt",
+      "sha256": "84deda478d07aa0c842e1effc47b0060b9ad356a5ab6841f1590577e0630cc7b",
+      "bytes": 2455
+    },
+    {
+      "path": "Tests/Evidence/Baseline-project.pbxproj.txt",
+      "sha256": "0a520e10bef9ad82acd2a53b45d2d1e9f09c934e51bd52148c6afd549f6583e9",
+      "bytes": 12596
+    },
+    {
+      "path": "Tests/Evidence/OriginalTen-HalalTagPreparedUITests.swift.txt",
+      "sha256": "68246ae5cc145eb8dab71f98835fc423b4925ad6e23a7ba91fc42789165e4306",
+      "bytes": 24128
+    },
+    {
+      "path": "Tests/Evidence/OriginalTen-helper-and-binding.diff",
+      "sha256": "ea55ee6c2aa3a4ed9d4d7eb72638bd676949807e1e48be877f52b5d77f517c2d",
+      "bytes": 9036
+    },
+    {
+      "path": "Tests/Evidence/ReviewedNine/HalalTagArabicAppearanceUITests.swift.txt",
+      "sha256": "2a91f21360c8a93e4ac09998efd89fa2fcb295da5d4fe1d3c04ac50a90983031",
+      "bytes": 29427
+    },
+    {
+      "path": "Tests/Evidence/ReviewedNine/HalalTagLanguageStateUITests.swift.txt",
+      "sha256": "28da5860b9764cbfce97a5796e3735f3a8b6fb2111c94bf44c7821716bd4e742",
+      "bytes": 8776
+    },
+    {
+      "path": "Tests/Evidence/ReviewedNine/HalalTagPreparedUITests.swift.txt",
+      "sha256": "b6511777246d9ff5958d20b9712242533e48447b4fc8d44b2813e572c6262f20",
+      "bytes": 32000
+    },
+    {
+      "path": "Tests/Evidence/provenance.json",
+      "sha256": "57b77582e34ae49d1533155d012ed9ef848e1e28991b9a19e511350d1ebc3c55",
+      "bytes": 1767
+    },
+    {
+      "path": "Tests/Model/BilingualModelChecks.swift",
+      "sha256": "f06bde05c70c050e7a3e4b068716a12ee45c701cdd65ca6684567bdf599c2fba",
+      "bytes": 7123
+    },
+    {
+      "path": "Tests/NativeQA/App/HalalTagQAApp.swift",
+      "sha256": "52dcc1d6708a452b1949aa04132286e14e7d5e281effac23aa4c127d0c0e19b7",
+      "bytes": 7395
+    },
+    {
+      "path": "Tests/NativeQA/App/Info.plist",
+      "sha256": "1c6795b7916c26c4644b35f3218a4d788af97fa9829572bde5917bea26956503",
+      "bytes": 1184
+    },
+    {
+      "path": "Tests/NativeQA/HalalTagQA.xcodeproj/project.pbxproj",
+      "sha256": "333c529a7f47043c7c78b556b2e111e3d181d2dc688155d5540afeaf973f2288",
+      "bytes": 12227
+    },
+    {
+      "path": "Tests/NativeQA/HalalTagQA.xcodeproj/xcshareddata/xcschemes/HalalTagQA.xcscheme",
+      "sha256": "9969f9848346f843f5bcd2fb4cd6463bc2bf5641ead24d32312406ba85ad2408",
+      "bytes": 2743
+    },
+    {
+      "path": "Tests/NativeQA/README.txt",
+      "sha256": "c586cd06a5027d26967a3357f06212e629a7b7eb2abaec8fe9045861acf8c6f1",
+      "bytes": 3705
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagArabicAppearanceUITests.swift",
+      "sha256": "2a91f21360c8a93e4ac09998efd89fa2fcb295da5d4fe1d3c04ac50a90983031",
+      "bytes": 29427
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagFunctionalUITests.swift",
+      "sha256": "e54f3e6225535c55fa1dac32ac41aae8032fcaf3c3195387f93810597d49344c",
+      "bytes": 21887
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagLanguageStateUITests.swift",
+      "sha256": "28da5860b9764cbfce97a5796e3735f3a8b6fb2111c94bf44c7821716bd4e742",
+      "bytes": 8776
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift",
+      "sha256": "b3a24d23e46c4dff57922558c12e17f225baf2fb7168794340c0a82b5f9c561d",
+      "bytes": 32077
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagSyntheticQAInstallation.json",
+      "sha256": "61034ec5751ec37b80f7f2777d07e1046e55672f1a579996a2b891718303118a",
+      "bytes": 762
+    },
+    {
+      "path": "Tests/NativeQA/nineteen-case-plan.json",
+      "sha256": "4b226c129d90514659d9c57ffb55ae98a8f47feaf1a5d4b013d3d6b05be9b6e7",
+      "bytes": 8617
+    },
+    {
+      "path": "Tests/README.txt",
+      "sha256": "42067460a36169d1dbaafac50e8d1638e5a975a8e6855eabd512906e77b2e0f7",
+      "bytes": 1129
+    },
+    {
+      "path": "Tests/openstep_reader.py",
+      "sha256": "552e83abb6530bd77adba1ab592469f92004997f2c3cb843949e76cf74f81ae4",
+      "bytes": 1385
+    },
+    {
+      "path": "Tests/validate_composition.py",
+      "sha256": "3aaecdcb29029eac0786d9c551fb216899e0bed7fbfaf14a34b5b66fd686771c",
+      "bytes": 17895
+    },
+    {
+      "path": "docs/.nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "c465b265181eaa8717ea49e43d7339e048ccd5b44bb0cc5845430b3cf7abf81e",
+      "bytes": 1967
+    },
+    {
+      "path": "docs/index.html",
+      "sha256": "48e5e75b6c3a96b8c61f669a01bd628106dd0525abe5d1e6ba29145e385ba1f3",
+      "bytes": 5575
+    },
+    {
+      "path": "docs/support.html",
+      "sha256": "35d11b916289d3b966b5822110a3e20d68a77c063a6a41ba05039f137ca8e1ae",
+      "bytes": 4368
+    }
+  ]
+}

@@ -6,6 +6,9 @@ struct ContentView: View {
     @State private var session = IngredientScreeningSession()
     @State private var showingLimitations = false
     @FocusState private var ingredientEditorFocused: Bool
+    @State private var softwareKeyboardVisible = false
+    @State private var pendingScreenReveal = false
+    @State private var readingAnchor: ScreeningScrollAnchor?
 
     private let samples = [
         "Gelatin, sugar, natural flavors",
@@ -21,25 +24,63 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 22) {
-                        if session.currentResult == nil {
-                            header
-                        }
-                        inputSection
+                ScrollViewReader { scroll in
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 22) {
+                            if session.currentResult == nil {
+                                header
+                            }
+                            inputSection
+                                .id(ScreeningScrollAnchor.input)
 
-                        if let result = session.currentResult {
-                            resultSection(result)
-                        }
+                            if let result = session.currentResult {
+                                resultSection(result)
+                            }
 
-                        sampleSection
+                            sampleSection
+                        }
+                        .padding(20)
                     }
-                    .padding(20)
+                    .clipped()
+                    // Keep the actual evidence being read visible when text size
+                    // or localized wrapping changes the surrounding content.
+                    .scrollPosition(id: $readingAnchor)
+                    .scrollDismissesKeyboard(.interactively)
+                    // Ordinary outer padding insets the scroll view itself. Safe-area
+                    // margins alone allow its content to continue under navigation.
+                    .padding(.top, 1)
+                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidShowNotification)) { _ in
+                        softwareKeyboardVisible = true
+                        guard ingredientEditorFocused else { return }
+                        // Keep the existing primary action above the actual keyboard.
+                        // No content or action is duplicated or removed while editing.
+                        scroll.scrollTo(ScreeningScrollAnchor.screen, anchor: .bottom)
+                    }
+                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidHideNotification)) { _ in
+                        softwareKeyboardVisible = false
+                        let revealScreenedInput = pendingScreenReveal
+                        pendingScreenReveal = false
+                        guard revealScreenedInput, session.currentResult != nil else { return }
+                        // Only the actual Screen action requests this return.
+                        // Dismissing a keyboard while reading never moves the page.
+                        // After screening, keep the input available for correction
+                        // together with the new outcome on ordinary text sizes.
+                        scroll.scrollTo(ScreeningScrollAnchor.input, anchor: .top)
+                    }
+                    .onChange(of: session.currentResult) { previous, current in
+                        if current?.matches.isEmpty != false {
+                            readingAnchor = nil
+                        }
+                        guard ingredientEditorFocused, previous != nil, current == nil else { return }
+                        // The first edit restores the scope header and changes the
+                        // content height. Follow that layout change once, retaining
+                        // the same usable primary action for continued editing.
+                        DispatchQueue.main.async {
+                            guard ingredientEditorFocused, session.currentResult == nil else { return }
+                            scroll.scrollTo(ScreeningScrollAnchor.screen, anchor: .bottom)
+                        }
+                    }
                 }
-                .clipped()
-                // Ordinary outer padding insets the scroll view itself. Safe-area
-                // margins alone allow its content to continue under navigation.
-                .padding(.top, 1)
 
                 clearAction
             }
@@ -112,7 +153,10 @@ struct ContentView: View {
                 // A compact, scrollable editor leaves the primary action and
                 // sample choices reachable on small phones without shrinking text.
                 .frame(minHeight: 120)
-                .padding(10)
+                // Keep the real RTL editor indicator inside the input surface,
+                // leaving an ordinary content gutter for scrolling the page.
+                .padding(.horizontal, 20)
+                .padding(.vertical, 10)
                 .scrollContentBackground(.hidden)
                 .background(.background, in: RoundedRectangle(cornerRadius: 8))
                 .overlay {
@@ -134,6 +178,7 @@ struct ContentView: View {
                 .accessibilityHint(copy(.editorHint))
 
             Button {
+                pendingScreenReveal = softwareKeyboardVisible
                 ingredientEditorFocused = false
                 session.screen()
             } label: {
@@ -147,6 +192,7 @@ struct ContentView: View {
             }
             .buttonStyle(ReadableScreeningActionStyle())
             .accessibilityIdentifier("screen-input")
+            .id(ScreeningScrollAnchor.screen)
             .disabled(session.input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             .accessibilityHint(session.input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
                                ? copy(.screenEmptyHint)
@@ -166,26 +212,11 @@ struct ContentView: View {
                 .font(.headline)
 
             ForEach(samples, id: \.self) { sample in
-                Button {
+                NativeScreeningSampleButton(title: copy.sampleLabel(sample), language: language,
+                                            hint: copy(.sampleHint)) {
                     ingredientEditorFocused = false
                     session.useSample(sample)
-                } label: {
-                    HStack {
-                        Text(copy.sampleLabel(sample))
-                            .font(.subheadline)
-                            .foregroundStyle(.primary)
-                            .multilineTextAlignment(.leading)
-                        Spacer()
-                        Image(systemName: language.isRightToLeft ? "chevron.left" : "chevron.right")
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(.secondary)
-                            .accessibilityHidden(true)
-                    }
-                    .padding(12)
-                    .background(.background, in: RoundedRectangle(cornerRadius: 8))
                 }
-                .buttonStyle(.plain)
-                .accessibilityHint(copy(.sampleHint))
             }
         }
     }
@@ -202,17 +233,21 @@ struct ContentView: View {
 
                     ForEach(result.matches) { match in
                         VStack(alignment: .leading, spacing: 5) {
-                            Text(copy.matchName(match))
-                                .font(.subheadline.weight(.semibold))
-                                .accessibilityAddTraits(.isHeader)
-                            Text(copy.dispositionTitle(match.disposition))
-                                .font(.subheadline)
-                            Text(copy.matchedText(match.terms))
-                                .font(.footnote)
-                            Text(copy.matchExplanation(match))
-                                .font(.footnote)
-                                .foregroundStyle(.primary)
+                            NativeScreeningMatchText(text: copy.matchName(match), language: language,
+                                                     textStyle: .subheadline, weight: .semibold,
+                                                     isHeading: true)
+                                .id(ScreeningScrollAnchor.matchName(match.id))
+                            NativeScreeningMatchText(text: copy.dispositionTitle(match.disposition),
+                                                     language: language, textStyle: .subheadline)
+                                .id(ScreeningScrollAnchor.matchDisposition(match.id))
+                            NativeScreeningMatchText(text: copy.matchedText(match.terms),
+                                                     language: language, textStyle: .footnote)
+                                .id(ScreeningScrollAnchor.matchText(match.id))
+                            NativeScreeningMatchText(text: copy.matchExplanation(match),
+                                                     language: language, textStyle: .footnote)
+                                .id(ScreeningScrollAnchor.matchExplanation(match.id))
                         }
+                        .scrollTargetLayout()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(12)
                         .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 8))
@@ -237,6 +272,67 @@ struct ContentView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+private enum ScreeningScrollAnchor: Hashable {
+    case input
+    case screen
+    case matchName(String)
+    case matchDisposition(String)
+    case matchText(String)
+    case matchExplanation(String)
+}
+
+/// Every match field is visible native text on the actual card surface. The
+/// enclosing card keeps its four independently navigable children and order.
+@MainActor
+private struct NativeScreeningMatchText: UIViewRepresentable {
+    let text: String
+    let language: ScreeningLanguage
+    let textStyle: UIFont.TextStyle
+    var weight: UIFont.Weight? = nil
+    var isHeading = false
+
+    func makeUIView(context: Context) -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.adjustsFontSizeToFitWidth = false
+        label.adjustsFontForContentSizeCategory = true
+        label.isAccessibilityElement = true
+        label.textAlignment = .natural
+        label.textColor = .label
+        label.backgroundColor = .secondarySystemGroupedBackground
+        label.isOpaque = true
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
+        return label
+    }
+
+    func updateUIView(_ label: UILabel, context: Context) {
+        label.text = text
+        let baseFont = UIFont.preferredFont(forTextStyle: textStyle,
+                                            compatibleWith: label.traitCollection)
+        if let weight {
+            let descriptor = baseFont.fontDescriptor.addingAttributes([
+                .traits: [UIFontDescriptor.TraitKey.weight: weight.rawValue]
+            ])
+            label.font = UIFont(descriptor: descriptor, size: baseFont.pointSize)
+        } else {
+            label.font = baseFont
+        }
+        label.accessibilityTraits = isHeading ? [.staticText, .header] : [.staticText]
+        label.accessibilityLanguage = language.rawValue
+        label.semanticContentAttribute = language.isRightToLeft
+            ? .forceRightToLeft : .forceLeftToRight
+    }
+
+    func sizeThatFits(_ proposal: ProposedViewSize, uiView: UILabel,
+                      context: Context) -> CGSize? {
+        guard let width = proposal.width, width.isFinite, width > 0 else { return nil }
+        let size = uiView.sizeThatFits(CGSize(width: width,
+                                            height: CGFloat.greatestFiniteMagnitude))
+        return CGSize(width: width, height: ceil(size.height))
     }
 }
 
@@ -292,6 +388,66 @@ private struct NativeScreeningHeading: UIViewRepresentable {
             CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
         )
         return CGSize(width: width, height: ceil(measured.height))
+    }
+}
+
+/// Sample selection replaces the current text directly. Give its complete title
+/// the card width, without a navigation chevron or a separate SwiftUI text node.
+@MainActor
+private struct NativeScreeningSampleButton: UIViewRepresentable {
+    let title: String
+    let language: ScreeningLanguage
+    let hint: String
+    let action: () -> Void
+
+    final class Coordinator: NSObject {
+        var action: () -> Void
+        init(action: @escaping () -> Void) { self.action = action }
+        @objc func activate() { action() }
+    }
+
+    func makeCoordinator() -> Coordinator { Coordinator(action: action) }
+
+    func makeUIView(context: Context) -> UIButton {
+        let button = UIButton(type: .system)
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.lineBreakMode = .byWordWrapping
+        button.titleLabel?.adjustsFontSizeToFitWidth = false
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
+        button.titleLabel?.textAlignment = .natural
+        button.titleLabel?.backgroundColor = .secondarySystemGroupedBackground
+        button.titleLabel?.isOpaque = true
+        button.contentHorizontalAlignment = .leading
+        button.contentEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        button.backgroundColor = .secondarySystemGroupedBackground
+        button.layer.cornerRadius = 8
+        button.clipsToBounds = true
+        button.setTitleColor(.label, for: .normal)
+        button.setContentCompressionResistancePriority(.required, for: .vertical)
+        button.addTarget(context.coordinator, action: #selector(Coordinator.activate),
+                         for: .touchUpInside)
+        return button
+    }
+
+    func updateUIView(_ button: UIButton, context: Context) {
+        context.coordinator.action = action
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.font = .preferredFont(forTextStyle: .subheadline,
+                                                compatibleWith: button.traitCollection)
+        button.accessibilityLanguage = language.rawValue
+        button.accessibilityHint = hint
+        button.titleLabel?.accessibilityLanguage = language.rawValue
+        button.semanticContentAttribute = language.isRightToLeft
+            ? .forceRightToLeft : .forceLeftToRight
+    }
+
+    func sizeThatFits(_ proposal: ProposedViewSize, uiView: UIButton,
+                      context: Context) -> CGSize? {
+        guard let width = proposal.width, width.isFinite, width > 24,
+              let label = uiView.titleLabel else { return nil }
+        let size = label.sizeThatFits(CGSize(width: width - 24,
+                                            height: CGFloat.greatestFiniteMagnitude))
+        return CGSize(width: width, height: max(44, ceil(size.height) + 24))
     }
 }
 
@@ -399,19 +555,35 @@ private struct ScreeningInformationView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
-                    section(copy(.whatDoesTitle), text: copy(.whatDoesBody))
-                    section(copy(.meaningTitle), text: copy(.meaningBody))
-                    section(copy(.privacyTitle), text: copy(.privacyBody))
-                    section(copy(.coverageTitle), text: copy(.coverage))
-                    onlineResources
+            VStack(spacing: 0) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 24) {
+                        section(copy(.whatDoesTitle), text: copy(.whatDoesBody))
+                        section(copy(.meaningTitle), text: copy(.meaningBody))
+                        section(copy(.privacyTitle), text: copy(.privacyBody))
+                        section(copy(.coverageTitle), text: copy(.coverage))
+                        onlineResources
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(20)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(20)
+                .clipped()
+                .padding(.top, 1)
+
+                // A persistent content action gives the real label room to
+                // scale while leaving every privacy section scrollable.
+                Button { dismiss() } label: {
+                    Text(copy(.done))
+                        .font(.body)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(ReadableScreeningActionStyle())
+                .accessibilityIdentifier("privacy-done")
+                .padding(.horizontal, 20)
+                .padding(.vertical, 12)
+                .background(Color(.systemBackground))
             }
-            .clipped()
-            .padding(.top, 1)
             .background(Color(.systemBackground))
             .navigationTitle(copy(.sheetTitle))
             .navigationBarTitleDisplayMode(.inline)
@@ -430,10 +602,6 @@ private struct ScreeningInformationView: View {
                     .accessibilityValue(language.nativeName)
                     .accessibilityHint(copy(.languageHint))
                     .accessibilityIdentifier("app-language-menu")
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button(copy(.done)) { dismiss() }
-                        .accessibilityIdentifier("privacy-done")
                 }
             }
         }

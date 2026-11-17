@@ -8,11 +8,11 @@ APP='HalalAnalyzer حلال ام حرام؟'
 QA=ROOT/'Tests/NativeQA'
 EVIDENCE=ROOT/'Tests/Evidence'
 EXPECTED_PRODUCT={
- 'ContentView.swift':'0e325df994491b1d1daf60eb69d4bf5d2186867717ba71c901dc4e18fb325099',
+ 'ContentView.swift':'9bfc7e5814308b8b7382f3136c7e076ee423e798ea45a321a05f8ec82ebe0c95',
  'IngredientScreening.swift':'bf98d94670058cb2a810ae9bb3866053bd9b706eee6d8503b9f459caa683bfe2',
  'ScreeningLocalization.swift':'7311a8c17857ed07161bac107911670c0edfdec5b8169fb8e08cb85739a92e4e',
  'PrivacyInfo.xcprivacy':'a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12'}
-QAID='com.saleh.halaltag.productioncomposition.qa.r20261117'
+QAID='com.saleh.halaltag.productioncomposition.qa.r20261117r3'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def method_bodies(text):
     # These fixed fixtures have no multiline Swift strings. Ignore quoted strings
@@ -78,7 +78,12 @@ def main():
     def without_comments(s):return re.sub(r'(?m)^\s*///.*\n','',s)
     for name in nine_names:
         old=(EVIDENCE/'ReviewedNine'/(name+'.txt')).read_text();new=(QA/'UITests'/name).read_text()
-        check(without_comments(old)==without_comments(new),'all reviewed nine executable bytes preserved '+name)
+        if name == 'HalalTagPreparedUITests.swift':
+            previous_content_pin = "0e325df994491b1d1daf60eb69d4bf5d2186867717ba71c901dc4e18fb325099"
+            check(old.count(previous_content_pin) == 1 and new.count(EXPECTED_PRODUCT['ContentView.swift']) == 1,
+                  'only the explicit reviewed R3 source binding changes in the original shared QA guard')
+            old = old.replace(previous_content_pin, EXPECTED_PRODUCT['ContentView.swift'])
+        check(without_comments(old)==without_comments(new),'all reviewed nine executable bytes preserved except the exact reviewed source binding '+name)
         check(len(method_bodies(new))==3,'exact three methods in '+name)
         nine_total+=len(method_bodies(new))
     check(nine_total+len(new_methods)==19,'exact nineteen native test methods, no additions/skips/retries')
@@ -188,7 +193,7 @@ def main():
     for key,name in [('contentViewSHA256','ContentView.swift'),('ingredientScreeningSHA256','IngredientScreening.swift'),('screeningLocalizationSHA256','ScreeningLocalization.swift'),('privacyManifestSHA256','PrivacyInfo.xcprivacy')]:
         check(manifest[key]==EXPECTED_PRODUCT[name],'test guard binds exact production file '+name)
     plan=json.loads((QA/'nineteen-case-plan.json').read_text());cases=plan['cases']
-    check(plan['scope']=='halaltag-production-composition-nineteen-journeys-r1' and plan['case_count']==len(cases)==19,
+    check(plan['scope']=='halaltag-production-composition-nineteen-journeys-r3' and plan['case_count']==len(cases)==19,
           'distinct nineteen-case scope, not the nine-case acknowledgment')
     check(len({c['execution_id'] for c in cases})==19 and len({(c['test_class'],c['method']) for c in cases})==19,
           'nineteen unique execution paths and selectors')
