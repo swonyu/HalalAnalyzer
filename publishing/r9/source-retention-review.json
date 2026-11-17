@@ -1,0 +1,91 @@
+{
+  "status": "PASS_SOURCE_RETENTION_ONLY_NOT_NATIVE_ACCEPTANCE",
+  "parent_commit": "f2cd50817dbb0918e8ce85c6e47d31b337a6e25c",
+  "existing_tracked_files_changed": [
+    "HalalAnalyzer حلال ام حرام؟/ContentView.swift",
+    "Tests/NativeQA/App/HalalTagQAApp.swift",
+    "Tests/NativeQA/HalalTagQA.xcodeproj/project.pbxproj",
+    "Tests/NativeQA/README.txt",
+    "Tests/NativeQA/UITests/HalalTagArabicAppearanceUITests.swift",
+    "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift",
+    "Tests/NativeQA/UITests/HalalTagSyntheticQAInstallation.json",
+    "Tests/NativeQA/nineteen-case-plan.json",
+    "Tests/validate_composition.py"
+  ],
+  "all19_method_bodies_retained": true,
+  "all_model_source_and_harness_files_unchanged": true,
+  "source_function_retention": [
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagArabicAppearanceUITests.swift",
+      "parent_sha256": "5a6ed862fb3608398703b392f979d628aa306bb15f9192222548e04eb986ee11",
+      "candidate_sha256": "c48ba3e57194ff29fb0cfaaa57f2de00333a7442a2d5891709bf8119acf3959b",
+      "method_count": 3,
+      "all_method_bodies_unchanged": true,
+      "changed_helper_functions": [
+        "drag"
+      ],
+      "original_method_hashes": {
+        "testLightAppearanceAndContrastJourney": "0e30e020d39ce627d69cbc1a3b483706108a90787b159002d7e490fac2c7ed2d",
+        "testDarkAppearanceAndContrastJourney": "9b041b5c9a9a89af24fec57b1b4be721ea595a26d3b1e505c41d43ea08d2fc51",
+        "testMaximumTextReachabilityAndFocusedSampleReplacement": "b418b71384ed24f8291fce07d62ad8e9beba7a3e1a07a353e7a1445ef9baf4cb"
+      }
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagFunctionalUITests.swift",
+      "parent_sha256": "e54f3e6225535c55fa1dac32ac41aae8032fcaf3c3195387f93810597d49344c",
+      "candidate_sha256": "e54f3e6225535c55fa1dac32ac41aae8032fcaf3c3195387f93810597d49344c",
+      "method_count": 10,
+      "all_method_bodies_unchanged": true,
+      "changed_helper_functions": [],
+      "original_method_hashes": {
+        "testFreshLaunchShowsScopeAndDisabledEmptyActions": "31f499b488fe4e0af173378ada21f3be6de7ef2f9e00115954c9ee8c8c7fd5c9",
+        "testWhitespaceCannotBeScreenedAndCanBeCleared": "e08636a726b0987c7050fe9a38cd0e749ed5e0a7e7e599a3cc48b432d00b6711",
+        "testDirectTermShowsWordEvidenceAndQualifiedWarning": "2db5ed90ea67ccfde0067e888406d725048d25b26d882dd6708c7490e1cc825c",
+        "testUnknownAndUnsupportedPrefixesRemainUnknown": "d6e56308639ea529f25f008090185f7e4daf0a5eb902ffbcb39e18e9a71dd3d2",
+        "testAlcoholFreeIsContextReviewWithoutDirectFlag": "b145dd03307cea107bf9e6247df76a2e1d1293a2f7340ad294fd58d2571051bb",
+        "testFirstEditInvalidatesResultAndRestoringTextDoesNotResurrectIt": "d248d22fd051f9e188a5258f327641985f5f986dcaad54dd19a2727d8d82bdb8",
+        "testClearRemovesScreenedAndUnscreenedState": "49667cddbe86162df3113c926072b85128a36c79e2c4e4c0cbb302e937c09384",
+        "testSampleReplacesExistingTextAndResultWithoutAppending": "7edc88fb1d93da03cb7a7c89e47e6539762892b1cdde6dceb827a80c3eeab2cb",
+        "testLimitationsOpenBeforeAndAfterScreeningWithoutLosingState": "518ddd41fa6e5a808bc506d731edf768b6de04b0e7402a09c4b0a1c9b3028da6",
+        "testScreenActionAndNewResultAreNotHiddenByKeyboard": "1f7e106332d5bcc8eb8ee98c408b3f4aeb3b5ae064dc615ad7ecb8c23b6ff489"
+      }
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagLanguageStateUITests.swift",
+      "parent_sha256": "28da5860b9764cbfce97a5796e3735f3a8b6fb2111c94bf44c7821716bd4e742",
+      "candidate_sha256": "28da5860b9764cbfce97a5796e3735f3a8b6fb2111c94bf44c7821716bd4e742",
+      "method_count": 3,
+      "all_method_bodies_unchanged": true,
+      "changed_helper_functions": [],
+      "original_method_hashes": {
+        "testLanguageSwitchPreservesUnscreenedDraftAndDoesNotInventAResult": "8ae7ac72a3006104e9b4df7943cae2ba53f3ceb3a80c083877e3aa28d5da5c6e",
+        "testLanguageSwitchPreservesScreenedEvidenceAndEditingInvalidatesResult": "23ff8362918b7d14c0aa2ddc826b01815a3498e42ec9a15f86f4eb90d421d045",
+        "testLanguagePreferenceSurvivesRelaunchButDraftAndResultDoNot": "cbbaeba168a010d9258fe02e5036aa85ecc91947b92a48f9ac3417246f8ee843"
+      }
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift",
+      "parent_sha256": "c7e0b465e081c5ff2b5151237a656d81a9c23833f76fbdc0ffd007faab2a32cf",
+      "candidate_sha256": "334cd81ad14739c78257cde44d69c3d85987d50a52c034dbc5f41709d58c439c",
+      "method_count": 3,
+      "all_method_bodies_unchanged": true,
+      "changed_helper_functions": [
+        "drag"
+      ],
+      "original_method_hashes": {
+        "testLightAppearanceAndContrastJourney": "0e30e020d39ce627d69cbc1a3b483706108a90787b159002d7e490fac2c7ed2d",
+        "testDarkAppearanceAndContrastJourney": "9b041b5c9a9a89af24fec57b1b4be721ea595a26d3b1e505c41d43ea08d2fc51",
+        "testMaximumTextReachabilityAndFocusedSampleReplacement": "b418b71384ed24f8291fce07d62ad8e9beba7a3e1a07a353e7a1445ef9baf4cb"
+      }
+    }
+  ],
+  "git_diff_check_exit": 0,
+  "pure_geometry_tests": 8,
+  "source_composition_checks": 92,
+  "geometry_test_log_sha256": "1c57aa3e61804cbc60890aee071d688537664ea149009efe2e63c53cfc5b76fa",
+  "composition_report_sha256": "e8079192fdef5eb626241429aa2d736f68e3575eea7cd0f84fba6f9dcea96cfa",
+  "native_tests": "NOT_RUN",
+  "native_preparer": "WRITTEN_NOT_EXECUTED",
+  "commit": "NOT_CREATED",
+  "push": "NOT_INVOKED"
+}

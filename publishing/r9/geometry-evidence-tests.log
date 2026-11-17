@@ -1,0 +1,13 @@
+test_actual_r6b_heading_distance_needs_more_than_four_and_clipped_finish_is_rejected (__main__.GeometryEvidence.test_actual_r6b_heading_distance_needs_more_than_four_and_clipped_finish_is_rejected) ... ok
+test_complete_read_must_still_restore_actual_523_point_audit_rewind (__main__.GeometryEvidence.test_complete_read_must_still_restore_actual_523_point_audit_rewind) ... ok
+test_complete_synthetic_evidence_passes_and_bilingual_logic_matches (__main__.GeometryEvidence.test_complete_synthetic_evidence_passes_and_bilingual_logic_matches) ... ok
+test_no_gap_and_no_fabricated_interval_or_recovery_binding (__main__.GeometryEvidence.test_no_gap_and_no_fabricated_interval_or_recovery_binding) ... ok
+test_original_r8_arabic_editor_indicator_requires_the_other_gutter (__main__.GeometryEvidence.test_original_r8_arabic_editor_indicator_requires_the_other_gutter) ... ok
+test_original_r8_english_link_activation_geometry_has_a_separate_safe_band (__main__.GeometryEvidence.test_original_r8_english_link_activation_geometry_has_a_separate_safe_band) ... ok
+test_original_seven_point_link_clip_and_missing_link_audit_are_rejected (__main__.GeometryEvidence.test_original_seven_point_link_clip_and_missing_link_audit_are_rejected) ... ok
+test_short_safe_travel_is_explicit_and_cannot_claim_the_full_request (__main__.GeometryEvidence.test_short_safe_travel_is_explicit_and_cannot_claim_the_full_request) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.029s
+
+OK

@@ -473,33 +473,105 @@ final class HalalTagAppearanceUITests: XCTestCase {
                   "Measured operation budget exhausted: " + key)
         let visible = try viewport(scroll, sheet: sheet)
         let before = anchor.frame
-        let contentFrames = (scroll.staticTexts.allElementsBoundByIndex +
-                             scroll.buttons.allElementsBoundByIndex +
-                             scroll.links.allElementsBoundByIndex +
-                             scroll.textViews.allElementsBoundByIndex).map(\.frame)
-            .filter { $0.width > 0 && $0.height > 0 && $0.intersects(visible) }
-        try check(!contentFrames.isEmpty, "No measured content margin for gesture: " + key)
-        let gutterLeft = visible.minX + 2
-        let gutterRight = (contentFrames.map(\.minX).min() ?? visible.minX) - 2
-        try check(gutterRight - gutterLeft >= 4, "No safe measured left gutter: " + key)
-        let x = (gutterLeft + gutterRight) / 2
-        let travel = min(visible.height * 0.56, max(12, requestedTravel))
-        let startY = direction < 0 ? visible.minY + visible.height * 0.78 : visible.minY + visible.height * 0.22
-        let endY = startY + CGFloat(direction) * travel
-        let route = CGRect(x: x - 2, y: min(startY, endY), width: 4, height: travel)
+        let buttonFrames = app.buttons.allElementsBoundByIndex.map(\.frame)
+            .filter { $0.width > 0 && $0.height > 0 }
+        let linkFrames = app.links.allElementsBoundByIndex.map(\.frame)
+            .filter { $0.width > 0 && $0.height > 0 }
         let editorFrames = scroll.textViews.allElementsBoundByIndex.map(\.frame)
             .filter { $0.width > 0 && $0.height > 0 }
         let indicatorFrames = scroll.descendants(matching: .any)
             .matching(NSPredicate(format: "label CONTAINS[c] %@", "scroll bar"))
             .allElementsBoundByIndex.map(\.frame)
             .filter { $0.width > 0 && $0.height > 0 }
-        try check(visible.contains(route) && !editorFrames.contains { $0.intersects(route) } &&
-                  !indicatorFrames.contains { $0.intersects(route) },
-                  "Measured drag route intersects an editor or native scroll indicator: " + key)
-        try attachJSON("Appearance measured drag route", ["key": key, "direction": direction,
-            "budget_id": budget, "route": rect(route), "gutter_left": Double(gutterLeft),
-            "gutter_right": Double(gutterRight), "editor_frames": editorFrames.map { rect($0) },
-            "indicator_frames": indicatorFrames.map { rect($0) }])
+        let contentFrames = (scroll.staticTexts.allElementsBoundByIndex.map(\.frame) +
+                             buttonFrames + linkFrames + editorFrames)
+            .filter { $0.width > 0 && $0.height > 0 && $0.intersects(visible) }
+        try check(!contentFrames.isEmpty, "No measured content margin for gesture: " + key)
+
+        // R8 activated a real Link from a point 9pt outside its AX text frame.
+        // Native buttons already expose the control bounds: retain the measured
+        // 2pt edge clearance and use a larger 24pt exclusion around every Link.
+        // These are guarded route margins, not a claim to know UIKit hit regions.
+        let buttonClearance: CGFloat = 2
+        let linkClearance: CGFloat = 24
+        let interactiveObstacles: [[String: Any]] =
+            buttonFrames.map { ["kind": "button", "frame": rect($0),
+                "clearance": Double(buttonClearance),
+                "excluded_frame": rect($0.insetBy(dx: -buttonClearance, dy: -buttonClearance))] } +
+            linkFrames.map { ["kind": "link", "frame": rect($0),
+                "clearance": Double(linkClearance),
+                "excluded_frame": rect($0.insetBy(dx: -linkClearance, dy: -linkClearance))] }
+        let excludedFrames = editorFrames + indicatorFrames +
+            buttonFrames.map { $0.insetBy(dx: -buttonClearance, dy: -buttonClearance) } +
+            linkFrames.map { $0.insetBy(dx: -linkClearance, dy: -linkClearance) }
+        let plannedTravel = min(visible.height * 0.56, max(12, requestedTravel))
+        let margins: [(side: String, left: CGFloat, right: CGFloat)] = [
+            ("left", visible.minX + 2, (contentFrames.map(\.minX).min() ?? visible.minX) - 2),
+            ("right", (contentFrames.map(\.maxX).max() ?? visible.maxX) + 2, visible.maxX - 2)
+        ]
+        var gutterEvidence: [[String: Any]] = []
+        var choices: [(side: String, band: CGRect, travel: CGFloat, route: CGRect)] = []
+        for margin in margins {
+            var bands: [CGRect] = []
+            let eligible = margin.right - margin.left >= 4
+            if eligible {
+                let x = (margin.left + margin.right) / 2
+                let column = CGRect(x: x - 2, y: visible.minY, width: 4, height: visible.height)
+                let blocked = excludedFrames.filter { $0.intersects(column) }
+                    .map { (low: max(visible.minY, $0.minY), high: min(visible.maxY, $0.maxY)) }
+                    .sorted { $0.low == $1.low ? $0.high < $1.high : $0.low < $1.low }
+                var cursor = visible.minY
+                func appendBand(_ low: CGFloat, _ high: CGFloat) {
+                    // Keep a real 2pt vertical clearance from every blocking
+                    // boundary, including the viewport edges.
+                    if high - low > 4 {
+                        bands.append(CGRect(x: column.minX, y: low + 2, width: 4, height: high - low - 4))
+                    }
+                }
+                for block in blocked {
+                    if block.low > cursor { appendBand(cursor, block.low) }
+                    cursor = max(cursor, block.high)
+                }
+                if cursor < visible.maxY { appendBand(cursor, visible.maxY) }
+                for band in bands where band.height >= 12 {
+                    let travel = min(plannedTravel, band.height)
+                    let route = CGRect(x: band.minX, y: band.minY + (band.height - travel) / 2,
+                                       width: 4, height: travel)
+                    choices.append((margin.side, band, travel, route))
+                }
+            }
+            gutterEvidence.append(["side": margin.side, "left": Double(margin.left),
+                "right": Double(margin.right), "eligible": eligible,
+                "free_bands": bands.map { rect($0) }])
+        }
+        // Prefer the entire requested travel if either gutter can provide it.
+        // A genuinely shorter safe route still consumes one real gesture from
+        // the unchanged finite budget and must make actual directional progress.
+        choices.sort {
+            if $0.travel != $1.travel { return $0.travel > $1.travel }
+            if $0.band.height != $1.band.height { return $0.band.height > $1.band.height }
+            if $0.side != $1.side { return $0.side == "left" }
+            return $0.band.minY < $1.band.minY
+        }
+        try check(!choices.isEmpty, "Neither measured gutter has a safe 12pt route: " + key)
+        guard let chosen = choices.first else { return }
+        let route = chosen.route
+        let x = route.midX
+        let startY = direction < 0 ? route.maxY : route.minY
+        let endY = direction < 0 ? route.minY : route.maxY
+        try check(visible.contains(route) && !excludedFrames.contains { $0.intersects(route) },
+                  "Measured drag route intersects an action, editor or native scroll indicator: " + key)
+        let routeEvidence: [String: Any] = ["route_policy": "R9_BOTH_GUTTERS_WITH_MEASURED_ACTION_EXCLUSIONS",
+            "key": key, "direction": direction, "budget_id": budget, "route": rect(route),
+            "requested_travel": Double(plannedTravel), "selected_travel": Double(chosen.travel),
+            "selected_gutter": chosen.side, "selected_band": rect(chosen.band),
+            "start_point": ["x": Double(x), "y": Double(startY)],
+            "end_point": ["x": Double(x), "y": Double(endY)],
+            "content_frames": contentFrames.map { rect($0) },
+            "gutter_candidates": gutterEvidence, "interactive_obstacles": interactiveObstacles,
+            "editor_frames": editorFrames.map { rect($0) },
+            "indicator_frames": indicatorFrames.map { rect($0) }]
+        try attachJSON("Appearance measured drag route", routeEvidence)
         let origin = scroll.coordinate(withNormalizedOffset: .zero)
         let start = origin.withOffset(CGVector(dx: x - scroll.frame.minX, dy: startY - scroll.frame.minY))
         let end = origin.withOffset(CGVector(dx: x - scroll.frame.minX, dy: endY - scroll.frame.minY))
@@ -511,14 +583,11 @@ final class HalalTagAppearanceUITests: XCTestCase {
         }
         gestureCount += 1
         gestureBudgets[budget]["used"] = used + 1
-        let event: [String: Any] = ["index": gestureCount, "key": key, "direction": direction,
-            "budget_id": budget, "budget_step": used + 1, "kind": gestureBudgets[budget]["kind"]!,
+        var event = routeEvidence
+        event.merge(["index": gestureCount, "budget_step": used + 1, "kind": gestureBudgets[budget]["kind"]!,
             "before": rect(before), "after": rect(anchor.frame), "viewport": rect(visible),
-            "requested_travel": Double(travel), "route": rect(route),
-            "editor_frames": editorFrames.map { rect($0) },
-            "indicator_frames": indicatorFrames.map { rect($0) },
             "before_capture_index": beforeCapture,
-            "after_capture_index": captureIndex + 1]
+            "after_capture_index": captureIndex + 1]) { _, new in new }
         gestures.append(event)
         try attachJSON("Appearance measured gesture", event)
         try capture("after-gesture")
@@ -649,7 +718,7 @@ struct QAInstallation: Decodable {
               usableReference(manifest.destinationEvidenceReference) else {
             throw PreparationFailure.blocked("QA launch refused: exact synthetic artifact, installation and destination evidence are required.")
         }
-        guard manifest.contentViewSHA256 == "b61194e8c199ce03d4950c39fa6a42f27fca061a11e7b99bb2da753c19c2fbec",
+        guard manifest.contentViewSHA256 == "a694d60e5cde54e96ae497b5e04803cec11700206e6630b6346bc43c8b9163dc",
               manifest.ingredientScreeningSHA256 == "fc8aab56d0fbdf7682cc77bf74a0a1811c813e93447b6985379f24c122e4167a",
               manifest.screeningLocalizationSHA256 == "097a18920ff95fda968c6cee1591360b50b0c077673bf40cb6c0970e8aa8be70",
               manifest.privacyManifestSHA256 == "a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12" else {

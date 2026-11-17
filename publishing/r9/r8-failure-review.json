@@ -1,0 +1,326 @@
+{
+  "status": "FAILED_NATIVE_R8; R9_SOURCE_REPAIR_NOT_NATIVE_TESTED",
+  "source_commit": "f2cd50817dbb0918e8ce85c6e47d31b337a6e25c",
+  "report": {
+    "report_path": "/Users/saleh/Library/Caches/HalalTag-ProductionCompositionR8-NativeQA/20261117T183904Z-97763-72dad329c7/report.json",
+    "report_sha256": "cb006176effe677f66796eb37ef0926d060df4e100dee25d0e128d2e740125f9",
+    "run_id": "72dad329c7e84a35a491ca4a5383bf74",
+    "started_at": "2026-11-17T18:39:04.492241+00:00",
+    "finished_at": "2026-11-17T19:14:41.978979+00:00",
+    "exit_code": 1,
+    "cleanup_complete": true,
+    "cleanup_safe": null,
+    "lock": "released",
+    "cases": [
+      {
+        "name": "en-dark-large-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:40:53.557097+00:00",
+        "finished_at": "2026-11-17T18:43:45.492203+00:00"
+      },
+      {
+        "name": "en-light-large-execute-original-method",
+        "status": "failed",
+        "returncode": 65,
+        "started_at": "2026-11-17T18:43:49.084106+00:00",
+        "finished_at": "2026-11-17T18:45:58.351898+00:00"
+      },
+      {
+        "name": "en-light-accessibility5-execute-original-method",
+        "status": "failed",
+        "returncode": 65,
+        "started_at": "2026-11-17T18:46:03.065151+00:00",
+        "finished_at": "2026-11-17T18:54:01.655104+00:00"
+      },
+      {
+        "name": "functional-01-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:54:06.455776+00:00",
+        "finished_at": "2026-11-17T18:54:16.407950+00:00"
+      },
+      {
+        "name": "functional-02-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:54:19.377407+00:00",
+        "finished_at": "2026-11-17T18:54:30.739943+00:00"
+      },
+      {
+        "name": "functional-03-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:54:33.754605+00:00",
+        "finished_at": "2026-11-17T18:54:47.177189+00:00"
+      },
+      {
+        "name": "functional-04-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:54:50.188445+00:00",
+        "finished_at": "2026-11-17T18:55:01.772356+00:00"
+      },
+      {
+        "name": "functional-05-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:55:04.771646+00:00",
+        "finished_at": "2026-11-17T18:55:17.373155+00:00"
+      },
+      {
+        "name": "functional-06-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:55:20.386017+00:00",
+        "finished_at": "2026-11-17T18:55:33.587024+00:00"
+      },
+      {
+        "name": "functional-07-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:55:36.603549+00:00",
+        "finished_at": "2026-11-17T18:55:51.862216+00:00"
+      },
+      {
+        "name": "functional-08-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:55:54.967263+00:00",
+        "finished_at": "2026-11-17T18:56:08.385797+00:00"
+      },
+      {
+        "name": "functional-09-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:56:11.452458+00:00",
+        "finished_at": "2026-11-17T18:56:31.142189+00:00"
+      },
+      {
+        "name": "functional-10-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:56:34.966739+00:00",
+        "finished_at": "2026-11-17T18:56:51.044179+00:00"
+      },
+      {
+        "name": "ar-dark-large-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T18:56:54.140369+00:00",
+        "finished_at": "2026-11-17T18:59:09.015763+00:00"
+      },
+      {
+        "name": "ar-light-large-execute-original-method",
+        "status": "failed",
+        "returncode": 65,
+        "started_at": "2026-11-17T18:59:12.309802+00:00",
+        "finished_at": "2026-11-17T19:00:58.847657+00:00"
+      },
+      {
+        "name": "ar-light-accessibility5-execute-original-method",
+        "status": "failed",
+        "returncode": 65,
+        "started_at": "2026-11-17T19:01:02.142521+00:00",
+        "finished_at": "2026-11-17T19:11:24.695268+00:00"
+      },
+      {
+        "name": "state-draft-retention-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T19:11:31.249328+00:00",
+        "finished_at": "2026-11-17T19:12:30.404590+00:00"
+      },
+      {
+        "name": "state-result-retention-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T19:12:33.513961+00:00",
+        "finished_at": "2026-11-17T19:13:40.320154+00:00"
+      },
+      {
+        "name": "state-language-relaunch-execute-original-method",
+        "status": "passed",
+        "returncode": 0,
+        "started_at": "2026-11-17T19:13:43.476536+00:00",
+        "finished_at": "2026-11-17T19:14:37.737485+00:00"
+      }
+    ],
+    "cleanup": {
+      "appearance_cleanup": {
+        "actual_readback": "light",
+        "device_id": "58639E52-7C7F-4E0F-B84D-E3B314B1E608",
+        "original": "light",
+        "other_devices_touched": false,
+        "restored_exactly": true
+      },
+      "content_size_cleanup": {
+        "actual_readback": "large",
+        "device_id": "58639E52-7C7F-4E0F-B84D-E3B314B1E608",
+        "original": "large",
+        "other_devices_touched": false,
+        "restored_exactly": true
+      },
+      "simulator_cleanup": {
+        "deleted": false,
+        "other_devices_touched": false,
+        "shutdown_verified": true,
+        "udid": "58639E52-7C7F-4E0F-B84D-E3B314B1E608"
+      },
+      "source_shared_handoff_required_for_this_isolated_run": false
+    },
+    "source_state": {
+      "shared_source_edited": false,
+      "prepared_source_unchanged": null,
+      "prepared_input": "/Users/saleh/Library/Caches/Publishing-Continuation-20261117-d597fc87411f/HalalTag/Production-Composition-R8-d57f4cd77813/preparation/Source",
+      "sealed_index_sha256": "241979e9ebe2d52be61dd4abb1060ad1f4d7f0fdbe85e3840d18c176391416be"
+    },
+    "native_ui_result": "FAILED_OR_EVIDENCE_INCOMPLETE",
+    "observed_at_utc": "2026-11-17T19:17:02.640814+00:00"
+  },
+  "model": {
+    "status": "PASS",
+    "checks": 211,
+    "required_boundary_labels_each_once": 9,
+    "receipt_sha256": "bb344c6fbad4ebf640b6eb668cefaaf52070fdad863d9a1258cc31884b4ef553"
+  },
+  "passed": 15,
+  "failed": 4,
+  "images": [
+    {
+      "case": "en-light-large",
+      "name": "FE52B1B8-E147-4AA2-876F-DCAAF8316768.png",
+      "bytes": 129717,
+      "sha256": "108964b1675614c90898fdae0f3d3e14558f4cccf235da571a62794347a4ce79",
+      "role": "original pre-audit; links fully visible"
+    },
+    {
+      "case": "en-light-large",
+      "name": "4BFEB141-8900-402B-8D18-2E8B36BA3AE3.png",
+      "bytes": 148500,
+      "sha256": "faa0158ed7eeb528ff3ece6b9347d5bb5eef36d368f1bef744848afa3b44d750",
+      "role": "original audit full screen; viewport shifted"
+    },
+    {
+      "case": "en-light-large",
+      "name": "93CCE1BA-B204-4A34-8D09-D381D54CFF95.png",
+      "bytes": 3746,
+      "sha256": "d18ad9be6d082dc98ebd93c0e08be7782fe71ad4820865114e4feda63633f7fd",
+      "role": "original audit crop; Done overlay, not link glyphs"
+    },
+    {
+      "case": "en-light-accessibility5",
+      "name": "EFC26D78-C760-4AFD-BBA0-FA3A3CF7B525.png",
+      "bytes": 98219,
+      "sha256": "8c5fc64415886506ac7845bead20141af0a0e7c86f3f17b9f4e475822fef51bb",
+      "role": "original before gesture202"
+    },
+    {
+      "case": "en-light-accessibility5",
+      "name": "4E805A10-95BA-4624-9748-045F5ED6E841.png",
+      "bytes": 223176,
+      "sha256": "91c0508837d71264213f078594f0983f1bca8de3aa727bb6e72ee2489d6ee479",
+      "role": "original after gesture203; external navigation transition"
+    },
+    {
+      "case": "en-light-accessibility5",
+      "name": "82606CB7-D389-4DCB-AF3E-D54FDE7EEF34.png",
+      "bytes": 54995,
+      "sha256": "274a9c1caeb0ab0d5dde48624a59745183f1d7ff6a5b3190f589e4536ad71a4b",
+      "role": "original failure204; external view and HalalTag return breadcrumb"
+    },
+    {
+      "case": "ar-light-large",
+      "name": "FC35F1F6-8930-4DB5-9690-5C0C5329CBF4.png",
+      "bytes": 153528,
+      "sha256": "193d59d827aeac0b856d1772d9c3337c49423a9be22a1e4946e7b9ba9479416c",
+      "role": "original pre-audit; Arabic label alignment and links"
+    },
+    {
+      "case": "ar-light-large",
+      "name": "9146C314-C944-40D4-B488-6925FF83EFAD.png",
+      "bytes": 171037,
+      "sha256": "5c61f2d8530bf677d2378d5e3f423982638eef7271e41ac6733bb29b273ffa3a",
+      "role": "original audit full screen"
+    },
+    {
+      "case": "ar-light-large",
+      "name": "AB5FD583-AFA6-449E-B89A-1E3CAE032251.png",
+      "bytes": 2654,
+      "sha256": "7c7ab29e80f49c10adbc6873a5496b2cc07548a672361871c70d8e1940e56e81",
+      "role": "original audit crop; Arabic Done overlay"
+    },
+    {
+      "case": "ar-light-accessibility5",
+      "name": "B2B6F7DF-94C9-4D1F-9090-115D97A87555.png",
+      "bytes": 97998,
+      "sha256": "fac6c1ae3d01ee09f4a38d9b8a09ff0b155935fd2f21d576a5762a2edbe1d67b",
+      "role": "original focused before sample253; editor reachable"
+    },
+    {
+      "case": "ar-light-accessibility5",
+      "name": "F311851F-7145-4914-AF41-57F9B3995BEC.png",
+      "bytes": 97745,
+      "sha256": "0af78ca7aae0a1c82cab3e51d2d6a01a1d564fa74d0dbb1f8e2857590d098713",
+      "role": "original failure254; left-gutter safety assertion"
+    }
+  ],
+  "screening": {
+    "original_images_actually_visually_reviewed": 11,
+    "synthetic_QA_data": true,
+    "known_private_contact_or_credentials": false,
+    "no_image_transformations": true,
+    "claim_limit": "Visual/context screening is not a universal guarantee against every possible secret."
+  },
+  "findings": [
+    {
+      "id": "R8-EN-LIGHT-LINK",
+      "case": "en-light-large",
+      "actual": "Unfiltered contrast audit failed on privacy Link; pre-audit link is fully exposed; original audit crop shows Done after viewport displacement.",
+      "independent_evidence": "Original pre-audit sRGB link glyph RGB(0,136,255), white surface,2691 solid glyph pixels,3.5201447456958013:1;17pt regular body inferred from source/default,not measured runtime font.",
+      "approved_repair": "Semantic primary foreground on both existing underlined Link labels; exact URLs/44pt/semantics retained.",
+      "uncertainty": "Audit crop does not itself establish a link tint measurement or independent product scroll defect; same real audit must pass."
+    },
+    {
+      "id": "R8-AR-LIGHT-ALIGNMENT",
+      "case": "ar-light-large",
+      "actual": "Same Link contrast failure/Done crop. Real UILabel heading/body endings visibly align left in Arabic; source .natural did not follow selected UI language.",
+      "approved_repair": "Explicit .right/.left in two existing UILabel updateUIView methods only; real text/type/AX/RTL/sizing retained.",
+      "uncertainty": "Native Arabic normal/AX5 screenshots must verify result."
+    },
+    {
+      "id": "R8-EN-AX5-NAVIGATION",
+      "case": "en-light-accessibility5",
+      "actual": "A real drag starting9pt outside privacyLink AX text frame opened external navigation; original images show app transition and return breadcrumb. Full-window guard correctly failed.",
+      "approved_repair": "Measure both gutters and exclude expanded interactive action regions; preserve full-window/audit and complete reading checks.",
+      "uncertainty": "24pt Link exclusion is a guarded evidence-based margin,not proof of the undocumented UIKit hit region."
+    },
+    {
+      "id": "R8-AR-AX5-INDICATOR",
+      "case": "ar-light-accessibility5",
+      "actual": "Safety assertion failed before gesture because left gutter intersects nested editor scroll indicator x16..46. Right gutter is clear. Original image shows editor and keyboard reachable after Clear.",
+      "approved_repair": "Choose among both measured safe gutters; keep editor/indicator exclusions,finite budgets,exact focused-sample assertions.",
+      "uncertainty": "The original case did not complete; source calculation is not native acceptance."
+    }
+  ],
+  "references": [
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/accessibility.md",
+      "used_for": "Current text contrast and accessible-color guidance"
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/typography.md",
+      "used_for": "Default body17pt regular; size here remains source/default inference"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG21/Techniques/general/G18",
+      "used_for": "sRGB relative luminance calculation"
+    }
+  ],
+  "clock": {
+    "original_deadline_utc": "2026-11-17T22:26:12Z",
+    "explicit_user_extension_hours": 24,
+    "extended_deadline_utc": "2026-11-18T22:26:12Z",
+    "budget_restarted": false
+  }
+}

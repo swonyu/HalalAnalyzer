@@ -327,6 +327,7 @@ private struct NativeScreeningMatchText: UIViewRepresentable {
 
     func updateUIView(_ label: UILabel, context: Context) {
         label.text = text
+        label.textAlignment = language.isRightToLeft ? .right : .left
         label.backgroundColor = surfaceColor
         let baseFont = UIFont.preferredFont(forTextStyle: textStyle,
                                             compatibleWith: label.traitCollection)
@@ -382,6 +383,7 @@ private struct NativeScreeningHeading: UIViewRepresentable {
 
     func updateUIView(_ label: UILabel, context: Context) {
         label.text = text
+        label.textAlignment = language.isRightToLeft ? .right : .left
         label.backgroundColor = surfaceColor
         let baseFont = UIFont.preferredFont(forTextStyle: textStyle,
                                             compatibleWith: label.traitCollection)
@@ -651,6 +653,7 @@ private struct ScreeningInformationView: View {
                 Link(destination: privacyURL) {
                     Text(copy(.onlinePrivacy))
                         .underline()
+                        .foregroundStyle(.primary)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(minHeight: 44, alignment: .leading)
                 }
@@ -661,6 +664,7 @@ private struct ScreeningInformationView: View {
                 Link(destination: supportURL) {
                     Text(copy(.onlineSupport))
                         .underline()
+                        .foregroundStyle(.primary)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(minHeight: 44, alignment: .leading)
                 }

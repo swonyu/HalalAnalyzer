@@ -8,11 +8,11 @@ APP='HalalAnalyzer حلال ام حرام؟'
 QA=ROOT/'Tests/NativeQA'
 EVIDENCE=ROOT/'Tests/Evidence'
 EXPECTED_PRODUCT={
- 'ContentView.swift':'b61194e8c199ce03d4950c39fa6a42f27fca061a11e7b99bb2da753c19c2fbec',
+ 'ContentView.swift':'a694d60e5cde54e96ae497b5e04803cec11700206e6630b6346bc43c8b9163dc',
  'IngredientScreening.swift':'fc8aab56d0fbdf7682cc77bf74a0a1811c813e93447b6985379f24c122e4167a',
  'ScreeningLocalization.swift':'097a18920ff95fda968c6cee1591360b50b0c077673bf40cb6c0970e8aa8be70',
  'PrivacyInfo.xcprivacy':'a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12'}
-QAID='com.saleh.halaltag.productioncomposition.qa.r20261117r8'
+QAID='com.saleh.halaltag.productioncomposition.qa.r20261117r9'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def method_bodies(text):
     # These fixed fixtures have no multiline Swift strings. Ignore quoted strings
@@ -108,7 +108,7 @@ def main():
         if name == 'HalalTagPreparedUITests.swift':
             previous_content_pin = "0e325df994491b1d1daf60eb69d4bf5d2186867717ba71c901dc4e18fb325099"
             check(old.count(previous_content_pin) == 1 and new.count(EXPECTED_PRODUCT['ContentView.swift']) == 1,
-                  'only the explicit reviewed R8 ContentView binding changes in the shared QA guard')
+                  'only the explicit reviewed R9 ContentView binding changes in the shared QA guard')
             old = old.replace(previous_content_pin, EXPECTED_PRODUCT['ContentView.swift'])
             previous_localization_pin = "7311a8c17857ed07161bac107911670c0edfdec5b8169fb8e08cb85739a92e4e"
             check(old.count(previous_localization_pin) == 1 and new.count(EXPECTED_PRODUCT['ScreeningLocalization.swift']) == 1,
@@ -247,7 +247,7 @@ def main():
     for key,name in [('contentViewSHA256','ContentView.swift'),('ingredientScreeningSHA256','IngredientScreening.swift'),('screeningLocalizationSHA256','ScreeningLocalization.swift'),('privacyManifestSHA256','PrivacyInfo.xcprivacy')]:
         check(manifest[key]==EXPECTED_PRODUCT[name],'test guard binds exact production file '+name)
     plan=json.loads((QA/'nineteen-case-plan.json').read_text());cases=plan['cases']
-    check(plan['scope']=='halaltag-production-composition-nineteen-journeys-r8' and plan['case_count']==len(cases)==19,
+    check(plan['scope']=='halaltag-production-composition-nineteen-journeys-r9' and plan['case_count']==len(cases)==19,
           'distinct nineteen-case scope, not the nine-case acknowledgment')
     check(len({c['execution_id'] for c in cases})==19 and len({(c['test_class'],c['method']) for c in cases})==19,
           'nineteen unique execution paths and selectors')

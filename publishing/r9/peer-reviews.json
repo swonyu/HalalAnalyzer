@@ -1,0 +1,28 @@
+{
+  "record_kind": "Transcribed peer dispositions from collaboration messages; reviewers performed file-only inspection",
+  "product": {
+    "reviewer": "lumina_recovery",
+    "content_sha256": "a694d60e5cde54e96ae497b5e04803cec11700206e6630b6346bc43c8b9163dc",
+    "finding": "No blocking source issue in the four insertions. Native text/font/Dynamic Type/RTL/sizing/AX and Link semantics/URLs/44pt/wrapping/hints retained.",
+    "native_verified": false
+  },
+  "drag": {
+    "reviewer": "github_recovery",
+    "english_sha256": "334cd81ad14739c78257cde44d69c3d85987d50a52c034dbc5f41709d58c439c",
+    "arabic_sha256": "c48ba3e57194ff29fb0cfaaa57f2de00333a7442a2d5891709bf8119acf3959b",
+    "finding": "No concrete Swift typing/control-flow defect. Both130-line drag bodies byte-identical; monotonic interval subtraction, both gutters, full-travel preference, containment/exclusion and one actual gesture retained.",
+    "limit": "Shorter safe routes can still exhaust unchanged budgets; no UIKit hit-region guarantee.",
+    "native_verified": false
+  },
+  "guard": {
+    "reviewer": "github_recovery",
+    "english_sha256": "0368d6d8624bd821393c8320f8b7b6c872947ba6bc1edb4731df85176295efc5",
+    "arabic_sha256": "a88936f27ff169617ba87fd8ec4a0a7cd82d283e89782bd4fd737b6596299268",
+    "finding": "No blocking source issue. Independently reconstructs both gutters, obstacle unions/expansions,2pt trims,longest travel/ties,centered route and directional endpoints; caller retains anchor progress,size,capture and budget-chain guards.",
+    "limit": "Evidence consistency only; not proof of complete AX inventory or actual UIKit hit-region margins.",
+    "native_verified": false
+  },
+  "root_review": "PENDING",
+  "commit": "NOT_CREATED",
+  "recorded_utc": "2026-11-17T19:45:14.656907+00:00"
+}
