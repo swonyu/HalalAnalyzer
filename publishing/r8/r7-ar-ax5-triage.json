@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "source_commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+  "native_run_id": "7dd1ee578a6f455ca5969805f198602f",
+  "case_id": "ar-light-accessibility5",
+  "original_failure": "Missing control needs investigation: focused-sample-editor",
+  "test_line": 606,
+  "observed_behavior": "After privacy closes and Clear removes the result, the actual main scroll viewport is blank. Only the navigation bar and disabled Clear button remain visible.",
+  "original_png": "B09E6792-2F2F-4D6B-8747-3874CA0EFC0E.png",
+  "original_ax": "E15E9169-CA30-4AFF-A836-1322883CF70B.txt",
+  "geometry": {
+    "window": {
+      "x": 0,
+      "y": 0,
+      "width": 375,
+      "height": 667
+    },
+    "scroll": {
+      "x": 0,
+      "y": 75,
+      "width": 375,
+      "height": 488.5
+    },
+    "content": {
+      "x": 0,
+      "y": -2349,
+      "width": 375,
+      "height": 2020
+    },
+    "editor": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "outer_scroll_indicator": "100%"
+  },
+  "timeline_test_seconds": {
+    "tap_privacy_done": 607.66,
+    "privacy_dismissed_and_pork_result_preserved": 608.38,
+    "tap_clear": 608.59,
+    "empty_input_and_result_absence_verified": 608.92,
+    "missing_editor_positive_frame_detected": 609.37,
+    "failure_screenshot": 609.42
+  },
+  "evidence_conclusion": "A real post-Clear reachability defect is present in the actual screenshot; it is not resolved by relaxing the test query. The retained deep scroll offset after the evidence is removed is the supported source/layout hypothesis.",
+  "source_cause": "The Clear action only calls session.clear(). The result-change handler clears readingAnchor, but scrolls only when ingredientEditorFocused; the observed case is unfocused.",
+  "repair_proposal": "For explicit Clear only, cancel stale screen reveal, dismiss focus, clear reading anchor/session, and after the shorter layout exists scroll to the actual surviving input. Guard the request and unchanged empty/unfocused state; retain all original assertions and helper geometry.",
+  "status": "NATIVE_FAILURE_PRESERVED; proposed R8 has not run",
+  "material_not_in_packet": [
+    "Full original253-frame Arabic case/xcresult remains on Mac; this selected failure packet includes the original fatal screenshot, AX, geometry and complete stdout, not every capture."
+  ]
+}

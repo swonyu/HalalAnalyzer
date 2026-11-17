@@ -649,7 +649,7 @@ struct QAInstallation: Decodable {
               usableReference(manifest.destinationEvidenceReference) else {
             throw PreparationFailure.blocked("QA launch refused: exact synthetic artifact, installation and destination evidence are required.")
         }
-        guard manifest.contentViewSHA256 == "06b6d75101b40eb4b99b9b59c1de876e54b6df85f772b3ed633f7fcf1a83a2fc",
+        guard manifest.contentViewSHA256 == "b61194e8c199ce03d4950c39fa6a42f27fca061a11e7b99bb2da753c19c2fbec",
               manifest.ingredientScreeningSHA256 == "fc8aab56d0fbdf7682cc77bf74a0a1811c813e93447b6985379f24c122e4167a",
               manifest.screeningLocalizationSHA256 == "097a18920ff95fda968c6cee1591360b50b0c077673bf40cb6c0970e8aa8be70",
               manifest.privacyManifestSHA256 == "a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12" else {

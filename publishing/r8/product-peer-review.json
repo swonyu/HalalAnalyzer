@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "reviewed_at_utc": "2026-11-17T17:45:54.238674+00:00",
+  "reviewer": "/root/lumina_recovery",
+  "status": "NO_REMAINING_PRODUCT_SOURCE_BLOCKER_FOUND_NATIVE_ACCEPTANCE_PENDING",
+  "candidate_path": "/workspace/scratch/d57f4cd77813/halaltag-r8-source",
+  "candidate_parent": "19256d4001b86363297f4a71f97b64f797b2933a",
+  "product_file": "HalalAnalyzer حلال ام حرام؟/ContentView.swift",
+  "product_sha256": "b61194e8c199ce03d4950c39fa6a42f27fca061a11e7b99bb2da753c19c2fbec",
+  "source_delta": "Two product-only changes: native UILabel rendering of exact entryScope copy, and explicit Clear-triggered guarded post-layout return to existing input anchor.",
+  "native_test_files": [
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift",
+      "byte_identical_at_review": true,
+      "sha256": "d5b353a69a4888c87b6ff18b75c02602379ef6081822a9dade9c93bded7ffaa8"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagArabicAppearanceUITests.swift",
+      "byte_identical_at_review": true,
+      "sha256": "5a6ed862fb3608398703b392f979d628aa306bb15f9192222548e04eb986ee11"
+    }
+  ],
+  "original_images_independently_viewed": [
+    {
+      "path": "/workspace/scratch/d57f4cd77813/halaltag-r7-triage/en-light-accessibility5/B96E5179-A250-4F01-9EE7-3E596FFB7839.png",
+      "bytes": 108429,
+      "sha256": "a0ce3c9417c2e9fd7faa10c3a350fc360b56fd7bffb67263b7638362bb68ddf0",
+      "visually_opened_original": true
+    },
+    {
+      "path": "/workspace/scratch/d57f4cd77813/halaltag-r7-triage/en-light-accessibility5/E9F21421-E340-4CA0-9AAD-5F8E34D24C57.png",
+      "bytes": 77844,
+      "sha256": "64fa4611977532268483692593f8093366c757de7eb46d3b037428fa0aa86d32",
+      "visually_opened_original": true
+    },
+    {
+      "path": "/workspace/scratch/d57f4cd77813/halaltag-r7-triage/en-light-accessibility5/5855D7BF-5045-455A-B0D2-025E02BA2B7C.png",
+      "bytes": 90228,
+      "sha256": "21fbe75f5a02e621cd0d5fd223c32205adacf06eb08758c03d7a9cbbbb35f5e1",
+      "visually_opened_original": true
+    },
+    {
+      "path": "/workspace/scratch/d57f4cd77813/halaltag-r7-triage/ar-light-accessibility5/B09E6792-2F2F-4D6B-8747-3874CA0EFC0E.png",
+      "bytes": 43517,
+      "sha256": "e52566bc8aecc53870b1e65b88cde6e438150bbeee0fe014934caff1838a5e31",
+      "visually_opened_original": true
+    }
+  ],
+  "english_evidence": {
+    "paragraph_height_points": 575,
+    "guarded_viewport_height_points": 479,
+    "finding": "Original node crop includes fixed Clear and off-window padding. This does not establish a foreground/background color defect. Existing UILabel wrapper is a bounded real-rendering experiment, not an inferred native pass."
+  },
+  "arabic_evidence": {
+    "viewport_y": [
+      75,
+      563.5
+    ],
+    "remaining_content_y": [
+      -2349,
+      -329
+    ],
+    "editor_frame": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "finding": "After actual Clear, contracted content remained wholly above the viewport. Frozen Clear had no explicit scroll recovery when the editor was unfocused."
+  },
+  "review_points": [
+    "entryScope exact localized copy and .subheadline retained; existing UILabel provides natural alignment, explicit RTL semantic direction and accessibilityLanguage, Dynamic Type, wrapping and visible semantic label/systemGroupedBackground surface.",
+    "No hidden replacement, duplicate text, accessibility frame override, text shrink, audit filter, caught audit retry or test waiver introduced.",
+    "Clear resets focus, pending Screen reveal, reading anchor and session, then issues a new explicit event. Ordinary reading, edits and passive result changes do not issue this event.",
+    "The deferred handler verifies the same Clear request and empty/no-result state, now also verifies the editor has not regained focus, before scrolling the actual surviving input anchor.",
+    "Both native test files are byte-identical at this review; all existing helpers, top-level journeys and uncaught audits remain. A later exact-source SHA binding/QA identity update must be checked separately."
+  ],
+  "review_finding_closed": {
+    "issue": "A deferred Clear reveal could compete with newly acquired focus on an empty editor.",
+    "owner_fix": "Added !ingredientEditorFocused to the deferred action guard.",
+    "verified_in_exact_reviewed_source": true
+  },
+  "limits": [
+    "No Swift compile, test, simulator or native command executed by this reviewer.",
+    "Next-main-cycle layout/keyboard completion and tall native text audit behavior require the same native journeys to pass.",
+    "No claim of R8 release, full native pass or store acceptance."
+  ],
+  "actions": {
+    "read_only_owner_source": true,
+    "owner_files_modified": false,
+    "native_execution": false,
+    "mac_writes": false
+  }
+}

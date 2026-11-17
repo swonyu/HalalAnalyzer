@@ -9,6 +9,7 @@ struct ContentView: View {
     @State private var softwareKeyboardVisible = false
     @State private var pendingScreenReveal = false
     @State private var readingAnchor: ScreeningScrollAnchor?
+    @State private var clearRevealRequest = 0
 
     private let samples = [
         "Gelatin, sugar, natural flavors",
@@ -80,6 +81,16 @@ struct ContentView: View {
                             scroll.scrollTo(ScreeningScrollAnchor.screen, anchor: .bottom)
                         }
                     }
+                    .onChange(of: clearRevealRequest) { _, request in
+                        // Clear removes long evidence from the layout. Return to
+                        // the surviving input only for this explicit action, after
+                        // that shorter layout exists; ordinary reading never jumps.
+                        DispatchQueue.main.async {
+                            guard request == clearRevealRequest, !ingredientEditorFocused,
+                                  session.input.isEmpty, session.currentResult == nil else { return }
+                            scroll.scrollTo(ScreeningScrollAnchor.input, anchor: .top)
+                        }
+                    }
                 }
 
                 clearAction
@@ -111,7 +122,11 @@ struct ContentView: View {
     /// Dynamic Type font to grow beyond the navigation bar's constrained height.
     private var clearAction: some View {
         Button {
+            ingredientEditorFocused = false
+            pendingScreenReveal = false
+            readingAnchor = nil
             session.clear()
+            clearRevealRequest += 1
         } label: {
             Text(copy(.clear))
                 .font(.body)
@@ -136,9 +151,9 @@ struct ContentView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityAddTraits(.isHeader)
 
-            Text(copy(.entryScope))
-                .font(.subheadline)
-                .foregroundStyle(.primary)
+            NativeScreeningMatchText(text: copy(.entryScope), language: language,
+                                     textStyle: .subheadline,
+                                     surfaceColor: .systemGroupedBackground)
         }
     }
 

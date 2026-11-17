@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "source_commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+  "shipping_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "native_run_id": "7dd1ee578a6f455ca5969805f198602f",
+  "native_report_path": "/Users/saleh/Library/Caches/HalalTag-ProductionCompositionR7-NativeQA/20261117T170914Z-39588-7dd1ee578a/report.json",
+  "native_report_sha256": "afbffa6c2a9aba0cb6d6dd159cc33136fffdfdbef12722bd6fe2a39958d1dc74",
+  "started_at": "2026-11-17T17:09:14.673829+00:00",
+  "finished_at": "2026-11-17T17:35:58.571065+00:00",
+  "exit_code": 1,
+  "counts": {
+    "totalTestCount": 19,
+    "passedTests": 17,
+    "failedTests": 2,
+    "skippedTests": 0,
+    "expectedFailures": 0
+  },
+  "runtime_warnings": 0,
+  "model_checks": {
+    "status": "PASS",
+    "count": 211,
+    "receipt_sha256": "a82a3e4dd68bc0277de744bb361e7731e2376866149c4793492a8f35c103d0a3"
+  },
+  "cleanup": {
+    "complete": true,
+    "lock": "released",
+    "detail": "Exact own metadata removed and own lock directory released",
+    "appearance": {
+      "actual_readback": "light",
+      "device_id": "CE2F9D59-9408-4DEC-B8A5-82D4854574B1",
+      "original": "light",
+      "other_devices_touched": false,
+      "restored_exactly": true
+    },
+    "content_size": {
+      "actual_readback": "large",
+      "device_id": "CE2F9D59-9408-4DEC-B8A5-82D4854574B1",
+      "original": "large",
+      "other_devices_touched": false,
+      "restored_exactly": true
+    },
+    "simulator": {
+      "deleted": false,
+      "other_devices_touched": false,
+      "shutdown_verified": true,
+      "udid": "CE2F9D59-9408-4DEC-B8A5-82D4854574B1"
+    }
+  },
+  "cases": [
+    {
+      "case_id": "ar-dark-large",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "aeedc3359ac7ecc8653f4e5d799970cb172c61a3b2c6823becb2cbd4c666d475"
+    },
+    {
+      "case_id": "ar-light-accessibility5",
+      "result": "Failed",
+      "totalTestCount": 1,
+      "passedTests": 0,
+      "failedTests": 1,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [
+        {
+          "failureText": "failed - Missing control needs investigation: focused-sample-editor",
+          "targetName": "HalalTagQAUItests",
+          "testIdentifier": 1,
+          "testIdentifierString": "HalalTagArabicAppearanceUITests/testMaximumTextReachabilityAndFocusedSampleReplacement()",
+          "testIdentifierURL": "test://com.apple.xcode/HalalTagQA/HalalTagQAUItests/HalalTagArabicAppearanceUITests/testMaximumTextReachabilityAndFocusedSampleReplacement",
+          "testName": "testMaximumTextReachabilityAndFocusedSampleReplacement()"
+        }
+      ],
+      "original_summary_sha256": "282f048696949972547fd8cfcbb8258cce9f1b246453086a514c2725b32d3cfa"
+    },
+    {
+      "case_id": "ar-light-large",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "bdcab6cec1d8c1352333328de76b9c09b78dbcdb1b8b22a65a4275a97d5c53fc"
+    },
+    {
+      "case_id": "en-dark-large",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "98f78c8c80c08cebfd79ece3c76d7f198a8943a78bf3586db9fc26c0b5b97f6b"
+    },
+    {
+      "case_id": "en-light-accessibility5",
+      "result": "Failed",
+      "totalTestCount": 1,
+      "passedTests": 0,
+      "failedTests": 1,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [
+        {
+          "failureText": "Contrast failed",
+          "targetName": "HalalTagQAUItests",
+          "testIdentifier": 1,
+          "testIdentifierString": "HalalTagAppearanceUITests/testMaximumTextReachabilityAndFocusedSampleReplacement()",
+          "testIdentifierURL": "test://com.apple.xcode/HalalTagQA/HalalTagQAUItests/HalalTagAppearanceUITests/testMaximumTextReachabilityAndFocusedSampleReplacement",
+          "testName": "testMaximumTextReachabilityAndFocusedSampleReplacement()"
+        }
+      ],
+      "original_summary_sha256": "2f87a5135192cbfc4648e145d280869740d29a874beb3227dca41ec73c53435a"
+    },
+    {
+      "case_id": "en-light-large",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "ef5424e09289269e46f6a61b61fd3201e5ee4e2a986c8b52e1d3459e5ebd594d"
+    },
+    {
+      "case_id": "functional-01",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "b08ffe39995cb9162d0a1bad365648abb37c8482f85da49303c3bad26413ac6c"
+    },
+    {
+      "case_id": "functional-02",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "4f2d20193375747834fbfebe25c2876fc4d4ccb4e3af2316f99608d872ae365a"
+    },
+    {
+      "case_id": "functional-03",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "33fa58c9d76594650f389aed9d1d45838e34e1728ab90c2dd9d719c3ee9a3d32"
+    },
+    {
+      "case_id": "functional-04",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "474c0fd642b60b483a210b8561bcab5497eed7cd0cb2eae7171eb38b0cf1e5fe"
+    },
+    {
+      "case_id": "functional-05",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "f3e6a1be5175432141be7bbd415d3eb6f78b04131439d8ed1fe6d9716b1b6df5"
+    },
+    {
+      "case_id": "functional-06",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "4ba3289c19df11c45d21f1935516c0b480309394639459144990467653089a5d"
+    },
+    {
+      "case_id": "functional-07",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "30cab9f24affc5cf886b44b80a2af059faca941980aba187bc26dc57c7db0910"
+    },
+    {
+      "case_id": "functional-08",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "84f9d324973efa6f4c5b01d8e196fdedcc876c3d2ae81db2b56af68a8e0cca9f"
+    },
+    {
+      "case_id": "functional-09",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "f5645a6f4c462f6f7b6868316d926f7ca44d2bc5341f6324847034bea7e408a3"
+    },
+    {
+      "case_id": "functional-10",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "dc614817235349ac7d6e6062ab3929248b31269e1ba01dcadaaacf91ececd9ee"
+    },
+    {
+      "case_id": "state-draft-retention",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "2ac91fbd5175a476af650cda11c909368a4fcc2f9a1d5b398ec6223c482cf848"
+    },
+    {
+      "case_id": "state-language-relaunch",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "fdf6b37fd0276dbb2037a909b3f1caae593ae74e363ea129bef1f8e5903da47a"
+    },
+    {
+      "case_id": "state-result-retention",
+      "result": "Passed",
+      "totalTestCount": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "expectedFailures": 0,
+      "failures": [],
+      "original_summary_sha256": "7d97b57968b05569a9798c1e5408e5817c64b37e33f18485ef2d917e99280635"
+    }
+  ],
+  "acceptance": "FAILED:17/19 native UI and211 model checks passed; no production archive/sign/upload or store release acceptance",
+  "original_deadline_utc": "2026-11-17T22:26:12Z",
+  "explicit_user_extension_hours": 24,
+  "extended_deadline_utc": "2026-11-18T22:26:12Z"
+}

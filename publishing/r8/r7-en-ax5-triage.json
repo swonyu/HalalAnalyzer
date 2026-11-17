@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "app": "HalalTag",
+  "scope": "Completed R7 English accessibility5 case only; overall nineteen-case run still active at 2026-11-17T17:28:32Z observation.",
+  "source_commit": "156c5eeb60eb1e06cf369235ed33af265460a9cb",
+  "shipping_source_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "run_root": "/Users/saleh/Library/Caches/HalalTag-ProductionCompositionR7-NativeQA/20261117T170914Z-39588-7dd1ee578a",
+  "case": "en-light-accessibility5",
+  "test": "HalalTagAppearanceUITests/testMaximumTextReachabilityAndFocusedSampleReplacement()",
+  "execution": {
+    "started_at": "2026-11-17T17:14:09.013734+00:00",
+    "finished_at": "2026-11-17T17:14:57.346378+00:00",
+    "exit_code": 65,
+    "tests": 1,
+    "passed": 0,
+    "failed": 1,
+    "skipped": 0,
+    "runtime_warnings": [],
+    "failure": "Contrast failed",
+    "complete_issue": "Contrast failed for SwiftUI.AccessibilityNode",
+    "source_line": "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift:535"
+  },
+  "original_artifact_manifests": [
+    "en-light-accessibility5/original-files.json",
+    "en-light-accessibility5/timeline-original-files.json"
+  ],
+  "visual_inspection": {
+    "reviewer": "/root/halaltag_recovery",
+    "original_files_opened": [
+      "5855D7BF-5045-455A-B0D2-025E02BA2B7C.png",
+      "B96E5179-A250-4F01-9EE7-3E596FFB7839.png",
+      "E9F21421-E340-4CA0-9AAD-5F8E34D24C57.png"
+    ],
+    "all_bytes_hash_verified": true,
+    "image_editing": false,
+    "content": "Synthetic empty ingredient draft and public informational copy; no real account, ingredients from a user, private contact or credential observed."
+  },
+  "geometry": {
+    "window": {
+      "width": 375,
+      "height": 667
+    },
+    "raw_scroll_viewport": {
+      "x": 0,
+      "y": 75,
+      "width": 375,
+      "height": 483
+    },
+    "guarded_viewport": {
+      "x": 2,
+      "y": 77,
+      "width": 371,
+      "height": 479
+    },
+    "paragraph": {
+      "width": 328,
+      "height": 575
+    },
+    "fixed_clear": {
+      "x": 20,
+      "y": 570,
+      "width": 335,
+      "height": 85
+    },
+    "failure_element_crop_pixels": {
+      "width": 656,
+      "height": 1150,
+      "scale": 2
+    }
+  },
+  "sequence": [
+    {
+      "pose": "entry-scope capture2",
+      "paragraph_y": 245.5,
+      "read_interval": [
+        0,
+        310.5
+      ],
+      "audit": "passed",
+      "audit_displacement": 0
+    },
+    {
+      "gesture": 1,
+      "kind": "read",
+      "requested_travel": 268.24,
+      "actual_y": [
+        245.5,
+        -12.5
+      ]
+    },
+    {
+      "pose": "entry-scope capture5",
+      "paragraph_y": -12.5,
+      "read_interval": [
+        89.5,
+        568.5
+      ],
+      "audit": "passed",
+      "audit_y_after": 148.5,
+      "audit_displacement": 161
+    },
+    {
+      "gesture": 2,
+      "kind": "audit-recovery",
+      "requested_travel": 171,
+      "actual_y": [
+        148.5,
+        -12.5
+      ],
+      "restored": true
+    },
+    {
+      "remaining_text_below_guarded_viewport_points": 6.5,
+      "gesture": 3,
+      "kind": "read",
+      "requested_travel": 268.24,
+      "actual_y": [
+        -12.5,
+        -270.5
+      ]
+    },
+    {
+      "pose": "entry-scope capture10",
+      "paragraph_y": -270.5,
+      "read_interval": [
+        347.5,
+        575
+      ],
+      "audit": "failed",
+      "failure_image": "Native audit moved toward the paragraph beginning; official node crop includes the fixed Clear control and black padding beyond the app window."
+    }
+  ],
+  "pixel_observation": {
+    "original_file": "E9F21421-E340-4CA0-9AAD-5F8E34D24C57.png",
+    "region": [
+      0,
+      20,
+      656,
+      780
+    ],
+    "dominant_background_rgb": [
+      242,
+      242,
+      247
+    ],
+    "background_pixels": 420653,
+    "solid_black_pixels": 58402,
+    "solid_color_pair_ratio": 18.819381454911877,
+    "limit": "This sampled interior color pair is not a whole-screen conformance result and does not override the failed native audit."
+  },
+  "conclusions": [
+    "The original R7 geometry recovery restored the observed 161-point displacement with a real measured gesture; this is not the former eight-gesture or privacy reveal-budget failure.",
+    "The concrete failure concerns the existing tall SwiftUI entryScope accessibility node. Its 575-point height exceeds the real 483-point viewport and the 479-point guarded viewport.",
+    "The audit image/crop and sampled colors support investigating scrolling/accessibility rendering. They do not establish a poor foreground color, an OS defect, or a successful repair.",
+    "The final read advanced 258 points although only 6.5 points of the paragraph remained below the viewport. This is an unnecessarily large final read movement; changing it alone is not evidence that the contrast failure will disappear."
+  ],
+  "proposed_successor": {
+    "status": "PROPOSAL_ONLY_NO_SOURCE_EDIT_OR_NATIVE_RUN",
+    "minimal_product_experiment": "Render only copy(.entryScope) using the existing NativeScreeningMatchText wrapper with .subheadline and surfaceColor .systemGroupedBackground. Preserve exact copy, preferred text style, dynamic sizing, natural/RTL alignment, language and one real visible accessible text element.",
+    "reason": "The original error identifies SwiftUI.AccessibilityNode; the same existing UILabel wrapper already supplies real on-surface text elsewhere in this app. No artificial accessibility frame or hidden replacement is proposed.",
+    "alternative_or_followup": "A narrowly bounded final-interval scroll controller can reduce unnecessary movement, while retaining continuous coverage and the unchanged combined audit. This remains a controller hypothesis, not a substitute for native acceptance.",
+    "forbidden_shortcuts": [
+      "No audit handler/filter",
+      "No caught failed-audit retry",
+      "No font shrink",
+      "No accessibility-frame override",
+      "No hidden duplicate text",
+      "No skipped original journey or assertion"
+    ],
+    "acceptance": "Root serially runs the same original nineteen journeys plus sealed model checks on a separately committed/pinned successor; exact native reports and cleanup must pass. Keep failed R7 source, results and original files preserved."
+  },
+  "actions": {
+    "mac_reads_only": true,
+    "source_edits": false,
+    "build_or_test_execution": false,
+    "simulator_control": false,
+    "upload": false
+  }
+}
