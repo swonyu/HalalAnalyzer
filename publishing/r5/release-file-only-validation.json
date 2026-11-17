@@ -1,0 +1,14 @@
+{
+  "observed_at_utc": "2026-11-17T14:50:03.322750+00:00",
+  "status": "FILE_ONLY_VERIFIED_NO_ADAPTER_EXECUTION",
+  "production_inventory": 14,
+  "production_hashes_and_sizes_match_manifest": true,
+  "stage_code_ast_identical_to_r3_after_explicit_label_path_pin_rebindings": true,
+  "lifecycle_and_coordination_byte_identical_to_reviewed_r3": true,
+  "all_three_acknowledgments_unconfigured_and_exactly_pinned": true,
+  "native_report_required": "actual frozen R5 nineteen passing cases, original evidence and matching shipping source",
+  "native_execution": false,
+  "release_adapter_execution": false,
+  "source_icon": "1024x1024 RGB; no alpha",
+  "physical_install_or_store_acceptance": false
+}
