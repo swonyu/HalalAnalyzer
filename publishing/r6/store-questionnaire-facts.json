@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "status": "SOURCE_BOUND_QUESTIONNAIRE_DRAFT_NOT_SAVED",
+  "shipping_candidate_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "adapter_revision": "R6b-model-receipt-guard",
+  "source_and_adapter_independently_reviewed": true,
+  "current_native_ui_acceptance": "PENDING",
+  "privacy": {
+    "proposed_app_collection_answer": "No, we do not collect data from this app",
+    "basis": "The reviewed native feature keeps its draft/result in memory, stores only its local interface-language choice and performs no app-operated network analysis or telemetry. No third-party SDK is included. Two fixed external-browser links carry no draft, result, identifier or query parameter.",
+    "collected_data_types_from_native_feature": [],
+    "tracking": false,
+    "tracking_domains": [],
+    "required_reason_api": {
+      "category": "UserDefaults",
+      "reason": "CA92.1",
+      "purpose": "Save the interface-language preference in this app"
+    },
+    "account_required": false,
+    "current_ingredient_history": "None; current draft/result only in memory",
+    "clear_behavior": "Removes current draft/result; retains language setting and does not erase clipboard",
+    "external_support": "Optional public GitHub requests are external posts. Public page hosting and support practices remain explained in the privacy notice. Do not invent operator retention periods or automatically classify every support request as exempt.",
+    "final_scope": "Apply to the actual matching final artifact and app-level data practices. This is not a saved privacy form; the final artifact and current external support practices remain the coordinator's verification."
+  },
+  "age_rating": {
+    "alcohol_tobacco_drugs": {
+      "proposed_frequency": "Infrequent / Mild references (use the equivalent actual form option)",
+      "interpretation": "Source-based classification of brief informational food-label references. Apple's definition concerns consumption references; this is a proposed interpretation for the coordinator to record, not an Apple-issued classification.",
+      "concrete_source": [
+        "One of three built-in samples is 'Ethanol, vanilla extract, color E120'.",
+        "The alcohol rule recognizes alcohol, ethanol, beer, wine and rum.",
+        "English and Arabic limitations explain an alcohol-free claim and the result title includes alcohol-related terms."
+      ],
+      "intensity": "No drinking imagery, drunkenness, purchase instructions, promotion, tobacco or recreational-drug content in the shipping source.",
+      "none_not_automatic": true,
+      "frequent_intense_supported": false
+    },
+    "no_capabilities": [
+      "Parental controls",
+      "Age assurance",
+      "Unrestricted web access within the app",
+      "Broadly distributed user-generated content",
+      "Social media",
+      "Messaging and chat",
+      "Advertising"
+    ],
+    "capability_reason": "The private text editor is not a distribution channel. Fixed external-browser privacy/help links do not provide an in-app arbitrary-web browser or social feed.",
+    "medical_or_treatment_information": "None in reviewed source; no diagnosis, treatment, medication, emergency or health-management guidance.",
+    "health_or_wellness_topics": "No in the reviewed source-based proposal; the feature identifies limited ingredient words and explains source uncertainty, without nutrition, calorie, exercise, dieting or health recommendations.",
+    "absent_content": [
+      "Profanity or crude humor supplied by the app",
+      "Horror or fear themes",
+      "Mature or suggestive sexual themes",
+      "Sexual content or nudity",
+      "Graphic sexual content or nudity",
+      "Cartoon or fantasy violence",
+      "Realistic violence",
+      "Prolonged graphic or sadistic violence",
+      "Guns or other weapons",
+      "Gambling",
+      "Simulated gambling",
+      "Contests",
+      "Loot boxes"
+    ],
+    "made_for_kids": "Not requested or established; preserve the ordinary app scope and do not select a Kids category from lack of objectionable content.",
+    "final_numeric_rating": "Let App Store Connect calculate the actual rating and inspect regional results; no final rating is asserted here."
+  },
+  "rights": {
+    "ownership_authority": "User explicitly states ownership of all four apps in this continuation.",
+    "proposed_copyright": "2026 Saleh Alayed",
+    "copyright_basis": "Source entry header credits saleh alayed; current source/release and handoff are in 2026. Preserve a correct existing copyright/entity record if the store already has one.",
+    "third_party_content_assessment": "No embedded third-party media, external ingredient database, scraped content or third-party content feed found in the fourteen shipping files. Typed/pasted text is private user input. Fixed links open the project's own public help/privacy pages externally.",
+    "proposed_content_rights_answer": "No third-party content in the reviewed shipped feature, if the form uses that option.",
+    "icon": {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png",
+      "sha256": "27e8d19a818f17dbcda9e3e6352055de3116748e1fb5e5d6f627886d30708fe0",
+      "source": "Artwork/HalalAnalyzerIcon.svg",
+      "source_notes": "SVG records original generic ingredient-label/magnifier artwork; no external image or font references.",
+      "visual_inspection": "Viewed actual PNG: generic label and magnifier, no certification mark, third-party logo or endorsement.",
+      "size": "1024x1024",
+      "mode": "RGB",
+      "alpha": false
+    },
+    "public_contact": "Not established by bounded public-source search; private review contact is not reused.",
+    "agreements_accepted": false
+  },
+  "source_evidence": [
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ContentView.swift",
+      "sha256": "06b6d75101b40eb4b99b9b59c1de876e54b6df85f772b3ed633f7fcf1a83a2fc",
+      "relevant_lines": [
+        {
+          "line": 5,
+          "text": "@AppStorage(ScreeningLanguage.preferenceKey) private var storedLanguage = \"\""
+        },
+        {
+          "line": 6,
+          "text": "@State private var session = IngredientScreeningSession()"
+        },
+        {
+          "line": 16,
+          "text": "\"Ethanol, vanilla extract, color E120\""
+        },
+        {
+          "line": 629,
+          "text": "private var onlineResources: some View {"
+        },
+        {
+          "line": 635,
+          "text": "if let privacyURL = URL(string: \"https://swonyu.github.io/HalalAnalyzer/\") {"
+        },
+        {
+          "line": 645,
+          "text": "if let supportURL = URL(string: \"https://swonyu.github.io/HalalAnalyzer/support.html\") {"
+        }
+      ]
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/IngredientScreening.swift",
+      "sha256": "fc8aab56d0fbdf7682cc77bf74a0a1811c813e93447b6985379f24c122e4167a",
+      "relevant_lines": [
+        {
+          "line": 52,
+          "text": "/// Exact input snapshot, retained only in memory for the current screen."
+        },
+        {
+          "line": 97,
+          "text": "mutating func clear() {"
+        },
+        {
+          "line": 187,
+          "text": "Rule(id: \"alcohol\", name: \"Alcohol-related terms\","
+        },
+        {
+          "line": 188,
+          "text": "phrases: [[\"alcohol\"], [\"ethanol\"], [\"beer\"], [\"wine\"], [\"rum\"]],"
+        }
+      ]
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ScreeningLocalization.swift",
+      "sha256": "097a18920ff95fda968c6cee1591360b50b0c077673bf40cb6c0970e8aa8be70",
+      "relevant_lines": [
+        {
+          "line": 130,
+          "text": "case .meaningBody: return language == .english ? \"A match only shows that a term appeared. It does not establish ingredient presence, origin, processing, cross-contamination, or halal status. Simple statements such as alcohol-free are marked for context review; this app cannot verify such claims. Unmatched text remains unknown. Check the original label and ask the manufacturer or a qualified certifier when needed.\" : \"تعني المطابقة فقط ظهور كلمة في النص. ولا تثبت وجود المكوّن أو مصدره أو طريقة تصنيعه أو التلوث التبادلي أو صفة الحلال. تُحال عبارات إنجليزية بسيطة مثل \\u{2066}alcohol-free\\u{2069} إلى مراجعة السياق؛ ولا يستطيع التطبيق التحقق من هذه الادعاءات. يبقى النص غير المطابق غير محسوم. راجع الملصق الأصلي واسأل الشركة المصنّعة أو جهة مختصة بمنح شهادات الحلال عند الحاجة.\""
+        },
+        {
+          "line": 132,
+          "text": "case .privacyBody: return language == .english ? \"This app screens text on your device and keeps the current text and result in memory. It does not save or transmit them, include analytics, or request camera, photos, microphone, or location permissions. Clear removes the current text and result. Your language choice is saved in this app’s settings. A fresh app launch starts with an empty draft and no result. Your keyboard and other iOS services remain subject to your device settings.\" : \"يفحص التطبيق النص على جهازك ويحتفظ بالنص الحالي والنتيجة في الذاكرة فقط. لا يحفظهما أو يرسلهما، ولا يتضمن تحليلات استخدام أو يطلب أذونات الكاميرا أو الصور أو الميكروفون أو الموقع. يمسح زر المسح النص الحالي والنتيجة. يُحفظ اختيار اللغة في إعدادات التطبيق. عند بدء تشغيل التطبيق من جديد تكون المسودة فارغة ولا توجد نتيجة. تخضع لوحة المفاتيح وخدمات iOS الأخرى لإعدادات جهازك.\""
+        },
+        {
+          "line": 154,
+          "text": "case .alcoholName: return language == .english ? \"Alcohol-related terms\" : \"كلمات مرتبطة بالكحول\""
+        },
+        {
+          "line": 161,
+          "text": "case .alcoholExplanation: return language == .english ? \"The word alone does not establish the substance, concentration, processing, or presence in the final product.\" : \"لا تحدد الكلمة وحدها المادة أو تركيزها أو طريقة تصنيعها أو وجودها في المنتج النهائي.\""
+        }
+      ]
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/PrivacyInfo.xcprivacy",
+      "sha256": "a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12",
+      "relevant_lines": [
+        {
+          "line": 5,
+          "text": "<key>NSPrivacyTracking</key>"
+        },
+        {
+          "line": 7,
+          "text": "<key>NSPrivacyTrackingDomains</key>"
+        },
+        {
+          "line": 9,
+          "text": "<key>NSPrivacyCollectedDataTypes</key>"
+        },
+        {
+          "line": 18,
+          "text": "<string>CA92.1</string>"
+        }
+      ]
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/HalalAnalyzer______________App.swift",
+      "sha256": "ae36f474eb444bfa7c084573d2e544a42ca1406e7082c2eea575a856f088e831",
+      "relevant_lines": [
+        {
+          "line": 5,
+          "text": "//  Created by saleh alayed on 10/12/1447 AH."
+        }
+      ]
+    },
+    {
+      "path": "Artwork/HalalAnalyzerIcon.svg",
+      "sha256": "d3e639d38eac86bb2bab040ec2c0c6a3b5072316c42eb472bd05b67d72b24380",
+      "relevant_lines": [
+        {
+          "line": 3,
+          "text": "<desc>Original artwork for Halal Analyzer. A cream ingredient label and warm amber magnifying glass on a deep blue background. No certification mark, religious symbol, brand logo, or endorsement is represented.</desc>"
+        }
+      ]
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟.xcodeproj/project.pbxproj",
+      "sha256": "777ca0dda92eabf2d446285a47b6f6f47f5d3d09e6c211744b88a25dd62661f0",
+      "relevant_lines": [
+        {
+          "line": 67,
+          "text": "packageProductDependencies = ("
+        },
+        {
+          "line": 182,
+          "text": "IPHONEOS_DEPLOYMENT_TARGET = 26.5;"
+        },
+        {
+          "line": 240,
+          "text": "IPHONEOS_DEPLOYMENT_TARGET = 26.5;"
+        },
+        {
+          "line": 280,
+          "text": "TARGETED_DEVICE_FAMILY = \"1,2\";"
+        },
+        {
+          "line": 314,
+          "text": "TARGETED_DEVICE_FAMILY = \"1,2\";"
+        }
+      ]
+    }
+  ],
+  "official_sources": [
+    "https://developer.apple.com/app-store/app-privacy-details/",
+    "https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy",
+    "https://developer.apple.com/help/app-store-connect/reference/app-information/age-ratings-values-and-definitions/",
+    "https://developer.apple.com/help/app-store-connect/reference/app-information/app-information/",
+    "https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information/"
+  ],
+  "store_write_performed": false,
+  "native_or_build_invoked": false
+}

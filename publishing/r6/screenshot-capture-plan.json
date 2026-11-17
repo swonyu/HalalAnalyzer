@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "status": "CAPTURE_PLAN_ONLY_NO_IMAGES_CAPTURED",
+  "source_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "prerequisites": "Coordinator confirms exact accepted source and fresh exclusive native slot. Current R6b nineteen-case acceptance is pending.",
+  "capture_build": "Actual running production target from the exact accepted shipping source, on a supported device or simulator. Record whether the binary is a simulator capture build or the final device build; preserve actual build receipt and version/build. Do not label the QA host or an unsigned simulator binary as the signed App Store build.",
+  "preserve_existing": "Root reported four existing iPhone images and review attachment01-scanner.png. Inspect actual content and record decisions before replacement or repeat upload.",
+  "locales": [
+    "en-US",
+    "ar-SA"
+  ],
+  "destinations": [
+    {
+      "category": "iPhone Dynamic Island medium",
+      "acceptable_portrait_pixels": [
+        [
+          1179,
+          2556
+        ],
+        [
+          1206,
+          2622
+        ]
+      ],
+      "actual_device": null,
+      "actual_runtime": null
+    },
+    {
+      "category": "iPad13-inch",
+      "acceptable_portrait_pixels": [
+        [
+          2064,
+          2752
+        ],
+        [
+          2048,
+          2732
+        ]
+      ],
+      "actual_device": null,
+      "actual_runtime": null
+    }
+  ],
+  "journeys": [
+    {
+      "id": "01-entry",
+      "input": null,
+      "action": "Fresh process; show input, scope and samples",
+      "expected": "Empty draft and no result"
+    },
+    {
+      "id": "02-source-context",
+      "input": "Gelatin, sugar, natural flavors",
+      "action": "Choose actual sample; read result",
+      "expected": "Source or context needs review, with matched gelatin explanation"
+    },
+    {
+      "id": "03-unknown",
+      "input": "Water, dates, citric acid",
+      "action": "Choose actual sample; read result",
+      "expected": "No supported match; status unknown"
+    },
+    {
+      "id": "04-limitations",
+      "input": null,
+      "action": "Open actual Privacy and limitations sheet",
+      "expected": "Real scrollable privacy/limitations content; clear actual language"
+    }
+  ],
+  "receipt_for_each_image": {
+    "filename": null,
+    "sha256": null,
+    "source_commit": null,
+    "source_manifest_sha256": null,
+    "build_receipt": null,
+    "bundle_id": null,
+    "version": null,
+    "build": null,
+    "binary_kind": null,
+    "device_id": null,
+    "device_name": null,
+    "runtime": null,
+    "locale": null,
+    "appearance": null,
+    "journey_id": null,
+    "width": null,
+    "height": null,
+    "format": null,
+    "alpha_verified_absent": false,
+    "full_size_visual_review": null,
+    "saved_to_store": false,
+    "store_receipt": null
+  },
+  "review": "Confirm all content belongs to actual accepted UI, no keyboard obstruction, clipping, false certification, audit overlays, debug/QA text, sensitive input or false locale. Retain original unmodified captures. Use accepted opaque PNG/JPEG from supported native capture tooling. Do not resize, reconstruct or generate app screens.",
+  "native_audit_distinction": "SE750x1334 attachments are real audit evidence but do not satisfy the primary iPhone/iPad screenshot categories.",
+  "official_source": "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/"
+}
