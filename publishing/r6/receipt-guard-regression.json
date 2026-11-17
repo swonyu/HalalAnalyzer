@@ -1,0 +1,58 @@
+{
+  "status": "PARSED_RECEIPT_PREDICATE_REGRESSIONS_PASS",
+  "cases": [
+    {
+      "case": "actual_211_with_three_existing_sample_labels",
+      "expected_acceptance": true,
+      "actual": {
+        "native": true,
+        "release": true
+      }
+    },
+    {
+      "case": "missing_required_boundary_check",
+      "expected_acceptance": false,
+      "actual": {
+        "native": false,
+        "release": false
+      }
+    },
+    {
+      "case": "duplicate_required_boundary_check",
+      "expected_acceptance": false,
+      "actual": {
+        "native": false,
+        "release": false
+      }
+    },
+    {
+      "case": "incorrect_declared_count",
+      "expected_acceptance": false,
+      "actual": {
+        "native": false,
+        "release": false
+      }
+    },
+    {
+      "case": "failure_status",
+      "expected_acceptance": false,
+      "actual": {
+        "native": false,
+        "release": false
+      }
+    },
+    {
+      "case": "non_string_check_label",
+      "expected_acceptance": false,
+      "actual": {
+        "native": false,
+        "release": false
+      }
+    }
+  ],
+  "original_model_checks_observed": 211,
+  "original_native_ui_result": "NOT_RUN",
+  "native_command_executed_here": false,
+  "release_adapter_imported_or_invoked": false,
+  "scope": "Boolean receipt conditions only; no model re-execution or native/release acceptance"
+}

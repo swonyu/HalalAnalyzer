@@ -1,0 +1,18 @@
+{
+  "status": "FILE_ONLY_RELEASE_INTEGRITY_PASS",
+  "shipping_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "shipping_files_matching_git_and_native": 14,
+  "unchanged_frozen_helpers": [
+    "lifecycle",
+    "coordination"
+  ],
+  "existing_release_functions_unchanged_except_native_gate": true,
+  "original_nineteen_gate_preserved_with_only_added_model_requirement": true,
+  "model_sources_bound": 3,
+  "required_new_labels_exactly_once": 9,
+  "all_three_acknowledgments_unconfigured": true,
+  "adapter_diff_matches_actual_files": true,
+  "release_adapter_imported_or_executed": false,
+  "native_executed": false,
+  "model_binary_executed_here": false
+}

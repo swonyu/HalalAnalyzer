@@ -1,0 +1,50 @@
+def validate_model_gate(root, report, gate):
+    receipt_path = root / 'model-checks-receipt.json'
+    proof = report.get('model_checks', {})
+    require(isinstance(proof, dict) and proof.get('receipt') == str(receipt_path)
+            and proof.get('receipt_sha256') == sha(receipt_path), 'Exact model receipt is missing or changed')
+    receipt = read_json(receipt_path)
+    require(receipt == {key: value for key, value in proof.items()
+                        if key not in ['receipt', 'receipt_sha256']}
+            and receipt.get('status') == 'PASS', 'Model receipt differs from the native report')
+    require(receipt.get('source_binding') == gate['model_source_binding'],
+            'Model execution was not bound to the exact three sealed sources')
+    for relative, binding in gate['model_source_binding'].items():
+        source = regular_path(root, 'Source/' + relative)
+        require(sha(source) == binding['sha256'] and source.stat().st_size == binding['bytes'],
+                'Preserved model source differs from the executed source binding')
+    binary = regular_path(root, 'ModelChecks/BilingualModelChecks')
+    require(receipt.get('binary') == str(binary) and receipt.get('binary_sha256') == sha(binary),
+            'Compiled model binary is missing or changed')
+    positions = []
+    for name, prefix in [('compile-sealed-model-checks', 'compile'),
+                         ('execute-sealed-model-checks', 'execution')]:
+        matches = [(index, row) for index, row in enumerate(report.get('steps', []))
+                   if row.get('name') == name]
+        require(len(matches) == 1, 'Missing or duplicate model step: ' + name)
+        position, step = matches[0]
+        positions.append(position)
+        require(step.get('status') == 'passed' and step.get('returncode') == 0,
+                'Model compilation or execution did not pass')
+        if prefix == 'execution':
+            require(step.get('argv') == [str(binary)], 'Model step executed another binary')
+        for stream in ['stdout', 'stderr']:
+            path = Path(step.get(stream, ''))
+            require(path.is_relative_to(root / 'steps'), 'Model log is outside the native run')
+            require(regular_path(root, path.relative_to(root).as_posix()) == path
+                    and receipt.get(prefix + '_' + stream) == str(path)
+                    and receipt.get(prefix + '_' + stream + '_sha256') == sha(path),
+                    'Model output evidence is missing or changed')
+    require(positions[0] < positions[1], 'Model execution did not follow compilation')
+    result = read_json(Path(receipt['execution_stdout']))
+    checks = result.get('checks', [])
+    require(result == receipt.get('actual_result') and result.get('status') == 'PASS'
+            and isinstance(checks, list) and all(isinstance(item, str) for item in checks)
+            and result.get('check_count') == len(checks),
+            'Actual model stdout does not establish complete passing checks')
+    required = gate['required_model_check_labels']
+    require(len(required) == receipt.get('required_boundary_check_count') == 9
+            and all(checks.count(label) == 1 for label in required), 'Required boundary regressions did not run exactly once')
+    return {'receipt': str(receipt_path), 'receipt_sha256': sha(receipt_path),
+            'binary_sha256': sha(binary), 'check_count': len(checks),
+            'required_boundary_check_count': 9, 'source_binding': receipt['source_binding']}

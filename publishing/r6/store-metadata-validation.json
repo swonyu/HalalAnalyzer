@@ -1,0 +1,49 @@
+{
+  "status": "DRAFT_LENGTH_AND_FORMAT_CHECKS_PASS",
+  "metadata_sha256": "cd5d26deb5a7429d61bc67733706911ded411cd3ca69c94d231a93ef2eda4c69",
+  "counts": {
+    "en-US": {
+      "description": {
+        "characters": 1015,
+        "utf8_bytes": 1015
+      },
+      "keywords": {
+        "characters": 61,
+        "utf8_bytes": 61
+      },
+      "promotional_text": {
+        "characters": 117,
+        "utf8_bytes": 117
+      }
+    },
+    "ar-SA": {
+      "description": {
+        "characters": 901,
+        "utf8_bytes": 1638
+      },
+      "keywords": {
+        "characters": 47,
+        "utf8_bytes": 79
+      },
+      "promotional_text": {
+        "characters": 88,
+        "utf8_bytes": 162
+      }
+    },
+    "review_notes_english": {
+      "characters": 1172,
+      "utf8_bytes": 1191
+    },
+    "review_notes_arabic": {
+      "characters": 910,
+      "utf8_bytes": 1631
+    },
+    "review_notes_combined": {
+      "characters": 2093,
+      "utf8_bytes": 2840
+    }
+  },
+  "review_notes_limit_unit": "UTF-8 bytes, not characters",
+  "saved_to_store": false,
+  "native_execution": "NOT_RUN"
+}

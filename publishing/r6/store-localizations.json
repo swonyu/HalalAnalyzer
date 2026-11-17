@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "status": "SOURCE_BOUND_DRAFT_NOT_SAVED_TO_STORE",
+  "shipping_candidate_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "native_pass_established": false,
+  "source_version": "1.0",
+  "source_build": "1",
+  "store_record_id": "6773625937",
+  "store_snapshot_source": "Root's live App Store Connect observation reported in this continuation; not independently inspected by this child",
+  "store_snapshot": {
+    "version": "1.0",
+    "state": "Prepare for Submission",
+    "build_attached": false,
+    "iphone_screenshot_count": 4,
+    "review_attachment": "01-scanner.png",
+    "attachment_content_verified": false
+  },
+  "instructions_to_coordinator": "Preserve the existing app name unless separately reviewed. Compare current store fields and screenshots before applying. These files do not establish delivery or a saved form. Apply only to the matching accepted release candidate and recheck current public URLs/contact.",
+  "localizations": {
+    "en-US": {
+      "description": "Review ingredient text and see which supported terms need closer attention. Type or paste English ingredient names, then screen them against a small built-in list that includes gelatin, enzymes, vanilla extract, E120 and E471. Read the matched words and the explanation of what needs source or context checks.\n\nChoose English or Arabic for the interface. Included sample texts help you explore different results. Editing the text clears the old result; Clear removes the current text and result. Screening happens on your device. The current draft and result stay in app memory, while your language choice is saved for later launches.\n\nCoverage is limited to supported English terms and code formats. Arabic controls do not translate or screen Arabic ingredient names. Unmatched text remains unknown. A word match does not establish ingredient presence, origin, processing or halal status, and no result is a halal certificate. Check the original label and ask the manufacturer or a qualified certifier when needed.",
+      "keywords": "food,label,additives,gelatin,enzymes,rennet,carmine,E120,E471",
+      "support_url": "https://swonyu.github.io/HalalAnalyzer/support.html",
+      "privacy_policy_url": "https://swonyu.github.io/HalalAnalyzer/",
+      "promotional_text": "Review a small supported set of English ingredient terms, with clear explanations and an English or Arabic interface."
+    },
+    "ar-SA": {
+      "description": "راجع نص المكونات وتعرّف على الكلمات التي تحتاج إلى تحقق إضافي. اكتب أسماء المكونات بالإنجليزية أو الصقها، ثم افحصها باستخدام قائمة محدودة داخل التطبيق تشمل الجيلاتين والإنزيمات ومستخلص الفانيليا وصيغ الرمزين E120 وE471. اقرأ الكلمات المطابقة وشرح ما يحتاج إلى التحقق من المصدر أو السياق.\n\nاختر العربية أو الإنجليزية للواجهة، وجرّب النصوص النموذجية للتعرّف على النتائج المختلفة. يؤدي تعديل النص إلى مسح النتيجة السابقة، ويمسح زر «مسح» النص الحالي والنتيجة. يجري الفحص على جهازك، وتبقى المسودة والنتيجة في ذاكرة التطبيق، بينما يُحفظ اختيار اللغة لمرات التشغيل اللاحقة.\n\nتقتصر التغطية على كلمات إنجليزية وصيغ رموز مدعومة. الواجهة العربية لا تترجم أسماء المكونات العربية أو تفحصها. يبقى النص غير المطابق غير محسوم. لا تثبت مطابقة الكلمات وجود المكوّن أو مصدره أو طريقة تصنيعه أو صفة الحلال، ولا تُعد أي نتيجة شهادة حلال. راجع الملصق الأصلي واسأل الشركة المصنّعة أو جهة مختصة بمنح شهادات الحلال عند الحاجة.",
+      "keywords": "غذاء,أطعمة,منتجات,إضافات,جيلاتين,ملصق,E120,E471",
+      "support_url": "https://swonyu.github.io/HalalAnalyzer/support-ar.html",
+      "privacy_policy_url": "https://swonyu.github.io/HalalAnalyzer/privacy-ar.html",
+      "promotional_text": "راجع مجموعة محدودة من أسماء المكونات الإنجليزية، مع شروح واضحة وواجهة عربية أو إنجليزية."
+    }
+  },
+  "review_notes": {
+    "english": "HalalTag screens typed or pasted English ingredient text on the device against a small built-in term list. No sign-in, subscription or purchase is needed. It has no camera, photo, OCR or barcode scanner and no remote ingredient-analysis service. The interface is English/Arabic; matching remains limited to supported English words and E120/E471 formats. Results identify terms to check and do not certify halal status.\n\nReview steps:\n1. Choose the sample “Gelatin, sugar, natural flavors” for a source/context result.\n2. Choose “Water, dates, citric acid” for an unknown result.\n3. Choose “Ethanol, vanilla extract, color E120” for flagged terms and their explanations.\n4. Edit the text: the old result clears. Choose Screen text again, or Clear to remove the current draft and result.\n5. Open Privacy and limitations, then the globe/App language menu. Select العربية or English. Switching language preserves the current draft and result. A fresh app launch has an empty draft and no result; the language choice persists.\n\nPrivacy and support links open external GitHub-hosted pages. Public issue posting requires a GitHub account. No account is needed for the app itself.",
+    "arabic": "يفحص HalalTag نص المكونات الإنجليزية الذي يكتبه المستخدم أو يلصقه، باستخدام قائمة محدودة على الجهاز. لا يتطلب تسجيل دخول أو اشتراكًا أو شراءً. لا يحتوي على كاميرا أو مسح صور أو رموز شريطية أو خدمة فحص عن بُعد. الواجهة عربية وإنجليزية، بينما تقتصر المطابقة على الكلمات الإنجليزية وصيغ E120/E471 المدعومة. النتائج لا تمنح شهادة حلال.\n\nللمراجعة، جرّب النصوص النموذجية الثلاثة: الأول يحتاج إلى تحقق من المصدر أو السياق، والثاني يبقى غير محسوم، والثالث يعرض كلمات تستدعي الانتباه. يؤدي تعديل النص إلى مسح النتيجة السابقة؛ اختر «فحص النص» لإعادته أو «مسح» لإزالة النص والنتيجة.\n\nافتح «الخصوصية والقيود» ثم قائمة الكرة الأرضية «لغة التطبيق» لاختيار العربية أو الإنجليزية. يحافظ تبديل اللغة على النص والنتيجة. يبدأ تشغيل التطبيق من جديد بمسودة فارغة دون نتيجة، مع الاحتفاظ باختيار اللغة. تفتح روابط الدعم والخصوصية صفحات خارجية تستضيفها GitHub؛ نشر طلب عام يحتاج إلى حساب GitHub، لكن استخدام التطبيق لا يحتاج إلى حساب.",
+    "combined": "HalalTag screens typed or pasted English ingredient text on the device against a small built-in term list. No sign-in, subscription or purchase is needed. It has no camera, photo, OCR or barcode scanner and no remote ingredient-analysis service. The interface is English/Arabic; matching remains limited to supported English words and E120/E471 formats. Results identify terms to check and do not certify halal status.\n\nReview steps:\n1. Choose the sample “Gelatin, sugar, natural flavors” for a source/context result.\n2. Choose “Water, dates, citric acid” for an unknown result.\n3. Choose “Ethanol, vanilla extract, color E120” for flagged terms and their explanations.\n4. Edit the text: the old result clears. Choose Screen text again, or Clear to remove the current draft and result.\n5. Open Privacy and limitations, then the globe/App language menu. Select العربية or English. Switching language preserves the current draft and result. A fresh app launch has an empty draft and no result; the language choice persists.\n\nPrivacy and support links open external GitHub-hosted pages. Public issue posting requires a GitHub account. No account is needed for the app itself.\n\nالعربية\n\nيفحص HalalTag نص المكونات الإنجليزية الذي يكتبه المستخدم أو يلصقه، باستخدام قائمة محدودة على الجهاز. لا يتطلب تسجيل دخول أو اشتراكًا أو شراءً. لا يحتوي على كاميرا أو مسح صور أو رموز شريطية أو خدمة فحص عن بُعد. الواجهة عربية وإنجليزية، بينما تقتصر المطابقة على الكلمات الإنجليزية وصيغ E120/E471 المدعومة. النتائج لا تمنح شهادة حلال.\n\nللمراجعة، جرّب النصوص النموذجية الثلاثة: الأول يحتاج إلى تحقق من المصدر أو السياق، والثاني يبقى غير محسوم، والثالث يعرض كلمات تستدعي الانتباه. يؤدي تعديل النص إلى مسح النتيجة السابقة؛ اختر «فحص النص» لإعادته أو «مسح» لإزالة النص والنتيجة.\n\nافتح «الخصوصية والقيود» ثم قائمة الكرة الأرضية «لغة التطبيق» لاختيار العربية أو الإنجليزية. يحافظ تبديل اللغة على النص والنتيجة. يبدأ تشغيل التطبيق من جديد بمسودة فارغة دون نتيجة، مع الاحتفاظ باختيار اللغة. تفتح روابط الدعم والخصوصية صفحات خارجية تستضيفها GitHub؛ نشر طلب عام يحتاج إلى حساب GitHub، لكن استخدام التطبيق لا يحتاج إلى حساب."
+  },
+  "review_sign_in_required": false,
+  "review_demo_account": null,
+  "public_support_contact": null,
+  "app_review_contact": null,
+  "source_scope": "Typed/pasted English-term screening; English/Arabic UI. Current shipping source has no OCR, barcode, camera, remote analysis, ads, purchases, accounts or scan history.",
+  "official_reference": "https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information/",
+  "model_observation": {
+    "run_id": "20261117T151221Z-4519-57fb808fc2",
+    "compile_exit": 0,
+    "execute_exit": 0,
+    "passing_model_checks": 211,
+    "native_ui": "NOT_RUN",
+    "adapter_outcome": "Rejected a repeated pre-existing sample label; R6b receipt-only repair prepared",
+    "r6b_acceptance": "PENDING"
+  }
+}

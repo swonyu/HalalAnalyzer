@@ -1,0 +1,121 @@
+{
+  "status": "BOUNDED_PUBLIC_SOURCE_SEARCH_NO_APPROVED_CONTACT_ESTABLISHED",
+  "checked_date": "2026-11-17",
+  "sources": [
+    {
+      "app": "HalalTag",
+      "public_source_file": "halaltag/docs/index.html",
+      "sha256": "564e60c1d16d9ec28a3e523d992a807033027f6e1a400efa1dcdd410d04bc806",
+      "explicit_email_or_phone_matches": [],
+      "public_issue_urls": [
+        "https://github.com/swonyu/HalalAnalyzer/issues/new"
+      ]
+    },
+    {
+      "app": "HalalTag",
+      "public_source_file": "halaltag/docs/privacy-ar.html",
+      "sha256": "af5eaf971243252319f10b3aeb0478355c77f6fd439357d8a25115d81d4f50bb",
+      "explicit_email_or_phone_matches": [],
+      "public_issue_urls": [
+        "https://github.com/swonyu/HalalAnalyzer/issues/new"
+      ]
+    },
+    {
+      "app": "HalalTag",
+      "public_source_file": "halaltag/docs/support.html",
+      "sha256": "39e402376a3692487716d93862c398bd6b3059406d554a5f26d1e91dca94f0db",
+      "explicit_email_or_phone_matches": [],
+      "public_issue_urls": [
+        "https://github.com/swonyu/HalalAnalyzer/issues",
+        "https://github.com/swonyu/HalalAnalyzer/issues/new"
+      ]
+    },
+    {
+      "app": "HalalTag",
+      "public_source_file": "halaltag/docs/support-ar.html",
+      "sha256": "7a5d93efb9efcebe1050e48bb342e2e2ebd70118a652e125157e265b705266ab",
+      "explicit_email_or_phone_matches": [],
+      "public_issue_urls": [
+        "https://github.com/swonyu/HalalAnalyzer/issues",
+        "https://github.com/swonyu/HalalAnalyzer/issues/new"
+      ]
+    },
+    {
+      "app": "Lumina",
+      "public_source_file": "lumina/docs/privacy.html",
+      "sha256": "898edbbbfa9125825ebb0badc2ff53b7d4e864d9b66e11878c99972aae338f66",
+      "explicit_email_or_phone_matches": [],
+      "public_issue_urls": []
+    },
+    {
+      "app": "Lumina",
+      "public_source_file": "lumina/docs/privacy-ar.html",
+      "sha256": "a516ff856b38daefc25909ecac4dcfb5e1632000e984abaad3c74a4738eaa7b4",
+      "explicit_email_or_phone_matches": [],
+      "public_issue_urls": []
+    },
+    {
+      "app": "Lumina",
+      "public_source_file": "lumina/docs/support.html",
+      "sha256": "3949a80265eb9886806066a356ca3ef607eb2c33d6a76cae8e57403e7fe5c0c1",
+      "explicit_email_or_phone_matches": [],
+      "public_issue_urls": [
+        "https://github.com/swonyu/Lumina/issues"
+      ]
+    },
+    {
+      "app": "Lumina",
+      "public_source_file": "lumina/docs/support-ar.html",
+      "sha256": "204ea4d8c2c315ee1a435c4256d59c1c21eecb3d30ec298cf72dc62d2dd8c78d",
+      "explicit_email_or_phone_matches": [],
+      "public_issue_urls": [
+        "https://github.com/swonyu/Lumina/issues"
+      ]
+    },
+    {
+      "app": "Career Finder",
+      "public_source_file": "career/hosted/app/support/page.tsx",
+      "sha256": "87f48f2760465136c9a56a516177cbe6ed2576e0a5b25491a140551ed4900beb",
+      "explicit_email_or_phone_matches": [],
+      "public_issue_urls": [
+        "https://github.com/swonyu/ahmad-career/issues"
+      ]
+    },
+    {
+      "app": "Career Finder",
+      "public_source_file": "career/hosted/app/privacy/page.tsx",
+      "sha256": "920f8db71169fdad0980424e5328fb41251f72870a1da56943264805b42a1324",
+      "explicit_email_or_phone_matches": [],
+      "public_issue_urls": []
+    }
+  ],
+  "additional_public_reads": [
+    {
+      "url": "https://api.github.com/repos/swonyu/swonyu/contents/README.md",
+      "result": "Public profile README names projects and engineering focus; no support email, phone or legal address found"
+    },
+    {
+      "url": "https://github.com/swonyu/Lumina/blob/main/README.md",
+      "result": "No explicit public support contact found; main README may describe an older prototype"
+    },
+    {
+      "url": "https://github.com/swonyu/HalalAnalyzer/blob/main/README.md",
+      "result": "No explicit public support contact found"
+    },
+    {
+      "url": "https://api.github.com/repos/swonyu/swonyu.github.io/contents/",
+      "result": "Not found in this bounded retrieval"
+    }
+  ],
+  "public_search": "Exact app/user web queries did not establish a relevant explicitly published contact; unrelated results excluded",
+  "retrieval_limits": [
+    "Public GitHub profile web-open returned a tool DisabledError; public profile README was retrieved through the GitHub connector",
+    "Some public support URLs were unavailable through search retrieval; no live browser verification by this child"
+  ],
+  "private_app_review_contact_reused": false,
+  "commit_author_address_used": false,
+  "contact_invented": false,
+  "public_contact_published": false,
+  "conclusion": "Public GitHub issue links exist. An explicitly public app-support email, telephone number or legal address remains unverified; do not treat this as proof that none exists globally.",
+  "apple_reference": "https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information/"
+}

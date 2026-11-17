@@ -1,0 +1,33 @@
+{
+  "status": "FILE_ONLY_PREPARATION_NO_STAGE_EXECUTED",
+  "preparer_sha256": "05f8d3cf1e8a881136cb7dd7aed2065ca85ceab9d2a53ea52f16bc32e0f6df7c",
+  "shipping_candidate_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "shipping_file_count": 14,
+  "all_shipping_files_equal_frozen_native_source_and_git_commit": true,
+  "native_source_seal_sha256": "2da71c3c9e9da9a472af9fdd380ad7585164ccbf5da7de0e8156007b7d589464",
+  "native_source_file_count": 47,
+  "all_nineteen_case_specifications_unchanged": true,
+  "native_source_mac": "/Users/saleh/Library/Caches/Publishing-Continuation-20261117-d597fc87411f/HalalTag/Production-Composition-R6b-d57f4cd77813/preparation/Source",
+  "parent_release_pins": {
+    "production-manifest.json": "52d699ffb591489c330497f2e8a4af9da3683b8d728130dea2049d244321a6d6",
+    "release_support.py": "931ec0e2d74bd9df21f418ade88758f70806bdc03fa00ced250ab09b9de3f872",
+    "run_release_stage.py": "b9e4fa24f976e20c0e14c812a71a09ce187ccd7ee0c6bb3a6a12a9ecd3c73316",
+    "publishing_runner_frozen.py": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99",
+    "native_coordination_frozen.py": "243dc8943a5d91ed3a26673223f862a4f30a1c8b0a35088e7476d02ea4f78c6c"
+  },
+  "current_pins": {
+    "production-manifest.json": "4334b0b1c78610592846330f177559c38aba430dd42c0ea14d63d814b2fb8e50",
+    "release_support.py": "98831a44ebd99bbafedae46b25218777ce229cacc83d076b7756d4036c18c5ed",
+    "run_release_stage.py": "9ac183044c3b33833311451fd28ec83756f663d4ece1563e415eda715aebe0a3",
+    "publishing_runner_frozen.py": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99",
+    "native_coordination_frozen.py": "243dc8943a5d91ed3a26673223f862a4f30a1c8b0a35088e7476d02ea4f78c6c"
+  },
+  "original_budget_and_cutoff_preserved": true,
+  "native_pass_required_before_any_archive": true,
+  "exact_model_receipt_required_before_any_archive": true,
+  "native_stage_invoked": false,
+  "release_adapter_invoked": false,
+  "signing_performed": false,
+  "upload_performed": false,
+  "configured_acknowledgment_created": false
+}
