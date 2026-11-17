@@ -1,0 +1,12 @@
+{
+  "root": "/Users/saleh/Library/Caches/HalalTag-ProductionCompositionR6-NativeQA/20261117T160346Z-2944-09b5555115",
+  "files": [
+    {"path":"cases/en-light-large/attachments/84B964A7-F55D-4AD2-B2AB-27749AC84B62.png","bytes":148065,"sha256":"75ec22222fd538bfa35e8631870bece3ca5c2ade25be3f6c76928c953635c152","label":"English light large: original accessibility issue full screenshot","visually_reviewed":true},
+    {"path":"cases/en-light-large/attachments/FF7C0779-771A-4FCD-9A65-8AA1F4A193C6.png","bytes":3746,"sha256":"d18ad9be6d082dc98ebd93c0e08be7782fe71ad4820865114e4feda63633f7fd","label":"English light large: original issue crop showing Done pixels, although audit names privacy link","visually_reviewed":true},
+    {"path":"cases/en-light-large/attachments/C6225388-C500-436D-9762-7B18970CCB74.txt","bytes":11707,"sha256":"8f881749af72886f1ec4855bfdd3d6fa96b0e46ead91de72eae293762b0f26cc","label":"English light large: original pre-audit privacy-section AX tree"},
+    {"path":"cases/en-light-accessibility5/attachments/E49AF43B-33D4-4C7A-A30D-495B1412DA78.png","bytes":96577,"sha256":"cb4aee41c17a9a571fba9b79cd53982089181de684204767c4993c3da7f15b8b","label":"English AX5: original failure screenshot after four measured gestures","visually_reviewed":true},
+    {"path":"cases/en-light-accessibility5/attachments/4653FE6E-E610-4873-B647-54D5AFE373A7.txt","bytes":11780,"sha256":"841fe7645242f6e98b23c5eb2fc3c543d356ec501401a43c63b654062eff2e8d","label":"English AX5: original failure AX tree"},
+    {"path":"cases/ar-light-accessibility5/attachments/F98AD36F-DB26-4AD7-9E3A-7CACC9DC94D7.png","bytes":106025,"sha256":"a4780bcdf487939939293f76e9eb7844290a4df23cd7fe0475e6ccbd3c7f83ab","label":"Arabic AX5: original failure screenshot after audit scroll displacement","visually_reviewed":true},
+    {"path":"cases/ar-light-accessibility5/attachments/BB1B9452-AA3E-4118-9882-21F034C7606C.txt","bytes":7180,"sha256":"a946559cd3d69db0b7a2777154b0d169a450c849f00fea865ebefdcf798cddca","label":"Arabic AX5: original failure AX tree"}
+  ]
+}

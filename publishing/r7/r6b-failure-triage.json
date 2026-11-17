@@ -1,0 +1,68 @@
+{
+  "schema": "halaltag-native-triage-v1",
+  "source_commit": "f2c27c9271da3a17bb01c50b6cdad94643e1d0f2",
+  "full_source_checkpoint": "aa7f756e6c4bb5441e6945e4454141756934252f",
+  "source_frozen": true,
+  "run_id": "09b55551150f4c4ea4a0b2ede2d7578d",
+  "qa_run_id": "09b55551-150f-4c4e-a4a0-b2ede2d7578d",
+  "run_directory_id": "20261117T160346Z-2944-09b5555115",
+  "run_root": "/Users/saleh/Library/Caches/HalalTag-ProductionCompositionR6-NativeQA/20261117T160346Z-2944-09b5555115",
+  "started_at": "2026-11-17T16:03:46.359545+00:00",
+  "finished_at": "2026-11-17T16:21:26.839975+00:00",
+  "exit_code": 1,
+  "native_ui_result": "FAILED_OR_EVIDENCE_INCOMPLETE",
+  "model_checks": {"result": "PASS", "count": 211, "nine_boundary_regression_labels_each_occur_once": true},
+  "ui": {"executed": 19, "passed": 16, "failed": 3, "skipped": 0, "expected_failures": 0, "runtime_warnings": 0},
+  "cleanup": {
+    "cleanup_complete": true,
+    "top_level_cleanup_safe_field_present": false,
+    "appearance_restored_exactly": true,
+    "content_size_restored_exactly": true,
+    "owned_simulator_shutdown_verified": true,
+    "other_devices_touched": false,
+    "lock": "released",
+    "lock_cleanup_detail": "Exact own metadata removed and own lock directory released",
+    "fresh_process_and_global_lock_guard_remains_coordinator_responsibility": true
+  },
+  "findings": [
+    {
+      "id": "en-light-contrast-occluded-link",
+      "case": "en-light-large",
+      "test": "HalalTagAppearanceUITests/testLightAppearanceAndContrastJourney()",
+      "failure": "Contrast nearly passed",
+      "test_source_line": 380,
+      "stdout_relative_path": "steps/046-en-light-large-execute-original-method/stdout.log",
+      "audit_named_element": "Read the privacy policy online",
+      "observation": "The original issue crop contains the fixed black Done button, not visibly rendered link text. The original full screenshot places the online resources heading above Done, with the link below that heading. The pre-audit AX snapshot has link frame y562..606, but the actual scroll viewport ends at599; fixed Done frame is y611..655. The audit itself subsequently moved the content. A low-contrast blue tint defect is not established.",
+      "classification": "Failed unfiltered contrast gate; clipped-link/audit geometry requires controlled native verification before product or helper disposition.",
+      "contrast_assertion_must_remain": true
+    },
+    {
+      "id": "en-ax5-reveal-bound",
+      "case": "en-light-accessibility5",
+      "test": "HalalTagAppearanceUITests/testMaximumTextReachabilityAndFocusedSampleReplacement()",
+      "failure": "Control not reachable within four measured gestures: privacy-What a result means",
+      "test_source_line": 426,
+      "stdout_relative_path": "steps/061-en-light-accessibility5-execute-original-method/stdout.log",
+      "viewport": {"x": 2, "y": 93, "width": 371, "height": 463},
+      "target_height": 137,
+      "measured_target_y_sequence": [1499, 1250, 1001, 752, 503],
+      "first_section_body_height": 1219,
+      "observation": "All four requested gestures made measured progress. After the fourth gesture the heading bottom is640, below visible bottom556. The original screenshot shows the heading beginning above Done; the second line remains below the visible content. The helper's hard four-step limit cannot reveal this unchanged AX5 geometry; one more equivalent gesture would geometrically fit the heading, but this was not executed.",
+      "classification": "Confirmed helper distance budget failure, not proof that the actual product is unscrollable or permanently clipped.",
+      "whole_target_and_finite_progress_assertions_must_remain": true
+    },
+    {
+      "id": "ar-ax5-audit-scroll-displacement",
+      "case": "ar-light-accessibility5",
+      "test": "HalalTagArabicAppearanceUITests/testMaximumTextReachabilityAndFocusedSampleReplacement()",
+      "failure": "Match evidence exhausted its original eight-gesture section budget",
+      "viewport": {"x": 2, "y": 77, "width": 371, "height": 484.5},
+      "observation": "The unchanged unfiltered accessibility audit repeatedly rewinds the actual scroll position while restoring element width/height. For matched-text, after full 105pt content was exposed at y225, the audit returns it to y748 (+523). For matched-explanation, after the first226.5/365pt was exposed at y335, the audit returns it to y858 (+523). Restoring that exposure consumes the original eight-gesture section budget. All measured gestures progress by261.5pt; the original failure screenshot still displays the match card, not a rendering crash.",
+      "classification": "Confirmed audit-induced scroll displacement consumes reading budget. Preserve continuous coverage and all audit types; recovery needs a separately explicit finite geometry budget or equivalent evidence-preserving helper repair.",
+      "continuous_reading_and_audit_assertions_must_remain": true
+    }
+  ],
+  "release_state": "Not released; native gate failed. No archive/sign/export/upload executed by this run.",
+  "scope_limit": "Read-only diagnosis from original summaries, stdout, AX attachments, measured geometry and four original PNGs. No current source changes or new native execution by the reviewer. The PNG selection is a focused failure audit, not the complete run's screenshot set."
+}

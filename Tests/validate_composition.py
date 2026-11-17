@@ -12,7 +12,7 @@ EXPECTED_PRODUCT={
  'IngredientScreening.swift':'fc8aab56d0fbdf7682cc77bf74a0a1811c813e93447b6985379f24c122e4167a',
  'ScreeningLocalization.swift':'097a18920ff95fda968c6cee1591360b50b0c077673bf40cb6c0970e8aa8be70',
  'PrivacyInfo.xcprivacy':'a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12'}
-QAID='com.saleh.halaltag.productioncomposition.qa.r20261117r6'
+QAID='com.saleh.halaltag.productioncomposition.qa.r20261117r7'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def method_bodies(text):
     # These fixed fixtures have no multiline Swift strings. Ignore quoted strings
@@ -39,6 +39,33 @@ def method_bodies(text):
         assert match.group(1) not in result,'duplicate method'
         result[match.group(1)]=text[match.start():i]
     return result
+
+def function_bodies(text):
+    # These fixed fixtures have no multiline Swift strings. Ignore quoted strings
+    # and comments while finding method-closing braces; retain original bytes.
+    result={}
+    for match in re.finditer(r'^    (?:private |override )?func (\w+)\([^\{]*\{',text,re.M):
+        i=match.end();start=i;depth=1;quoted=False;escaped=False
+        while depth:
+            assert i<len(text),'unterminated method'
+            c=text[i]
+            if quoted:
+                if escaped:escaped=False
+                elif c=='\\':escaped=True
+                elif c=='"':quoted=False
+                i+=1;continue
+            if text.startswith('//',i):
+                end=text.find('\n',i);i=len(text) if end<0 else end+1;continue
+            if text.startswith('/*',i):
+                end=text.find('*/',i+2);assert end>=0;i=end+2;continue
+            if c=='"':quoted=True
+            elif c=='{':depth+=1
+            elif c=='}':depth-=1
+            i+=1
+        assert match.group(1) not in result,'duplicate method'
+        result[match.group(1)]=text[match.start():i]
+    return result
+
 
 def main():
     checks=[]
@@ -91,15 +118,34 @@ def main():
             check(old.count(previous_model_pin) == 1 and new.count(EXPECTED_PRODUCT['IngredientScreening.swift']) == 1,
                   'only the exact reviewed R6 model hash changes in the shared QA guard')
             old = old.replace(previous_model_pin, EXPECTED_PRODUCT['IngredientScreening.swift'])
-        check(without_comments(old)==without_comments(new),'all reviewed nine executable bytes preserved except the exact reviewed source binding '+name)
+        check(method_bodies(old)==method_bodies(new), 'all original top-level native method bodies byte-identical '+name)
+        if name == 'HalalTagLanguageStateUITests.swift':
+            check(without_comments(old)==without_comments(new), 'language state fixture bytes unchanged '+name)
+        else:
+            previous_functions, current_functions = function_bodies(old), function_bodies(new)
+            changed_helpers = {'journey','readPorkEvidence','reveal','readBlock','drag','capture'}
+            added_helpers = {'beginBudget','finishBudget','revealTogether','auditPreservingViewport',
+                             'privacyLinks','preparePrivacySection','auditPrivacyLinks'}
+            check(set(current_functions)==set(previous_functions)|added_helpers,
+                  'only reviewed measured-geometry helpers added '+name)
+            check(all(body==current_functions[key] for key,body in previous_functions.items() if key not in changed_helpers),
+                  'all unrelated interaction, timeout, viewport, audit and failure helpers remain byte-identical '+name)
+            if name == 'HalalTagPreparedUITests.swift':
+                check(old[old.index('enum PreparationFailure:'):]==new[new.index('enum PreparationFailure:'):],
+                      'shared four-source-hash QA installation guard unchanged')
         check(len(method_bodies(new))==3,'exact three methods in '+name)
         nine_total+=len(method_bodies(new))
     check(nine_total+len(new_methods)==19,'exact nineteen native test methods, no additions/skips/retries')
     for filename in nine_names[:2]:
         t=(QA/'UITests'/filename).read_text()
         check('try app.performAccessibilityAudit(for: [.contrast, .textClipped, .dynamicType])' in t and
-              'issueHandler' not in t and 'gestureCount - start <= 8' in t and 'stateTimeout: TimeInterval = 3' in t,
-              'original unfiltered audit types and bounded reading budget retained '+filename)
+              'issueHandler' not in t and 'stateTimeout: TimeInterval = 3' in t and
+              'let limit = Int(ceil(distance / step)) + 2' in t and 'limit <= 64' in t and
+              'gestureCount < 168' in t and 'try finishBudget(budget)' in t and
+              'if abs(error) <= 2 { restored = true; break }' in t and
+              'Reading made no new continuous progress' in t and
+              'A reveal gesture skipped an unobserved text region' in t,
+              'unchanged unfiltered audits, continuous coverage and explicit bounded R7 geometry policy '+filename)
     for name,pin in EXPECTED_PRODUCT.items():
         check(sha(ROOT/APP/name)==pin,'exact reviewed shipping product bytes '+name)
     check((ROOT/APP/'HalalAnalyzer______________App.swift').read_bytes()==(EVIDENCE/'Baseline-AppEntry.swift.txt').read_bytes(),
@@ -201,7 +247,7 @@ def main():
     for key,name in [('contentViewSHA256','ContentView.swift'),('ingredientScreeningSHA256','IngredientScreening.swift'),('screeningLocalizationSHA256','ScreeningLocalization.swift'),('privacyManifestSHA256','PrivacyInfo.xcprivacy')]:
         check(manifest[key]==EXPECTED_PRODUCT[name],'test guard binds exact production file '+name)
     plan=json.loads((QA/'nineteen-case-plan.json').read_text());cases=plan['cases']
-    check(plan['scope']=='halaltag-production-composition-nineteen-journeys-r6' and plan['case_count']==len(cases)==19,
+    check(plan['scope']=='halaltag-production-composition-nineteen-journeys-r7' and plan['case_count']==len(cases)==19,
           'distinct nineteen-case scope, not the nine-case acknowledgment')
     check(len({c['execution_id'] for c in cases})==19 and len({(c['test_class'],c['method']) for c in cases})==19,
           'nineteen unique execution paths and selectors')

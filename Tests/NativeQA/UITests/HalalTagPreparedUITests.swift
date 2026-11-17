@@ -4,7 +4,7 @@ import CryptoKit
 import ImageIO
 import UIKit
 
-/// Three original appearance/maximum-text cases, with unchanged executable code.
+/// Three original appearance/maximum-text methods with R7 measured-geometry helpers.
 /// Ten functional bodies are also present; their helper/binding adaptation is documented separately.
 final class HalalTagAppearanceUITests: XCTestCase {
     private var app: XCUIApplication!
@@ -17,7 +17,9 @@ final class HalalTagAppearanceUITests: XCTestCase {
     private var gestures: [[String: Any]] = []
     private var readCoverage: [[String: Any]] = []
     private var matchEvidence: [String: Any] = [:]
-    private var matchReadGestureStart: Int?
+    private var gestureBudgets: [[String: Any]] = []
+    private var auditRecoveries: [[String: Any]] = []
+    private var linkExposure: [[String: Any]] = []
     private var audits: [String] = []
     private var actions: [String] = []
     private let stateTimeout: TimeInterval = 3
@@ -111,10 +113,14 @@ final class HalalTagAppearanceUITests: XCTestCase {
         try capture("privacy-sheet")
         try audit("privacy-sheet")
         for heading in ["What this screen does", "What a result means", "Your text and privacy", "Language and coverage"] {
-            try reveal(try text(heading), key: "privacy-" + heading, sheet: true)
+            let section = try text(heading)
+            try reveal(section, key: "privacy-" + heading, sheet: true)
+            try preparePrivacySection(section, key: "privacy-" + heading)
+            let captureNumber = captureIndex + 1
             try capture("privacy-section")
-            try audit("privacy-section-" + heading)
+            try auditPreservingViewport(section, key: "privacy-section-" + heading, sheet: true, captureNumber: captureNumber)
         }
+        try auditPrivacyLinks()
         try tap(try button("Done"), "close-privacy")
         try wait("Privacy sheet did not dismiss") { self.app.navigationBars.matching(identifier: "Privacy & limitations").count == 0 }
         try assertInput("pork")
@@ -151,7 +157,10 @@ final class HalalTagAppearanceUITests: XCTestCase {
         try attachJSON("Appearance case completed", ["schema_version": 1, "run_id": binding.runID!, "case_id": caseID,
             "test_name": name, "actions": actions, "audits": audits, "captures": captures,
             "gestures": gestures, "gesture_count": gestureCount, "read_coverage": readCoverage,
-            "match_semantics": matchEvidence, "status": "CASE_COMPLETED"])
+            "match_semantics": matchEvidence, "gesture_budgets": gestureBudgets,
+            "audit_recoveries": auditRecoveries, "online_link_exposure": linkExposure,
+            "geometry_policy": "R7_MEASURED_DISTANCE_AND_SEPARATE_AUDIT_RECOVERY",
+            "case_gesture_limit": 168, "status": "CASE_COMPLETED"])
     }
 
     private func readPorkEvidence() throws {
@@ -184,17 +193,19 @@ final class HalalTagAppearanceUITests: XCTestCase {
                          "container_is_static_text": card.elementType == .staticText,
                          "container_frame": rect(containerFrame), "children": childEvidence]
         try attachJSON("Appearance actual match semantics", matchEvidence)
-        // Splitting the card does not increase its original eight-gesture budget.
-        // Each real text also keeps the unchanged continuous-reading assertions.
+        // Each child keeps continuous reading and exact semantics. Navigation
+        // and actual audit-recovery gestures now have independent geometry bounds.
         let start = gestureCount
-        matchReadGestureStart = start
-        defer { matchReadGestureStart = nil }
+        let budgetStart = gestureBudgets.count
         for (index, child) in children.enumerated() {
             try check(child.label == expected[index].label, "Match evidence label changed while reading")
             try readBlock(child, key: expected[index].key, sheet: false)
         }
-        try check(gestureCount - start <= 8, "Match evidence exceeded its original eight-gesture section budget")
+        let matching = gestures.filter { ($0["index"] as! Int) > start }
         matchEvidence["gesture_count"] = gestureCount - start
+        matchEvidence["navigation_gesture_count"] = matching.filter { $0["kind"] as? String != "audit-recovery" }.count
+        matchEvidence["audit_recovery_gesture_count"] = matching.filter { $0["kind"] as? String == "audit-recovery" }.count
+        matchEvidence["budget_ids"] = Array(budgetStart..<gestureBudgets.count)
     }
 
     private func unique(_ query: XCUIElementQuery, _ label: String) throws -> XCUIElement {
@@ -246,89 +257,225 @@ final class HalalTagAppearanceUITests: XCTestCase {
         try check(rect.width > 100 && rect.height > 80 && !rect.isInfinite && !rect.isNull, "No usable actual content viewport")
         return rect.insetBy(dx: 2, dy: 2)
     }
+    // R6b measured up to 9152.5pt of privacy content, 4406.5pt of main
+    // content, a 463pt viewport, and a 523pt audit rewind. R7 records every
+    // operation's tighter geometry-derived budget and every recovery gesture.
+    private func beginBudget(_ kind: String, key: String, frame: CGRect,
+                             viewport: CGRect, distance: CGFloat,
+                             targetRelativeY: CGFloat? = nil) throws -> Int {
+        try check(distance.isFinite && distance >= 0 && viewport.height > 80,
+                  "Invalid measured gesture distance: " + key)
+        let step = viewport.height * 0.40
+        let limit = Int(ceil(distance / step)) + 2
+        try check(limit <= 64 && gestureBudgets.count < 100,
+                  "Measured operation exceeds the independently bounded geometry policy: " + key)
+        let index = gestureBudgets.count
+        var value: [String: Any] = ["id": index, "kind": kind, "key": key,
+            "initial_frame": rect(frame), "initial_viewport": rect(viewport),
+            "distance": Double(distance), "minimum_planned_step": Double(step),
+            "limit": limit, "used": 0, "complete": false]
+        if let targetRelativeY { value["target_relative_y"] = Double(targetRelativeY) }
+        gestureBudgets.append(value)
+        return index
+    }
+    private func finishBudget(_ id: Int) throws {
+        try check(id >= 0 && id < gestureBudgets.count, "Unknown gesture budget")
+        gestureBudgets[id]["complete"] = true
+    }
     private func reveal(_ element: XCUIElement, key: String, sheet: Bool) throws {
+        try revealTogether([element], key: key, sheet: sheet)
+    }
+    private func revealTogether(_ elements: [XCUIElement], key: String, sheet: Bool) throws {
         let scroll = try content(sheet)
-        for attempt in 0...4 {
+        let initialViewport = try viewport(scroll, sheet: sheet)
+        try check(!elements.isEmpty && elements.allSatisfy { $0.exists && $0.frame.width > 0 && $0.frame.height > 0 },
+                  "Missing control needs investigation: " + key)
+        let initialFrame = elements.map(\.frame).dropFirst().reduce(elements[0].frame) { $0.union($1) }
+        try check(initialFrame.height <= initialViewport.height && initialFrame.width <= initialViewport.width,
+                  "Oversized control/group needs investigation: " + key)
+        let distance = max(0, max(initialFrame.maxY - initialViewport.maxY,
+                                  initialViewport.minY - initialFrame.minY))
+        let budget = try beginBudget("reveal", key: key, frame: initialFrame,
+                                     viewport: initialViewport, distance: distance)
+        gestureBudgets[budget]["initial_anchor_frame"] = rect(elements[0].frame)
+        let limit = gestureBudgets[budget]["limit"] as! Int
+        for attempt in 0...limit {
             let visible = try viewport(scroll, sheet: sheet)
-            if element.exists && element.isHittable && visible.contains(element.frame) { return }
-            try check(attempt < 4, "Control not reachable within four measured gestures: " + key)
-            try check(element.exists && element.frame.width > 0 && element.frame.height > 0 && element.frame.height <= visible.height, "Missing/oversized control needs investigation: " + key)
-            let direction = element.frame.maxY > visible.maxY ? -1.0 : 1.0
-            try drag(scroll, anchor: element, direction: direction, key: key, sheet: sheet)
+            let target = elements.map(\.frame).dropFirst().reduce(elements[0].frame) { $0.union($1) }
+            if elements.allSatisfy({ $0.exists && $0.isHittable }) && visible.contains(target) {
+                gestureBudgets[budget]["final_frame"] = rect(target)
+                gestureBudgets[budget]["final_anchor_frame"] = rect(elements[0].frame)
+                gestureBudgets[budget]["final_viewport"] = rect(visible)
+                try finishBudget(budget)
+                return
+            }
+            try check(attempt < limit && elements.allSatisfy { $0.exists && $0.frame.width > 0 && $0.frame.height > 0 } &&
+                      target.height <= visible.height && target.width <= visible.width,
+                      "Control not fully reachable within its measured geometry budget: " + key)
+            let error = target.maxY > visible.maxY ? target.maxY - visible.maxY : target.minY - visible.minY
+            let direction = error > 0 ? -1.0 : 1.0
+            // The observed native drag has a ~10pt touch threshold. Leave a
+            // small interior margin; actual containment and progress decide.
+            let settlingMargin = min(12, (visible.height - target.height) / 2)
+            let travel = min(visible.height * 0.56, abs(error) + settlingMargin + 10)
+            try drag(scroll, anchor: elements[0], direction: direction, key: key,
+                     sheet: sheet, budget: budget, requestedTravel: travel)
         }
     }
     private func readBlock(_ element: XCUIElement, key: String, sheet: Bool) throws {
         let scroll = try content(sheet)
+        let initialViewport = try viewport(scroll, sheet: sheet)
+        let initialFrame = element.frame
+        try check(element.exists && initialFrame.width > 0 && initialFrame.height > 0,
+                  "Missing readable block: " + key)
+        let distance = abs(initialFrame.minY - initialViewport.minY) + initialFrame.height
+        let budget = try beginBudget("read", key: key, frame: initialFrame,
+                                     viewport: initialViewport, distance: distance)
+        let limit = gestureBudgets[budget]["limit"] as! Int
         var furthest: CGFloat = 0
         var began = false
-        var auditDisplaced = false
-        for attempt in 0...8 {
+        for attempt in 0...limit {
             let visible = try viewport(scroll, sheet: sheet)
             let frame = element.frame
             try check(element.exists && frame.width > 0 && frame.height > 0, "Missing readable block: " + key)
             if !began && (frame.minY < visible.minY || frame.minY >= visible.maxY - 30) {
-                try check(attempt < 8, "Text start not reached within bounded gestures: " + key)
-                try drag(scroll, anchor: element, direction: frame.minY < visible.minY ? 1 : -1, key: key, sheet: sheet)
+                try check(attempt < limit, "Text start not reached within its measured geometry budget: " + key)
+                let error = frame.minY - (visible.minY + 12)
+                try drag(scroll, anchor: element, direction: error > 0 ? -1 : 1,
+                         key: key, sheet: sheet, budget: budget,
+                         requestedTravel: min(visible.height * 0.56, abs(error) + 10))
                 continue
             }
             let intersection = frame.intersection(visible)
             let start = intersection.isNull ? CGFloat.infinity : max(0, intersection.minY - frame.minY)
             let end = intersection.isNull ? -CGFloat.infinity : min(frame.height, intersection.maxY - frame.minY)
-            // The original audit can move the actual scroll offset. Restore
-            // exposure using measured gestures inside this SAME eight-step and
-            // forty-total budget; never count an unseen or skipped text region.
-            if auditDisplaced && (intersection.isNull || intersection.height <= 10 ||
-                                  end <= furthest + 2 || start > furthest + 2) {
-                try check(attempt < 8, "Audit-displaced text not restored within original bounded gestures: " + key)
-                let nextUnreadY = frame.minY + furthest
-                try drag(scroll, anchor: element,
-                    direction: nextUnreadY >= visible.maxY - 2 ? -1 : 1, key: key, sheet: sheet)
-                continue
-            }
             try check(!intersection.isNull && intersection.height > 10 && element.isHittable, "Readable text is not exposed: " + key)
             try check(start <= furthest + 2, "A reveal gesture skipped an unobserved text region: " + key)
+            try check(!began || end > furthest + 1, "Reading made no new continuous progress: " + key)
             began = true
-            auditDisplaced = false
             furthest = max(furthest, end)
             let captureNumber = captureIndex + 1
             try capture(key)
             readCoverage.append(["key": key, "capture_index": captureNumber,
-                "start": Double(start), "end": Double(end), "height": Double(frame.height),
-                "frame": rect(frame), "viewport": rect(visible)])
-            let beforeAudit = element.frame
-            try audit(key)
-            // Reacquire real geometry after the unchanged unfiltered audit.
-            let afterAudit = element.frame
-            let afterViewport = try viewport(scroll, sheet: sheet)
-            try attachJSON("Appearance audit viewport observation", ["key": key,
-                "before_frame": rect(beforeAudit), "after_frame": rect(afterAudit),
-                "before_viewport": rect(visible), "after_viewport": rect(afterViewport),
-                "read_through": Double(furthest), "attempt": attempt])
-            try check(element.exists && abs(afterAudit.width - beforeAudit.width) <= 2 &&
-                      abs(afterAudit.height - beforeAudit.height) <= 2,
-                      "Audit did not restore the readable block's actual geometry: " + key)
-            auditDisplaced = abs(afterAudit.minY - beforeAudit.minY) > 2 ||
-                             abs(afterViewport.minY - visible.minY) > 2 ||
-                             abs(afterViewport.maxY - visible.maxY) > 2
-            if furthest >= frame.height - 2 { return }
-            try check(attempt < 8, "Text not covered within eight bounded reveal steps: " + key)
-            let nextUnreadY = afterAudit.minY + furthest
-            let direction = auditDisplaced && nextUnreadY < afterViewport.minY ? 1.0 : -1.0
-            try drag(scroll, anchor: element, direction: direction, key: key, sheet: sheet)
+                "budget_id": budget, "start": Double(start), "end": Double(end),
+                "height": Double(frame.height), "frame": rect(frame), "viewport": rect(visible)])
+            try auditPreservingViewport(element, key: key, sheet: sheet, captureNumber: captureNumber)
+            // Recovery is complete before returning even when the whole text
+            // was visible. A later child never inherits an audit's scroll rewind.
+            if furthest >= frame.height - 2 {
+                try finishBudget(budget)
+                return
+            }
+            try check(attempt < limit, "Text not covered within its measured geometry budget: " + key)
+            let restoredViewport = try viewport(scroll, sheet: sheet)
+            let nextUnreadY = element.frame.minY + furthest
+            let travel = min(restoredViewport.height * 0.56,
+                             max(12, nextUnreadY - (restoredViewport.minY + restoredViewport.height * 0.35)) + 10)
+            try drag(scroll, anchor: element, direction: -1, key: key, sheet: sheet,
+                     budget: budget, requestedTravel: travel)
         }
     }
-    private func drag(_ scroll: XCUIElement, anchor: XCUIElement, direction: Double, key: String, sheet: Bool) throws {
-        try check(gestureCount < 40, "The bounded 40-gesture case budget was exhausted")
-        if let matchReadGestureStart {
-            try check(gestureCount - matchReadGestureStart < 8,
-                      "Match evidence exhausted its original eight-gesture section budget")
+    private func auditPreservingViewport(_ element: XCUIElement, key: String,
+                                        sheet: Bool, captureNumber: Int) throws {
+        let scroll = try content(sheet)
+        let before = element.frame
+        let beforeViewport = try viewport(scroll, sheet: sheet)
+        // This call remains combined and unfiltered. A failed audit throws;
+        // it is never caught, retried, or turned into a passing receipt.
+        try audit(key)
+        let after = element.frame
+        let afterViewport = try viewport(scroll, sheet: sheet)
+        try check(element.exists && abs(after.width - before.width) <= 2 && abs(after.height - before.height) <= 2 &&
+                  abs(afterViewport.width - beforeViewport.width) <= 2 && abs(afterViewport.height - beforeViewport.height) <= 2,
+                  "Audit did not restore the readable block's actual geometry: " + key)
+        let targetRelativeY = before.minY - beforeViewport.minY
+        let displacement = (after.minY - afterViewport.minY) - targetRelativeY
+        let budget = try beginBudget("audit-recovery", key: key, frame: after,
+            viewport: afterViewport, distance: abs(displacement), targetRelativeY: targetRelativeY)
+        let limit = gestureBudgets[budget]["limit"] as! Int
+        var restored = false
+        for attempt in 0...limit {
+            let visible = try viewport(scroll, sheet: sheet)
+            let current = element.frame
+            try check(element.exists && abs(current.width - before.width) <= 2 && abs(current.height - before.height) <= 2 &&
+                      abs(visible.width - beforeViewport.width) <= 2 && abs(visible.height - beforeViewport.height) <= 2,
+                      "Actual geometry changed during audit recovery: " + key)
+            let error = (current.minY - visible.minY) - targetRelativeY
+            if abs(error) <= 2 { restored = true; break }
+            try check(attempt < limit, "Audit-displaced interval was not restored within its measured recovery budget: " + key)
+            try drag(scroll, anchor: element, direction: error > 0 ? -1 : 1,
+                     key: key, sheet: sheet, budget: budget,
+                     requestedTravel: min(visible.height * 0.56, abs(error) + 10))
+            let resultingViewport = try viewport(scroll, sheet: sheet)
+            let remaining = abs((element.frame.minY - resultingViewport.minY) - targetRelativeY)
+            try check(remaining <= 2 || remaining < abs(error) - 1,
+                      "Audit recovery did not approach the previously exposed interval: " + key)
         }
+        try check(restored, "Prior visible interval was not restored: " + key)
+        try finishBudget(budget)
+        let finalViewport = try viewport(scroll, sheet: sheet)
+        let record: [String: Any] = ["key": key, "audit_index": audits.count,
+            "capture_index": captureNumber, "budget_id": budget,
+            "before_frame": rect(before), "before_viewport": rect(beforeViewport),
+            "after_frame": rect(after), "after_viewport": rect(afterViewport),
+            "restored_frame": rect(element.frame), "restored_viewport": rect(finalViewport),
+            "displacement": Double(displacement), "restored": true]
+        auditRecoveries.append(record)
+        try attachJSON("Appearance audit viewport recovery", record)
+    }
+    private func privacyLinks() throws -> [XCUIElement] {
+        try ["Read the privacy policy online", "Open support instructions"].map {
+            try unique(app.links.matching(NSPredicate(format: "label == %@", $0)), $0)
+        }
+    }
+    private func preparePrivacySection(_ heading: XCUIElement, key: String) throws {
+        let scroll = try content(true)
+        let visible = try viewport(scroll, sheet: true)
+        let links = try privacyLinks()
+        // The R6b link was 7pt outside the real scroll viewport. If a link
+        // intersects this section's pose, expose both links and the original
+        // heading together before the same audit, only when their union fits.
+        if links.contains(where: { $0.frame.intersects(visible) && !visible.contains($0.frame) }) {
+            try revealTogether([heading] + links, key: key + "-nearby-links", sheet: true)
+        }
+        try check((try viewport(scroll, sheet: true)).contains(heading.frame) && heading.isHittable,
+                  "Original privacy heading lost its fully visible audit pose: " + key)
+    }
+    private func auditPrivacyLinks() throws {
+        let links = try privacyLinks()
+        for (index, link) in links.enumerated() {
+            let key = index == 0 ? "privacy-online-link" : "support-online-link"
+            let initialViewport = try viewport(try content(true), sheet: true)
+            let pair = links[0].frame.union(links[1].frame)
+            if pair.height <= initialViewport.height {
+                try revealTogether(links, key: key, sheet: true)
+            } else {
+                try reveal(link, key: key, sheet: true)
+            }
+            let visible = try viewport(try content(true), sheet: true)
+            try check(link.exists && link.elementType == .link && link.isHittable && visible.contains(link.frame),
+                      "Online link is not fully exposed inside the real scroll viewport: " + key)
+            let captureNumber = captureIndex + 1
+            try capture(key)
+            linkExposure.append(["key": key, "label": link.label, "element_type": "link",
+                "frame": rect(link.frame), "viewport": rect(visible), "capture_index": captureNumber])
+            try auditPreservingViewport(link, key: key, sheet: true, captureNumber: captureNumber)
+        }
+    }
+    private func drag(_ scroll: XCUIElement, anchor: XCUIElement, direction: Double, key: String,
+                      sheet: Bool, budget: Int, requestedTravel: CGFloat) throws {
+        try check(gestureCount < 168, "The independently bounded 168-gesture R7 case ceiling was exhausted")
+        try check(budget >= 0 && budget < gestureBudgets.count,
+                  "Gesture lacks its measured operation budget: " + key)
+        let used = gestureBudgets[budget]["used"] as! Int
+        let limit = gestureBudgets[budget]["limit"] as! Int
+        try check(used < limit && gestureBudgets[budget]["complete"] as? Bool == false,
+                  "Measured operation budget exhausted: " + key)
         let visible = try viewport(scroll, sheet: sheet)
         let before = anchor.frame
-        // Derive a left gutter from real visible content. The previous trailing
-        // path intersected the native indicator thumb and scrubbed the document.
         let contentFrames = (scroll.staticTexts.allElementsBoundByIndex +
                              scroll.buttons.allElementsBoundByIndex +
+                             scroll.links.allElementsBoundByIndex +
                              scroll.textViews.allElementsBoundByIndex).map(\.frame)
             .filter { $0.width > 0 && $0.height > 0 && $0.intersects(visible) }
         try check(!contentFrames.isEmpty, "No measured content margin for gesture: " + key)
@@ -336,10 +483,10 @@ final class HalalTagAppearanceUITests: XCTestCase {
         let gutterRight = (contentFrames.map(\.minX).min() ?? visible.minX) - 2
         try check(gutterRight - gutterLeft >= 4, "No safe measured left gutter: " + key)
         let x = (gutterLeft + gutterRight) / 2
+        let travel = min(visible.height * 0.56, max(12, requestedTravel))
         let startY = direction < 0 ? visible.minY + visible.height * 0.78 : visible.minY + visible.height * 0.22
-        let endY = direction < 0 ? visible.minY + visible.height * 0.22 : visible.minY + visible.height * 0.78
-        let route = CGRect(x: x - 2, y: min(startY, endY), width: 4,
-                           height: abs(endY - startY))
+        let endY = startY + CGFloat(direction) * travel
+        let route = CGRect(x: x - 2, y: min(startY, endY), width: 4, height: travel)
         let editorFrames = scroll.textViews.allElementsBoundByIndex.map(\.frame)
             .filter { $0.width > 0 && $0.height > 0 }
         let indicatorFrames = scroll.descendants(matching: .any)
@@ -350,20 +497,28 @@ final class HalalTagAppearanceUITests: XCTestCase {
                   !indicatorFrames.contains { $0.intersects(route) },
                   "Measured drag route intersects an editor or native scroll indicator: " + key)
         try attachJSON("Appearance measured drag route", ["key": key, "direction": direction,
-            "route": rect(route), "gutter_left": Double(gutterLeft), "gutter_right": Double(gutterRight),
-            "editor_frames": editorFrames.map { rect($0) },
+            "budget_id": budget, "route": rect(route), "gutter_left": Double(gutterLeft),
+            "gutter_right": Double(gutterRight), "editor_frames": editorFrames.map { rect($0) },
             "indicator_frames": indicatorFrames.map { rect($0) }])
         let origin = scroll.coordinate(withNormalizedOffset: .zero)
         let start = origin.withOffset(CGVector(dx: x - scroll.frame.minX, dy: startY - scroll.frame.minY))
         let end = origin.withOffset(CGVector(dx: x - scroll.frame.minX, dy: endY - scroll.frame.minY))
+        let beforeCapture = captureIndex + 1
         try capture("before-gesture")
         start.press(forDuration: 0.1, thenDragTo: end, withVelocity: .slow, thenHoldForDuration: 0.2)
         try wait("Content gesture made no progress in the requested direction: " + key) {
             direction * Double(anchor.frame.minY - before.minY) > 1
         }
         gestureCount += 1
+        gestureBudgets[budget]["used"] = used + 1
         let event: [String: Any] = ["index": gestureCount, "key": key, "direction": direction,
-            "before": rect(before), "after": rect(anchor.frame), "viewport": rect(visible)]
+            "budget_id": budget, "budget_step": used + 1, "kind": gestureBudgets[budget]["kind"]!,
+            "before": rect(before), "after": rect(anchor.frame), "viewport": rect(visible),
+            "requested_travel": Double(travel), "route": rect(route),
+            "editor_frames": editorFrames.map { rect($0) },
+            "indicator_frames": indicatorFrames.map { rect($0) },
+            "before_capture_index": beforeCapture,
+            "after_capture_index": captureIndex + 1]
         gestures.append(event)
         try attachJSON("Appearance measured gesture", event)
         try capture("after-gesture")
@@ -410,7 +565,7 @@ final class HalalTagAppearanceUITests: XCTestCase {
         // Original PNG/metadata are attached BEFORE any assertion, including failures.
         XCTAssertEqual(width, 750, "Expected the pinned SE native screenshot width")
         XCTAssertEqual(height, 1334, "Expected the pinned SE native screenshot height")
-        XCTAssertLessThanOrEqual(captureIndex, 150, "Bounded capture budget exceeded")
+        XCTAssertLessThanOrEqual(captureIndex, 400, "Bounded R7 capture budget exceeded")
         XCTAssertEqual(app.frame.size.width, 375)
         XCTAssertEqual(app.frame.size.height, 667)
     }

@@ -11,7 +11,7 @@ implementation. App/HalalTagQAApp.swift is a separate UIKit receipt host; it doe
 not belong to the shipping file-system-synchronized app group. The shipping
 SwiftUI entry and production archive scheme remain unchanged.
 
-Exact native scope: halaltag-production-composition-nineteen-journeys-r6.
+Exact native scope: halaltag-production-composition-nineteen-journeys-r7.
 Use the distinct reviewed nineteen-case adapter and a fresh exact-source
 coordinator acknowledgment. A prior nine-case receipt cannot authorize or prove
 this scope. The bundled installation manifest is deliberately UNCONFIGURED.
@@ -35,11 +35,20 @@ scroll, keyboard dismissal, timeout, expanded gesture budget or test waiver.
 The shared four-source-hash installation guard replaces the duplicate older
 private guard. The full file is therefore NOT unchanged. See the explicit diff.
 
-The nine reviewed journey method bodies and interaction helpers retain all
-executable code. Only the explicit product-source hash binding is updated in the
-shared English guard; Arabic and state files are byte-identical.
-Contrast, clipped-text and Dynamic Type audits remain unfiltered. Existing
-failures must be reported; these native controls remain a rendering hypothesis.
+All nineteen top-level method bodies remain byte-identical. R7 changes only the
+English/Arabic appearance interaction helpers, their explicit evidence guards,
+and the dedicated QA identity. The two functional/state fixture files remain
+byte-identical. Shipping product bytes are still the exact f2 candidate.
+
+R6b completed 16/19 native cases and all 211 model checks; its three failed
+appearance cases remain preserved failures. R7 replaces the inadequate hard
+4/8/40 scroll allowances with bounded measured-distance budgets, separately
+accounts for actual audit-induced scroll recovery, restores each prior interval
+even after complete reading, and fully exposes the online links before auditing.
+It keeps continuous no-gap reading and the same unfiltered combined contrast,
+clipped-text and Dynamic Type audit. No failed audit is caught or retried as a
+pass. R7 has not compiled or run natively; the repair is still a hypothesis until
+its own exact-source native receipt passes. See publishing/r7 in the full repo.
 
 Production-only acceptance remains necessary after the simulator suite:
 - Compile/run the real SwiftUI entry, including language switching and relaunch.
