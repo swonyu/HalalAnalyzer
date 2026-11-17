@@ -50,4 +50,3 @@
         self.report["model_checks"] = {**receipt, "receipt": str(receipt_path),
                                        "receipt_sha256": sha(receipt_path)}
         self.flush()
-
