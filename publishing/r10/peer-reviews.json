@@ -1,0 +1,22 @@
+{
+  "reviewed_at_utc": "2026-11-17T21:04:36.336807+00:00",
+  "reviewer": "github_recovery",
+  "scope": "Read-only static R10 typed decomposition; no compiler/native/test/source edits",
+  "patch_sha256": "2ff5c7fe8c467a838f2b635af86f48cef91b7b5c114610d8315d273c2c4aa09e",
+  "files": [
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift",
+      "current_sha256": "22ba775b743c9776696bae9a057401e7c17d6716a44765451766544ed54954f0",
+      "parent_sha256": "334cd81ad14739c78257cde44d69c3d85987d50a52c034dbc5f41709d58c439c",
+      "reverse_replacement_exact_parent": true
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagArabicAppearanceUITests.swift",
+      "current_sha256": "8aa778616b83f5891b747020fd8c8eac68587081e7fba0f46e751c9cea9f484d",
+      "parent_sha256": "c48ba3e57194ff29fb0cfaaa57f2de00333a7442a2d5891709bf8119acf3959b",
+      "reverse_replacement_exact_parent": true
+    }
+  ],
+  "finding": "No blocking source issue. Filtering, vertical clipping, primary low ordering and equal-low high ordering are identical. Explicit CGFloat tuple typing matches CGRect coordinates. All remaining bytes in both files equal the frozen Git parent.",
+  "limits": "This verifies source equivalence only. It does not prove Swift compilation succeeds or any native appearance journey passes."
+}

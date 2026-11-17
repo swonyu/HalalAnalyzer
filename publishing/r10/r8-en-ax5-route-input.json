@@ -1,0 +1,146 @@
+{
+  "label": "R8 EN AX5 before actual external navigation",
+  "source_sha256": "85d6ba0df3723ed1c413578b7e945c6180bd6043591a360c88ed77602d9a913c",
+  "source_attachment": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "58639E52-7C7F-4E0F-B84D-E3B314B1E608",
+    "deviceName": "HalalTag-Appearance-QA-72dad329c7e84a35",
+    "exportedFileName": "384CE69B-8ED9-437C-A5EB-593A34BAF774.txt",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Appearance AX - appearance-light-accessibility5-202-before-gesture_0_58428344-FCA5-4755-B038-6A4E54AE6C19.txt",
+    "timestamp": 1794941622.243
+  },
+  "viewport": {
+    "x": 2,
+    "y": 93,
+    "width": 371,
+    "height": 463
+  },
+  "content_frames": [
+    {
+      "x": 20,
+      "y": -942,
+      "width": 335,
+      "height": 1152
+    },
+    {
+      "x": 20,
+      "y": 234,
+      "width": 335,
+      "height": 137
+    },
+    {
+      "x": 20,
+      "y": 391,
+      "width": 335,
+      "height": 153
+    },
+    {
+      "x": 20,
+      "y": 383,
+      "width": 318.5,
+      "height": 204.5
+    }
+  ],
+  "button_frames": [
+    {
+      "x": 20,
+      "y": 24,
+      "width": 36.5,
+      "height": 36
+    },
+    {
+      "x": 20,
+      "y": -2878.5,
+      "width": 335,
+      "height": 85
+    },
+    {
+      "x": 20,
+      "y": 391,
+      "width": 335,
+      "height": 153
+    },
+    {
+      "x": 20,
+      "y": 713,
+      "width": 335,
+      "height": 153
+    },
+    {
+      "x": 20,
+      "y": 876,
+      "width": 335,
+      "height": 153
+    },
+    {
+      "x": 20,
+      "y": 1039,
+      "width": 335,
+      "height": 216
+    },
+    {
+      "x": 20,
+      "y": 570,
+      "width": 335,
+      "height": 85
+    },
+    {
+      "x": 20,
+      "y": 40,
+      "width": 36.5,
+      "height": 36
+    },
+    {
+      "x": 20,
+      "y": 40,
+      "width": 36.5,
+      "height": 36
+    },
+    {
+      "x": 20,
+      "y": 570,
+      "width": 335,
+      "height": 85
+    }
+  ],
+  "link_frames": [
+    {
+      "x": 20,
+      "y": 383,
+      "width": 318.5,
+      "height": 204.5
+    },
+    {
+      "x": 20,
+      "y": 599.5,
+      "width": 321.5,
+      "height": 137
+    }
+  ],
+  "editor_frames": [],
+  "indicator_frames": [
+    {
+      "x": 342,
+      "y": 91,
+      "width": 30,
+      "height": 467
+    },
+    {
+      "x": 342,
+      "y": 91,
+      "width": 30,
+      "height": 467
+    }
+  ],
+  "requested_travel": 202.5,
+  "direction": -1,
+  "previous_route": {
+    "x": 9,
+    "y": 251.64,
+    "width": 4,
+    "height": 202.5
+  },
+  "fixture_scope": "Extracted actual R8 AX rectangles; route calculation is synthetic and does not establish a native pass.",
+  "previous_route_provenance": "Original recorded R8 gesture route"
+}

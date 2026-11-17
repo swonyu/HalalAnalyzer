@@ -1,0 +1,24 @@
+{
+  "status": "R9_BUILD_FAILED_UI_NOT_RUN",
+  "parent_commit": "4405f8ffec0d21d3922dd333dfb4ee64447b5643",
+  "run_id": "80caf9e0d2534c7485e6e08cb3a8be83",
+  "started_at": "2026-11-17T20:48:35.649191+00:00",
+  "finished_at": "2026-11-17T20:49:30.794281+00:00",
+  "report_sha256": "caf89d9ec474a509d60dacbc2a84a32091b275e4c6b95f05ed01e73354ca6238",
+  "model_checks_passed": 211,
+  "ui_cases_executed": 0,
+  "ui_cases_required": 19,
+  "build_exit_code": 65,
+  "compiler_error": {
+    "file": "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift",
+    "line": 520,
+    "message": "the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions"
+  },
+  "compiler_stdout_sha256": "7118f0e6e29cb0f1e6eb5280e4d3a58566911510fd79d0aa2a8a6e68cd855426",
+  "compiler_stderr_sha256": "d9439e7eb3bb39b81e8fb011a68ce39bc1c775f47be84684a5c410114c7d7061",
+  "cleanup_complete": true,
+  "cleanup_safe_property_present": false,
+  "lock": "released",
+  "new_candidate_native_invoked": false,
+  "originals_preserved_privately": true
+}

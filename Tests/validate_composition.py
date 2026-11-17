@@ -12,7 +12,7 @@ EXPECTED_PRODUCT={
  'IngredientScreening.swift':'fc8aab56d0fbdf7682cc77bf74a0a1811c813e93447b6985379f24c122e4167a',
  'ScreeningLocalization.swift':'097a18920ff95fda968c6cee1591360b50b0c077673bf40cb6c0970e8aa8be70',
  'PrivacyInfo.xcprivacy':'a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12'}
-QAID='com.saleh.halaltag.productioncomposition.qa.r20261117r9'
+QAID='com.saleh.halaltag.productioncomposition.qa.r20261117r10'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def method_bodies(text):
     # These fixed fixtures have no multiline Swift strings. Ignore quoted strings
@@ -247,7 +247,7 @@ def main():
     for key,name in [('contentViewSHA256','ContentView.swift'),('ingredientScreeningSHA256','IngredientScreening.swift'),('screeningLocalizationSHA256','ScreeningLocalization.swift'),('privacyManifestSHA256','PrivacyInfo.xcprivacy')]:
         check(manifest[key]==EXPECTED_PRODUCT[name],'test guard binds exact production file '+name)
     plan=json.loads((QA/'nineteen-case-plan.json').read_text());cases=plan['cases']
-    check(plan['scope']=='halaltag-production-composition-nineteen-journeys-r9' and plan['case_count']==len(cases)==19,
+    check(plan['scope']=='halaltag-production-composition-nineteen-journeys-r10' and plan['case_count']==len(cases)==19,
           'distinct nineteen-case scope, not the nine-case acknowledgment')
     check(len({c['execution_id'] for c in cases})==19 and len({(c['test_class'],c['method']) for c in cases})==19,
           'nineteen unique execution paths and selectors')

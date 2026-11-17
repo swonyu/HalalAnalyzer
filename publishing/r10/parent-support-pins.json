@@ -1,0 +1,117 @@
+[
+  {
+    "path": "HANDOFF.txt",
+    "bytes": 4197,
+    "sha256": "e419eacdea31e56f4c9d5fab20030bced05e81c68bbc3c78181e45457b7ab5a0"
+  },
+  {
+    "path": "Tests/test_adapter_contract.py",
+    "bytes": 17007,
+    "sha256": "7d03c497ecd250f80c67a24bcf432213b784e5620cba96ee7f559524f9b0ab7a"
+  },
+  {
+    "path": "adapter-from-r8.diff",
+    "bytes": 2993,
+    "sha256": "f8f27e1a855b0ca7825af86e248d1c272e86cb1a07b90e46604b0d74b47cabe8"
+  },
+  {
+    "path": "appearance_evidence_guard.py",
+    "bytes": 33736,
+    "sha256": "0368d6d8624bd821393c8320f8b7b6c872947ba6bc1edb4731df85176295efc5"
+  },
+  {
+    "path": "appearance_evidence_guard.py.from-r8.diff",
+    "bytes": 8177,
+    "sha256": "424b31f3e44d291f181b56eb720131a4b1cb63f8f5b801ef483284daa77f57cb"
+  },
+  {
+    "path": "appearance_png.py",
+    "bytes": 2828,
+    "sha256": "0d22ed3a871d4abdf5c8272a3a7319b4c8698d45d77554d5261140e4ac9c7f2d"
+  },
+  {
+    "path": "arabic_appearance_evidence_guard.py",
+    "bytes": 34563,
+    "sha256": "a88936f27ff169617ba87fd8ec4a0a7cd82d283e89782bd4fd737b6596299268"
+  },
+  {
+    "path": "arabic_appearance_evidence_guard.py.from-r8.diff",
+    "bytes": 8305,
+    "sha256": "c4784f87b14a895f25ea11d0a715c180faa7064ce28152b0e2e65cab84978865"
+  },
+  {
+    "path": "coordinator-acknowledgment-UNCONFIGURED.json",
+    "bytes": 2357,
+    "sha256": "e1643bdd324e8667207ba2110c5800316021f76d494a88d388002d215c9bc001"
+  },
+  {
+    "path": "native-drag-from-r8.patch",
+    "bytes": 19578,
+    "sha256": "36c093ba17315c8947176e917047218cf12cad795d3938f0fad29f850af80a4a"
+  },
+  {
+    "path": "product-from-r8.patch",
+    "bytes": 1542,
+    "sha256": "406e431a7cd4e5be62f69560cf1fd482a5adb71332d650aff7943f7af9a512e2"
+  },
+  {
+    "path": "production_case_evidence.py",
+    "bytes": 16581,
+    "sha256": "87be7604fb95bda60dfcd9eacd63546ac829c3bd5ab7ef27dc2fe48cbbd987b0"
+  },
+  {
+    "path": "publishing_runner_frozen.py",
+    "bytes": 61657,
+    "sha256": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99"
+  },
+  {
+    "path": "r8-ar-ax5-route-input.json",
+    "bytes": 2778,
+    "sha256": "ad48f25b6e61f6711a455f5285d033981290d8ab5a00ea16290583fb9e240b18"
+  },
+  {
+    "path": "r8-en-ax5-route-input.json",
+    "bytes": 2692,
+    "sha256": "0b1ba22d9f5bcc161cc4c9cf99d59e39cf85c35f67991fc7fc482d6e9f22362b"
+  },
+  {
+    "path": "reference-inputs.json",
+    "bytes": 4345,
+    "sha256": "fc4de05bdcdd1cb48ffcc967c9b0cee2d9f4c8b1d29fa6ab62566ac5e2cceb3e"
+  },
+  {
+    "path": "run_halaltag_native_qa.py",
+    "bytes": 60954,
+    "sha256": "011d1d950c24aa5ce07b617c8724b49db66d1d7468e7b770a59ace4525987df4"
+  },
+  {
+    "path": "sealed-project-inputs.json",
+    "bytes": 8873,
+    "sha256": "1d73c6e84bf5cf0bf948e33e3fc8452eb016e91c5a7d121ec52c1af0cedd16f4"
+  },
+  {
+    "path": "shipping-retention.json",
+    "bytes": 3250,
+    "sha256": "cb12f614d94b3cfa1fba462527cf71623acc124b438cbc995e91f6ca59c21831"
+  },
+  {
+    "path": "simctl-ui-help-root-20261117.stderr",
+    "bytes": 1776,
+    "sha256": "2fa67269b4a75d4856edcaf9f65ed4bd830bd0ecae95e370173fa8ed2fe87084"
+  },
+  {
+    "path": "source-retention.json",
+    "bytes": 2426,
+    "sha256": "1eadced36ec919cbc130fed7e0423053c96b96df0ed65b375dabaad3bd07f029"
+  },
+  {
+    "path": "system_size_evidence.py",
+    "bytes": 6440,
+    "sha256": "e2e58acbb2de819be1e1cc4e0149f7311981c243473c07992df0ca1f67b8e83b"
+  },
+  {
+    "path": "test_geometry_evidence.py",
+    "bytes": 14419,
+    "sha256": "e2181a94a7aad0eca749f825396cae36571d271dbc3176038ce551d98a4638a6"
+  }
+]

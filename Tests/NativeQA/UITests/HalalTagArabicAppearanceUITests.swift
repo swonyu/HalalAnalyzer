@@ -542,9 +542,16 @@ final class HalalTagArabicAppearanceUITests: XCTestCase {
             if eligible {
                 let x = (margin.left + margin.right) / 2
                 let column = CGRect(x: x - 2, y: visible.minY, width: 4, height: visible.height)
-                let blocked = excludedFrames.filter { $0.intersects(column) }
-                    .map { (low: max(visible.minY, $0.minY), high: min(visible.maxY, $0.maxY)) }
-                    .sorted { $0.low == $1.low ? $0.high < $1.high : $0.low < $1.low }
+                let intersectingFrames: [CGRect] = excludedFrames.filter { frame in
+                    frame.intersects(column)
+                }
+                let clippedSpans: [(low: CGFloat, high: CGFloat)] = intersectingFrames.map { frame in
+                    (low: max(visible.minY, frame.minY), high: min(visible.maxY, frame.maxY))
+                }
+                let blocked: [(low: CGFloat, high: CGFloat)] = clippedSpans.sorted { lhs, rhs in
+                    if lhs.low == rhs.low { return lhs.high < rhs.high }
+                    return lhs.low < rhs.low
+                }
                 var cursor = visible.minY
                 func appendBand(_ low: CGFloat, _ high: CGFloat) {
                     // Keep a real 2pt vertical clearance from every blocking

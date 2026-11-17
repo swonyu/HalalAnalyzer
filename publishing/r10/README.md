@@ -1,0 +1,11 @@
+# HalalTag R10 typed-expression successor
+
+R10 is an isolated source successor of frozen R9 `4405f8ffec0d21d3922dd333dfb4ee64447b5643`. It has not been compiled or native-tested. R9 passed its 211 model checks, then the initial UI build exited 65 because Swift could not type-check the chained route expression in reasonable time. All 19 R9 UI cases were NOT_RUN; that failure is preserved in `r9-build-failure.json` and private original logs.
+
+The only behavioral-source edit is the same small decomposition at the English and Arabic private `drag` helper sites: an explicitly typed CGRect intersection list, an explicitly typed named-interval clipping list, and the same ascending low/high tie comparator. There is no geometry-policy change. The recorded route policy remains `R9_BOTH_GUTTERS_WITH_MEASURED_ACTION_EXCLUSIONS` because R10 retains that exact policy, margins, chosen-travel semantics and evidence validator.
+
+All 14 shipping source files remain byte-identical to R9, including the reviewed link foreground and Arabic label alignment repairs. All 19 method bodies, assertions, uncaught/unfiltered audits, complete reading coverage, finite gesture/capture budgets, 45-minute batch cap, 120-second cleanup reserve, 20-minute case bound and zero-retry rule remain intact. Five QA identity/scope files identify the separate R10 candidate. The unconfigured synthetic installation template stays byte-identical because its production-source hashes have not changed. The existing 8 geometry regression tests and 16 adapter contract tests remain required; their source is retained.
+
+`prepare_native_review.py` is file-only. It requires a clean committed descendant candidate, verifies all 23 pinned parent support files and 47 source inputs, checks shipping/test retention, copies only exact support inputs and creates a separate unconfigured acknowledgment. It never compiles, controls a simulator, signs, uploads, pushes or retries a native run. Root owns the next native reservation and actual acknowledgment. The explicit user extension ends 2026-11-18T22:26:12Z; the original budget was not restarted.
+
+Actual native acceptance still requires a new root-owned successful build, 211 model checks and all 19 UI cases, including actual R8 failure poses. No static source or Python contract result is a native or store release pass.
