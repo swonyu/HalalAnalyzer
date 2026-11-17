@@ -1,0 +1,114 @@
+[
+  {
+    "path": "Artwork/HalalAnalyzerIcon.svg",
+    "sha256": "d3e639d38eac86bb2bab040ec2c0c6a3b5072316c42eb472bd05b67d72b24380"
+  },
+  {
+    "path": "HalalTag.xcworkspace/contents.xcworkspacedata",
+    "sha256": "da6d2cee1e12ca533006d2628813a2744f0fa6bd056d4f73ffcff7a7e283b6f1"
+  },
+  {
+    "path": "Tests/validate_composition.py",
+    "sha256": "3aaecdcb29029eac0786d9c551fb216899e0bed7fbfaf14a34b5b66fd686771c"
+  },
+  {
+    "path": "Tests/openstep_reader.py",
+    "sha256": "552e83abb6530bd77adba1ab592469f92004997f2c3cb843949e76cf74f81ae4"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f.xcodeproj/project.pbxproj",
+    "sha256": "777ca0dda92eabf2d446285a47b6f6f47f5d3d09e6c211744b88a25dd62661f0"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f/PrivacyInfo.xcprivacy",
+    "sha256": "a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f/HalalAnalyzer______________App.swift",
+    "sha256": "ae36f474eb444bfa7c084573d2e544a42ca1406e7082c2eea575a856f088e831"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f/ContentView.swift",
+    "sha256": "9bfc7e5814308b8b7382f3136c7e076ee423e798ea45a321a05f8ec82ebe0c95"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f/IngredientScreening.swift",
+    "sha256": "bf98d94670058cb2a810ae9bb3866053bd9b706eee6d8503b9f459caa683bfe2"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f/ScreeningLocalization.swift",
+    "sha256": "7311a8c17857ed07161bac107911670c0edfdec5b8169fb8e08cb85739a92e4e"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f/ar.lproj/InfoPlist.strings",
+    "sha256": "14e333dd2c788060b92ac06b5fa2055f064dd190c801390764b972d9a520f354"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f/en.lproj/InfoPlist.strings",
+    "sha256": "14e333dd2c788060b92ac06b5fa2055f064dd190c801390764b972d9a520f354"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f/Assets.xcassets/Contents.json",
+    "sha256": "0fd49ba3c3585c709678e0046a821c3c60685ec7063720d30d3a3448be3a208b"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f/Assets.xcassets/AppIcon.appiconset/Contents.json",
+    "sha256": "9cf2928dad89427abd581b6852db081352417f400afb65e60c479228cdc4f4da"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f/Assets.xcassets/AccentColor.colorset/Contents.json",
+    "sha256": "9af65086fa30b49252fae1a1225731691de794f7775af74d71befeb507d12b7c"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+    "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f"
+  },
+  {
+    "path": "HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f.xcodeproj/xcshareddata/xcschemes/HalalAnalyzer \u062d\u0644\u0627\u0644 \u0627\u0645 \u062d\u0631\u0627\u0645\u061f.xcscheme",
+    "sha256": "84deda478d07aa0c842e1effc47b0060b9ad356a5ab6841f1590577e0630cc7b"
+  },
+  {
+    "path": "Tests/NativeQA/nineteen-case-plan.json",
+    "sha256": "4b226c129d90514659d9c57ffb55ae98a8f47feaf1a5d4b013d3d6b05be9b6e7"
+  },
+  {
+    "path": "Tests/Model/BilingualModelChecks.swift",
+    "sha256": "f06bde05c70c050e7a3e4b068716a12ee45c701cdd65ca6684567bdf599c2fba"
+  },
+  {
+    "path": "Tests/NativeQA/UITests/HalalTagFunctionalUITests.swift",
+    "sha256": "e54f3e6225535c55fa1dac32ac41aae8032fcaf3c3195387f93810597d49344c"
+  },
+  {
+    "path": "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift",
+    "sha256": "b3a24d23e46c4dff57922558c12e17f225baf2fb7168794340c0a82b5f9c561d"
+  },
+  {
+    "path": "Tests/NativeQA/UITests/HalalTagSyntheticQAInstallation.json",
+    "sha256": "61034ec5751ec37b80f7f2777d07e1046e55672f1a579996a2b891718303118a"
+  },
+  {
+    "path": "Tests/NativeQA/UITests/HalalTagArabicAppearanceUITests.swift",
+    "sha256": "2a91f21360c8a93e4ac09998efd89fa2fcb295da5d4fe1d3c04ac50a90983031"
+  },
+  {
+    "path": "Tests/NativeQA/UITests/HalalTagLanguageStateUITests.swift",
+    "sha256": "28da5860b9764cbfce97a5796e3735f3a8b6fb2111c94bf44c7821716bd4e742"
+  },
+  {
+    "path": "Tests/NativeQA/App/HalalTagQAApp.swift",
+    "sha256": "52dcc1d6708a452b1949aa04132286e14e7d5e281effac23aa4c127d0c0e19b7"
+  },
+  {
+    "path": "Tests/NativeQA/App/Info.plist",
+    "sha256": "1c6795b7916c26c4644b35f3218a4d788af97fa9829572bde5917bea26956503"
+  },
+  {
+    "path": "Tests/NativeQA/HalalTagQA.xcodeproj/project.pbxproj",
+    "sha256": "333c529a7f47043c7c78b556b2e111e3d181d2dc688155d5540afeaf973f2288"
+  },
+  {
+    "path": "Tests/NativeQA/HalalTagQA.xcodeproj/xcshareddata/xcschemes/HalalTagQA.xcscheme",
+    "sha256": "9969f9848346f843f5bcd2fb4cd6463bc2bf5641ead24d32312406ba85ad2408"
+  }
+]

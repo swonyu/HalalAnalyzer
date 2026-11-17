@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Ingredient text and magnifying glass</title>
+  <desc>Original artwork for Halal Analyzer. A cream ingredient label and warm amber magnifying glass on a deep blue background. No certification mark, religious symbol, brand logo, or endorsement is represented.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#244A54"/>
+      <stop offset="1" stop-color="#102B38"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#FFFCF3"/>
+      <stop offset="1" stop-color="#EDEFE6"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F2D395"/>
+      <stop offset="0.55" stop-color="#E9BC78"/>
+      <stop offset="1" stop-color="#CF9855"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4F8F0"/>
+      <stop offset="1" stop-color="#D1E4DF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed opaque square. iOS applies its own corner mask. -->
+  <rect width="1024" height="1024" fill="url(#background)"/>
+  <circle cx="200" cy="120" r="590" fill="#72968F" opacity="0.07"/>
+
+  <!-- Ingredient label: deliberately generic, with no verdict or seal. -->
+  <rect x="214" y="188" width="490" height="655" rx="64" fill="#071C25" opacity="0.23"/>
+  <rect x="205" y="165" width="490" height="655" rx="64" fill="url(#paper)"/>
+  <rect x="209" y="169" width="482" height="647" rx="60" fill="none" stroke="#FFFFFF" stroke-opacity="0.36" stroke-width="4"/>
+  <rect x="278" y="252" width="252" height="32" rx="16" fill="#274D57"/>
+
+  <g fill="#6C8988">
+    <circle cx="293" cy="367" r="14"/>
+    <rect x="333" y="352" width="242" height="30" rx="15"/>
+    <circle cx="293" cy="465" r="14"/>
+    <rect x="333" y="450" width="216" height="30" rx="15"/>
+    <circle cx="293" cy="563" r="14"/>
+    <rect x="333" y="548" width="176" height="30" rx="15"/>
+  </g>
+
+  <!-- Magnifier, with a visible handle so the circle reads as a tool. -->
+  <path d="M751 759 L866 874" fill="none" stroke="#071C25" stroke-width="92" stroke-linecap="round" opacity="0.25"/>
+  <path d="M745 746 L859 860" fill="none" stroke="url(#amber)" stroke-width="82" stroke-linecap="round"/>
+  <path d="M765 753 L864 852" fill="none" stroke="#FFF3D6" stroke-width="10" stroke-linecap="round" opacity="0.16"/>
+  <circle cx="644" cy="659" r="165" fill="#071C25" opacity="0.20"/>
+  <circle cx="638" cy="644" r="165" fill="url(#amber)"/>
+  <circle cx="638" cy="644" r="125" fill="url(#glass)"/>
+  <circle cx="638" cy="644" r="127" fill="none" stroke="#FFF4DB" stroke-opacity="0.48" stroke-width="4"/>
+  <rect x="571" y="608" width="134" height="25" rx="12.5" fill="#456D73"/>
+  <rect x="571" y="655" width="92" height="25" rx="12.5" fill="#6B8B8C"/>
+  <path d="M550 598 A108 108 0 0 1 608 545" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" opacity="0.44"/>
+</svg>
