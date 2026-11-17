@@ -104,8 +104,17 @@ def main():
         ack[key] = sha(out / name)
     dump(out / "coordinator-acknowledgment-UNCONFIGURED.json", ack)
     (out / "Tests").mkdir()
-    (out / "Tests/test_adapter_contract.py").write_text(
-        (base / "Tests/test_adapter_contract.py").read_text().replace(OLD_SCOPE, NEW_SCOPE))
+    contract = (base / "Tests/test_adapter_contract.py").read_text().replace(OLD_SCOPE, NEW_SCOPE)
+    contract = contract.replace("Exact content and localization hash literals", "Exact content, localization and model hash literals")
+    binding_hook = "                old=old.replace(previous_localization,reviewed_localization)"
+    assert contract.count(binding_hook) == 1
+    contract = contract.replace(binding_hook, binding_hook + "\n" + '''                previous_model=reference['base_ingredient_screening_sha256']
+                reviewed_model=reference['ingredient_screening_sha256']
+                self.assertEqual(hashlib.sha256((ROOT/'Source/HalalAnalyzer حلال ام حرام؟/IngredientScreening.swift').read_bytes()).hexdigest(),reviewed_model)
+                self.assertEqual(old.count(previous_model),1)
+                self.assertEqual(current.count(reviewed_model),1)
+                old=old.replace(previous_model,reviewed_model)''')
+    (out / "Tests/test_adapter_contract.py").write_text(contract)
     retention = []
     for old in sorted((base / "Source/Tests/NativeQA/UITests").glob("*.swift")):
         relative = old.relative_to(base / "Source")
@@ -122,7 +131,8 @@ def main():
         prepared_by_continuation="d57f4cd77813", parent_adapter_sha256=PARENT_ADAPTER,
         parent_seal_sha256=PARENT_SEAL, parent_content_view_sha256=old_content,
         content_view_sha256=content, ingredient_screening_sha256=model,
-        parent_ingredient_screening_sha256=old_model, model_regression_execution="NOT_RUN", native_execution="NOT_RUN",
+        parent_ingredient_screening_sha256=old_model, base_ingredient_screening_sha256=old_model,
+        model_regression_execution="NOT_RUN", native_execution="NOT_RUN",
         parent_native_result="R5 preserved but not executed; R6 semantic boundary repair supersedes its planned native slot",
         parent_native_run=None,
         last_native_result="R4 incomplete failed run; not acceptance",
