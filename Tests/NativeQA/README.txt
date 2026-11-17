@@ -11,7 +11,7 @@ implementation. App/HalalTagQAApp.swift is a separate UIKit receipt host; it doe
 not belong to the shipping file-system-synchronized app group. The shipping
 SwiftUI entry and production archive scheme remain unchanged.
 
-Exact native scope: halaltag-production-composition-nineteen-journeys-r4.
+Exact native scope: halaltag-production-composition-nineteen-journeys-r5.
 Use the distinct reviewed nineteen-case adapter and a fresh exact-source
 coordinator acknowledgment. A prior nine-case receipt cannot authorize or prove
 this scope. The bundled installation manifest is deliberately UNCONFIGURED.
@@ -35,8 +35,9 @@ scroll, keyboard dismissal, timeout, expanded gesture budget or test waiver.
 The shared four-source-hash installation guard replaces the duplicate older
 private guard. The full file is therefore NOT unchanged. See the explicit diff.
 
-The nine reviewed journeys retain all executable code. The original English
-file has one corrected historical comment; Arabic and state files are byte-identical.
+The nine reviewed journey method bodies and interaction helpers retain all
+executable code. Only the explicit product-source hash binding is updated in the
+shared English guard; Arabic and state files are byte-identical.
 Contrast, clipped-text and Dynamic Type audits remain unfiltered. Existing
 failures must be reported; these native controls remain a rendering hypothesis.
 

@@ -293,6 +293,7 @@ private struct NativeScreeningMatchText: UIViewRepresentable {
     let textStyle: UIFont.TextStyle
     var weight: UIFont.Weight? = nil
     var isHeading = false
+    var surfaceColor: UIColor = .secondarySystemGroupedBackground
 
     func makeUIView(context: Context) -> UILabel {
         let label = UILabel()
@@ -303,7 +304,7 @@ private struct NativeScreeningMatchText: UIViewRepresentable {
         label.isAccessibilityElement = true
         label.textAlignment = .natural
         label.textColor = .label
-        label.backgroundColor = .secondarySystemGroupedBackground
+        label.backgroundColor = surfaceColor
         label.isOpaque = true
         label.setContentCompressionResistancePriority(.required, for: .vertical)
         return label
@@ -311,6 +312,7 @@ private struct NativeScreeningMatchText: UIViewRepresentable {
 
     func updateUIView(_ label: UILabel, context: Context) {
         label.text = text
+        label.backgroundColor = surfaceColor
         let baseFont = UIFont.preferredFont(forTextStyle: textStyle,
                                             compatibleWith: label.traitCollection)
         if let weight {
@@ -346,6 +348,7 @@ private struct NativeScreeningHeading: UIViewRepresentable {
     var textStyle: UIFont.TextStyle = .headline
     var emphasis = false
     var headingIdentifier = "matched-terms-heading"
+    var surfaceColor: UIColor = .systemGroupedBackground
 
     func makeUIView(context: Context) -> UILabel {
         let label = UILabel()
@@ -357,13 +360,14 @@ private struct NativeScreeningHeading: UIViewRepresentable {
         label.accessibilityTraits = [.staticText, .header]
         label.textAlignment = .natural
         label.textColor = .label
-        label.backgroundColor = .systemGroupedBackground
+        label.backgroundColor = surfaceColor
         label.isOpaque = true
         return label
     }
 
     func updateUIView(_ label: UILabel, context: Context) {
         label.text = text
+        label.backgroundColor = surfaceColor
         let baseFont = UIFont.preferredFont(forTextStyle: textStyle,
                                             compatibleWith: label.traitCollection)
         if emphasis, let descriptor = baseFont.fontDescriptor.withSymbolicTraits(
@@ -624,9 +628,9 @@ private struct ScreeningInformationView: View {
 
     private var onlineResources: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(copy(.onlineTitle))
-                .font(.headline)
-                .accessibilityAddTraits(.isHeader)
+            NativeScreeningHeading(text: copy(.onlineTitle), language: language,
+                                   headingIdentifier: "privacy-online-heading",
+                                   surfaceColor: .systemBackground)
 
             if let privacyURL = URL(string: "https://swonyu.github.io/HalalAnalyzer/") {
                 Link(destination: privacyURL) {
@@ -648,18 +652,21 @@ private struct ScreeningInformationView: View {
                 .accessibilityHint(copy(.onlineSupportHint))
             }
 
-            Text(copy(.publicSupportNotice))
-                .font(.body)
+            NativeScreeningMatchText(text: copy(.publicSupportNotice), language: language,
+                                    textStyle: .body, surfaceColor: .systemBackground)
         }
     }
 
     private func section(_ title: String, text: String) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(title)
-                .font(.headline)
-                .accessibilityAddTraits(.isHeader)
-            Text(text)
-                .font(.body)
+            // Keep the visible text, measured size and native accessibility
+            // semantics together while this section scrolls past the toolbar.
+            // The same real sheet surface is painted behind each text element.
+            NativeScreeningHeading(text: title, language: language,
+                                   headingIdentifier: "privacy-section-" + title,
+                                   surfaceColor: .systemBackground)
+            NativeScreeningMatchText(text: text, language: language,
+                                    textStyle: .body, surfaceColor: .systemBackground)
         }
     }
 }
