@@ -1,0 +1,70 @@
+{
+  "status": "ROOT_REVIEWED_INVENTORY_ONLY_NO_NATIVE_AUTHORITY",
+  "scope": "HALALTAG_R11_DISTINCT_HOSTED_INVENTORY_V1",
+  "source_commit": "7ef009beb0c1f6f355eeceb931d899553ea8cad5",
+  "candidate_contract_sha256": "b9a5cf2df124a83062d2ebdfdc2b9f4b8f90ff314c60415303912c8e13f8279d",
+  "native_build_test_archive_authorized": false,
+  "additional_spend_usd": 0,
+  "proposal_receipt_sha256": "ddeee7d4b4961585e41d7f42f2c740207c781acce72b040f477809680bb294d9",
+  "independent_peer_receipt_sha256": "e45b773ac0b2c7aa984f6b71002c9db054632ba03b01219b4cba31c51be7b360",
+  "control_files": [
+    {
+      "path": ".github/workflows/halaltag-hosted-inventory.yml",
+      "bytes": 3708,
+      "sha256": "1abb93bfebd396013922884478fa62e25c5b4e2ddda8e423e0cc3c1faceb6c17",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/README.md",
+      "bytes": 11020,
+      "sha256": "58fc57da4ddb4bdd2d3df30c7d81557d59f7c098e47c9c21d8fbafc7d78d6222",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/coverage-contract.json",
+      "bytes": 23887,
+      "sha256": "64287ca28115b9b7b1d42a7c03a5cda024fcee919068e7f979df06a212a46da6",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/inventory_only.py",
+      "bytes": 24121,
+      "sha256": "d1172707eca56c0c4e560aa1519fb3b926b2c772eb33e7b5e03fb2fd6c98b4f2",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/source-index.json",
+      "bytes": 38721,
+      "sha256": "f008307c5e9255651ef183b5f02af930f5081cfc3e4fb3cbf27f9ad431e316ca",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/test_inventory_only.py",
+      "bytes": 16369,
+      "sha256": "34ca812d7a7a147aa31b4971ffd77aafebaf64adcf7a660b1fd6b797403521bc",
+      "mode": "0644"
+    }
+  ],
+  "recorded_utc": "2026-11-18T16:17:00Z",
+  "root_cost_review": {
+    "fresh_cost_and_included_storage_receipt_sha256": "8b181723c7367a726faa6945a2bd0dba2012a69ee98358e7473832d96eaab41e",
+    "fresh_receipt_recorded_utc": "2026-11-18T16:08:37Z",
+    "observed_included_storage_display": "0 GB used / 0.5 GB included",
+    "fresh_included_storage_available_bytes": 500000000,
+    "available_bytes_basis": "Display-derived allowance before the known later 3710893-byte Lumina artifact; approximate and subject to billing lag, not a claim of an independently measured live storage balance.",
+    "known_later_artifact_bytes": 3710893,
+    "display_derived_allowance_after_known_later_artifact_bytes": 496289107,
+    "included_storage_reservation_bytes": 21000000,
+    "candidate_artifact_cap_bytes": 20000000,
+    "outer_upload_overhead_reserve_bytes": 1000000,
+    "root_confirms_no_additional_spend_and_sufficient_included_storage": true,
+    "confirmation_basis": "Current UI displayed allowance is sufficient for this 21 MB inventory reservation; existing Actions zero-dollar stop remains enforced. If actual quota differs or upload fails, inventory acceptance fails. No paid usage, budget increase, deletion or extra storage is authorized.",
+    "paid_usage_blocked": true,
+    "additional_spend_usd": 0,
+    "retention_days": 1,
+    "standard_public_hosted_runner": "xcode-27",
+    "candidate_existing_zero_spend_policy_receipt_sha256": "b375f7e421f5ce9cab7930ea02028364550bc14db1a0781f286161cde7f5789c",
+    "metadata_enforcement": "Root review obligation; fresh numeric storage/time metadata is not runtime-validated by this frozen inventory driver."
+  },
+  "historical_context_correction": "All six formerly missing original support bodies are now recovered byte-for-byte. This receipt authorizes only the separate hosted read-only inventory; original Mac native hold remains active."
+}

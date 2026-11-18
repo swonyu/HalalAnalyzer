@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "scope": "HALALTAG_R11_DISTINCT_HOSTED_INVENTORY_V1",
+  "source_commit": "7ef009beb0c1f6f355eeceb931d899553ea8cad5",
+  "source_tree": "97b9e5eca0e4bc5c82ceb8b133fc823eed1af4bf",
+  "repository": "swonyu/HalalAnalyzer",
+  "branch": "continuation/halaltag-r11-hosted-preflight-d57",
+  "runner_label": "xcode-27",
+  "developer_dir": "/Applications/Xcode_27.app/Contents/Developer",
+  "deadline": "2026-11-18T22:26:12Z",
+  "authorization": "ROOT_REVIEWED_INVENTORY_ONLY",
+  "root_review_sha256": "30f4c52f06b7808a883664448c2559302b997992ffcf14cf123af7ff1945695b",
+  "native_build_test_archive_authorized": false,
+  "artifact_byte_limit": 20000000,
+  "retention_days": 1,
+  "additional_spend_usd": 0,
+  "private_zero_spend_receipt_sha256": "b375f7e421f5ce9cab7930ea02028364550bc14db1a0781f286161cde7f5789c",
+  "source_index_sha256": "f008307c5e9255651ef183b5f02af930f5081cfc3e4fb3cbf27f9ad431e316ca",
+  "coverage_contract_sha256": "64287ca28115b9b7b1d42a7c03a5cda024fcee919068e7f979df06a212a46da6"
+}
