@@ -1,0 +1,112 @@
+name: HalalTag R11 reviewed runtime native and complete evidence
+
+on:
+  push:
+    branches:
+      - continuation/halaltag-r11-hosted-native-v5-d57
+
+permissions:
+  contents: read
+
+concurrency:
+  group: halaltag-r11-native-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  original-native-and-archive:
+    if: github.repository == 'swonyu/HalalAnalyzer' && github.event.repository.private == false
+    runs-on: xcode-27
+    timeout-minutes: 100
+    # Required only for reservation/new assets on the exact root-created draft.
+    # Runtime code has no release/tag create/update/publish/delete operation.
+    permissions:
+      contents: write
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_27.app/Contents/Developer
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Check out the single exact R11 control successor
+        timeout-minutes: 2
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+          submodules: false
+          lfs: false
+
+      - name: Inspect the complete reviewed file contract
+        id: inspect
+        timeout-minutes: 1
+        env:
+          HALALTAG_HOSTED_ENVIRONMENT: ${{ runner.environment }}
+        run: python3 -B publishing/hosted-r11-native/native_driver.py inspect
+
+      - name: Claim the exact empty evidence draft once before native work
+        id: reservation
+        timeout-minutes: 1
+        env:
+          HALALTAG_HOSTED_ENVIRONMENT: ${{ runner.environment }}
+          HALALTAG_EVIDENCE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 -B publishing/hosted-r11-native/release_evidence.py reserve
+
+      - name: Execute original 211 model and 19 UI cases followed by unsigned archive
+        id: native
+        timeout-minutes: 75
+        env:
+          HALALTAG_HOSTED_ENVIRONMENT: ${{ runner.environment }}
+        run: python3 -B publishing/hosted-r11-native/native_driver.py native
+
+      - name: Preserve all original source and failed or complete evidence
+        if: always()
+        id: collect
+        timeout-minutes: 15
+        env:
+          HALALTAG_HOSTED_ENVIRONMENT: ${{ runner.environment }}
+          HALALTAG_NATIVE_STEP_OUTCOME: ${{ steps.native.outcome }}
+        run: python3 -B publishing/hosted-r11-native/collect_evidence.py
+
+      - name: Upload complete evidence within the original Actions storage bound
+        if: always() && steps.collect.outcome == 'success' && steps.collect.outputs.upload_allowed == 'true'
+        id: upload
+        timeout-minutes: 5
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: halaltag-r11-native-v5-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.collect.outputs.evidence_directory }}
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1
+          overwrite: false
+
+      - name: Retain complete overflow originals on the reserved evidence draft
+        if: always() && steps.reservation.outcome == 'success' && steps.collect.outcome == 'success' && steps.collect.outputs.release_upload_allowed == 'true'
+        id: release
+        timeout-minutes: 5
+        env:
+          HALALTAG_HOSTED_ENVIRONMENT: ${{ runner.environment }}
+          HALALTAG_EVIDENCE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 -B publishing/hosted-r11-native/release_evidence.py deliver
+
+      - name: Require native completion and complete verified evidence delivery
+        if: always()
+        timeout-minutes: 1
+        env:
+          INSPECT_OUTCOME: ${{ steps.inspect.outcome }}
+          RESERVATION_OUTCOME: ${{ steps.reservation.outcome }}
+          NATIVE_OUTCOME: ${{ steps.native.outcome }}
+          COLLECT_OUTCOME: ${{ steps.collect.outcome }}
+          UPLOAD_OUTCOME: ${{ steps.upload.outcome }}
+          RELEASE_OUTCOME: ${{ steps.release.outcome }}
+          COMPUTATION_GATE_PASSED: ${{ steps.collect.outputs.computation_gate_passed }}
+          EVIDENCE_ROUTE: ${{ steps.collect.outputs.evidence_route }}
+          ARCHIVE_SHA256: ${{ steps.collect.outputs.archive_sha256 }}
+          ARCHIVE_BYTES: ${{ steps.collect.outputs.archive_bytes }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_DIGEST: ${{ steps.upload.outputs.artifact-digest }}
+          RELEASE_DELIVERY_VERIFIED: ${{ steps.release.outputs.release_delivery_verified }}
+          RELEASE_ID: ${{ steps.release.outputs.release_id }}
+          DELIVERY_RECEIPT_ASSET_ID: ${{ steps.release.outputs.delivery_receipt_asset_id }}
+          DELIVERY_RECEIPT_SHA256: ${{ steps.release.outputs.delivery_receipt_sha256 }}
+          RELEASE_ARCHIVE_SHA256: ${{ steps.release.outputs.archive_sha256 }}
+          RELEASE_ARCHIVE_BYTES: ${{ steps.release.outputs.archive_bytes }}
+        run: python3 -B publishing/hosted-r11-native/delivery_gate.py
