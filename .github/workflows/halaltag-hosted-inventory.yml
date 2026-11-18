@@ -1,0 +1,86 @@
+name: HalalTag R12 Xcode26.6 source-bound inventory v5
+
+on:
+  push:
+    branches:
+      - continuation/halaltag-r12-hosted-preflight-v5-d57
+
+permissions:
+  contents: read
+
+concurrency:
+  group: halaltag-r12-inventory-v5-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  inventory:
+    if: github.repository == 'swonyu/HalalAnalyzer' && github.event.repository.private == false
+    runs-on: macos-26
+    timeout-minutes: 10
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+      PYTHONDONTWRITEBYTECODE: '1'
+      REPOSITORY_VISIBILITY: ${{ github.event.repository.visibility }}
+    steps:
+      - name: Check out the exact proposed successor
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+          submodules: false
+          lfs: false
+
+      - name: Inspect the complete file contract
+        run: python3 -B publishing/hosted-r11/inventory_only.py inspect
+
+      - name: Capture exact hosted inventory without native execution
+        id: inventory
+        continue-on-error: true
+        run: python3 -B publishing/hosted-r11/inventory_only.py inventory
+
+      - name: Preserve all original inventory output
+        id: collect
+        if: always()
+        continue-on-error: true
+        run: python3 -B publishing/hosted-r11/inventory_only.py collect
+
+      - name: Upload the complete bounded inventory evidence
+        id: evidence
+        if: always() && steps.collect.outcome == 'success'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: halaltag-r12-hosted-inventory-v5-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.collect.outputs.archive }}
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
+
+      - name: Require actual inventory and evidence delivery
+        if: always()
+        env:
+          INVENTORY_OUTCOME: ${{ steps.inventory.outcome }}
+          COLLECTION_OUTCOME: ${{ steps.collect.outcome }}
+          UPLOAD_OUTCOME: ${{ steps.evidence.outcome }}
+          PLATFORM_ELIGIBLE: ${{ steps.collect.outputs.platform_eligible }}
+          ARTIFACT_ID: ${{ steps.evidence.outputs.artifact-id }}
+          ARTIFACT_DIGEST: ${{ steps.evidence.outputs.artifact-digest }}
+          INNER_ARCHIVE_SHA256: ${{ steps.collect.outputs.archive_sha256 }}
+        run: |
+          python3 -B - <<'PY'
+          import os, re
+          from pathlib import Path
+          passed = all(os.environ.get(key) == 'success' for key in
+                       ('INVENTORY_OUTCOME', 'COLLECTION_OUTCOME', 'UPLOAD_OUTCOME'))
+          passed = passed and os.environ.get('PLATFORM_ELIGIBLE') == 'true'
+          passed = passed and re.fullmatch(r'[1-9][0-9]*', os.environ.get('ARTIFACT_ID', '')) is not None
+          passed = passed and re.fullmatch(r'(sha256:)?[0-9a-f]{64}', os.environ.get('ARTIFACT_DIGEST', '')) is not None
+          passed = passed and re.fullmatch(r'[0-9a-f]{64}', os.environ.get('INNER_ARCHIVE_SHA256', '')) is not None
+          summary = Path(os.environ['GITHUB_STEP_SUMMARY'])
+          with summary.open('a') as handle:
+              handle.write('## HalalTag R12 reviewed Xcode26.6 inventory v5\n\n')
+              handle.write('Inventory and upload accepted.\n' if passed else 'Inventory or evidence delivery failed.\n')
+              handle.write('\nNative builds, tests, archives, signing and store submission were not invoked.\n')
+              for key in ('ARTIFACT_ID', 'ARTIFACT_DIGEST', 'INNER_ARCHIVE_SHA256'):
+                  handle.write(f'\n{key}: {os.environ.get(key, "")}\n')
+          raise SystemExit(0 if passed else 1)
+          PY

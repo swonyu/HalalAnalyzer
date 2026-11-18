@@ -1,0 +1,98 @@
+{
+  "status": "ROOT_REVIEWED_DISTINCT_R12_XCODE26_INVENTORY_ONLY",
+  "scope": "HALALTAG_R12_XCODE26_INSTALLED_RUNTIME_HOSTED_INVENTORY_V5",
+  "source_commit": "b2d1ea13460fe9a8f3aedc1912f474737a1ec2ed",
+  "candidate_contract_sha256": "7de787a753799a1bb2d4e83a3e0d3d57b81cd9d3dd0f1f41ab32581abbdbcd7f",
+  "native_build_test_archive_authorized": false,
+  "additional_spend_usd": 0,
+  "proposal_receipt_sha256": "a9035421ea1eab0cf8bdc8d66b0f0650a4f2a225097381075ab7adda4398aa66",
+  "independent_peer_receipt_sha256": "ce150dd5208d49dc48062d21d53484a779b3ea185ba8b831062821ddf616cce2",
+  "control_files": [
+    {
+      "path": ".github/workflows/halaltag-hosted-inventory.yml",
+      "bytes": 3745,
+      "sha256": "a698b9c19cd9ec49e38b5b4f5179e3d4af00ef7a53701660355fa572e8e7ed94",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/README.md",
+      "bytes": 6562,
+      "sha256": "e8653f81ff821ef7d01d911a22ddc7f58eb1657a8ccf768f3fcab5bf908c6e23",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/coverage-contract.json",
+      "bytes": 23887,
+      "sha256": "0bca922cd3c02c3dd5ba913d6e847d64cc5bcabea184b6d44a73eb68e78224ea",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/expected-simctl-ui-help.stderr",
+      "bytes": 1776,
+      "sha256": "2fa67269b4a75d4856edcaf9f65ed4bd830bd0ecae95e370173fa8ed2fe87084",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/inventory_only.py",
+      "bytes": 28816,
+      "sha256": "36a900f6eb6f1355cd8928e0364d664c33d8bd189932f93267abc525acb93b4d",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/source-index.json",
+      "bytes": 38721,
+      "sha256": "72bd68dbf9c982e46628b4ffe81ffd3f291728558108fdb74746d8ac5f2dd0a2",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/test_inventory_only.py",
+      "bytes": 23359,
+      "sha256": "91f01c1b0d0d2fcb0362780c24d1c20c5096f93ce721a7f1cb89516d02626686",
+      "mode": "0644"
+    }
+  ],
+  "root_cost_qualification": "Fresh root18:49 zero-budget observation receipt; no provider live storage balance is claimed. Bind a separate local20M+reserve allowance without paid fallback/deletion.",
+  "actual_inventory_accepted": false,
+  "native_acceptance": "NOT_RUN",
+  "store_release": false,
+  "recorded_utc": "2026-11-18T19:07:43.384156+00:00",
+  "reviewer": "/root",
+  "root_source_and_platform_review": {
+    "source_commit": "b2d1ea13460fe9a8f3aedc1912f474737a1ec2ed",
+    "source_tree": "eaeb5fe8c1c7a7486282a907cc7906e6c3799eba",
+    "source_files": 165,
+    "native_inputs": 47,
+    "ordered_model_labels": 211,
+    "UI_methods": 19,
+    "root_read_full_proposal_semantic_driver_fixture_delta_and_platform_provenance": true,
+    "platform": "macos-26 ARM64 / Xcode26.6 build17F113 / iOS26.5 SDKs / runtime23F77",
+    "reason": "Preserved hosted27 postboot device-list stalls; independent Career native progression demonstrates a useful installed26.x candidate, not HalalTag acceptance.",
+    "fresh_SE3_runtime_support_required": true,
+    "fresh_exact_UI_help_required": true,
+    "commands_timeouts_source_coverage_collector_unchanged": true,
+    "original27_failures_preserved": true,
+    "native_acceptance_transferred_from_other_apps": false
+  },
+  "root_cost_review": {
+    "actual_observation_utc": "2026-11-18T18:49Z",
+    "actual_observation_receipt_sha256": "908122aa7b1421fb693b7424568802eb692ce38e73f8b0f71b422343d6c672f2",
+    "observation_type": "Root read-only refreshed UI observation, not a complete original screenshot/DOM export",
+    "existing_zero_dollar_Actions_stop_verified": true,
+    "additional_spend_usd": 0,
+    "paid_capacity_allowed": false,
+    "standard_public_hosted_runner": "macos-26",
+    "repository_visibility_required": "public",
+    "artifact_cap_bytes": 20000000,
+    "local_transfer_overhead_allowance_bytes": 1000000,
+    "local_total_allowance_bytes": 21000000,
+    "local_allowance_is_provider_reservation": false,
+    "actual_live_available_storage_bytes": null,
+    "storage_qualification": "A current provider storage balance is not established. This bounded free-only attempt may fail quota or delivery; no paid fallback, billing change, artifact deletion or acceptance waiver is authorized.",
+    "retention_days": 1,
+    "outer_workflow_minutes": 10,
+    "inventory_total_seconds": 300,
+    "per_command_seconds": 30
+  },
+  "shared_Mac_native_hold_changed": false,
+  "deadline_utc": "2026-11-18T22:26:12Z"
+}
