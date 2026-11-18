@@ -1,0 +1,311 @@
+{
+  "actual_native_pass": false,
+  "archive_verifier_peer_sha256": "665514f0ae110657efe1cecaccb44f16243579f7c2befb4ce0409ef9bec672e2",
+  "authorization": "ROOT_REVIEWED_DISTINCT_HOSTED_NATIVE_AND_ARCHIVE",
+  "candidate_contract_sha256": "57646c1e39dfc20164d5429568d080840d201d27e5b727b8774f2f4da5bd7bbb",
+  "case_evidence_peer_sha256": "c97ca9d4d3123b05e26aa8a41b698322ebfea407ca0349d959391e22296f56c9",
+  "control_files": [
+    {
+      "bytes": 4615,
+      "mode": "0644",
+      "path": ".github/workflows/halaltag-r11-native.yml",
+      "sha256": "22b2cfdb3d269969f986efe1eb0d4bad0c33d88caec403c1297ce787277264d3"
+    },
+    {
+      "bytes": 13757,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/README.md",
+      "sha256": "26cb752defd4cca4b3c87fdefb0e34ff394c5ced047a8b627e93ec77157243e0"
+    },
+    {
+      "bytes": 21125,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/accepted-inventory.json",
+      "sha256": "670920b501f267016525f3d1893bd603288bf731b1f5844efe714716c9f6a46c"
+    },
+    {
+      "bytes": 33737,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/appearance_evidence_guard.py",
+      "sha256": "e520953ae9220ac280f9f700fbace00c2eda9987b495b8b1f356e1c475e1cde3"
+    },
+    {
+      "bytes": 33735,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/appearance_evidence_guard_installed.py",
+      "sha256": "b16b7239944b777ab24697d24fdd034ae470ea03f862fb09bc4dca1f365b433b"
+    },
+    {
+      "bytes": 2828,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/appearance_png.py",
+      "sha256": "0d22ed3a871d4abdf5c8272a3a7319b4c8698d45d77554d5261140e4ac9c7f2d"
+    },
+    {
+      "bytes": 34564,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/arabic_appearance_evidence_guard.py",
+      "sha256": "27a84445670a1fed8b83b04d9fbd6787dea41a355ce9d3dc111c058fc81eaacb"
+    },
+    {
+      "bytes": 34562,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/arabic_appearance_evidence_guard_installed.py",
+      "sha256": "4e3787a1bd4c872c4e63f54a4a7bd80582374aea90ffc9b4858f30e2f9797397"
+    },
+    {
+      "bytes": 6973,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/artifact_binding.py",
+      "sha256": "91775120ca90c398639644d9f4b0fef6150dfb5d529ad86441af06541bff7467"
+    },
+    {
+      "bytes": 26452,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/case_evidence.py",
+      "sha256": "384b04d77fca90a5513e2bb04ba031b4aa53fdb655e8ac9ca17588c1dbcc6da0"
+    },
+    {
+      "bytes": 26450,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/case_evidence_installed.py",
+      "sha256": "dea8df43811651c03a997b12daa41e9acbb0c648448ca91a5aeb9ff26b3fb97f"
+    },
+    {
+      "bytes": 18868,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/collect_evidence.py",
+      "sha256": "372d55241c9a3328b0fb326855691ef3291ed6d71a5dcf95cb2db0e936b1b119"
+    },
+    {
+      "bytes": 23887,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/coverage-contract.json",
+      "sha256": "64287ca28115b9b7b1d42a7c03a5cda024fcee919068e7f979df06a212a46da6"
+    },
+    {
+      "bytes": 3667,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/current_original_union.py",
+      "sha256": "f25f226051b0fc3acc3dad33042954ca65f8d8ded114514101c67970c519fd7c"
+    },
+    {
+      "bytes": 2835,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/delivery_gate.py",
+      "sha256": "26dce04c25d15cfa93dbd7945003634eb7529d51bde4a3446f5b45d6015483eb"
+    },
+    {
+      "bytes": 22709,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/evidence_pack.py",
+      "sha256": "ee493ee09002132ae47ebfe97b061f17ed6a4c6e1bb1505a944a54c27cd7980a"
+    },
+    {
+      "bytes": 6743,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/gate_checks.py",
+      "sha256": "abceebd3cac3c588a4b62ed09aed2df251122520ea9e194bdaadc6cbc8d3f5e7"
+    },
+    {
+      "bytes": 13844,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/github_evidence_transport.py",
+      "sha256": "7e31eebaaaf2192ab1817bfa9d58d0b3110ef92264149fb14f192b43905ca77a"
+    },
+    {
+      "bytes": 18100,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/hosted_binding.py",
+      "sha256": "da76541b485b8bec3a6cbb31636dfaf55c3d190a8aba332cc687568c4006e6fb"
+    },
+    {
+      "bytes": 53640,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/native_driver.py",
+      "sha256": "603d29ee07d4ae4eba6f96088b16ab6132adf2c0ac3bed8041e76feec7a4122d"
+    },
+    {
+      "bytes": 8620,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/nineteen-case-plan.json",
+      "sha256": "8e6e78d37f6a5a162bff2cb5fb79fc3b91382f333b143554833ab4ec64a05a62"
+    },
+    {
+      "bytes": 10425,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/original_attachments.py",
+      "sha256": "c7230af7e5fddc3a7905188ae1ed8edf1caa97cb6bd65e72ebdf1f913943e2eb"
+    },
+    {
+      "bytes": 7736,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/overflow_evidence.py",
+      "sha256": "171fe384f6f6ab8a923453205d852427f36e4f74c43283a31ce82e03208e74f7"
+    },
+    {
+      "bytes": 61657,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/publishing_runner_frozen.py",
+      "sha256": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99"
+    },
+    {
+      "bytes": 6660,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/release_contract.py",
+      "sha256": "8634569fd62632e12fd9a342c1c7c10d8e6f757a3c28a3852c7fb24b69701909"
+    },
+    {
+      "bytes": 13999,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/release_evidence.py",
+      "sha256": "e9c9c44a99f85d47b2c2c07dc680bd5a0ec447a25ea000ded4b256ef4636f9d7"
+    },
+    {
+      "bytes": 4892,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/shipping-contract.json",
+      "sha256": "5ef3cc1d338d09734afceb1515963bc793ba4924bce441f831053f716d430c22"
+    },
+    {
+      "bytes": 1776,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/simctl-ui-help-root-20261117.stderr",
+      "sha256": "2fa67269b4a75d4856edcaf9f65ed4bd830bd0ecae95e370173fa8ed2fe87084"
+    },
+    {
+      "bytes": 2678,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/source-contract.json",
+      "sha256": "7fcfb6678900c48fd8332d572d4df9594402ec781eb92715923012b5cbe8cf5f"
+    },
+    {
+      "bytes": 38721,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/source-index.json",
+      "sha256": "f008307c5e9255651ef183b5f02af930f5081cfc3e4fb3cbf27f9ad431e316ca"
+    },
+    {
+      "bytes": 6440,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/system_size_evidence.py",
+      "sha256": "e2e58acbb2de819be1e1cc4e0149f7311981c243473c07992df0ca1f67b8e83b"
+    },
+    {
+      "bytes": 21927,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/test_complete_draft_evidence.py",
+      "sha256": "7e8d2940dc0eb9b2836e41bfa517ab3ede8156031c39849694b74f758cd3520d"
+    },
+    {
+      "bytes": 6314,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/test_current_original_union.py",
+      "sha256": "35613e343385eeadce8cd41f09d43ccf3c243c251da473f0f609d0aa009e1bc9"
+    },
+    {
+      "bytes": 16418,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/test_hosted_contract.py",
+      "sha256": "3b90ab71a68c2ca4e9f54ca64a1723274b179bd1528698781241bd1f6239e823"
+    },
+    {
+      "bytes": 17763,
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/verify_shipping_archive.py",
+      "sha256": "cda0ad4b956bf555f991690039414e9f6d41cf3e8cff610faa3073cf1d786040"
+    }
+  ],
+  "cost": {
+    "additional_spend_usd": 0,
+    "authorization": "ROOT_VERIFIED_NO_EXTRA_SPEND",
+    "cache_allowed": false,
+    "delete_prior_evidence_allowed": false,
+    "maximum_output_bytes": 20000000,
+    "paid_usage_blocked": true,
+    "private_receipt_sha256": "752b077d3823bac574189a4b3759a4b5b54ade52e4b7e369c31b48a95da68899",
+    "public_standard_runner": "xcode-27",
+    "reserved_included_storage_bytes": 21000000,
+    "retention_days": 1,
+    "valid_until_utc": "2026-11-18T22:26:12Z"
+  },
+  "distribution_signing": false,
+  "draft_creation_receipt_sha256": "2c81804889a834b558265d139d86cb9be9db645f6d69ac2b24d7c6fcb0bdfa8d",
+  "evidence_packer_peer_sha256": "fb79c6e57d22413bf9159cfb40c4c66518bba3a2d9ededd5d164eb0675ba839b",
+  "evidence_release": {
+    "author_id": 221923776,
+    "author_login": "swonyu",
+    "authorization": "ROOT_VERIFIED_NEW_EMPTY_EVIDENCE_ONLY_DRAFT",
+    "created_at": "2026-11-17T22:27:27Z",
+    "creation_receipt_sha256": "2c81804889a834b558265d139d86cb9be9db645f6d69ac2b24d7c6fcb0bdfa8d",
+    "free_route_review_receipt_sha256": "99ace590df6af9c8d61f6b4e0c31ab4995bddb62d231220a2b15e55c9c4aad19",
+    "fresh_empty_asset_list_verified": true,
+    "policy": {
+      "additional_spend_usd": 0,
+      "asset_overwrite_delete_retry_allowed": false,
+      "automatic_retries": 0,
+      "body_sha256": "ba79789098c74b37cfa3ad6e8f70c60c8e2d953d826f22573be47d47acb1c243",
+      "candidate_nonce": "d57f4cd778134ea0b2b9e744147c364e",
+      "claim_before_native_required": true,
+      "complete_download_hash_crc_gate_required": true,
+      "draft": true,
+      "initial_assets": [],
+      "maximum_actions_artifact_bytes": 500000000,
+      "maximum_asset_bytes": {
+        "complete-member-index.json": 40000000,
+        "delivery-receipt.json": 1000000,
+        "evidence.tar.gz": 2000000000,
+        "reservation.json": 16384,
+        "verdict.json": 16384
+      },
+      "prerelease": true,
+      "release_create_update_publish_delete_allowed": false,
+      "repository": "swonyu/HalalAnalyzer",
+      "run_attempt": 1,
+      "runtime_token_permission": "contents:write",
+      "runtime_token_used_only_for_existing_draft_assets": true,
+      "schema_version": 1,
+      "source_commit": "7ef009beb0c1f6f355eeceb931d899553ea8cad5",
+      "tag": "evidence/halaltag-r11-7ef009beb0c1-d57f4cd778134ea0b2b9e744147c364e",
+      "tag_create_update_delete_allowed": false,
+      "tag_target_sha": "7ef009beb0c1f6f355eeceb931d899553ea8cad5",
+      "tag_target_type": "commit",
+      "title": "HalalTag R11 evidence only d57f4cd778134ea0b2b9e744147c364e"
+    },
+    "release_id": 450293513,
+    "root_created_tag_and_draft_before_native": true,
+    "root_existing_auth_route_verified": true
+  },
+  "inventory_prerequisite": {
+    "accepted_inventory_sha256": "670920b501f267016525f3d1893bd603288bf731b1f5844efe714716c9f6a46c",
+    "artifact_download_sha256": "669cee0e9c4d216ffb44a0bc474c71c95b763ad97b79a36cd62b6c437be0b005",
+    "artifact_id": 14448295189,
+    "authorization": "ROOT_VERIFIED_EXACT_PLATFORM_INVENTORY",
+    "run_attempt": 1,
+    "run_id": 44348679786,
+    "workflow_commit": "07fe75910f00019fb16493ad17cc509bfe6e6120"
+  },
+  "mac_native_hold_unchanged": true,
+  "native_executor_peer_sha256": "c1b06b629fc9b83473cd2f0ea057febaecf469d8a243064a44cddde57bd3c249",
+  "platform_revision": {
+    "original_inventory_artifact_id": 14446386073,
+    "original_inventory_artifact_sha256": "85c3a63040eba18dd325b9f65fe0d1a2e1df4573f8aa70a71c4fb7fa38978d4b",
+    "original_inventory_gate": "FAILED_RUNTIME_BUILD_UNAVAILABLE",
+    "original_inventory_inner_archive_sha256": "36f3e7702636819f335bc2aacdc4b05f427fa93024ee850128ad89da7d3b37ee",
+    "original_inventory_run_attempt": 1,
+    "original_inventory_run_id": 44346043468,
+    "original_inventory_workflow_commit": "7394b369aaf85fb99830af6ceeb2de4f4c35097e",
+    "original_runtime_build": "24A5423a",
+    "review_scope": "EXPLICIT_INSTALLED_RUNTIME_SUCCESSOR_AFTER_FAILED_ORIGINAL_GATE",
+    "runtime_build": "24A434",
+    "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+    "runtime_version": "27.0"
+  },
+  "proposal_receipt_sha256": "396061d2d4390ce9844d8d15d7fc1efa88021341f57b3465a35ddd6e10d1cd92",
+  "recorded_utc": "2026-11-18T17:11:43.640959+00:00",
+  "release_asset_peer_sha256": "3592d79f3419e8b911aabc1776bc3c8299467d45f5fd5ea525c6c3d3b8905e53",
+  "schema_version": 1,
+  "scope": "HALALTAG_R11_INSTALLED_RUNTIME_NATIVE_AND_COMPLETE_EVIDENCE_V3",
+  "source_commit": "7ef009beb0c1f6f355eeceb931d899553ea8cad5",
+  "store_release": false
+}

@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "scope": "halaltag-production-composition-nineteen-journeys-r11",
+  "status": "PREPARATION_ONLY_NOT_NATIVE_ACCEPTANCE",
+  "qa_bundle_id": "com.saleh.halaltag.productioncomposition.qa.r20261117r11",
+  "production_bundle_id": "HalalTag.v1.1",
+  "test_bundle_id": "com.saleh.halaltag.productioncomposition.qa.r20261117r11.uitests",
+  "source_project": "Tests/NativeQA/HalalTagQA.xcodeproj",
+  "source_scheme": "HalalTagQA",
+  "shipping_project": "HalalAnalyzer حلال ام حرام؟.xcodeproj",
+  "shipping_scheme": "HalalAnalyzer حلال ام حرام؟",
+  "native_device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+  "native_runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "runtime_build": "24A5423a",
+  "case_count": 19,
+  "expected_process_launches": 20,
+  "unique_UUID_supplementary_launches": 17,
+  "original_ten_full_file_unchanged": false,
+  "original_ten_method_bodies_unchanged": true,
+  "nine_journey_executable_code_unchanged": true,
+  "functional_helper_geometry_tolerance_points": 2,
+  "retry_count": 0,
+  "cases": [
+    {
+      "execution_id": "en-dark-large",
+      "group": "en",
+      "case_id": "dark-large",
+      "test_class": "HalalTagAppearanceUITests",
+      "method": "testDarkAppearanceAndContrastJourney",
+      "expected_launches": 1,
+      "style": "dark",
+      "size": "large"
+    },
+    {
+      "execution_id": "en-light-large",
+      "group": "en",
+      "case_id": "light-large",
+      "test_class": "HalalTagAppearanceUITests",
+      "method": "testLightAppearanceAndContrastJourney",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "en-light-accessibility5",
+      "group": "en",
+      "case_id": "light-accessibility5",
+      "test_class": "HalalTagAppearanceUITests",
+      "method": "testMaximumTextReachabilityAndFocusedSampleReplacement",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "accessibility-extra-extra-extra-large"
+    },
+    {
+      "execution_id": "functional-01",
+      "group": "functional",
+      "case_id": "light-large",
+      "test_class": "HalalTagPreparedUITests",
+      "method": "testFreshLaunchShowsScopeAndDisabledEmptyActions",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "functional-02",
+      "group": "functional",
+      "case_id": "light-large",
+      "test_class": "HalalTagPreparedUITests",
+      "method": "testWhitespaceCannotBeScreenedAndCanBeCleared",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "functional-03",
+      "group": "functional",
+      "case_id": "light-large",
+      "test_class": "HalalTagPreparedUITests",
+      "method": "testDirectTermShowsWordEvidenceAndQualifiedWarning",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "functional-04",
+      "group": "functional",
+      "case_id": "light-large",
+      "test_class": "HalalTagPreparedUITests",
+      "method": "testUnknownAndUnsupportedPrefixesRemainUnknown",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "functional-05",
+      "group": "functional",
+      "case_id": "light-large",
+      "test_class": "HalalTagPreparedUITests",
+      "method": "testAlcoholFreeIsContextReviewWithoutDirectFlag",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "functional-06",
+      "group": "functional",
+      "case_id": "light-large",
+      "test_class": "HalalTagPreparedUITests",
+      "method": "testFirstEditInvalidatesResultAndRestoringTextDoesNotResurrectIt",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "functional-07",
+      "group": "functional",
+      "case_id": "light-large",
+      "test_class": "HalalTagPreparedUITests",
+      "method": "testClearRemovesScreenedAndUnscreenedState",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "functional-08",
+      "group": "functional",
+      "case_id": "light-large",
+      "test_class": "HalalTagPreparedUITests",
+      "method": "testSampleReplacesExistingTextAndResultWithoutAppending",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "functional-09",
+      "group": "functional",
+      "case_id": "light-large",
+      "test_class": "HalalTagPreparedUITests",
+      "method": "testLimitationsOpenBeforeAndAfterScreeningWithoutLosingState",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "functional-10",
+      "group": "functional",
+      "case_id": "light-large",
+      "test_class": "HalalTagPreparedUITests",
+      "method": "testScreenActionAndNewResultAreNotHiddenByKeyboard",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "ar-dark-large",
+      "group": "ar",
+      "case_id": "dark-large",
+      "test_class": "HalalTagArabicAppearanceUITests",
+      "method": "testDarkAppearanceAndContrastJourney",
+      "expected_launches": 1,
+      "style": "dark",
+      "size": "large"
+    },
+    {
+      "execution_id": "ar-light-large",
+      "group": "ar",
+      "case_id": "light-large",
+      "test_class": "HalalTagArabicAppearanceUITests",
+      "method": "testLightAppearanceAndContrastJourney",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "ar-light-accessibility5",
+      "group": "ar",
+      "case_id": "light-accessibility5",
+      "test_class": "HalalTagArabicAppearanceUITests",
+      "method": "testMaximumTextReachabilityAndFocusedSampleReplacement",
+      "expected_launches": 1,
+      "style": "light",
+      "size": "accessibility-extra-extra-extra-large"
+    },
+    {
+      "execution_id": "state-draft-retention",
+      "group": "state",
+      "case_id": "light-large",
+      "test_class": "HalalTagLanguageStateUITests",
+      "method": "testLanguageSwitchPreservesUnscreenedDraftAndDoesNotInventAResult",
+      "expected_launches": 1,
+      "required_capture": "draft-retained-both-directions",
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "state-result-retention",
+      "group": "state",
+      "case_id": "light-large",
+      "test_class": "HalalTagLanguageStateUITests",
+      "method": "testLanguageSwitchPreservesScreenedEvidenceAndEditingInvalidatesResult",
+      "expected_launches": 1,
+      "required_capture": "arabic-screened-evidence",
+      "style": "light",
+      "size": "large"
+    },
+    {
+      "execution_id": "state-language-relaunch",
+      "group": "state",
+      "case_id": "light-large",
+      "test_class": "HalalTagLanguageStateUITests",
+      "method": "testLanguagePreferenceSurvivesRelaunchButDraftAndResultDoNot",
+      "expected_launches": 2,
+      "required_capture": "arabic-preference-after-real-process-relaunch",
+      "style": "light",
+      "size": "large"
+    }
+  ],
+  "required_evidence": [
+    "Nineteen distinct unmodified xcresults, exactly one matching leaf per selector",
+    "Exact installed artifact, xctestrun and UI-test resource identity binding",
+    "Actual simulator style and text-size readback before and after every method",
+    "Twenty host process receipts, with seventeen distinct supplementary launch UUIDs",
+    "All original contrast, clipped-text and Dynamic Type audits with no filters or waivers",
+    "Original PNGs, accessibility trees and original per-case attachments retained",
+    "Exact owned-device setting restoration, shutdown, child-process cleanup and lock release"
+  ],
+  "still_separate_gates": [
+    "Shipping SwiftUI entry/native lifecycle smoke",
+    "Production unsigned archive and bundle resource/privacy/icon verification",
+    "iPad and supported orientation behavior; VoiceOver and physical devices",
+    "Signing, App Store privacy answers, upload, review and public release"
+  ],
+  "old_receipts_valid_for_this_scope": false,
+  "native_execution_authorization": "Fresh exact-source coordinator acknowledgment plus live process/schedule/lock checks; no acknowledgment or native run created here.",
+  "ordering_reason": "Original English no-UUID host directories must be reserved before any supplementary UUID subdirectory creates the same case directory. Functional methods retain their original relative order."
+}
