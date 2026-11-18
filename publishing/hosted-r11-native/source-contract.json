@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "source_commit": "b2d1ea13460fe9a8f3aedc1912f474737a1ec2ed",
+  "source_tree": "eaeb5fe8c1c7a7486282a907cc7906e6c3799eba",
+  "original_plan_sha256": "8e6e78d37f6a5a162bff2cb5fb79fc3b91382f333b143554833ab4ec64a05a62",
+  "source_files": [
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagArabicAppearanceUITests.swift",
+      "bytes": 44274,
+      "sha256": "8aa778616b83f5891b747020fd8c8eac68587081e7fba0f46e751c9cea9f484d",
+      "test_class": "HalalTagArabicAppearanceUITests"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagFunctionalUITests.swift",
+      "bytes": 21887,
+      "sha256": "e54f3e6225535c55fa1dac32ac41aae8032fcaf3c3195387f93810597d49344c",
+      "test_class": "HalalTagPreparedUITests"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagLanguageStateUITests.swift",
+      "bytes": 8776,
+      "sha256": "28da5860b9764cbfce97a5796e3735f3a8b6fb2111c94bf44c7821716bd4e742",
+      "test_class": "HalalTagLanguageStateUITests"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift",
+      "bytes": 46874,
+      "sha256": "03318fe88b6e11f790093fa7a21035991159f8e9bb2e54dd40faec0230b242f9",
+      "test_class": "HalalTagAppearanceUITests"
+    },
+    {
+      "path": "Tests/NativeQA/App/HalalTagQAApp.swift",
+      "bytes": 7396,
+      "sha256": "70ef4e53b608d167aa8532ab227eb88cd2544e3ffdc3cd1c0df76e79f79af0cc"
+    },
+    {
+      "path": "Tests/NativeQA/nineteen-case-plan.json",
+      "bytes": 8620,
+      "sha256": "8e6e78d37f6a5a162bff2cb5fb79fc3b91382f333b143554833ab4ec64a05a62"
+    }
+  ],
+  "functional_direct_captures": {
+    "functional-01": [
+      "fresh-scope-and-empty-actions"
+    ],
+    "functional-02": [],
+    "functional-03": [
+      "direct-term-word-evidence"
+    ],
+    "functional-04": [
+      "unknown-is-not-certification"
+    ],
+    "functional-05": [
+      "context-claim-not-verified"
+    ],
+    "functional-06": [
+      "first-edit-invalidates-result"
+    ],
+    "functional-07": [
+      "clear-resets-input-and-result"
+    ],
+    "functional-08": [
+      "sample-replaces-text-and-outcome"
+    ],
+    "functional-09": [
+      "limitations-return-preserves-current-result"
+    ],
+    "functional-10": [
+      "keyboard-before-screening",
+      "result-without-scroll-or-keyboard-workaround"
+    ]
+  },
+  "capture_scope": "Direct unconditional capture calls in the original functional method bodies only. Conditional helper/failure captures are preserved if present, but not invented as requirements. Whitespace has no direct screenshot call. Every functional setup has the original QA run binding text. State PNG/AX names come from original nineteen-case plan."
+}

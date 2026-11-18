@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "source_commit": "b2d1ea13460fe9a8f3aedc1912f474737a1ec2ed",
+  "source_tree": "eaeb5fe8c1c7a7486282a907cc7906e6c3799eba",
+  "source_files": [
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/AccentColor.colorset/Contents.json",
+      "bytes": 123,
+      "sha256": "9af65086fa30b49252fae1a1225731691de794f7775af74d71befeb507d12b7c",
+      "git_blob": "eb8789700816459c1e1480e0b34781d9fb78a1ca",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png",
+      "bytes": 577515,
+      "sha256": "27e8d19a818f17dbcda9e3e6352055de3116748e1fb5e5d6f627886d30708fe0",
+      "git_blob": "84bd9c6ae893b047c99ad08e445fc75f28a11d15",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "bytes": 216,
+      "sha256": "9cf2928dad89427abd581b6852db081352417f400afb65e60c479228cdc4f4da",
+      "git_blob": "f22e10cde3659e827af3a74cdef013e7ca368a3e",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/Contents.json",
+      "bytes": 63,
+      "sha256": "0fd49ba3c3585c709678e0046a821c3c60685ec7063720d30d3a3448be3a208b",
+      "git_blob": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ContentView.swift",
+      "bytes": 32095,
+      "sha256": "8a508afaaf1b946d80aedec9e9c37cd6e4fc5f447a5147f4394139654f725a4e",
+      "git_blob": "832c62188f34ba66e22206c49bdc69403ccaa056",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/HalalAnalyzer______________App.swift",
+      "bytes": 300,
+      "sha256": "ae36f474eb444bfa7c084573d2e544a42ca1406e7082c2eea575a856f088e831",
+      "git_blob": "9d80446002e87984aacedfb80f753c7ed68fc568",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/IngredientScreening.swift",
+      "bytes": 9195,
+      "sha256": "fc8aab56d0fbdf7682cc77bf74a0a1811c813e93447b6985379f24c122e4167a",
+      "git_blob": "a2fa7a8eeec1f793d36b96976d6288221aaec4af",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/PrivacyInfo.xcprivacy",
+      "bytes": 598,
+      "sha256": "a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12",
+      "git_blob": "5704beda8f6061dddefc74c325dba37bc5fdce4f",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ScreeningLocalization.swift",
+      "bytes": 20976,
+      "sha256": "097a18920ff95fda968c6cee1591360b50b0c077673bf40cb6c0970e8aa8be70",
+      "git_blob": "3feb32ef23c6658ecf1252d93bd83ad3b3c3a0e5",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ar.lproj/InfoPlist.strings",
+      "bytes": 106,
+      "sha256": "14e333dd2c788060b92ac06b5fa2055f064dd190c801390764b972d9a520f354",
+      "git_blob": "47c825ef397feb36f2970087dce5b72d28024ff9",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/en.lproj/InfoPlist.strings",
+      "bytes": 106,
+      "sha256": "14e333dd2c788060b92ac06b5fa2055f064dd190c801390764b972d9a520f354",
+      "git_blob": "47c825ef397feb36f2970087dce5b72d28024ff9",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟.xcodeproj/project.pbxproj",
+      "bytes": 12604,
+      "sha256": "777ca0dda92eabf2d446285a47b6f6f47f5d3d09e6c211744b88a25dd62661f0",
+      "git_blob": "189bc9af1cc2dd1c1731689a168898933ea106d1",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "bytes": 135,
+      "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+      "git_blob": "919434a6254f0e9651f402737811be6634a03e9c",
+      "mode": "0644"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟.xcodeproj/xcshareddata/xcschemes/HalalAnalyzer حلال ام حرام؟.xcscheme",
+      "bytes": 2455,
+      "sha256": "84deda478d07aa0c842e1effc47b0060b9ad356a5ab6841f1590577e0630cc7b",
+      "git_blob": "87324ea3070a01a0a2543311e39f3f31a536f23d",
+      "mode": "0644"
+    }
+  ],
+  "shipping_file_count": 14,
+  "project": "HalalAnalyzer حلال ام حرام؟.xcodeproj",
+  "scheme": "HalalAnalyzer حلال ام حرام؟",
+  "bundle_identifier": "HalalTag.v1.1",
+  "development_team": "WY272L3F3N",
+  "display_name": "HalalTag",
+  "marketing_version": "1.0",
+  "build_version": "1",
+  "minimum_ios_version": "26.5",
+  "sdk_version": "26.5",
+  "xcode_build": "17F113",
+  "device_families": [
+    1,
+    2
+  ],
+  "app_icon_name": "AppIcon",
+  "localizations": [
+    "en",
+    "ar"
+  ],
+  "signing_scope": "UNSIGNED_ARCHIVE_INTEGRITY_ONLY_NOT_STORE_OR_NATIVE_ACCEPTANCE"
+}
