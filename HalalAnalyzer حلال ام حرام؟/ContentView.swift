@@ -649,7 +649,9 @@ private struct ScreeningInformationView: View {
                                    headingIdentifier: "privacy-online-heading",
                                    surfaceColor: .systemBackground)
 
-            if let privacyURL = URL(string: "https://swonyu.github.io/HalalAnalyzer/") {
+            if let privacyURL = URL(string: language == .arabic
+                ? "https://swonyu.github.io/HalalAnalyzer/privacy-ar.html"
+                : "https://swonyu.github.io/HalalAnalyzer/") {
                 Link(destination: privacyURL) {
                     Text(copy(.onlinePrivacy))
                         .underline()
@@ -660,7 +662,9 @@ private struct ScreeningInformationView: View {
                 .accessibilityHint(copy(.onlinePrivacyHint))
             }
 
-            if let supportURL = URL(string: "https://swonyu.github.io/HalalAnalyzer/support.html") {
+            if let supportURL = URL(string: language == .arabic
+                ? "https://swonyu.github.io/HalalAnalyzer/support-ar.html"
+                : "https://swonyu.github.io/HalalAnalyzer/support.html") {
                 Link(destination: supportURL) {
                     Text(copy(.onlineSupport))
                         .underline()

@@ -8,7 +8,7 @@ APP='HalalAnalyzer حلال ام حرام؟'
 QA=ROOT/'Tests/NativeQA'
 EVIDENCE=ROOT/'Tests/Evidence'
 EXPECTED_PRODUCT={
- 'ContentView.swift':'ec5d3ff8b0edf26b7b885aed7a20d15ae8a6eafd1a675cb760dcce295a348fc1',
+ 'ContentView.swift':'8a508afaaf1b946d80aedec9e9c37cd6e4fc5f447a5147f4394139654f725a4e',
  'IngredientScreening.swift':'fc8aab56d0fbdf7682cc77bf74a0a1811c813e93447b6985379f24c122e4167a',
  'ScreeningLocalization.swift':'097a18920ff95fda968c6cee1591360b50b0c077673bf40cb6c0970e8aa8be70',
  'PrivacyInfo.xcprivacy':'a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12'}
