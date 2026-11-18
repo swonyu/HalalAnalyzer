@@ -1,0 +1,391 @@
+{
+  "actual_native_pass": false,
+  "archive_verifier_peer_sha256": "665514f0ae110657efe1cecaccb44f16243579f7c2befb4ce0409ef9bec672e2",
+  "authorization": "ROOT_REVIEWED_DISTINCT_HOSTED_NATIVE_AND_ARCHIVE",
+  "candidate_contract_sha256": "4662abbc350b30ad3c6ec8e77a7284f0b123c192a24a90c2c4f7cf3e62aea0d4",
+  "case_evidence_peer_sha256": "c97ca9d4d3123b05e26aa8a41b698322ebfea407ca0349d959391e22296f56c9",
+  "control_files": [
+    {
+      "bytes": 4905,
+      "git_blob": "7fc29e3d47f9329923343f3ca889a926c7100ce8",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": ".github/workflows/halaltag-r11-native.yml",
+      "sha256": "23153bce7e29cc105959e8b9c7a95c618aa7c6d864cc63f109802564c046d498"
+    },
+    {
+      "bytes": 23015,
+      "git_blob": "cf74218054e91b0bac3e6abb2e643b1cfbfd991a",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/README.md",
+      "sha256": "f5dd0e3ab33d9e1f1485a8470db34b4885d7593c321ae1aac626e6ccb3f5ec7e"
+    },
+    {
+      "bytes": 21125,
+      "git_blob": "8d56c3d43f1b08215b6e06cc69e8d9da79f8b74b",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/accepted-inventory.json",
+      "sha256": "670920b501f267016525f3d1893bd603288bf731b1f5844efe714716c9f6a46c"
+    },
+    {
+      "bytes": 33737,
+      "git_blob": "798f36ee215d2c9e6f34495f6343abfb7dcb0a68",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/appearance_evidence_guard.py",
+      "sha256": "e520953ae9220ac280f9f700fbace00c2eda9987b495b8b1f356e1c475e1cde3"
+    },
+    {
+      "bytes": 33735,
+      "git_blob": "4845f37a6d9098d4ca965841f305e4c9465657cc",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/appearance_evidence_guard_installed.py",
+      "sha256": "b16b7239944b777ab24697d24fdd034ae470ea03f862fb09bc4dca1f365b433b"
+    },
+    {
+      "bytes": 2828,
+      "git_blob": "c6f7dbb0e02e793a8b2b359662ffd5fc9649cf6d",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/appearance_png.py",
+      "sha256": "0d22ed3a871d4abdf5c8272a3a7319b4c8698d45d77554d5261140e4ac9c7f2d"
+    },
+    {
+      "bytes": 34564,
+      "git_blob": "64402195740e9cce4aca12a2c96e2b76a25c0277",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/arabic_appearance_evidence_guard.py",
+      "sha256": "27a84445670a1fed8b83b04d9fbd6787dea41a355ce9d3dc111c058fc81eaacb"
+    },
+    {
+      "bytes": 34562,
+      "git_blob": "557b824194c033c95ebd41074c6bc2da0707fc95",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/arabic_appearance_evidence_guard_installed.py",
+      "sha256": "4e3787a1bd4c872c4e63f54a4a7bd80582374aea90ffc9b4858f30e2f9797397"
+    },
+    {
+      "bytes": 6973,
+      "git_blob": "b6675893990c503fd19dce86ee3926973ebf0507",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/artifact_binding.py",
+      "sha256": "91775120ca90c398639644d9f4b0fef6150dfb5d529ad86441af06541bff7467"
+    },
+    {
+      "bytes": 26452,
+      "git_blob": "6f780f4e5baf6194f3305dcd30acb782f835f900",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/case_evidence.py",
+      "sha256": "384b04d77fca90a5513e2bb04ba031b4aa53fdb655e8ac9ca17588c1dbcc6da0"
+    },
+    {
+      "bytes": 26450,
+      "git_blob": "6583960e901b56ddfba2654bb6a2fbd0930e3e18",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/case_evidence_installed.py",
+      "sha256": "dea8df43811651c03a997b12daa41e9acbb0c648448ca91a5aeb9ff26b3fb97f"
+    },
+    {
+      "bytes": 19299,
+      "git_blob": "fe1a046c462f3417ecdc4f6a74fe78467375ea98",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/collect_evidence.py",
+      "sha256": "7f536c00655051ef30575a5553ea8c2c89fc6f749fd2bd5afa1e08846028633c"
+    },
+    {
+      "bytes": 11008,
+      "git_blob": "0a29275f315bfde2012355c6ea11502d6c39fa83",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/console_diagnostics.py",
+      "sha256": "f7eb496013140879be5b93041cda307d4036be108f5975c3a020b30810da209c"
+    },
+    {
+      "bytes": 23887,
+      "git_blob": "c8b08fef974d22c2bda8253f51e97c3f7083e0e8",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/coverage-contract.json",
+      "sha256": "64287ca28115b9b7b1d42a7c03a5cda024fcee919068e7f979df06a212a46da6"
+    },
+    {
+      "bytes": 3667,
+      "git_blob": "a51a847da8156cda5e7fc80c9e5d2335695ebaa4",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/current_original_union.py",
+      "sha256": "f25f226051b0fc3acc3dad33042954ca65f8d8ded114514101c67970c519fd7c"
+    },
+    {
+      "bytes": 2835,
+      "git_blob": "469713e7538198e6e5fafbbeb094593a2a6ad7da",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/delivery_gate.py",
+      "sha256": "26dce04c25d15cfa93dbd7945003634eb7529d51bde4a3446f5b45d6015483eb"
+    },
+    {
+      "bytes": 22709,
+      "git_blob": "cd851aee26cc7be46e74a79205aded21b11f3986",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/evidence_pack.py",
+      "sha256": "ee493ee09002132ae47ebfe97b061f17ed6a4c6e1bb1505a944a54c27cd7980a"
+    },
+    {
+      "bytes": 6743,
+      "git_blob": "d7c2547eb630c7b85464d4b66fdccc6013bf09af",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/gate_checks.py",
+      "sha256": "abceebd3cac3c588a4b62ed09aed2df251122520ea9e194bdaadc6cbc8d3f5e7"
+    },
+    {
+      "bytes": 13844,
+      "git_blob": "062d43920b0f7bf7f05f8e957c8a1002bb81d85d",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/github_evidence_transport.py",
+      "sha256": "7e31eebaaaf2192ab1817bfa9d58d0b3110ef92264149fb14f192b43905ca77a"
+    },
+    {
+      "bytes": 18126,
+      "git_blob": "bcd23e58b86653505dfc8b7a1d188d220621aa81",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/hosted_binding.py",
+      "sha256": "3d4ffeb22a5d9ddfde338203f506e92d42bb585026059a1b0764d705db6ea700"
+    },
+    {
+      "bytes": 55056,
+      "git_blob": "f8e0416cda771fabe38b3ed1931880b6e3be4502",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/native_driver.py",
+      "sha256": "cdb176a2de15a96790edaa18756a971f0c5f80a66ddc5c846b2bedfca6b9509e"
+    },
+    {
+      "bytes": 8620,
+      "git_blob": "d458e54ec3faf9182cf7b732ada5d6c545238676",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/nineteen-case-plan.json",
+      "sha256": "8e6e78d37f6a5a162bff2cb5fb79fc3b91382f333b143554833ab4ec64a05a62"
+    },
+    {
+      "bytes": 10425,
+      "git_blob": "e39c45b175005649d567f00f42dc6d58f975a3d3",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/original_attachments.py",
+      "sha256": "c7230af7e5fddc3a7905188ae1ed8edf1caa97cb6bd65e72ebdf1f913943e2eb"
+    },
+    {
+      "bytes": 7736,
+      "git_blob": "282f9f8cbdc4f99d833842c1e3a724a6e9e19a99",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/overflow_evidence.py",
+      "sha256": "171fe384f6f6ab8a923453205d852427f36e4f74c43283a31ce82e03208e74f7"
+    },
+    {
+      "bytes": 61657,
+      "git_blob": "e09ad3c7723934f644268f59fecdad8968836faa",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/publishing_runner_frozen.py",
+      "sha256": "1980cdf5a564a802198183fd79ee2f0a325b486908bab45e01beaadb02e50f99"
+    },
+    {
+      "bytes": 6660,
+      "git_blob": "1abedda68f3c3822c943344b08424e230c90325f",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/release_contract.py",
+      "sha256": "8ac3dc0fd50b23c023330065975e9118f5e5fa3b4a3460c938d4e4155d050ae7"
+    },
+    {
+      "bytes": 13999,
+      "git_blob": "0fbf5403f59229e4032013ea06c3775f09c09370",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/release_evidence.py",
+      "sha256": "e9c9c44a99f85d47b2c2c07dc680bd5a0ec447a25ea000ded4b256ef4636f9d7"
+    },
+    {
+      "bytes": 4892,
+      "git_blob": "ba328dcb6e2d9b28729d815d88b2ce396464c265",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/shipping-contract.json",
+      "sha256": "5ef3cc1d338d09734afceb1515963bc793ba4924bce441f831053f716d430c22"
+    },
+    {
+      "bytes": 1776,
+      "git_blob": "2fb67618e156cb59ff2c2ab961dc14fff2af9573",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/simctl-ui-help-root-20261117.stderr",
+      "sha256": "2fa67269b4a75d4856edcaf9f65ed4bd830bd0ecae95e370173fa8ed2fe87084"
+    },
+    {
+      "bytes": 2678,
+      "git_blob": "0d8847351d857b21cf5c6244e4f415918fe44616",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/source-contract.json",
+      "sha256": "7fcfb6678900c48fd8332d572d4df9594402ec781eb92715923012b5cbe8cf5f"
+    },
+    {
+      "bytes": 38721,
+      "git_blob": "fdefee771400cd76ac00eef77ca1557076d6cc52",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/source-index.json",
+      "sha256": "f008307c5e9255651ef183b5f02af930f5081cfc3e4fb3cbf27f9ad431e316ca"
+    },
+    {
+      "bytes": 6440,
+      "git_blob": "335beccf304db7ee37f0058ee89d9432951d3ca8",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/system_size_evidence.py",
+      "sha256": "e2e58acbb2de819be1e1cc4e0149f7311981c243473c07992df0ca1f67b8e83b"
+    },
+    {
+      "bytes": 21927,
+      "git_blob": "309965204cda37ef6c07962a5cb093159c01e7ee",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/test_complete_draft_evidence.py",
+      "sha256": "7e8d2940dc0eb9b2836e41bfa517ab3ede8156031c39849694b74f758cd3520d"
+    },
+    {
+      "bytes": 6314,
+      "git_blob": "cf9d775ce403e56d740c4ddbc085e56dbce4d1cb",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/test_current_original_union.py",
+      "sha256": "35613e343385eeadce8cd41f09d43ccf3c243c251da473f0f609d0aa009e1bc9"
+    },
+    {
+      "bytes": 16418,
+      "git_blob": "a3d8bb38036b7eb2afc9310d5d0fa24edd0fcd66",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/test_hosted_contract.py",
+      "sha256": "3b90ab71a68c2ca4e9f54ca64a1723274b179bd1528698781241bd1f6239e823"
+    },
+    {
+      "bytes": 17763,
+      "git_blob": "23879c5c74cf72a3d7287c0012f20f42c236d215",
+      "git_mode": "100644",
+      "mode": "0644",
+      "path": "publishing/hosted-r11-native/verify_shipping_archive.py",
+      "sha256": "cda0ad4b956bf555f991690039414e9f6d41cf3e8cff610faa3073cf1d786040"
+    }
+  ],
+  "cost": {
+    "additional_spend_usd": 0,
+    "authorization": "ROOT_VERIFIED_NO_EXTRA_SPEND",
+    "cache_allowed": false,
+    "delete_prior_evidence_allowed": false,
+    "maximum_output_bytes": 20000000,
+    "paid_usage_blocked": true,
+    "private_receipt_sha256": "a031163275fb0fbfe9e1982f9802b74bb913810537bc1e9eb69d8127ca8792ea",
+    "public_standard_runner": "xcode-27",
+    "reserved_included_storage_bytes": 21000000,
+    "retention_days": 1,
+    "valid_until_utc": "2026-11-18T22:26:12Z"
+  },
+  "distribution_signing": false,
+  "evidence_packer_peer_sha256": "fb79c6e57d22413bf9159cfb40c4c66518bba3a2d9ededd5d164eb0675ba839b",
+  "evidence_release": {
+    "author_id": 221923776,
+    "author_login": "swonyu",
+    "authorization": "ROOT_VERIFIED_NEW_EMPTY_EVIDENCE_ONLY_DRAFT",
+    "created_at": "2026-11-17T22:27:27Z",
+    "creation_receipt_sha256": "366a2ab96f6bb291e48c2b24aa75d7461b787b8e58ce37140fb0677db29c39dd",
+    "free_route_review_receipt_sha256": "3cb1d80c47ecf0d787cbe08df21d291e35a4ffda534164d6353adc8cd79dd4a9",
+    "fresh_empty_asset_list_verified": true,
+    "policy": {
+      "additional_spend_usd": 0,
+      "asset_overwrite_delete_retry_allowed": false,
+      "automatic_retries": 0,
+      "body_sha256": "7fa49f7cab20a19ea41c4dde154d94a3c90f560e6eb6c6081e19413809dcc178",
+      "candidate_nonce": "caa4a1a243ba4b67813b310bf9a87d8b",
+      "claim_before_native_required": true,
+      "complete_download_hash_crc_gate_required": true,
+      "draft": true,
+      "initial_assets": [],
+      "maximum_actions_artifact_bytes": 500000000,
+      "maximum_asset_bytes": {
+        "complete-member-index.json": 40000000,
+        "delivery-receipt.json": 1000000,
+        "evidence.tar.gz": 2000000000,
+        "reservation.json": 16384,
+        "verdict.json": 16384
+      },
+      "prerelease": true,
+      "release_create_update_publish_delete_allowed": false,
+      "repository": "swonyu/HalalAnalyzer",
+      "run_attempt": 1,
+      "runtime_token_permission": "contents:write",
+      "runtime_token_used_only_for_existing_draft_assets": true,
+      "schema_version": 1,
+      "source_commit": "7ef009beb0c1f6f355eeceb931d899553ea8cad5",
+      "tag": "evidence/halaltag-r11-7ef009beb0c1-caa4a1a243ba4b67813b310bf9a87d8b",
+      "tag_create_update_delete_allowed": false,
+      "tag_target_sha": "7ef009beb0c1f6f355eeceb931d899553ea8cad5",
+      "tag_target_type": "commit",
+      "title": "HalalTag R11 evidence only caa4a1a243ba4b67813b310bf9a87d8b"
+    },
+    "release_id": 450388726,
+    "root_created_tag_and_draft_before_native": true,
+    "root_existing_auth_route_verified": true
+  },
+  "fresh_empty_draft_receipt_sha256": "366a2ab96f6bb291e48c2b24aa75d7461b787b8e58ce37140fb0677db29c39dd",
+  "inventory_prerequisite": {
+    "accepted_inventory_sha256": "670920b501f267016525f3d1893bd603288bf731b1f5844efe714716c9f6a46c",
+    "artifact_download_sha256": "669cee0e9c4d216ffb44a0bc474c71c95b763ad97b79a36cd62b6c437be0b005",
+    "artifact_id": 14448295189,
+    "authorization": "ROOT_VERIFIED_EXACT_PLATFORM_INVENTORY",
+    "run_attempt": 1,
+    "run_id": 44348679786,
+    "workflow_commit": "07fe75910f00019fb16493ad17cc509bfe6e6120"
+  },
+  "mac_native_hold_unchanged": true,
+  "native_executor_peer_sha256": "9374137af3b53a3b6982c6bc8907684f11bf780b03a362dbd134b753c46a0660",
+  "platform_revision": {
+    "original_inventory_artifact_id": 14446386073,
+    "original_inventory_artifact_sha256": "85c3a63040eba18dd325b9f65fe0d1a2e1df4573f8aa70a71c4fb7fa38978d4b",
+    "original_inventory_gate": "FAILED_RUNTIME_BUILD_UNAVAILABLE",
+    "original_inventory_inner_archive_sha256": "36f3e7702636819f335bc2aacdc4b05f427fa93024ee850128ad89da7d3b37ee",
+    "original_inventory_run_attempt": 1,
+    "original_inventory_run_id": 44346043468,
+    "original_inventory_workflow_commit": "7394b369aaf85fb99830af6ceeb2de4f4c35097e",
+    "original_runtime_build": "24A5423a",
+    "review_scope": "EXPLICIT_INSTALLED_RUNTIME_SUCCESSOR_AFTER_FAILED_ORIGINAL_GATE",
+    "runtime_build": "24A434",
+    "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+    "runtime_version": "27.0"
+  },
+  "prior_full_executor_root_review_sha256": "c1b06b629fc9b83473cd2f0ea057febaecf469d8a243064a44cddde57bd3c249",
+  "proposal_receipt_sha256": "b633991244d95e5a7450b971373de6b45dd17464fe503619016219db17850b7a",
+  "recorded_utc": "2026-11-18T18:28:38.691512+00:00",
+  "release_asset_peer_sha256": "3592d79f3419e8b911aabc1776bc3c8299467d45f5fd5ea525c6c3d3b8905e53",
+  "root_v6_startup_review_sha256": "c29405b0e5de7dce7b1436f94ad5be01541e07ffca9246dfca3f5b3b201bb503",
+  "schema_version": 1,
+  "scope": "HALALTAG_R11_INSTALLED_RUNTIME_NATIVE_AND_COMPLETE_EVIDENCE_V3",
+  "source_commit": "7ef009beb0c1f6f355eeceb931d899553ea8cad5",
+  "store_release": false
+}
