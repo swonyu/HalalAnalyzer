@@ -1,0 +1,1209 @@
+{
+  "schema_version": 1,
+  "commit": "b2d1ea13460fe9a8f3aedc1912f474737a1ec2ed",
+  "tree": "eaeb5fe8c1c7a7486282a907cc7906e6c3799eba",
+  "files": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "git_blob": "203748e441ad2966c3c0f2112be4b005acc93c40",
+      "bytes": 68,
+      "native_input": true,
+      "sha256": "425858fa284e970d92a16ae3bde6f2f920f0462f34afbbc0ea4ecaad8ebc186d"
+    },
+    {
+      "path": "Artwork/HalalAnalyzerIcon.svg",
+      "mode": "100644",
+      "git_blob": "afbf067894f4741d5e800d9e2f69f5c3e965376d",
+      "bytes": 3097,
+      "native_input": true,
+      "sha256": "d3e639d38eac86bb2bab040ec2c0c6a3b5072316c42eb472bd05b67d72b24380"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟.xcodeproj/project.pbxproj",
+      "mode": "100644",
+      "git_blob": "189bc9af1cc2dd1c1731689a168898933ea106d1",
+      "bytes": 12604,
+      "native_input": true,
+      "sha256": "777ca0dda92eabf2d446285a47b6f6f47f5d3d09e6c211744b88a25dd62661f0"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "mode": "100644",
+      "git_blob": "919434a6254f0e9651f402737811be6634a03e9c",
+      "bytes": 135,
+      "native_input": true,
+      "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟.xcodeproj/xcshareddata/xcschemes/HalalAnalyzer حلال ام حرام؟.xcscheme",
+      "mode": "100644",
+      "git_blob": "87324ea3070a01a0a2543311e39f3f31a536f23d",
+      "bytes": 2455,
+      "native_input": true,
+      "sha256": "84deda478d07aa0c842e1effc47b0060b9ad356a5ab6841f1590577e0630cc7b"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/AccentColor.colorset/Contents.json",
+      "mode": "100644",
+      "git_blob": "eb8789700816459c1e1480e0b34781d9fb78a1ca",
+      "bytes": 123,
+      "native_input": true,
+      "sha256": "9af65086fa30b49252fae1a1225731691de794f7775af74d71befeb507d12b7c"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png",
+      "mode": "100644",
+      "git_blob": "84bd9c6ae893b047c99ad08e445fc75f28a11d15",
+      "bytes": 577515,
+      "native_input": true,
+      "sha256": "27e8d19a818f17dbcda9e3e6352055de3116748e1fb5e5d6f627886d30708fe0"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "mode": "100644",
+      "git_blob": "f22e10cde3659e827af3a74cdef013e7ca368a3e",
+      "bytes": 216,
+      "native_input": true,
+      "sha256": "9cf2928dad89427abd581b6852db081352417f400afb65e60c479228cdc4f4da"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/Assets.xcassets/Contents.json",
+      "mode": "100644",
+      "git_blob": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "bytes": 63,
+      "native_input": true,
+      "sha256": "0fd49ba3c3585c709678e0046a821c3c60685ec7063720d30d3a3448be3a208b"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ContentView.swift",
+      "mode": "100644",
+      "git_blob": "832c62188f34ba66e22206c49bdc69403ccaa056",
+      "bytes": 32095,
+      "native_input": true,
+      "sha256": "8a508afaaf1b946d80aedec9e9c37cd6e4fc5f447a5147f4394139654f725a4e"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/HalalAnalyzer______________App.swift",
+      "mode": "100644",
+      "git_blob": "9d80446002e87984aacedfb80f753c7ed68fc568",
+      "bytes": 300,
+      "native_input": true,
+      "sha256": "ae36f474eb444bfa7c084573d2e544a42ca1406e7082c2eea575a856f088e831"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/IngredientScreening.swift",
+      "mode": "100644",
+      "git_blob": "a2fa7a8eeec1f793d36b96976d6288221aaec4af",
+      "bytes": 9195,
+      "native_input": true,
+      "sha256": "fc8aab56d0fbdf7682cc77bf74a0a1811c813e93447b6985379f24c122e4167a"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/PrivacyInfo.xcprivacy",
+      "mode": "100644",
+      "git_blob": "5704beda8f6061dddefc74c325dba37bc5fdce4f",
+      "bytes": 598,
+      "native_input": true,
+      "sha256": "a331d51864743ebe4e00dd22360b4a538b6b3ac26a6b3eb54094e60a36959a12"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ScreeningLocalization.swift",
+      "mode": "100644",
+      "git_blob": "3feb32ef23c6658ecf1252d93bd83ad3b3c3a0e5",
+      "bytes": 20976,
+      "native_input": true,
+      "sha256": "097a18920ff95fda968c6cee1591360b50b0c077673bf40cb6c0970e8aa8be70"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/ar.lproj/InfoPlist.strings",
+      "mode": "100644",
+      "git_blob": "47c825ef397feb36f2970087dce5b72d28024ff9",
+      "bytes": 106,
+      "native_input": true,
+      "sha256": "14e333dd2c788060b92ac06b5fa2055f064dd190c801390764b972d9a520f354"
+    },
+    {
+      "path": "HalalAnalyzer حلال ام حرام؟/en.lproj/InfoPlist.strings",
+      "mode": "100644",
+      "git_blob": "47c825ef397feb36f2970087dce5b72d28024ff9",
+      "bytes": 106,
+      "native_input": true,
+      "sha256": "14e333dd2c788060b92ac06b5fa2055f064dd190c801390764b972d9a520f354"
+    },
+    {
+      "path": "HalalTag.xcworkspace/contents.xcworkspacedata",
+      "mode": "100644",
+      "git_blob": "e0cd745eb55fadd83790aef4ee3984780bbfc769",
+      "bytes": 223,
+      "native_input": true,
+      "sha256": "da6d2cee1e12ca533006d2628813a2744f0fa6bd056d4f73ffcff7a7e283b6f1"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "git_blob": "6850fc3bbf4b7a4cb1412475edee9ebd82621a4e",
+      "bytes": 728,
+      "native_input": true,
+      "sha256": "065182464929a146aa33271e33f29c555b874eb1378d3235e9171365c9088e4c"
+    },
+    {
+      "path": "Tests/Evidence/Baseline-AppEntry.swift.txt",
+      "mode": "100644",
+      "git_blob": "9d80446002e87984aacedfb80f753c7ed68fc568",
+      "bytes": 300,
+      "native_input": true,
+      "sha256": "ae36f474eb444bfa7c084573d2e544a42ca1406e7082c2eea575a856f088e831"
+    },
+    {
+      "path": "Tests/Evidence/Baseline-ContentView.swift.txt",
+      "mode": "100644",
+      "git_blob": "2c28db25612b34dfd9d939fefaf1612d08f4af95",
+      "bytes": 9870,
+      "native_input": true,
+      "sha256": "2ee0276c580055038c1a4c79553930ad6d121df7b3497db34ac05e59907f11bf"
+    },
+    {
+      "path": "Tests/Evidence/Baseline-ShippingScheme.xcscheme.txt",
+      "mode": "100644",
+      "git_blob": "87324ea3070a01a0a2543311e39f3f31a536f23d",
+      "bytes": 2455,
+      "native_input": true,
+      "sha256": "84deda478d07aa0c842e1effc47b0060b9ad356a5ab6841f1590577e0630cc7b"
+    },
+    {
+      "path": "Tests/Evidence/Baseline-project.pbxproj.txt",
+      "mode": "100644",
+      "git_blob": "081654727366f24d402ed951634d20fdcce30ce9",
+      "bytes": 12596,
+      "native_input": true,
+      "sha256": "0a520e10bef9ad82acd2a53b45d2d1e9f09c934e51bd52148c6afd549f6583e9"
+    },
+    {
+      "path": "Tests/Evidence/OriginalTen-HalalTagPreparedUITests.swift.txt",
+      "mode": "100644",
+      "git_blob": "e796edc02292d908306c4dba0055e5a388c36fb9",
+      "bytes": 24128,
+      "native_input": true,
+      "sha256": "68246ae5cc145eb8dab71f98835fc423b4925ad6e23a7ba91fc42789165e4306"
+    },
+    {
+      "path": "Tests/Evidence/OriginalTen-helper-and-binding.diff",
+      "mode": "100644",
+      "git_blob": "5de33ed8a933afb9c62acfdf91136f50a3a82d48",
+      "bytes": 9036,
+      "native_input": true,
+      "sha256": "ea55ee6c2aa3a4ed9d4d7eb72638bd676949807e1e48be877f52b5d77f517c2d"
+    },
+    {
+      "path": "Tests/Evidence/ReviewedNine/HalalTagArabicAppearanceUITests.swift.txt",
+      "mode": "100644",
+      "git_blob": "e09557a989414d778496c094429fc2429398b3a7",
+      "bytes": 29427,
+      "native_input": true,
+      "sha256": "2a91f21360c8a93e4ac09998efd89fa2fcb295da5d4fe1d3c04ac50a90983031"
+    },
+    {
+      "path": "Tests/Evidence/ReviewedNine/HalalTagLanguageStateUITests.swift.txt",
+      "mode": "100644",
+      "git_blob": "6efb92745035fe35e67153321588d734106af243",
+      "bytes": 8776,
+      "native_input": true,
+      "sha256": "28da5860b9764cbfce97a5796e3735f3a8b6fb2111c94bf44c7821716bd4e742"
+    },
+    {
+      "path": "Tests/Evidence/ReviewedNine/HalalTagPreparedUITests.swift.txt",
+      "mode": "100644",
+      "git_blob": "770b08d4ac6ca3b3a6d65fa70721b530c804b3eb",
+      "bytes": 32000,
+      "native_input": true,
+      "sha256": "b6511777246d9ff5958d20b9712242533e48447b4fc8d44b2813e572c6262f20"
+    },
+    {
+      "path": "Tests/Evidence/provenance.json",
+      "mode": "100644",
+      "git_blob": "8575ec022f1681df4bd33876350474b017beb8b7",
+      "bytes": 1767,
+      "native_input": true,
+      "sha256": "57b77582e34ae49d1533155d012ed9ef848e1e28991b9a19e511350d1ebc3c55"
+    },
+    {
+      "path": "Tests/Model/BilingualModelChecks.swift",
+      "mode": "100644",
+      "git_blob": "c3cfba0b051fa63d8eac522a2565b221d00daba4",
+      "bytes": 8220,
+      "native_input": true,
+      "sha256": "b9df24c2bde9976438e6ca219987081056ac253b8a3fd02d0d5c78dfcbbc450c"
+    },
+    {
+      "path": "Tests/NativeQA/App/HalalTagQAApp.swift",
+      "mode": "100644",
+      "git_blob": "ea896baf55b0466bdba0257d1ba31c9389ca0314",
+      "bytes": 7396,
+      "native_input": true,
+      "sha256": "70ef4e53b608d167aa8532ab227eb88cd2544e3ffdc3cd1c0df76e79f79af0cc"
+    },
+    {
+      "path": "Tests/NativeQA/App/Info.plist",
+      "mode": "100644",
+      "git_blob": "366717026c980c2eba21d91f2a2ce4d7bf37ec9e",
+      "bytes": 1184,
+      "native_input": true,
+      "sha256": "1c6795b7916c26c4644b35f3218a4d788af97fa9829572bde5917bea26956503"
+    },
+    {
+      "path": "Tests/NativeQA/HalalTagQA.xcodeproj/project.pbxproj",
+      "mode": "100644",
+      "git_blob": "fbec809a3fcb7d54bfc427f2bef472ea091cff85",
+      "bytes": 12229,
+      "native_input": true,
+      "sha256": "d728945d4d72d9d19b61cd0927295c7138673df9efc719e2ea60a27136278b3b"
+    },
+    {
+      "path": "Tests/NativeQA/HalalTagQA.xcodeproj/xcshareddata/xcschemes/HalalTagQA.xcscheme",
+      "mode": "100644",
+      "git_blob": "98deb5c8e719af85170fda30ce47cd7fac5663cc",
+      "bytes": 2743,
+      "native_input": true,
+      "sha256": "9969f9848346f843f5bcd2fb4cd6463bc2bf5641ead24d32312406ba85ad2408"
+    },
+    {
+      "path": "Tests/NativeQA/README.txt",
+      "mode": "100644",
+      "git_blob": "aad251aec856fdecaef0a9d86a7c40f9941f12eb",
+      "bytes": 4407,
+      "native_input": true,
+      "sha256": "62bdfff9fe0bc4261a207b18efb56461bd55691a0ba2875e448d5c9b007fba1f"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagArabicAppearanceUITests.swift",
+      "mode": "100644",
+      "git_blob": "8c2cea7bbd1597aa98da798a18c59ebda3c325ab",
+      "bytes": 44274,
+      "native_input": true,
+      "sha256": "8aa778616b83f5891b747020fd8c8eac68587081e7fba0f46e751c9cea9f484d"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagFunctionalUITests.swift",
+      "mode": "100644",
+      "git_blob": "6abecac95221c12a0f3904539f17a87e322f16cf",
+      "bytes": 21887,
+      "native_input": true,
+      "sha256": "e54f3e6225535c55fa1dac32ac41aae8032fcaf3c3195387f93810597d49344c"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagLanguageStateUITests.swift",
+      "mode": "100644",
+      "git_blob": "6efb92745035fe35e67153321588d734106af243",
+      "bytes": 8776,
+      "native_input": true,
+      "sha256": "28da5860b9764cbfce97a5796e3735f3a8b6fb2111c94bf44c7821716bd4e742"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagPreparedUITests.swift",
+      "mode": "100644",
+      "git_blob": "60a32d087301ae7b1fde08f74afb888b277e6685",
+      "bytes": 46874,
+      "native_input": true,
+      "sha256": "03318fe88b6e11f790093fa7a21035991159f8e9bb2e54dd40faec0230b242f9"
+    },
+    {
+      "path": "Tests/NativeQA/UITests/HalalTagSyntheticQAInstallation.json",
+      "mode": "100644",
+      "git_blob": "c869dba672b58c79d272b6be65452fd91534ff30",
+      "bytes": 762,
+      "native_input": true,
+      "sha256": "387bc286c81c1da1b3ebc944a9f6771b22b23d80fa52b2320a70a6535ed20f36"
+    },
+    {
+      "path": "Tests/NativeQA/nineteen-case-plan.json",
+      "mode": "100644",
+      "git_blob": "d458e54ec3faf9182cf7b732ada5d6c545238676",
+      "bytes": 8620,
+      "native_input": true,
+      "sha256": "8e6e78d37f6a5a162bff2cb5fb79fc3b91382f333b143554833ab4ec64a05a62"
+    },
+    {
+      "path": "Tests/README.txt",
+      "mode": "100644",
+      "git_blob": "d2bb7b9e2aeab2ee71ec1c14f034de3bbe219466",
+      "bytes": 1129,
+      "native_input": true,
+      "sha256": "42067460a36169d1dbaafac50e8d1638e5a975a8e6855eabd512906e77b2e0f7"
+    },
+    {
+      "path": "Tests/openstep_reader.py",
+      "mode": "100644",
+      "git_blob": "f17970f75f65a1eaed89c90100c78fae49675f7c",
+      "bytes": 1385,
+      "native_input": true,
+      "sha256": "552e83abb6530bd77adba1ab592469f92004997f2c3cb843949e76cf74f81ae4"
+    },
+    {
+      "path": "Tests/validate_composition.py",
+      "mode": "100644",
+      "git_blob": "2329265372f15e0694e77b72e39db6ff608d43d4",
+      "bytes": 21408,
+      "native_input": true,
+      "sha256": "ddbf0cc6dff3fd603f46061e83795d80555ce7f3107e8dbe41b20a3766e85e09"
+    },
+    {
+      "path": "docs/.nojekyll",
+      "mode": "100644",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "native_input": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/README.md",
+      "mode": "100644",
+      "git_blob": "317e33a47d9ee8c343b6678769682d1a970c6a8c",
+      "bytes": 4483,
+      "native_input": true,
+      "sha256": "e8e84ddbc25752cc91482eea8b7762e781ea15adb699e97732cd7433f032d823"
+    },
+    {
+      "path": "docs/index.html",
+      "mode": "100644",
+      "git_blob": "5cd085ae36bc7b01685bbab0f91e9aebc9fbdebb",
+      "bytes": 6551,
+      "native_input": true,
+      "sha256": "564e60c1d16d9ec28a3e523d992a807033027f6e1a400efa1dcdd410d04bc806"
+    },
+    {
+      "path": "docs/privacy-ar.html",
+      "mode": "100644",
+      "git_blob": "ebd8706c166476c8db1945bc95d301297df2f601",
+      "bytes": 9307,
+      "native_input": false
+    },
+    {
+      "path": "docs/styles.css",
+      "mode": "100644",
+      "git_blob": "95bd67a105257869343f41be98b9706a9abeebbb",
+      "bytes": 3012,
+      "native_input": false
+    },
+    {
+      "path": "docs/support-ar.html",
+      "mode": "100644",
+      "git_blob": "482a010c6a82b634f7c83333ff4e976a543fd40a",
+      "bytes": 7577,
+      "native_input": false
+    },
+    {
+      "path": "docs/support.html",
+      "mode": "100644",
+      "git_blob": "e06c6115407ed29db04fded323343b23ff020645",
+      "bytes": 5272,
+      "native_input": true,
+      "sha256": "39e402376a3692487716d93862c398bd6b3059406d554a5f26d1e91dca94f0db"
+    },
+    {
+      "path": "publishing/r10/README.md",
+      "mode": "100644",
+      "git_blob": "8576ba72b08759e7e0452936836f8cf109ee6501",
+      "bytes": 2341,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/appearance_evidence_guard.py",
+      "mode": "100644",
+      "git_blob": "577833f474096af1a9974637897724fa2da21bc7",
+      "bytes": 33737,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/arabic_appearance_evidence_guard.py",
+      "mode": "100644",
+      "git_blob": "a0685c1d3bead750ede739c1d4fd1877a2628b40",
+      "bytes": 34564,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/composition-static-verification.json",
+      "mode": "100644",
+      "git_blob": "26c5560eeb2115d2273fdfd02f086d71661b97db",
+      "bytes": 9599,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/geometry-evidence-tests.log",
+      "mode": "100644",
+      "git_blob": "25ea07ea28632a7c1ae776cc16b90e73faf278e2",
+      "bytes": 1504,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/parent-support-pins.json",
+      "mode": "100644",
+      "git_blob": "9cf6d1d390a79e33905a5595cb4fe4410b6db9e7",
+      "bytes": 3511,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/peer-reviews.json",
+      "mode": "100644",
+      "git_blob": "10ec7e6405eeacd4cebe7091e84dd5a04df98eda",
+      "bytes": 1320,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/prepare_native_review.py",
+      "mode": "100644",
+      "git_blob": "cbb17c05d2c51bd27336261bd4cae7cb4bfdcfb2",
+      "bytes": 14957,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/r8-ar-ax5-route-input.json",
+      "mode": "100644",
+      "git_blob": "738fe8931ff04636dc2945431d214d261a24e1e4",
+      "bytes": 2778,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/r8-en-ax5-route-input.json",
+      "mode": "100644",
+      "git_blob": "9aa08becea93632a554ea8c51be5530987e6a036",
+      "bytes": 2692,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/r9-build-failure.json",
+      "mode": "100644",
+      "git_blob": "af9ca7d39cc31e53fb2da22e8c439720daaddf70",
+      "bytes": 1085,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/source-retention-review.json",
+      "mode": "100644",
+      "git_blob": "8f0bacce4741e0a1cec8701e772859681fd901f9",
+      "bytes": 17237,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r10/test_geometry_evidence.py",
+      "mode": "100644",
+      "git_blob": "95db8ec344de471c5cc32ba3874b23db8064d7ee",
+      "bytes": 14419,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r11/README.md",
+      "mode": "100644",
+      "git_blob": "dcd24cd611a54c7a971fcd357dc9cb6ceb70e28d",
+      "bytes": 2629,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r11/appearance_evidence_guard.py",
+      "mode": "100644",
+      "git_blob": "798f36ee215d2c9e6f34495f6343abfb7dcb0a68",
+      "bytes": 33737,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r11/arabic_appearance_evidence_guard.py",
+      "mode": "100644",
+      "git_blob": "64402195740e9cce4aca12a2c96e2b76a25c0277",
+      "bytes": 34564,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r11/parent-support-pins.json",
+      "mode": "100644",
+      "git_blob": "43381f0fd5a3a11e249e784ac0e6a8cc32a20c05",
+      "bytes": 3505,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r11/peer-reviews.json",
+      "mode": "100644",
+      "git_blob": "f44eec83d9ac660cc87213c10a5e3be6b73189a3",
+      "bytes": 1895,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r11/prepare_native_review.py",
+      "mode": "100644",
+      "git_blob": "07b28dd055d2af05fb42c1510f233f73570cad0b",
+      "bytes": 14809,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r11/r10-light-large-failure.json",
+      "mode": "100644",
+      "git_blob": "5e9c7a47d6b50db835d00833b462dd0efa694e7a",
+      "bytes": 3073,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r11/r8-ar-ax5-route-input.json",
+      "mode": "100644",
+      "git_blob": "738fe8931ff04636dc2945431d214d261a24e1e4",
+      "bytes": 2778,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r11/r8-en-ax5-route-input.json",
+      "mode": "100644",
+      "git_blob": "9aa08becea93632a554ea8c51be5530987e6a036",
+      "bytes": 2692,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r11/test_geometry_evidence.py",
+      "mode": "100644",
+      "git_blob": "95db8ec344de471c5cc32ba3874b23db8064d7ee",
+      "bytes": 14419,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r3/STATUS.txt",
+      "mode": "100644",
+      "git_blob": "079a6fa275ee10ed11784f18629952dfa9a7a459",
+      "bytes": 3154,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r3/source-delta.json",
+      "mode": "100644",
+      "git_blob": "1cdc7be653cf4b132b340ecab141654f3337670c",
+      "bytes": 2301,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r3/source-files.json",
+      "mode": "100644",
+      "git_blob": "6a0bf7bf26dc29a619df858a75e246318b074aed",
+      "bytes": 8868,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r3/source-retention.json",
+      "mode": "100644",
+      "git_blob": "5b05663c01d0e28618ae71a278eda60fa229537e",
+      "bytes": 1718,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r4/STATUS.txt",
+      "mode": "100644",
+      "git_blob": "abfc3f3077108e700f55b7d0a1101c779d47abe1",
+      "bytes": 2996,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r4/source-delta.json",
+      "mode": "100644",
+      "git_blob": "7d50c67612229e4191edd0bebee4143601ff6dc1",
+      "bytes": 2321,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r4/source-files.json",
+      "mode": "100644",
+      "git_blob": "d2174165db425e4032033eb862ad1591f8e20176",
+      "bytes": 8938,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r4/source-retention.json",
+      "mode": "100644",
+      "git_blob": "a9f39ce2aa1f7d87a149f98d89f6a67b9d2b9e36",
+      "bytes": 1770,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r5/README.md",
+      "mode": "100644",
+      "git_blob": "ea0f65b40088d3efd3bb5609fd2624db9e494501",
+      "bytes": 4080,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r5/RELEASE-ADAPTER.md",
+      "mode": "100644",
+      "git_blob": "e2aba41cb6a378da2f6fe86a9e182bfa04c92771",
+      "bytes": 6206,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r5/prepare_native_review.py",
+      "mode": "100644",
+      "git_blob": "afead7a04d8da2324b8341751b10b176dfcea261",
+      "bytes": 7788,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r5/prepare_release_review.py",
+      "mode": "100644",
+      "git_blob": "29b8d75585f552dc2dd0193fa58fdaee54939261",
+      "bytes": 8727,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r5/public-docs-reconciliation.json",
+      "mode": "100644",
+      "git_blob": "da1713c4a26d0d279b12598f993bb136ff1030ab",
+      "bytes": 2781,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r5/public-docs-validation.json",
+      "mode": "100644",
+      "git_blob": "8810603ab44d0c5b70101014925277454c9c53b2",
+      "bytes": 885,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r5/release-file-only-validation.json",
+      "mode": "100644",
+      "git_blob": "97b414daa411e999cf828698a0544b366f3ab3f9",
+      "bytes": 698,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r5/release-preparation-review.json",
+      "mode": "100644",
+      "git_blob": "74804e306855b38714928d066da2f23258f70550",
+      "bytes": 2001,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r5/source-validation.json",
+      "mode": "100644",
+      "git_blob": "876a54930512158b920597f4e14ea62e43bf73d5",
+      "bytes": 9640,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/R6B-ADAPTER.md",
+      "mode": "100644",
+      "git_blob": "eb54fff73d4ba3b28c6804a583daa3ded0b74b2e",
+      "bytes": 2136,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/README.md",
+      "mode": "100644",
+      "git_blob": "ba237f69c32651b19c9fd9ced5896250a51bfeee",
+      "bytes": 2115,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/RELEASE-ADAPTER.md",
+      "mode": "100644",
+      "git_blob": "cf5867beebc28c86ba9bfd1140ff0838d790915d",
+      "bytes": 3577,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/STORE-HANDOFF.md",
+      "mode": "100644",
+      "git_blob": "31dcd716820ee3d06a38194813b175c92b6e6c10",
+      "bytes": 11660,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/check_model_receipt_guard.py",
+      "mode": "100644",
+      "git_blob": "1b36f8c6165aa66f1816fc7ba9cd163b3a528251",
+      "bytes": 4619,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/model-check-step.txt",
+      "mode": "100644",
+      "git_blob": "9829b0714f7caf6ec088688782d2d2c503a375ec",
+      "bytes": 3502,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/model-release-gate.txt",
+      "mode": "100644",
+      "git_blob": "818dab12e96efcfa2ce34a2a410f73703bc362ea",
+      "bytes": 3488,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/observed-model-result-r6.json",
+      "mode": "100644",
+      "git_blob": "70f5ac5a7e4755e2245a2ac99455da034d8082d9",
+      "bytes": 11204,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/prepare_model_receipt_revision.py",
+      "mode": "100644",
+      "git_blob": "be546088f96182144f7431a77f4c9cc96232c2b1",
+      "bytes": 4168,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/prepare_native_review.py",
+      "mode": "100644",
+      "git_blob": "3c8bafc613c3bb868f784a97c0e1c5c5bf7a6c4f",
+      "bytes": 9477,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/prepare_release_review.py",
+      "mode": "100644",
+      "git_blob": "cac01b11bccff01382a578768da85ae16444819d",
+      "bytes": 10644,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/public-contact-search.json",
+      "mode": "100644",
+      "git_blob": "e4babd0c6093b2f19c36856b204b9eddb21b5e6e",
+      "bytes": 4893,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/receipt-guard-regression.json",
+      "mode": "100644",
+      "git_blob": "ff022e4d68d5b942162d7b4623f11c8b0b09d102",
+      "bytes": 1370,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/release-file-only-validation.json",
+      "mode": "100644",
+      "git_blob": "c38b7fe9056d7b2c9f103d7adbc5d93c95f68c7d",
+      "bytes": 662,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/release-preparation-review.json",
+      "mode": "100644",
+      "git_blob": "8ca31f19af7fa5bb57d9b4d2277e11348346e0cf",
+      "bytes": 2061,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/screenshot-capture-plan.json",
+      "mode": "100644",
+      "git_blob": "3e2035a063e453959624ce19acfa49a487b50c4d",
+      "bytes": 3440,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/source-validation.json",
+      "mode": "100644",
+      "git_blob": "e219e27132690d915d2765dce8880506dc761f69",
+      "bytes": 841,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/store-localizations.json",
+      "mode": "100644",
+      "git_blob": "977b5752bbe4cbf9fc87ce89611c6cf1306969c6",
+      "bytes": 11127,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/store-metadata-validation.json",
+      "mode": "100644",
+      "git_blob": "eba796912d56c594c62385b93fb4351e789b485f",
+      "bytes": 1098,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r6/store-questionnaire-facts.json",
+      "mode": "100644",
+      "git_blob": "3d6f71f71fb06ae7735eecec59438f5ceb7e1189",
+      "bytes": 13281,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/README.md",
+      "mode": "100644",
+      "git_blob": "be4dece74977fc9edd8380feaac4f556811a4b0c",
+      "bytes": 6013,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/RELEASE-PREPARATION.md",
+      "mode": "100644",
+      "git_blob": "b71be621dc0df086d79848653b66b2d2324fff43",
+      "bytes": 2317,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/adapter-contract-tests.log",
+      "mode": "100644",
+      "git_blob": "76f7c73ea76e7d625661cef1e794bb2380496157",
+      "bytes": 2433,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/appearance_evidence_guard.py",
+      "mode": "100644",
+      "git_blob": "4550e946fa6bb9014a280712224727ddf3811369",
+      "bytes": 28453,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/arabic_appearance_evidence_guard.py",
+      "mode": "100644",
+      "git_blob": "505a8c7b910a581a28eac44ee5e67d99c9019a0d",
+      "bytes": 29280,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/composition-static-verification.json",
+      "mode": "100644",
+      "git_blob": "85a92e4eb4d74dd8575463111eda5fa2427c0159",
+      "bytes": 9603,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/README.md",
+      "mode": "100644",
+      "git_blob": "b1dc1ab129676790919c33b2ee0c37ced345b1c2",
+      "bytes": 2097,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/native-staging/STAGER-VERIFICATION.json",
+      "mode": "100644",
+      "git_blob": "0cda783fbf7713474250b54a6d937014b7f64d86",
+      "bytes": 741,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/native-staging/STAGING.md",
+      "mode": "100644",
+      "git_blob": "2499fb24e9b3f0b234e7bc0a6427d74a9b7a18e9",
+      "bytes": 5356,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/native-staging/stage_from_git.py",
+      "mode": "100644",
+      "git_blob": "ca1c8ac3fe669d9f4cb1aedf41cae198a75d3b91",
+      "bytes": 9739,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/native-staging/support-manifest.json",
+      "mode": "100644",
+      "git_blob": "2aca05d3a5bcd755ffb62b6e0d3bb2744d3ab96a",
+      "bytes": 4000,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/release-extension/coordination-horizon-tests.log",
+      "mode": "100644",
+      "git_blob": "f34cfe0bbe53be48db8eb9013bfd695368aa727a",
+      "bytes": 614,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/release-extension/explicit-extension-adapter.diff",
+      "mode": "100644",
+      "git_blob": "d9251c3d80f0bf0cf7c05cde2b502db3bcc40403",
+      "bytes": 5385,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/release-extension/peer-review.json",
+      "mode": "100644",
+      "git_blob": "687237db1208b6617e4577c0cde651daf6c8a619",
+      "bytes": 3820,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/release-extension/preparation-review.json",
+      "mode": "100644",
+      "git_blob": "d18569eb6b17cf0ea776a5fb757dee6da4e7b6e9",
+      "bytes": 1943,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/release-extension/prepare_extension_review.py",
+      "mode": "100644",
+      "git_blob": "ac259b3a5a876b9aab605f14339799d106d80c67",
+      "bytes": 9309,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/release-extension/test_coordination_horizon.py",
+      "mode": "100644",
+      "git_blob": "b4a07d950925eef90c957be267b132c76f5e035d",
+      "bytes": 5166,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/release-extension/transport-receipt.json",
+      "mode": "100644",
+      "git_blob": "b0bf47abb750cb18d57c26e8703e74c22bea28a2",
+      "bytes": 1338,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/source-export/CLOUD-EXPORT-VERIFICATION.json",
+      "mode": "100644",
+      "git_blob": "97b704fbbcce6311f0e3bfef4b6604d3a7a58a33",
+      "bytes": 2388,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/source-export/MAC-EXPORT-HANDOFF.txt",
+      "mode": "100644",
+      "git_blob": "89c4983fa8ebfd70585fbd25e844170777f153a5",
+      "bytes": 2953,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/source-export/REVIEW-INSTRUCTIONS.txt",
+      "mode": "100644",
+      "git_blob": "152ba1dc9c47f9b0863b4a7fb61f91c7c66bda1d",
+      "bytes": 3740,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/source-export/VERSION-AND-UI-STATUS.json",
+      "mode": "100644",
+      "git_blob": "7ca1580a64940b9beae7a7d4daab68f1bf1b8033",
+      "bytes": 2402,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/source-export/export_halaltag_r7.py",
+      "mode": "100644",
+      "git_blob": "723ad88d2ee2cbeaa2c07326811b9e843d8bcceb",
+      "bytes": 4437,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/source-export/screened-review-ledger.json",
+      "mode": "100644",
+      "git_blob": "fdddc78835c6afaa97858219edcb2371dc0212cf",
+      "bytes": 1004,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/source-export/source-spec.json",
+      "mode": "100644",
+      "git_blob": "56b667246057b64600d234f29da087a2fa5c386f",
+      "bytes": 256,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/followup/source-export/source_export_engine.py",
+      "mode": "100644",
+      "git_blob": "9b56c50a1cbccbc0fe5eb69d55b405c502cefa8c",
+      "bytes": 26975,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/geometry-evidence-tests.log",
+      "mode": "100644",
+      "git_blob": "8422f7e4bece152152ec5670aaeec5ffe6ec4a45",
+      "bytes": 977,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/peer-review-github.json",
+      "mode": "100644",
+      "git_blob": "75aca738f6bef987449ea4b03ad7c47779d5923a",
+      "bytes": 3329,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/prepare_native_review.py",
+      "mode": "100644",
+      "git_blob": "3da402044b48ad87e9fd13d986d32f0c642adc0e",
+      "bytes": 12268,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/prepare_release_review.py",
+      "mode": "100644",
+      "git_blob": "1943cbcbd4124a5b168f4ba4f3ff261ce594e313",
+      "bytes": 10080,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/r6b-failure-triage.json",
+      "mode": "100644",
+      "git_blob": "8265d5d2f8f42a8e3922afcc11981cb75380f548",
+      "bytes": 5358,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/r6b-original-failure-files.json",
+      "mode": "100644",
+      "git_blob": "9f630fd66ccaa9a5c7377e3c99a1d220294e1e7b",
+      "bytes": 2045,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/release-adapter-from-r6b.diff",
+      "mode": "100644",
+      "git_blob": "69d7952750595a6f15c9f6fc6e9bc29b9f224823",
+      "bytes": 3557,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/release-preparation-review.json",
+      "mode": "100644",
+      "git_blob": "3350830ed3de2e701fe6d22d7720822ee545e6d0",
+      "bytes": 2129,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r7/test_geometry_evidence.py",
+      "mode": "100644",
+      "git_blob": "a16ba7a5f1dfa2368448b3eb0cde30e842ab515b",
+      "bytes": 9257,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r8/README.md",
+      "mode": "100644",
+      "git_blob": "2583bf02d0a773392aca56a1bb12165f72f8a404",
+      "bytes": 2662,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r8/prepare_native_review.py",
+      "mode": "100644",
+      "git_blob": "80e6247ecde38b73d40b8bcc8a10cec5edabc0ff",
+      "bytes": 12549,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r8/product-peer-review.json",
+      "mode": "100644",
+      "git_blob": "6d60970ba22e451be4bff7fc54105d59d92531ac",
+      "bytes": 4788,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r8/r7-ar-ax5-triage.json",
+      "mode": "100644",
+      "git_blob": "c48d63d4b291a9d64ca900f92c1c6f4b62715515",
+      "bytes": 2354,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r8/r7-en-ax5-triage.json",
+      "mode": "100644",
+      "git_blob": "94d4ba8f001184c37660ae112bc3000a8ce9addf",
+      "bytes": 6388,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r8/r7-native-results.json",
+      "mode": "100644",
+      "git_blob": "9fa2b7680915b4e0cc7d76a06914ff4611dd7567",
+      "bytes": 9225,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r8/source-validation.json",
+      "mode": "100644",
+      "git_blob": "4e8d785012e9de1d86c193ff14caaf958dec1fe2",
+      "bytes": 9599,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/README.md",
+      "mode": "100644",
+      "git_blob": "2b4f240cae2a358837ec803e57baf89a4c678018",
+      "bytes": 4197,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/appearance_evidence_guard.py",
+      "mode": "100644",
+      "git_blob": "41ce4db20cc0aef16518863669e137582158f638",
+      "bytes": 33736,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/arabic_appearance_evidence_guard.py",
+      "mode": "100644",
+      "git_blob": "42d2d683af76c9f8abc675aab02cf3c77d65e8f7",
+      "bytes": 34563,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/composition-static-verification.json",
+      "mode": "100644",
+      "git_blob": "26c5560eeb2115d2273fdfd02f086d71661b97db",
+      "bytes": 9599,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/geometry-evidence-tests.log",
+      "mode": "100644",
+      "git_blob": "010442684e46d79fe92214bd74a3fb796cb8cf5c",
+      "bytes": 1504,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/parent-support-pins.json",
+      "mode": "100644",
+      "git_blob": "949311c9dae59a0298a1b543b7f1f3406146df21",
+      "bytes": 3654,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/peer-reviews.json",
+      "mode": "100644",
+      "git_blob": "f856411e937a8390b8df7c8ddeeb9df3f57c7edc",
+      "bytes": 1793,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/prepare_native_review.py",
+      "mode": "100644",
+      "git_blob": "af645ee34f3c83a0b9275752f45b51ee90368a4b",
+      "bytes": 13875,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/r8-ar-ax5-route-input.json",
+      "mode": "100644",
+      "git_blob": "738fe8931ff04636dc2945431d214d261a24e1e4",
+      "bytes": 2778,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/r8-en-ax5-route-input.json",
+      "mode": "100644",
+      "git_blob": "9aa08becea93632a554ea8c51be5530987e6a036",
+      "bytes": 2692,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/r8-failure-review.json",
+      "mode": "100644",
+      "git_blob": "fef4d7ffd9a3469a5dd9875d469f4b8ae9cf0643",
+      "bytes": 13249,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/source-retention-review.json",
+      "mode": "100644",
+      "git_blob": "63be414019779ce1a6ef049000c27a04d970ffed",
+      "bytes": 5395,
+      "native_input": false
+    },
+    {
+      "path": "publishing/r9/test_geometry_evidence.py",
+      "mode": "100644",
+      "git_blob": "95db8ec344de471c5cc32ba3874b23db8064d7ee",
+      "bytes": 14419,
+      "native_input": false
+    }
+  ]
+}
