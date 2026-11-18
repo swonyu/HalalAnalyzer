@@ -1,0 +1,84 @@
+{
+  "status": "ROOT_REVIEWED_EXPLICIT_INSTALLED_RUNTIME_INVENTORY_ONLY",
+  "scope": "HALALTAG_R11_INSTALLED_RUNTIME_HOSTED_INVENTORY_V3",
+  "source_commit": "7ef009beb0c1f6f355eeceb931d899553ea8cad5",
+  "candidate_contract_sha256": "8ed7c6dad4cc4ed4bb41153840d9210a209a7c47c5e712023e6ff0dd9f85c376",
+  "native_build_test_archive_authorized": false,
+  "additional_spend_usd": 0,
+  "proposal_receipt_sha256": "89c91282fa6648778ec00c30ed3013efac645d00ea290d5f4104e54c89497cf9",
+  "independent_peer_receipt_sha256": "7abb9057deef146bdb8e2055cfaef57ab2370612b3c767f7497b8ef057adfdf5",
+  "control_files": [
+    {
+      "path": ".github/workflows/halaltag-hosted-inventory.yml",
+      "bytes": 3749,
+      "sha256": "58de69b157010ddd3dfafd907beb73212c075284cdb555fe7b6e072a00474d4c",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/README.md",
+      "bytes": 6262,
+      "sha256": "c69c5714f2760921fce082c1f03c7375588ec685c614001694a2822db643dbe3",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/coverage-contract.json",
+      "bytes": 23887,
+      "sha256": "64287ca28115b9b7b1d42a7c03a5cda024fcee919068e7f979df06a212a46da6",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/inventory_only.py",
+      "bytes": 25129,
+      "sha256": "bfc7f5510e35acfa5a2a76fe80f7e15fcc19beb8c1a04f01d62017effb340bea",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/source-index.json",
+      "bytes": 38721,
+      "sha256": "f008307c5e9255651ef183b5f02af930f5081cfc3e4fb3cbf27f9ad431e316ca",
+      "mode": "0644"
+    },
+    {
+      "path": "publishing/hosted-r11/test_inventory_only.py",
+      "bytes": 18883,
+      "sha256": "fd3bcf97c021be9e6c7db24669c0cd8d608512aef2136dbb547c9e741d10da8b",
+      "mode": "0644"
+    }
+  ],
+  "recorded_utc": "2026-11-18T16:31:23Z",
+  "root_cost_review": {
+    "fresh_cost_and_included_storage_receipt_sha256": "8b181723c7367a726faa6945a2bd0dba2012a69ee98358e7473832d96eaab41e",
+    "fresh_receipt_recorded_utc": "2026-11-18T16:08:37Z",
+    "observed_included_storage_display": "0 GB used / 0.5 GB included",
+    "fresh_included_storage_available_bytes": 500000000,
+    "available_bytes_basis": "Display-derived allowance before the known later 3710893-byte Lumina artifact; approximate and subject to billing lag, not a claim of an independently measured live storage balance.",
+    "known_later_artifact_bytes": 3756070,
+    "display_derived_allowance_after_known_later_artifact_bytes": 496243930,
+    "included_storage_reservation_bytes": 21000000,
+    "candidate_artifact_cap_bytes": 20000000,
+    "outer_upload_overhead_reserve_bytes": 1000000,
+    "root_confirms_no_additional_spend_and_sufficient_included_storage": true,
+    "confirmation_basis": "Current UI displayed allowance is sufficient for this 21 MB inventory reservation; existing Actions zero-dollar stop remains enforced. If actual quota differs or upload fails, inventory acceptance fails. No paid usage, budget increase, deletion or extra storage is authorized.",
+    "paid_usage_blocked": true,
+    "additional_spend_usd": 0,
+    "retention_days": 1,
+    "standard_public_hosted_runner": "xcode-27",
+    "candidate_existing_zero_spend_policy_receipt_sha256": "b375f7e421f5ce9cab7930ea02028364550bc14db1a0781f286161cde7f5789c",
+    "metadata_enforcement": "Root review obligation; fresh numeric storage/time metadata is not runtime-validated by this frozen inventory driver.",
+    "known_later_artifacts": [
+      {
+        "run_id": 44342327548,
+        "artifact_id": 14444892596,
+        "bytes": 3710893
+      },
+      {
+        "run_id": 44346043468,
+        "artifact_id": 14446386073,
+        "bytes": 45177
+      }
+    ],
+    "freshness_note": "Same observed 16:08:37 zero-dollar stop and included allowance, with the two subsequent measured artifacts accounted for. This is an approximate UI-derived reservation, not a live exact balance; failed quota or upload means no acceptance. No paid storage or budget change authorized."
+  },
+  "original_failed_platform_gate": "Run44346043468 remains failed: required24A5423a absent. Raw installed27.0/24A434 is the sole explicitly reviewed new target; no inferred native equivalence.",
+  "original_failed_inventory_verification_sha256": "aecd3c9f8e11df6fffa96394effcff299aaff50811427f1a84628da7d56062d3"
+}
